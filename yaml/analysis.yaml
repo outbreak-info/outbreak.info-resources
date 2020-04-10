@@ -321,6 +321,15 @@
     '@id': https://schema.org/keywords
   schema:rangeIncludes:
     '@id': text
+- '@id': topicCategory
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Applicable outbreak.info category
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': text
 - '@id': ''
   '@type': rdf:Property
   marginality: ''

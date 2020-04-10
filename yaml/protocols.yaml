@@ -344,6 +344,15 @@
     '@id': https://schema.org/keywords
   schema:rangeIncludes:
     '@id': text
+- '@id': topicCategory
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Applicable outbreak.info category
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': text
 - '@id': usedToGenerate
   '@type': rdf:Property
   marginality: optional
@@ -374,4 +383,176 @@
     '@id': bioschemas:duration
   schema:rangeIncludes:
     '@id': date/time
+- '@id': ''
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Related articles such as pre-prints, publications in which the protocol
+    was cited
+  rdfs:subClassOf:
+    '@id': https://schema.org/citation
+  schema:rangeIncludes:
+    '@id': publications
+- '@id': ''
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: DOI of the related article
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': doi
+- '@id': ''
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: url of related article
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': url
+- '@id': ''
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: other articles referenced by the protocol
+  rdfs:subClassOf:
+    '@id': https://schema.org/citation
+  schema:rangeIncludes:
+    '@id': publications
+- '@id': ''
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: DOI for other articles referenced by this protocol
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': doi
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
+- '@id': ''
+  '@type': rdf:Property
+  marginality: ''
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:subClassOf:
+    '@id': ''
+  schema:rangeIncludes:
+    '@id': ''
 '@id': http://sulab.org/
