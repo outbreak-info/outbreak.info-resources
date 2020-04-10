@@ -1,0 +1,1 @@
+terms = ["Severe acute respiratory syndrome coronavirus 2", "COVID19", "SARS-2", "SARS-CoV2", "SARS-CoV-2", "HCoV-19","SARS2","2019-nCoV","COVID-19","COVID-19 virus","Wuhan coronavirus","Wuhan seafood market pneumonia virus","Human coronavirus 2019","novel coronavirus 2019","novel coronavirus"]
