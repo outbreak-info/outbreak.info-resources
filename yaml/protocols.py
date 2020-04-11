@@ -21,10 +21,7 @@ with open("c:/users/ben/desktop/schemas/protocol.csv", "r") as fin:
             prop["@type"] = "rdf:Property"
             prop["rdfs:subClassOf"] = {"@id" : row[cols.index("sameAs")].lower()}
             prop["rdfs:comment"] = row[cols.index("Description")]
-            card_string = row[cols.index("cardinality")]
-            if (card_string != "one"):
-                card_string = "many"
-            prop["owl:cardinality"] = card_string
+            prop["owl:cardinality"] = row[cols.index("cardinality")]
             prop["marginality"] = row[cols.index("marginality")]
 
             rangeIncludes = row[cols.index("expected type")]

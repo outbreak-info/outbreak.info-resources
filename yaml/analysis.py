@@ -4,9 +4,9 @@ import csv
 
 schema = Schema("http://sulab.org/")
 
-schema.add_to_context("schema", "http://schema.org")
-schema.add_to_context("bioschemas", "http://bioschema.org")
-schema.add_to_context("owl", "http://www.w3.org/2002/07/owl")
+schema.add_to_context("schema", "http://schema.org/")
+schema.add_to_context("bioschemas", "http://bioschema.org/")
+schema.add_to_context("owl", "http://www.w3.org/2002/07/owl/")
 
 with open("c:/users/ben/desktop/schemas/analysis.csv", "r") as fin:
     csv_reader = csv.reader(fin)
