@@ -1,5 +1,6 @@
 import yaml
 import os
+import re
 
 class Schema:
     def __init__(self, id):
@@ -25,6 +26,14 @@ class Schema:
                 else:
                     cardinality = "many"
 
+    def clean_urls(self, yaml):
+        urls = re.findall(r'(?:http|https):\/\/(?:[a-zA-Z0-9\.\/]+)', yaml)
+        urls = list(set(urls))
+        for url in urls:
+            if not url.endswith('/'):
+                yaml = yaml.replace(url, url + '/')
+        return yaml
+
     def render(self, out):
         result = {}
         result["@context"] = self.context
@@ -34,6 +43,9 @@ class Schema:
         # do cleansing
         self.clean_cardinality(result)
 
+        theYaml = yaml.dump(result)
+        theYaml = self.clean_urls(theYaml)
+
         # write out
         with open(out, 'w') as fout: 
-            fout.write(yaml.dump(result))
+            fout.write(theYaml)
