@@ -19,7 +19,17 @@ with open("c:/users/ben/desktop/schemas/protocol.csv", "r") as fin:
             prop = {}
             prop["@id"] = row[cols.index("Property")]
             prop["@type"] = "rdf:Property"
-            prop["rdfs:subClassOf"] = {"@id" : row[cols.index("sameAs")].lower()}
+            #prop["rdfs:subClassOf"] = {"@id" : row[cols.index("sameAs")].lower()}
+
+            subClassOf = row[cols.index("sameAs")]
+            subClassOf = [f.strip() for f in subClassOf.replace('[', '').replace(']','').split(',')]
+
+            if len(subClassOf) == 1:
+                prop["rdfs:subClassOf"] = {"@id" : subClassOf[0]}
+            else:
+                prop["rdfs:subClassOf"] = [{"@id" : f} for f in subClassOf]
+
+
             prop["rdfs:comment"] = row[cols.index("Description")]
             prop["owl:cardinality"] = row[cols.index("cardinality")]
             prop["marginality"] = row[cols.index("marginality")]
@@ -27,7 +37,11 @@ with open("c:/users/ben/desktop/schemas/protocol.csv", "r") as fin:
             rangeIncludes = row[cols.index("expected type")]
             rangeIncludes = [f.strip() for f in rangeIncludes.replace('[', '').replace(']','').split(',')]
 
-            prop["schema:rangeIncludes"] = [{"@id" : f} for f in rangeIncludes]
+            if len(rangeIncludes) == 1:
+                prop["schema:rangeIncludes"] = {"@id" : rangeIncludes[0]}
+            else:
+                prop["schema:rangeIncludes"] = [{"@id" : f} for f in rangeIncludes]
+            
 
             schema.add_to_props(prop)
 
