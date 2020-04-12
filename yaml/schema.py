@@ -34,6 +34,13 @@ class Schema:
                 yaml = yaml.replace(url, url + '/')
         return yaml
 
+    def enforce_contexts(self, yaml, result):
+        namespaces = re.findall(r'([a-zA-Z]+):[a-zA-Z]+', yaml)
+        namespaces = list(set(namespaces))
+        for namespace in namespaces:
+            if not namespace in result["@context"]:
+                raise Exception()
+
     def render(self, out):
         result = {}
         result["@context"] = self.context
@@ -45,6 +52,8 @@ class Schema:
 
         theYaml = yaml.dump(result)
         theYaml = self.clean_urls(theYaml)
+
+        self.enforce_contexts(theYaml, result)
 
         # write out
         with open(out, 'w') as fout: 
