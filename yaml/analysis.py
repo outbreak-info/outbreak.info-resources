@@ -4,11 +4,11 @@ import csv
 
 schema = Schema("http://sulab.org/")
 
-schema.add_to_context("schema", "http://schema.org")
-schema.add_to_context("bioschemas", "http://bioschema.org")
-schema.add_to_context("owl", "http://www.w3.org/2002/07/owl")
+schema.add_to_context("schema", "http://schema.org/")
+schema.add_to_context("bioschemas", "http://bioschema.org/")
+schema.add_to_context("owl", "http://www.w3.org/2002/07/owl/")
 
-with open("c:/users/ben/desktop/analysis.csv", "r") as fin:
+with open("c:/users/ben/desktop/schemas/analysis.csv", "r") as fin:
     csv_reader = csv.reader(fin)
 
     cols = []
@@ -26,8 +26,12 @@ with open("c:/users/ben/desktop/analysis.csv", "r") as fin:
                 card_string = "many"
             prop["owl:cardinality"] = card_string
             prop["marginality"] = row[cols.index("marginality")]
-            prop["schema:rangeIncludes"] = {"@id" : row[cols.index("expected type")]}
+
+            rangeIncludes = row[cols.index("expected type")]
+            rangeIncludes = [f.strip() for f in rangeIncludes.replace('[', '').replace(']','').split(',')]
+
+            prop["schema:rangeIncludes"] = [{"@id" : f} for f in rangeIncludes]
 
             schema.add_to_props(prop)
 
-schema.render('c:/users/ben/desktop/analysis.yaml')
+schema.render('c:/users/ben/desktop/schemas/analysis.yaml')
