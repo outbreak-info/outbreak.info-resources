@@ -1,0 +1,411 @@
+{
+  "@context": {
+    "bioschemas": "http://bioschemas.org/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
+    "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
+    "schema": "http://schema.org/"
+  },
+  "@id": "https://discovery.biothings.io/view/outbreak/",
+  "@graph": [{
+      "@id": "outbreak:Analysis",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A schema describing an analysis for outbreak.info. Additional schema.org and/or custom properties could be added.",
+      "rdfs:label": "Analysis",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:url",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The url of the item",
+      "rdfs:label": "url",
+      "rdfs:sameAs": {
+        "@id": "schema:url"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "outbreak:domainUrl",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The domain name or main site on which webpage or specific url can be found",
+      "rdfs:label": "domainUrl",
+      "rdfs:sameAs": {
+        "@id": "schema:url"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:description",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "A description of the item.",
+        "rdfs:label": "description",
+      "rdfs:sameAs": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:author",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The author of this content or rating.",
+      "rdfs:label": "author",
+      "rdfs:sameAs": {
+        "@id": "schema:author"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "outbreak:Person",
+        "@id": "outbreak:Organization"
+      }]
+    },
+    {
+      "@id": "outbreak:funder",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "rdfs:label": "funder",  
+      "rdfs:sameAs": {
+        "@id": "schema:funder"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:hasDownloadableContent",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Indicates the site has content that can be downloaded (raw data, data sheets, charts, etc)",
+      "rdfs:label": "hasDownloadableContent",  
+      "rdfs:sameAs": {
+        "@id": "schema:isAccessibleForFree"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
+      "@id": "outbreak:infectiousAgent",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The actual infectious agent, such as a specific bacterium",
+      "rdfs:label": "infectiousAgent",  
+      "rdfs:sameAs": {
+        "@id": "schema:infectiousAgent"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:infectiousDisease",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The disease caused by the infectious agent. Important as some agents may cause multiple diseases",
+      "rdfs:label": "infectiousDisease",
+      "rdfs:sameAs": {
+        "@id": "schema:infectousDisease"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:license",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "A license document that applies to this content, typically indicated by URL",
+      "rdfs:label": "license",
+      "rdfs:sameAs": {
+        "@id": "schema:license"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:datePublished",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "PublicationDate of the analysis online if available",
+      "rdfs:label": "datePublished",
+      "rdfs:sameAs": {
+        "@id": "schema:datePublished"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "outbreak:dateModified",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Most recent date for which the analysis model itself was updated",
+      "rdfs:label": "dateModified",
+      "rdfs:sameAs": {
+        "@id": "schema:dateModified"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "outbreak:analysisTechnique",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "This is the analysis type, analytical technique or mathematical model used in this analysis",
+      "rdfs:label": "analysisTechnique",
+      "rdfs:sameAs": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:analysisTopic",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The underlying question, goal, or aim of the analysis",
+      "rdfs:label": "analysisTopic",
+      "rdfs:sameAs": {
+        "@id": "bioschemas:purpose"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:assumption",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Statement of assumptions / limitations of the model",
+      "rdfs:label": "assumption",
+      "rdfs:sameAs": {
+        "@id": "schema:text"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:citedBy",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "A resource (publication, protocol, dataset, etc.) which was derived from this protocol",
+      "rdfs:label": "citedBy",
+      "rdfs:sameAs": {
+        "@id": "schema:citation"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "outbreak:ClinicalTrial", 
+        "@id": "outbreak:Analysis", 
+        "@id": "outbreak:Publication", 
+        "@id": "outbreak:Dataset", 
+        "@id": "outbreak:Protocol"}
+      ]
+    },
+    {
+      "@id": "outbreak:isBasedOn",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "A resource (publication, protocol, dataset, etc) from which this analysis was derived",
+      "rdfs:label": "isBasedOn",
+      "rdfs:sameAs": {
+        "@id": "schema:isBasedOn"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "outbreak:ClinicalTrial", 
+        "@id": "outbreak:Analysis", 
+        "@id": "outbreak:Publication", 
+        "@id": "outbreak:Dataset", 
+        "@id": "outbreak:Protocol"}
+      ]
+    },
+    {
+      "@id": "outbreak:relatedTo",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Other resources related to, but not a derivative of nor derived from this analysis",
+      "rdfs:label": "relatedTo",
+      "rdfs:sameAs": {
+        "@id": "schema:relatedTo"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "outbreak:ClinicalTrial", 
+        "@id": "outbreak:Analysis", 
+        "@id": "outbreak:Publication", 
+        "@id": "outbreak:Dataset", 
+        "@id": "outbreak:Protocol"}
+      ]
+    },
+    {
+      "@id": "outbreak:contributor",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "A secondary contributor to the CreativeWork or Event.",
+      "rdfs:label": "contributor",
+      "rdfs:sameAs": {
+        "@id": "schema:contributor"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "outbreak:author"
+      }
+    },
+    {
+      "@id": "outbreak:maintainer",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "A maintainer of a Dataset, software package (SoftwareApplication), or other Project.",
+      "rdfs:label": "maintainer",
+      "rdfs:sameAs": {
+        "@id": "schema:maintainer"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "outbreak:author"
+      }
+    },
+    {
+      "@id": "outbreak:keywords",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "keywords",
+      "rdfs:label": "keywords",
+      "rdfs:sameAs": {
+        "@id": "schema:keywords"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:topicCategory",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Applicable outbreak.info category",
+      "rdfs:label": "topicCategory",
+      "rdfs:sameAs": {
+        "@id": "schema:about"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Analysis"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    }
+  ]
+}
