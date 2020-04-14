@@ -102,7 +102,7 @@
         "@id": "outbreak:Analysis"
       },
       "schema:rangeIncludes": [{
-        "@id": "outbreak:Person",
+        "@id": "outbreak:Person"},{
         "@id": "outbreak:Organization"
       }]
     },
