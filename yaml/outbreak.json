@@ -290,11 +290,11 @@
         "@id": "outbreak:Analysis"
       },
       "schema:rangeIncludes": [{
-        "@id": "outbreak:ClinicalTrial", 
-        "@id": "outbreak:Analysis", 
-        "@id": "outbreak:Publication", 
-        "@id": "outbreak:Dataset", 
-        "@id": "outbreak:Protocol"}
+        "@id": "outbreak:ClinicalTrial"}, 
+        {"@id": "outbreak:Analysis"}, 
+        {"@id": "outbreak:Publication"}, 
+        {"@id": "outbreak:Dataset"}, 
+        {"@id": "outbreak:Protocol"}
       ]
     },
     {
@@ -311,11 +311,11 @@
         "@id": "outbreak:Analysis"
       },
       "schema:rangeIncludes": [{
-        "@id": "outbreak:ClinicalTrial", 
-        "@id": "outbreak:Analysis", 
-        "@id": "outbreak:Publication", 
-        "@id": "outbreak:Dataset", 
-        "@id": "outbreak:Protocol"}
+        "@id": "outbreak:ClinicalTrial"}, 
+        {"@id": "outbreak:Analysis"}, 
+        {"@id": "outbreak:Publication"}, 
+        {"@id": "outbreak:Dataset"}, 
+        {"@id": "outbreak:Protocol"}
       ]
     },
     {
@@ -332,11 +332,11 @@
         "@id": "outbreak:Analysis"
       },
       "schema:rangeIncludes": [{
-        "@id": "outbreak:ClinicalTrial", 
-        "@id": "outbreak:Analysis", 
-        "@id": "outbreak:Publication", 
-        "@id": "outbreak:Dataset", 
-        "@id": "outbreak:Protocol"}
+        "@id": "outbreak:ClinicalTrial"}, 
+        {"@id": "outbreak:Analysis"}, 
+        {"@id": "outbreak:Publication"}, 
+        {"@id": "outbreak:Dataset"}, 
+        {"@id": "outbreak:Protocol"}
       ]
     },
     {
