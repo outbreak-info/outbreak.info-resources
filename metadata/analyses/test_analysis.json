@@ -1,0 +1,32 @@
+{
+  "type": "Analysis",
+  "url": "https://covid19.healthdata.org/united-states-of-america",
+  "domainName": "http://www.healthdata.org/",
+  "name": "COVID-19 Hospital Needs and Death Projections",
+  "description": "Referenced in a White House press briefing as the 'Chris Murray Model,' IHME’s COVID-19 projections show demand for hospital services in each state. The demand for these services is expected to exceed capacity. Please send questions to covid19@healthdata.org.",
+  "author": [{
+    "name": "Institute for Health Metrics and Evaluation",
+    "affiliation": "University of Washington"
+  }],
+  "hasDownloadableContent": true,
+  "infectiousAgent": "https://www.ncbi.nlm.nih.gov/taxonomy/2697049",
+  "infectiousDisease": "COVID-19",
+  "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "funder": [],
+  "datePublished": "",
+  "dateModified": "2020-04-10",
+  "analysisTechnique": [],
+  "analysisTopic": [],
+  "assumption": [],
+  "citedBy": {
+    "name": "Forecasting COVID-19 impact on hospital bed-days, ICU-days, ventilator-days and deaths by US state in the next 4 months",
+    "type": "Publication",
+    "identifier": "https://www.medrxiv.org/content/10.1101/2020.03.27.20043752v1"
+  },
+  "isBasedOn": [],
+  "relatedTo": [],
+  "contributor": [],
+  "maintainer": [],
+  "keywords": [],
+  "topicCategory": []
+}

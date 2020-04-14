@@ -5,12 +5,23 @@
     "schema": "http://schema.org"
   },
   "@graph": [
+    { "rdfs:label": "Analysis",
+     "rdfs:subClassOf": {
+       "@id": "schema:CreativeWork"
+     },
+     "schema:isPartOf": {
+       "@id": "https://discovery.biothings.io/guide/outbreak/"
+     },
+     "@id": "outbreak:Analysis",
+     "@type": "rdfs:Class"},
+
     {
       "@id": "url",
       "@type": "rdf:Property",
       "marginality": "required",
       "owl:cardinality": "one",
       "rdfs:comment": "The url of the item",
+      "schema:domainIncludes": "outbreak:Analysis",
       "rdfs:subClassOf": {
         "@id": "https://schema.org/url"
       },
@@ -442,6 +453,19 @@
       "rdfs:comment": "",
       "rdfs:subClassOf": {
         "@id": "https://schema.org/keywords"
+      },
+      "schema:rangeIncludes": {
+        "@id": "text"
+      }
+    },
+    {
+      "@id": "topicCategory",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Applicable outbreak.info category",
+      "rdfs:subClassOf": {
+        "@id": ""
       },
       "schema:rangeIncludes": {
         "@id": "text"
