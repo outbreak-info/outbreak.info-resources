@@ -1,7 +1,8 @@
 '@context':
-  bioschemas: http://bioschema.org/
+  bioschemas: http://bioschemas.org/
   outbreak: http://outbreak.info/
   owl: http://www.w3.org/2002/07/owl/
+  prs: https://prsinfo.clinicaltrials.gov/ProtocolRecordSchema.xsd/
   rdf: http://www.w3.org/1999/02/22/-rdf-syntax-ns/
   rdfs: http://www.w3.org/2000/01/rdf/-schema/
   schema: http://schema.org/
@@ -13,8 +14,8 @@
     '@id': https://outbreak.org/
   rdfs:label: ArmGroup
   rdfs:subClassOf:
-  - '@id': prs_ArmGroup
-  - '@id': prs_Intervention
+  - '@id': prs:ArmGroup
+  - '@id': prs:Intervention
 - '@id': outbreak:ClinicalTrial
   '@type': rdfs:Class
   rdfs:comment: ClinicalTrial
@@ -22,7 +23,7 @@
     '@id': https://outbreak.org/
   rdfs:label: ClinicalTrial
   rdfs:subClassOf:
-    '@id': Schema_ MedicalStudy
+    '@id': 'Schema: MedicalStudy'
 - '@id': outbreak:Eligibility
   '@type': rdfs:Class
   rdfs:comment: Eligibility
@@ -30,7 +31,7 @@
     '@id': https://outbreak.org/
   rdfs:label: Eligibility
   rdfs:subClassOf:
-    '@id': prs_Eligibility
+    '@id': prs:Eligibility
 - '@id': outbreak:Instrument
   '@type': rdfs:Class
   rdfs:comment: Instrument
@@ -38,7 +39,7 @@
     '@id': https://outbreak.org/
   rdfs:label: Instrument
   rdfs:subClassOf:
-    '@id': bioschema_LabProtocol
+    '@id': bioschemas:LabProtocol
 - '@id': outbreak:Organization
   '@type': rdfs:Class
   rdfs:comment: Organization
@@ -46,7 +47,7 @@
     '@id': https://outbreak.org/
   rdfs:label: Organization
   rdfs:subClassOf:
-    '@id': schema_Organization
+    '@id': schema:Organization
 - '@id': outbreak:Person
   '@type': rdfs:Class
   rdfs:comment: Person
@@ -54,7 +55,7 @@
     '@id': https://outbreak.org/
   rdfs:label: Person
   rdfs:subClassOf:
-    '@id': schema_Person
+    '@id': schema:Person
 - '@id': outbreak:StudyDesign
   '@type': rdfs:Class
   rdfs:comment: StudyDesign
@@ -62,7 +63,7 @@
     '@id': https://outbreak.org/
   rdfs:label: StudyDesign
   rdfs:subClassOf:
-    '@id': prs_StudyDesign
+    '@id': prs:StudyDesign
 - '@id': outbreak:armGroup.Name
   '@type': rdfs:Property
   marginality: optional

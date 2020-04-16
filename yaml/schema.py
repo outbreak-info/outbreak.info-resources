@@ -53,9 +53,9 @@ class Schema:
         referenced_class["@type"] = "rdfs:Class"
 
         if len(sub_class) == 1:
-            referenced_class["rdfs:subClassOf"] = {"@id" : sub_class[0]}
+            referenced_class["rdfs:subClassOf"] = {"@id" : sub_class[0].replace("_",":")}
         else:
-            referenced_class["rdfs:subClassOf"] = [{"@id" : f} for f in sub_class]
+            referenced_class["rdfs:subClassOf"] = [{"@id" : f.replace("_",":")} for f in sub_class]
 
         referenced_class["rdfs:isPartOf"] = {"@id" : is_part}
 
