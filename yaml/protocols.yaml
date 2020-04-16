@@ -1,44 +1,1234 @@
 '@context':
-  bioschemas: http://bioschema.org
-  owl: http://www.w3.org/2002/07/owl
-  schema: http://schema.org
+  bioschemas: http://bioschema.org/
+  outbreak: http://outbreak.info/
+  owl: http://www.w3.org/2002/07/owl/
+  rdf: http://www.w3.org/1999/02/22/-rdf-syntax-ns/
+  rdfs: http://www.w3.org/2000/01/rdf/-schema/
+  schema: http://schema.org/
 '@graph':
+- '@id': outbreak:ArmGroup
+  '@type': rdfs:Class
+  rdfs:comment: ''
+  rdfs:isPartOf:
+    '@id': https://outbreak.org/
+  rdfs:label: ArmGroup
+  rdfs:subClassOf:
+  - '@id': prs_ArmGroup
+  - '@id': prs_Intervention
+- '@id': outbreak:ClinicalTrial
+  '@type': rdfs:Class
+  rdfs:comment: ''
+  rdfs:isPartOf:
+    '@id': https://outbreak.org/
+  rdfs:label: ClinicalTrial
+  rdfs:subClassOf:
+    '@id': Schema_ MedicalStudy
+- '@id': outbreak:Eligibility
+  '@type': rdfs:Class
+  rdfs:comment: ''
+  rdfs:isPartOf:
+    '@id': https://outbreak.org/
+  rdfs:label: Eligibility
+  rdfs:subClassOf:
+    '@id': prs_Eligibility
+- '@id': outbreak:Instrument
+  '@type': rdfs:Class
+  rdfs:comment: ''
+  rdfs:isPartOf:
+    '@id': https://outbreak.org/
+  rdfs:label: Instrument
+  rdfs:subClassOf:
+    '@id': bioschema_LabProtocol
+- '@id': outbreak:Organization
+  '@type': rdfs:Class
+  rdfs:comment: ''
+  rdfs:isPartOf:
+    '@id': https://outbreak.org/
+  rdfs:label: Organization
+  rdfs:subClassOf:
+    '@id': schema_Organization
+- '@id': outbreak:Person
+  '@type': rdfs:Class
+  rdfs:comment: ''
+  rdfs:isPartOf:
+    '@id': https://outbreak.org/
+  rdfs:label: Person
+  rdfs:subClassOf:
+    '@id': schema_Person
+- '@id': outbreak:StudyDesign
+  '@type': rdfs:Class
+  rdfs:comment: ''
+  rdfs:isPartOf:
+    '@id': https://outbreak.org/
+  rdfs:label: StudyDesign
+  rdfs:subClassOf:
+    '@id': prs_StudyDesign
+- '@id': armGroup.Name
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The name of the arm or factor (can include a specific intervention,
+    a placebo or even a lack of intervention, ie- 'no intervention' group)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup.Role
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The role of the arm or factor in the study this is equivalent to the
+    ArmType in ClinicalTrials.gov
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup.Category
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The category of the arm or factor in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup.Description
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: A description of the arm or factor
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': name
+  '@type': ''
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: Official or scientific title of the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': alternateName
+  '@type': ''
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Brief title, acronyms, or public titles for the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': identifier
+  '@type': ''
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: Registration number or identifier assigned to the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': identifier.source
+  '@type': ''
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: Source of identifier assignment or type of identifier (NCTid, China
+    CTRid, EudraCT Number, etc.)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': url
+  '@type': ''
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: url where the study can be found
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': status
+  '@type': ''
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The recruitment status of the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': status.expandedAccess
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: Flag for whether or not the study has expanded Access status
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': status.date
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The date that the status was verified. Equivalent to NCT's StatusVerifiedDate
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': description
+  '@type': ''
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: Description of the study can be found in the "BriefSummary" field
+    of the "DescriptionModule" for schema used in ClinicalTrials.gov
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyEvent
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: events such as Study Start, Primary Completion, Completion, StudyFirstSubmit,
+    StudyFirstSubmitQC, LastUpdateSubmit
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyEvent.date
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per studyEvent
+  rdfs:comment: StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate,
+    StudyFirstSubmitQCDate, LastUpdateSubmitDate
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyEvent.type
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per studyEvent
+  rdfs:comment: the type of date provided (actual, anticipated, or estimated)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': dateModified
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: LastUpdatePostDate
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': dateModified.type
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per date modified
+  rdfs:comment: LastUpdatePostDateType
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': funder
+  '@type': ''
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: A sponsor, funder, or collaborator for the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': funder.name
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per funder
+  rdfs:comment: The name of the sponsoring or funding organization
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': funder.class
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per funder
+  rdfs:comment: The type of organization
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': funder.role
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per funder
+  rdfs:comment: LeadSponsor, funder, collaborator
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': author
+  '@type': ''
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: The study's author, this includes ResponsiblePartyInvestigator, Contacts,
+    and OverallOfficials
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': author.name
+  '@type': ''
+  marginality: required
+  owl:cardinality: one per author
+  rdfs:comment: 'The name of the study author as it appears in the registery. May
+    include values from the following NCT fields: ResponsiblePartyInvestigatorFullName,
+    OverallOfficialName, ContactName'
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': author.givenName
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per author
+  rdfs:comment: The given name of the study author
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': author.familyName
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per author
+  rdfs:comment: The family name of the study author
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': author.affiliation
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many per author
+  rdfs:comment: Affiliation associated with the study author
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': author.role
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many per author
+  rdfs:comment: The role of this particular author in this study, this includes roles
+    such as ResponsibleParty, Contacts, values of OverallOfficialRole, Investigator
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyLocation
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The location of the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyLocation.City
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per location
+  rdfs:comment: The city in which the facility used for the study is located
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyLocation.LocationCountry
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per location
+  rdfs:comment: The countryin which the facility used for the study is located
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The general design of the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.studyType
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Type of human study, can be subtypes of observational study or clinical
+    studies
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.Phase
+  '@type': ''
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Stage or phase of the study in the U.S.
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designAllocation
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The method by which the study participants were allocated into groups
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designInterventionModel
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The general design of the strategy for assigning interventions to
+    participants in a clinical study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designPrimaryPurpose
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The primary purpose of the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designWhoMasked
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The people who not know which participants have been assigned to which
+    interventions.
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': enrollmentCount
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The number of participants enrolled in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': enrollmentType
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The type of estimation used to determine the enrollmentCount (actual
+    counts, target size, etc.)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup
+  '@type': ''
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: The arm or factor of an interventional study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup.Name
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per arm
+  rdfs:comment: The name of the arm or factor (can include a specific intervention,
+    a placebo or even a lack of intervention, ie- 'no intervention' group)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup.Role
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per arm
+  rdfs:comment: The role of the arm or factor in the study this is equivalent to the
+    ArmType in ClinicalTrials.gov
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup.Category
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per arm
+  rdfs:comment: The category of the arm or factor in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': armGroup.Description
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per arm
+  rdfs:comment: A description of the arm or factor
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ArmGroup
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': outcome
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': outcome.measure
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The outcome measure for the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': outcome.timeFrame
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per outcome
+  rdfs:comment: 'The specific time point(s) and overall duration of evaluation must
+    be specified in this section. '
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': outcome.type
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one per outcome
+  rdfs:comment: The classification of the outcome measure as either primary, secondary,
+    or exploratory
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': healthCondition
+  '@type': ''
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: The health condition or disease being studied
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': healthCondition.identifier
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Ontological or controlled vocabulary identifier for the health condition
+    or disease
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: ''
+  rdfs:comment: eligibility criteria
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: criteria for inclusion in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.minimumAge
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: the minimum age for a participant to be included in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.maximumAge
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: the maximum age for a participant to be included in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.gender
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: the gender requirement to be included in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.healthyVolunteers
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: a boolean to indicate whether or not healthy volunteers may be included
+    in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.stdAge
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: ''
+  rdfs:comment: the age category of a participant to be included in the study if a
+    minimum and maximum age is not specified
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.exclusionCriteria
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: criteria for exclusion from the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': citedBy
+  '@type': ''
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: other articles or resources that cite this clinical trial
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': citedBy.name
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: name of the citedBy resource
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': citedBy.type
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: type (publication, protocol, dataset, code, etc.) of the citedBy resource.
+    Note that this can include ClinicalTrial results
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': citedBy.identifier
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: identifier (pmid, WHO protocol id, etc.) of the citedby resource
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': citedBy.url
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: url of the cited by resource
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Dataset
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': citedBy.datePublished
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: The date for which the other articles, resources, or results that
+    cite this clinical trial were posted, published, or made available
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': isBasedOn
+  '@type': ''
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Associated datasets, software, protocols, etc. used by the work described
+    in this clinical study (includes study protocol documents, data analysis plans,
+    reference publications. etc)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': isBasedOn.name
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: name of the associated dataset, software, protocols, etc used by the
+    work described in this clinical study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': isBasedOn.type
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: type of the associated resource (dataset, protocols, analysis, etc.)
+    used by the work described in this clinical study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': isBasedOn.identifier
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: Identifier of the associated datasets, software, protocols, etc.
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': isBasedOn.versionDate
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: date of the version of the associated resource used by the work described
+    in this clinical trial
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': isBasedOn.url
+  '@type': ''
+  marginality: ''
+  owl:cardinality: ''
+  rdfs:comment: url of the associated resource used by the work described in this
+    clinical study (includes study protocol documents, data analysis plans, etc)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': relatedTo
+  '@type': ''
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Other resources related to, but not a derivative of nor derived from
+    this analysis
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': relatedTo.name
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: name of related resource
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': relatedTo.type
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: type of related resource
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': relatedTo.identifier
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one per resource
+  rdfs:comment: identifier (if available) of related resource
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
+      outbreak:Protocol]'
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': keywords
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: ''
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': topicCategory
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Applicable outbreak.info category
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:ClinicalTrial
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: criteria for inclusion in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.minimumAge
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: the minimum age for a participant to be included in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.maximumAge
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: the maximum age for a participant to be included in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.gender
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: the gender requirement to be included in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.healthyVolunteers
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: a boolean to indicate whether or not healthy volunteers may be included
+    in the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.inclusionCriteria.stdAge
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: the age category of a participant to be included in the study if a
+    minimum and maximum age is not specified
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': eligibilityCriteria.exclusionCriteria
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: criteria for exclusion from the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Eligibility
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': name
+  '@type': ''
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the instrument
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': manufacturer
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The name of the manufacturer of the instrument
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': brand
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The brand of the instrument
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': model
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The model number of the instrument
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': name
+  '@type': ''
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the organization, team or group
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': alternateName
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Alternative names or commonly used abbreviations for the organization,
+    team or group
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': affiliation
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: An overarching consortia, multi-institutional team or group in which
+    the organization/team/group is a member or affiliate
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': affiliation.status
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The status of the organization's membership or affiliation in the
+    overarching consortial, multi-institutional team or group (current, past)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': members
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Members of this organization, team, or group
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': members.status
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: Status of the members of this organization
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': name
+  '@type': ''
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the person
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': alternateName
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Alternative ways in which the person's name is included in a record
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': givenName
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The given name of the person
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': familyName
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The family name of the person
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': affiliation
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The organization with which the person is affiliated or has membership
+    in
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': affiliation.status
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The status of the person's membership or affiliation in an organization,
+    team or group (current, past)
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': orcid
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The ORCID ID of the person
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.studyType
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Type of human study, can be subtypes of observational study or clinical
+    studies
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.Phase
+  '@type': ''
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Stage or phase of the study in the U.S.
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designAllocation
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The method by which the study participants were allocated into groups
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designInterventionModel
+  '@type': ''
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The general design of the strategy for assigning interventions to
+    participants in a clinical study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designPrimaryPurpose
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The primary purpose of the study
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
+- '@id': studyDesign.designWhoMasked
+  '@type': ''
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The people who not know which participants have been assigned to which
+    interventions.
+  rdfs:label: ''
+  schema:domainIncludes:
+    '@id': outbreak:StudyDesign
+  schema:rangeIncludes: []
+  schema:sameAs: {}
 - '@id': url
   '@type': rdf:Property
   marginality: required
   owl:cardinality: many
   rdfs:comment: url where the protocol can be found
   rdfs:subClassOf:
-    '@id': https://schema.org/url
+    '@id': schema:url
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': url
+    '@id': schema:URL
 - '@id': name
   '@type': rdf:Property
   marginality: required
   owl:cardinality: one
   rdfs:comment: ''
   rdfs:subClassOf:
-    '@id': https://schema.org/name
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': description
   '@type': rdf:Property
   marginality: required
   owl:cardinality: one
   rdfs:comment: ''
   rdfs:subClassOf:
-    '@id': https://schema.org/description
+    '@id': schema:description
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': status
   '@type': rdf:Property
   marginality: recommended
   owl:cardinality: one
   rdfs:comment: The status of the protocol
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:creativeWorkStatus
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': MeasurementTechnique
   '@type': rdf:Property
   marginality: required
@@ -46,81 +1236,100 @@
   rdfs:comment: This is the measurement technique or assay type covered described
     by the protocol
   rdfs:subClassOf:
-    '@id': dataset:measurementtechnique
+    '@id': schema:Dataset:MeasurementTechnique
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': author
   '@type': rdf:Property
   marginality: required
   owl:cardinality: many
   rdfs:comment: person, people, or organization that created the protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/author
+    '@id': schema:author
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': Schema:Person or Schema:Organization
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
 - '@id': author.name
   '@type': rdf:Property
   marginality: required
-  owl:cardinality: many
+  owl:cardinality: one per author per resource
   rdfs:comment: The name of the author as provided by the resource
   rdfs:subClassOf:
-    '@id': https://schema.org/name
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': ''
+    '@id': schema:Text
 - '@id': author.affiliation
   '@type': rdf:Property
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: The author's affiliation(s)
   rdfs:subClassOf:
-    '@id': https://schema.org/affiliation
+    '@id': schema:affiliation
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': material
   '@type': rdf:Property
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: material or reagent used in this protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/material
+    '@id': schema:material
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': Schema:Product
+    '@id': outbreak:Reagent
 - '@id': material.Name
   '@type': rdf:Property
-  marginality: recommended if material included
-  owl:cardinality: many
+  marginality: recommended
+  owl:cardinality: many per material
   rdfs:comment: The name of the material or reagent
   rdfs:subClassOf:
-    '@id': https://schema.org/name
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': material.manufacturer
   '@type': rdf:Property
-  marginality: recommended if material included
-  owl:cardinality: many
+  marginality: recommended
+  owl:cardinality: many per material
   rdfs:comment: The manufacturer, brand, or vendor of the material or reagent
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:manufacturer
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': material.identifier
   '@type': rdf:Property
-  marginality: recommended if material included
-  owl:cardinality: many
+  marginality: recommended
+  owl:cardinality: many per material
   rdfs:comment: The catalog number or identifier of the material or reagent
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': material.type
   '@type': rdf:Property
-  marginality: recommended if material included
-  owl:cardinality: many
+  marginality: recommended
+  owl:cardinality: one per material
   rdfs:comment: Type of material
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': chemical reagent, biological sample, PPE, etc.
+    '@id': schema:Text
 - '@id': instrument
   '@type': rdf:Property
   marginality: optional
@@ -129,26 +1338,32 @@
     to follow one or more steps described in this LabProtocol.
   rdfs:subClassOf:
     '@id': bioschemas:instrument
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': Bioschemas:instrument
+    '@id': bioschemas:instrument
 - '@id': instrument.Name
   '@type': rdf:Property
-  marginality: recommended if instrument included
-  owl:cardinality: many
+  marginality: recommended
+  owl:cardinality: one per instrument
   rdfs:comment: The name/model number of the instrument
   rdfs:subClassOf:
-    '@id': https://schema.org/name
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': instrument.manufacturer
   '@type': rdf:Property
-  marginality: recommended if instrument included
-  owl:cardinality: many
+  marginality: recommended
+  owl:cardinality: one per instrument
   rdfs:comment: The manufacturer, brand, or vendor of the instrument
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:manufacturer
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': warning
   '@type': rdf:Property
   marginality: optional
@@ -156,63 +1371,77 @@
   rdfs:comment: Precautions, warnings, and/or safety warnings associated with the
     protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/warning
+    '@id': schema:warning
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': license
   '@type': rdf:Property
   marginality: required
   owl:cardinality: one
   rdfs:comment: License
   rdfs:subClassOf:
-    '@id': https://schema.org/license
+    '@id': schema:license
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': funder
   '@type': rdf:Property
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: The funder of the study
   rdfs:subClassOf:
-    '@id': https://schema.org/funder
+    '@id': schema:funder
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': datePublished
   '@type': rdf:Property
   marginality: required
   owl:cardinality: one
   rdfs:comment: PublicationDate of the protocol online if available
   rdfs:subClassOf:
-    '@id': https://schema.org/datepublished
+    '@id': schema:datePublished
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': date
+    '@id': schema:Date
 - '@id': dateModified
   '@type': rdf:Property
   marginality: optional
   owl:cardinality: many
   rdfs:comment: Date of protocol update
   rdfs:subClassOf:
-    '@id': https://schema.org/datemodified
+    '@id': schema:dateModified
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': date
+    '@id': schema:Date
 - '@id': correction
   '@type': rdf:Property
   marginality: optional
   owl:cardinality: many
   rdfs:comment: statement of what was updated/changed since prior version
   rdfs:subClassOf:
-    '@id': https://pending.schema.org/correction
+    '@id': schema:correction
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': identifier
   '@type': rdf:Property
   marginality: recommended
   owl:cardinality: one
   rdfs:comment: identifier for the protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/identifier
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': citedBy
   '@type': rdf:Property
   marginality: optional
@@ -220,37 +1449,49 @@
   rdfs:comment: Associated guidelines, protocols, publications, etc. that include,
     adapt, modify, expand, etc. this protocol.
   rdfs:subClassOf:
-    '@id': https://schema.org/citation
+    '@id': schema:citation
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': Protocols/guidelines, publications, analysis, dataset, etc
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
 - '@id': citedBy.name
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: name of the resource (publication, protocol, etc.) which was derived
     from this protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/name
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': citedBy.type
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: type of resource which was derived from this protocol
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': Protocols/guidelines, publications, analysis, dataset, etc
+    '@id': schema:Text
 - '@id': citedBy.identifier
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: identifier for this resource which was derived from this protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/identifier
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': isBasedOn
   '@type': rdf:Property
   marginality: optional
@@ -258,46 +1499,60 @@
   rdfs:comment: Associated resource (guidelines, protocols, publications, etc.) from
     which this protocol was derived
   rdfs:subClassOf:
-    '@id': https://schema.org/isbasedon
+    '@id': schema:isBasedOn
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': Protocols, publications, guidelines, etc.
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
 - '@id': isBasedOn.name
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: name of the associated resource from which this protocol was derived
   rdfs:subClassOf:
-    '@id': https://schema.org/name
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': isBasedOn.type
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: Type of resource (publication, analysis, ClinicalTrial, dataset, etc.)
     from which this protocol was derived
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': https://schema.org/Dataset, https://schema.org/SoftwareSourceCode, https://schema.org/HowTo
+    '@id': schema:Text
 - '@id': isBasedOn.identifier
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: Identifier for the resource
   rdfs:subClassOf:
-    '@id': https://schema.org/identifier
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': isBasedOn.versionDate
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: date of the version of the resource from which this protocol was derived
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:releaseDate
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': date
+    '@id': schema:Date
 - '@id': relatedTo
   '@type': rdf:Property
   marginality: optional
@@ -305,63 +1560,81 @@
   rdfs:comment: Other resources related to, but not a derivative of nor derived from
     this protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/relatedto
+    '@id': schema:relatedTo
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
 - '@id': relatedTo.name
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: name of related resource
   rdfs:subClassOf:
-    '@id': https://schema.org/name
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': relatedTo.type
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: type of related resource
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': publications, analysis, datasets, clinicaltrials, etc.
+    '@id': schema:Text
 - '@id': relatedTo.identifier
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one per citation
   rdfs:comment: identifier (if available_ of related resource
   rdfs:subClassOf:
-    '@id': https://schema.org/identifier
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
-- '@id': keywords
-  '@type': rdf:Property
-  marginality: recommended
-  owl:cardinality: many
-  rdfs:comment: ''
-  rdfs:subClassOf:
-    '@id': https://schema.org/keywords
-  schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': topicCategory
   '@type': rdf:Property
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: Applicable outbreak.info category
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:about
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
+- '@id': keywords
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: keywords
+  rdfs:subClassOf:
+    '@id': schema:keywords
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
 - '@id': usedToGenerate
   '@type': rdf:Property
   marginality: optional
   owl:cardinality: many
   rdfs:comment: Type of evidence/data generated by the protocol
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': inComplianceWith
   '@type': rdf:Property
   marginality: optional
@@ -370,9 +1643,11 @@
     GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines
     must be met
   rdfs:subClassOf:
-    '@id': ''
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': text
+    '@id': schema:Text
 - '@id': duration
   '@type': rdf:Property
   marginality: optional
@@ -381,8 +1656,11 @@
     date format.
   rdfs:subClassOf:
     '@id': bioschemas:duration
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
-    '@id': date/time
+  - '@id': schema:Duration
+  - '@id': schema:Text
 - '@id': ''
   '@type': rdf:Property
   marginality: recommended
@@ -390,7 +1668,9 @@
   rdfs:comment: Related articles such as pre-prints, publications in which the protocol
     was cited
   rdfs:subClassOf:
-    '@id': https://schema.org/citation
+    '@id': https://schema.org/citation/
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': publications
 - '@id': ''
@@ -400,6 +1680,8 @@
   rdfs:comment: DOI of the related article
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': doi
 - '@id': ''
@@ -409,6 +1691,8 @@
   rdfs:comment: url of related article
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': url
 - '@id': ''
@@ -417,7 +1701,9 @@
   owl:cardinality: many
   rdfs:comment: other articles referenced by the protocol
   rdfs:subClassOf:
-    '@id': https://schema.org/citation
+    '@id': https://schema.org/citation/
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': publications
 - '@id': ''
@@ -427,132 +1713,162 @@
   rdfs:comment: DOI for other articles referenced by this protocol
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': doi
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 - '@id': ''
   '@type': rdf:Property
   marginality: ''
-  owl:cardinality: many
+  owl:cardinality: ''
   rdfs:comment: ''
   rdfs:subClassOf:
     '@id': ''
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': ''
 '@id': http://sulab.org/
