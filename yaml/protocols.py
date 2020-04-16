@@ -5,7 +5,7 @@ import csv
 schema = Schema("http://sulab.org/")
 
 schema.add_to_context("schema", "http://schema.org")
-schema.add_to_context("bioschemas", "http://bioschema.org")
+schema.add_to_context("bioschemas", "http://bioschemas.org")
 schema.add_to_context("owl", "http://www.w3.org/2002/07/owl")
 schema.add_to_context("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns")
 schema.add_to_context("rdfs", "http://www.w3.org/2000/01/rdf-schema")
