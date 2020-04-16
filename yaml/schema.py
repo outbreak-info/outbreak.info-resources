@@ -17,7 +17,7 @@ class ClassProperty:
     def to_dictionary(self):
         ret = {}
         ret["@id"] = self.id
-        ret["@type"] = self.type
+        ret["@type"] = "rdfs:Property"
         ret["rdfs:comment"] = self.comment
         ret["rdfs:label"] = self.label
         ret["schema:domainIncludes"] = {"@id" : self.domain_includes}
