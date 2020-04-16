@@ -1,0 +1,7 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+name,schema:name,"The name of the organization, team or group",one,required,outbreak:Organization,schema:Text,
+alternateName,schema:alternateName,"Alternative names or commonly used abbreviations for the organization, team or group",many,recommended,outbreak:Organization,schema:Text,
+affiliation,schema:affiliation,"An overarching consortia, multi-institutional team or group in which the organization/team/group is a member or affiliate",many,recommended,outbreak:Organization,outbreak:Organization,
+affiliation.status,schema:status,"The status of the organization's membership or affiliation in the overarching consortial, multi-institutional team or group (current, past)",one,recommended,outbreak:Organization,schema:Text,"[""current"",""past""]"
+members,schema:members,"Members of this organization, team, or group",many,recommended,outbreak:Organization,"[outbreak:Person, outbreak:Organization]",
+members.status,schema:status,Status of the members of this organization,one,recommended,outbreak:Organization,schema:Text,"[""current"",""past""]"
