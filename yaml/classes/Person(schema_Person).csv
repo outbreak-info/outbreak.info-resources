@@ -1,0 +1,8 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+name,schema:name,The name of the person,one,required,outbreak:Person,schema:Text,
+alternateName,schema:alternateName,Alternative ways in which the person's name is included in a record,many,recommended,outbreak:Person,schema:Text,
+givenName,schema:givenName,The given name of the person,one,recommended,outbreak:Person,schema:Text,
+familyName,schema:familyName,The family name of the person,one,recommended,outbreak:Person,schema:Text,
+affiliation,schema:affiliation,The organization with which the person is affiliated or has membership in,many,recommended,outbreak:Person,outbreak:Organization,
+affiliation.status,schema:status,"The status of the person's membership or affiliation in an organization, team or group (current, past)",one,recommended,outbreak:Person,schema:Text,"[""current"",""past""]"
+orcid,schema:identifier,The ORCID ID of the person,one,recommended,outbreak:Person,schema:Text,
