@@ -83,6 +83,7 @@ with open("c:/users/ben/desktop/schemas/protocol.csv", "r") as fin:
             prop["rdfs:comment"] = row[cols.index("Description")]
             prop["owl:cardinality"] = row[cols.index("cardinality")]
             prop["marginality"] = row[cols.index("marginality")]
+            prop["schema:domainIncludes"] = {"@id" : "outbreak:Protocol"}
 
             rangeIncludes = row[cols.index("expected type")]
             rangeIncludes = [f.strip() for f in rangeIncludes.replace('[', '').replace(']','').split(',')]
