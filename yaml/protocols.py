@@ -25,11 +25,12 @@ for class_file in class_files:
                 cols = row
             else:   
                 class_prop = ClassProperty()
-                class_prop.id = row[cols.index("Property")]
+                class_prop.id = "outbreak:" + row[cols.index("Property")]
                 class_prop.comment = row[cols.index("Description")]
                 class_prop.cardinality = row[cols.index("cardinality")]
                 class_prop.marginality = row[cols.index("marginality")]
                 class_prop.domain_includes = row[cols.index("domainIncludes")]
+                class_prop.label = row[cols.index("Property")]
 
                 rangeIncludes = row[cols.index("expected type")]
                 rangeIncludes = [f.strip() for f in rangeIncludes.replace('[', '').replace(']','').split(',')]
@@ -56,10 +57,10 @@ for class_file in class_files:
         sub_classes = [s.strip() for s in file_name[file_name.find('(')+1:len(file_name)-5].split(',')]
         class_id = file_name[:file_name.find('(')]
 
-        schema.add_class("outbreak:" + class_id, "", class_id, sub_classes, "https://outbreak.org", class_props)
+        schema.add_class("outbreak:" + class_id, class_id, class_id, sub_classes, "https://outbreak.org", class_props)
 
 
-with open("c:/users/ben/desktop/schemas/protocol.csv", "r") as fin:
+with open("yaml/csvs/protocol.csv", "r") as fin:
     csv_reader = csv.reader(fin)
 
     cols = []
@@ -96,4 +97,4 @@ with open("c:/users/ben/desktop/schemas/protocol.csv", "r") as fin:
 
             schema.add_to_props(prop)
 
-schema.render('C:/Users/ben/Desktop/schemas/protocols.yaml')
+schema.render('yaml/yaml_out/protocols.yaml')
