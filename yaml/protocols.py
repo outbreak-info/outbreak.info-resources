@@ -10,6 +10,7 @@ schema.add_to_context("owl", "http://www.w3.org/2002/07/owl")
 schema.add_to_context("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns")
 schema.add_to_context("rdfs", "http://www.w3.org/2000/01/rdf-schema")
 schema.add_to_context("outbreak", "http://outbreak.info/")
+schema.add_to_context("prs", "https://prsinfo.clinicaltrials.gov/ProtocolRecordSchema.xsd")
 
 class_dir = "yaml/classes"
 class_files = [os.path.join(os.getcwd(), "yaml/classes", f) 
