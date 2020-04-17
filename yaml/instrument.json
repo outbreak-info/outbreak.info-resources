@@ -1,0 +1,76 @@
+{
+  "@context": {
+    "outbreak": "http://outbreak.info/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
+    "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
+    "schema": "http://schema.org/"
+  },
+  "@id": "https://discovery.biothings.io/view/outbreak/",
+  "@graph": [
+    {
+      "@id": "outbreak:Instrument",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Instrument",
+      "rdfs:label": "Instrument",
+      "rdfs:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:Product"
+      }
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the instrument",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:name"}
+    },
+    {
+      "@id": "outbreak:manufacturer",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the manufacturer of the instrument",
+      "rdfs:label": "manufacturer",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:manufacturer"}
+    },
+    {
+      "@id": "outbreak:brand",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The brand of the instrument",
+      "rdfs:label": "brand",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:brand"}
+    },
+    {
+      "@id": "outbreak:model",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The model number of the instrument",
+      "rdfs:label": "model",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:model"}
+    }
+    ]
+}

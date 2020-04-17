@@ -1,0 +1,1032 @@
+{
+  "@context": {
+    "outbreak": "https://discovery.biothings.io/view/outbreak/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
+    "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
+    "schema": "http://schema.org/"
+  },
+  "@id": "https://discovery.biothings.io/view/outbreak/",
+  "@graph": [
+    {
+      "@id": "outbreak:Protocol",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A schema describing a protocol for outbreak.info. Additional schema.org and/or custom properties could be added.",
+      "rdfs:label": "Protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:HowTo"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:Instrument",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Instrument",
+      "rdfs:label": "Instrument",
+      "rdfs:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:Product"
+      }
+    },
+    {
+      "@id": "outbreak:Organization",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Organization",
+      "rdfs:label": "Organization",
+      "rdfs:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:Organization"
+      }
+    },
+    {
+      "@id": "outbreak:Person",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Person",
+      "rdfs:label": "Person",
+      "rdfs:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:Person"
+      }
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the instrument",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:name"}
+    },
+    {
+      "@id": "outbreak:manufacturer",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the manufacturer of the instrument",
+      "rdfs:label": "manufacturer",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:manufacturer"}
+    },
+    {
+      "@id": "outbreak:brand",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The brand of the instrument",
+      "rdfs:label": "brand",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:brand"}
+    },
+    {
+      "@id": "outbreak:model",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The model number of the instrument",
+      "rdfs:label": "model",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:model"}
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the organization, team or group",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:name"}
+    },
+    {
+      "@id": "outbreak:alternateName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Alternative names or commonly used abbreviations for the organization, team or group",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:alternateName"}
+    },
+    {
+      "@id": "outbreak:affiliation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "An overarching consortia, multi-institutional team or group in which the organization/team/group is a member or affiliate",
+      "rdfs:label": "affiliation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Organization"},
+      "schema:sameAs": {"@id": "schema:affiliation"}
+    },
+    {
+      "@id": "outbreak:affiliationStatus",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the organization's membership or affiliation in the overarching consortial, multi-institutional team or group (current, past)",
+      "rdfs:label": "affiliationStatus",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:additionalType"}
+    },
+    {
+      "@id": "outbreak:members",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Members of this organization, team, or group",
+      "rdfs:label": "members",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [{"@id": "schema:Person"},{"@id": "schema:Organization"}],
+      "schema:sameAs": {"@id": "schema:members"}
+    },
+    {
+      "@id": "outbreak:membershipStatus",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Status of the members of this organization",
+      "rdfs:label": "membershipStatus",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:additionalType"}
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the person",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:name"}
+    },
+    {
+      "@id": "outbreak:alternateName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Alternative ways in which the person's name is included in a record",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:alternateName"}
+    },
+    {
+      "@id": "outbreak:givenName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The given name of the person",
+      "rdfs:label": "givenName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:givenName"}
+    },
+    {
+      "@id": "outbreak:familyName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The family name of the person",
+      "rdfs:label": "familyName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:familyName"}
+    },
+    {
+      "@id": "outbreak:affiliation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The organization with which the person is affiliated or has membership in",
+      "rdfs:label": "affiliation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:affiliation"}
+    },
+    {
+      "@id": "outbreak:affiliationStatus",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the person's membership or affiliation in an organization, team or group (current, past)",
+      "rdfs:label": "affiliationStatus",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:additionalType"}
+    },
+    {
+      "@id": "outbreak:orcid",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The ORCID ID of the person",
+      "rdfs:label": "orcid",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:identifier"}
+    },
+    {
+      "@id": "outbreak:url",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "url where the protocol can be found",
+      "rdfs:label": "url",
+      "rdfs:sameAs": {
+        "@id": "schema:url"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "name of the protocol",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:description",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "description of the protocol",
+      "rdfs:label": "description",
+      "rdfs:sameAs": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:status",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the protocol",
+      "rdfs:label": "status",
+      "rdfs:sameAs": {
+        "@id": "schema:creativeWorkStatus"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:measurementTechnique",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "This is the measurement technique or assay type covered described by the protocol",
+      "rdfs:label": "measurementTechnique",
+      "rdfs:sameAs": {
+        "@id": "outbreak:measurementTechnique"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:author",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "person, people, or organization that created the protocol",
+      "rdfs:label": "author",
+      "rdfs:sameAs": {
+        "@id": "schema:author"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:Person"
+        },
+        {
+          "@id": "outbreak:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the author as provided by the resource",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": [
+      {"@id": "outbreak:Person"},
+      {"@id": "outbreak:Organization"}
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:affiliation",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The author's affiliation(s)",
+      "rdfs:label": "affiliation",
+      "rdfs:sameAs": {
+        "@id": "schema:affiliation"
+      },
+      "schema:domainIncludes": [
+      {"@id": "outbreak:Person"},
+      {"@id": "outbreak:Organization"}
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:material",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "material or reagent used in this protocol",
+      "rdfs:label": "material",
+      "rdfs:sameAs": {
+        "@id": "schema:material"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Product"
+      }
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per material",
+      "rdfs:comment": "The name of the material or reagent",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Product"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:manufacturer",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per material",
+      "rdfs:comment": "The manufacturer, brand, or vendor of the material or reagent",
+      "rdfs:label": "manufacturer",
+      "rdfs:sameAs": {
+        "@id": "schema:manufacturer"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Product"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:identifier",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per material",
+      "rdfs:comment": "The catalog number or identifier of the material or reagent",
+      "rdfs:label": "identifier",
+      "rdfs:sameAs": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Product"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:type",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per material",
+      "rdfs:comment": "Type of material",
+      "rdfs:label": "type",
+      "rdfs:sameAs": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Product"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:instrument",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.",
+      "rdfs:label": "instrument",
+      "rdfs:sameAs": {
+        "@id": "schema:Product"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "outbreak:Instrument"
+      }
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per instrument",
+      "rdfs:comment": "The name/model number of the instrument",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:manufacturer",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per instrument",
+      "rdfs:comment": "The manufacturer, brand, or vendor of the instrument",
+      "rdfs:label": "manufacturer",
+      "rdfs:sameAs": {
+        "@id": "schema:manufacturer"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:warning",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Precautions, warnings, and/or safety warnings associated with the protocol",
+      "rdfs:label": "warning",
+      "rdfs:sameAs": {
+        "@id": "schema:warning"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:license",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "License",
+      "rdfs:label": "license",
+      "rdfs:sameAs": {
+        "@id": "schema:license"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:funder",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The funder of the study",
+      "rdfs:label": "funder",
+      "rdfs:sameAs": {
+        "@id": "schema:funder"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Organization"
+      }
+    },
+    {
+      "@id": "outbreak:datePublished",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "PublicationDate of the protocol online if available",
+      "rdfs:label": "datePublished",
+      "rdfs:sameAs": {
+        "@id": "schema:datePublished"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "outbreak:dateModified",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Date of protocol update",
+      "rdfs:label": "dateModified",
+      "rdfs:sameAs": {
+        "@id": "schema:dateModified"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "outbreak:correction",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "statement of what was updated/changed since prior version",
+      "rdfs:label": "correction",
+      "rdfs:sameAs": {
+        "@id": "schema:correction"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:identifier",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "identifier for the protocol",
+      "rdfs:label": "identifier",
+      "rdfs:sameAs": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:citedBy",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Associated guidelines, protocols, publications, etc. that include, adapt, modify, expand, etc. this protocol.",
+      "rdfs:label": "citedBy",
+      "rdfs:sameAs": {
+        "@id": "schema:citation"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        }
+      ]
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "name of the resource (publication, protocol, etc.) which was derived from this protocol",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:type",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "type of resource which was derived from this protocol",
+      "rdfs:label": "type",
+      "rdfs:sameAs": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:identifier",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "identifier for this resource which was derived from this protocol",
+      "rdfs:label": "identifier",
+      "rdfs:sameAs": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:isBasedOn",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Associated resource (guidelines, protocols, publications, etc.) from which this protocol was derived",
+      "rdfs:label": "isBasedOn",
+      "rdfs:sameAs": {
+        "@id": "schema:isBasedOn"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        }
+      ]
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "name of the associated resource from which this protocol was derived",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:type",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "Type of resource (publication, analysis, ClinicalTrial, dataset, etc.) from which this protocol was derived",
+      "rdfs:label": "type",
+      "rdfs:sameAs": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:identifier",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "Identifier for the resource",
+      "rdfs:label": "identifier",
+      "rdfs:sameAs": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:versionDate",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "date of the version of the resource from which this protocol was derived",
+      "rdfs:label": "versionDate",
+      "rdfs:sameAs": {
+        "@id": "schema:releaseDate"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "outbreak:relatedTo",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Other resources related to, but not a derivative of nor derived from this protocol",
+      "rdfs:label": "relatedTo",
+      "rdfs:sameAs": {
+        "@id": "schema:relatedTo"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        }
+      ]
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "name of related resource",
+      "rdfs:label": "name",
+      "rdfs:sameAs": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:type",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "type of related resource",
+      "rdfs:label": "type",
+      "rdfs:sameAs": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:identifier",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "identifier (if available_ of related resource",
+      "rdfs:label": "identifier",
+      "rdfs:sameAs": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:topicCategory",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Applicable outbreak.info category",
+      "rdfs:label": "topicCategory",
+      "rdfs:sameAs": {
+        "@id": "schema:about"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:keywords",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "keywords",
+      "rdfs:label": "keywords",
+      "rdfs:sameAs": {
+        "@id": "schema:keywords"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:usedToGenerate",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Type of evidence/data generated by the protocol",
+      "rdfs:label": "usedToGenerate",
+      "rdfs:sameAs": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:inComplianceWith",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Guidelines or Standards to which these protocols adhere. ie- GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines must be met",
+      "rdfs:label": "inComplianceWith",
+      "rdfs:sameAs": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "outbreak:duration",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The time it takes to actually carry out the protocol, in ISO 8601 date format.",
+      "rdfs:label": "duration",
+      "rdfs:sameAs": {
+        "@id": "schema:performTime"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Duration"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    }
+  ]
+}

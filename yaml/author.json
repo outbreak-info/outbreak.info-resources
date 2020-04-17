@@ -1,0 +1,205 @@
+{
+  "@context": {
+    "outbreak": "http://outbreak.info/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
+    "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
+    "schema": "http://schema.org/"
+  },
+  "@id": "https://discovery.biothings.io/view/outbreak/",
+  "@graph": [
+    {
+      "@id": "outbreak:Organization",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Organization",
+      "rdfs:label": "Organization",
+      "rdfs:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:Organization"
+      }
+    },
+    {
+      "@id": "outbreak:Person",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Person",
+      "rdfs:label": "Person",
+      "rdfs:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:Person"
+      }
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the organization, team or group",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:name"}
+    },
+    {
+      "@id": "outbreak:alternateName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Alternative names or commonly used abbreviations for the organization, team or group",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:alternateName"}
+    },
+    {
+      "@id": "outbreak:affiliation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "An overarching consortia, multi-institutional team or group in which the organization/team/group is a member or affiliate",
+      "rdfs:label": "affiliation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Organization"},
+      "schema:sameAs": {"@id": "schema:affiliation"}
+    },
+    {
+      "@id": "outbreak:affiliationStatus",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the organization's membership or affiliation in the overarching consortial, multi-institutional team or group (current, past)",
+      "rdfs:label": "affiliationStatus",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:additionalType"}
+    },
+    {
+      "@id": "outbreak:members",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Members of this organization, team, or group",
+      "rdfs:label": "members",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [{"@id": "schema:Person"},{"@id": "schema:Organization"}],
+      "schema:sameAs": {"@id": "schema:members"}
+    },
+    {
+      "@id": "outbreak:membershipStatus",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Status of the members of this organization",
+      "rdfs:label": "membershipStatus",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:additionalType"}
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the person",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:name"}
+    },
+    {
+      "@id": "outbreak:alternateName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Alternative ways in which the person's name is included in a record",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:alternateName"}
+    },
+    {
+      "@id": "outbreak:givenName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The given name of the person",
+      "rdfs:label": "givenName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:givenName"}
+    },
+    {
+      "@id": "outbreak:familyName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The family name of the person",
+      "rdfs:label": "familyName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:familyName"}
+    },
+    {
+      "@id": "outbreak:affiliation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The organization with which the person is affiliated or has membership in",
+      "rdfs:label": "affiliation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:affiliation"}
+    },
+    {
+      "@id": "outbreak:affiliationStatus",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the person's membership or affiliation in an organization, team or group (current, past)",
+      "rdfs:label": "affiliationStatus",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:additionalType"}
+    },
+    {
+      "@id": "outbreak:orcid",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The ORCID ID of the person",
+      "rdfs:label": "orcid",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": {"@id": "schema:Text"},
+      "schema:sameAs": {"@id": "schema:identifier"}
+    }
+]
+}
