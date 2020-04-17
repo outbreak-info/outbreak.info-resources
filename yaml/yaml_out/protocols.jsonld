@@ -1,0 +1,2506 @@
+{
+  "@context": {
+    "bioschemas": "http://bioschemas.org/",
+    "outbreak": "http://outbreak.info/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "prs": "https://prsinfo.clinicaltrials.gov/ProtocolRecordSchema.xsd/",
+    "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
+    "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
+    "schema": "http://schema.org/"
+  },
+  "@graph": [
+    {
+      "@id": "outbreak:ArmGroup",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "ArmGroup",
+      "rdfs:isPartOf": {
+        "@id": "https://outbreak.org/"
+      },
+      "rdfs:label": "ArmGroup",
+      "rdfs:subClassOf": [
+        {
+          "@id": "prs:ArmGroup"
+        },
+        {
+          "@id": "prs:Intervention"
+        }
+      ]
+    },
+    {
+      "@id": "outbreak:ClinicalTrial",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "ClinicalTrial",
+      "rdfs:isPartOf": {
+        "@id": "https://outbreak.org/"
+      },
+      "rdfs:label": "ClinicalTrial",
+      "rdfs:subClassOf": {
+        "@id": "Schema: MedicalStudy"
+      }
+    },
+    {
+      "@id": "outbreak:Eligibility",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Eligibility",
+      "rdfs:isPartOf": {
+        "@id": "https://outbreak.org/"
+      },
+      "rdfs:label": "Eligibility",
+      "rdfs:subClassOf": {
+        "@id": "prs:Eligibility"
+      }
+    },
+    {
+      "@id": "outbreak:Instrument",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Instrument",
+      "rdfs:isPartOf": {
+        "@id": "https://outbreak.org/"
+      },
+      "rdfs:label": "Instrument",
+      "rdfs:subClassOf": {
+        "@id": "bioschemas:LabProtocol"
+      }
+    },
+    {
+      "@id": "outbreak:Organization",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Organization",
+      "rdfs:isPartOf": {
+        "@id": "https://outbreak.org/"
+      },
+      "rdfs:label": "Organization",
+      "rdfs:subClassOf": {
+        "@id": "schema:Organization"
+      }
+    },
+    {
+      "@id": "outbreak:Person",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Person",
+      "rdfs:isPartOf": {
+        "@id": "https://outbreak.org/"
+      },
+      "rdfs:label": "Person",
+      "rdfs:subClassOf": {
+        "@id": "schema:Person"
+      }
+    },
+    {
+      "@id": "outbreak:StudyDesign",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "StudyDesign",
+      "rdfs:isPartOf": {
+        "@id": "https://outbreak.org/"
+      },
+      "rdfs:label": "StudyDesign",
+      "rdfs:subClassOf": {
+        "@id": "prs:StudyDesign"
+      }
+    },
+    {
+      "@id": "outbreak:armGroup.Name",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the arm or factor (can include a specific intervention, a placebo or even a lack of intervention, ie- 'no intervention' group)",
+      "rdfs:label": "armGroup.Name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup.Role",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The role of the arm or factor in the study this is equivalent to the ArmType in ClinicalTrials.gov",
+      "rdfs:label": "armGroup.Role",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup.Category",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The category of the arm or factor in the study",
+      "rdfs:label": "armGroup.Category",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup.Description",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "A description of the arm or factor",
+      "rdfs:label": "armGroup.Description",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Official or scientific title of the study",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:alternateName",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Brief title, acronyms, or public titles for the study",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:identifier",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Registration number or identifier assigned to the study",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:identifier.source",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Source of identifier assignment or type of identifier (NCTid, China CTRid, EudraCT Number, etc.)",
+      "rdfs:label": "identifier.source",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:url",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "url where the study can be found",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:status",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The recruitment status of the study",
+      "rdfs:label": "status",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:status.expandedAccess",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Flag for whether or not the study has expanded Access status",
+      "rdfs:label": "status.expandedAccess",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:status.date",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The date that the status was verified. Equivalent to NCT's StatusVerifiedDate",
+      "rdfs:label": "status.date",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:description",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Description of the study can be found in the \"BriefSummary\" field of the \"DescriptionModule\" for schema used in ClinicalTrials.gov",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyEvent",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "events such as Study Start, Primary Completion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
+      "rdfs:label": "studyEvent",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyEvent.date",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per studyEvent",
+      "rdfs:comment": "StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate",
+      "rdfs:label": "studyEvent.date",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyEvent.type",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per studyEvent",
+      "rdfs:comment": "the type of date provided (actual, anticipated, or estimated)",
+      "rdfs:label": "studyEvent.type",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:dateModified",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "LastUpdatePostDate",
+      "rdfs:label": "dateModified",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:dateModified.type",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per date modified",
+      "rdfs:comment": "LastUpdatePostDateType",
+      "rdfs:label": "dateModified.type",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:funder",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "A sponsor, funder, or collaborator for the study",
+      "rdfs:label": "funder",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:funder.name",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per funder",
+      "rdfs:comment": "The name of the sponsoring or funding organization",
+      "rdfs:label": "funder.name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:funder.class",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per funder",
+      "rdfs:comment": "The type of organization",
+      "rdfs:label": "funder.class",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:funder.role",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per funder",
+      "rdfs:comment": "LeadSponsor, funder, collaborator",
+      "rdfs:label": "funder.role",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:author",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The study's author, this includes ResponsiblePartyInvestigator, Contacts, and OverallOfficials",
+      "rdfs:label": "author",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:author.name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one per author",
+      "rdfs:comment": "The name of the study author as it appears in the registery. May include values from the following NCT fields: ResponsiblePartyInvestigatorFullName, OverallOfficialName, ContactName",
+      "rdfs:label": "author.name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:author.givenName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per author",
+      "rdfs:comment": "The given name of the study author",
+      "rdfs:label": "author.givenName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:author.familyName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per author",
+      "rdfs:comment": "The family name of the study author",
+      "rdfs:label": "author.familyName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:author.affiliation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per author",
+      "rdfs:comment": "Affiliation associated with the study author",
+      "rdfs:label": "author.affiliation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:author.role",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per author",
+      "rdfs:comment": "The role of this particular author in this study, this includes roles such as ResponsibleParty, Contacts, values of OverallOfficialRole, Investigator",
+      "rdfs:label": "author.role",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyLocation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The location of the study",
+      "rdfs:label": "studyLocation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyLocation.City",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per location",
+      "rdfs:comment": "The city in which the facility used for the study is located",
+      "rdfs:label": "studyLocation.City",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyLocation.LocationCountry",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per location",
+      "rdfs:comment": "The countryin which the facility used for the study is located",
+      "rdfs:label": "studyLocation.LocationCountry",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The general design of the study",
+      "rdfs:label": "studyDesign",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.studyType",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Type of human study, can be subtypes of observational study or clinical studies",
+      "rdfs:label": "studyDesign.studyType",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.Phase",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Stage or phase of the study in the U.S.",
+      "rdfs:label": "studyDesign.Phase",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designAllocation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The method by which the study participants were allocated into groups",
+      "rdfs:label": "studyDesign.designAllocation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designInterventionModel",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The general design of the strategy for assigning interventions to participants in a clinical study",
+      "rdfs:label": "studyDesign.designInterventionModel",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designPrimaryPurpose",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The primary purpose of the study",
+      "rdfs:label": "studyDesign.designPrimaryPurpose",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designWhoMasked",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The people who not know which participants have been assigned to which interventions.",
+      "rdfs:label": "studyDesign.designWhoMasked",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:enrollmentCount",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The number of participants enrolled in the study",
+      "rdfs:label": "enrollmentCount",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:enrollmentType",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The type of estimation used to determine the enrollmentCount (actual counts, target size, etc.)",
+      "rdfs:label": "enrollmentType",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The arm or factor of an interventional study",
+      "rdfs:label": "armGroup",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup.Name",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per arm",
+      "rdfs:comment": "The name of the arm or factor (can include a specific intervention, a placebo or even a lack of intervention, ie- 'no intervention' group)",
+      "rdfs:label": "armGroup.Name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup.Role",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per arm",
+      "rdfs:comment": "The role of the arm or factor in the study this is equivalent to the ArmType in ClinicalTrials.gov",
+      "rdfs:label": "armGroup.Role",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup.Category",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per arm",
+      "rdfs:comment": "The category of the arm or factor in the study",
+      "rdfs:label": "armGroup.Category",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:armGroup.Description",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per arm",
+      "rdfs:comment": "A description of the arm or factor",
+      "rdfs:label": "armGroup.Description",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ArmGroup"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:outcome",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "",
+      "rdfs:label": "outcome",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:outcome.measure",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The outcome measure for the study",
+      "rdfs:label": "outcome.measure",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:outcome.timeFrame",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per outcome",
+      "rdfs:comment": "The specific time point(s) and overall duration of evaluation must be specified in this section. ",
+      "rdfs:label": "outcome.timeFrame",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:outcome.type",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per outcome",
+      "rdfs:comment": "The classification of the outcome measure as either primary, secondary, or exploratory",
+      "rdfs:label": "outcome.type",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:healthCondition",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The health condition or disease being studied",
+      "rdfs:label": "healthCondition",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:healthCondition.identifier",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Ontological or controlled vocabulary identifier for the health condition or disease",
+      "rdfs:label": "healthCondition.identifier",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "",
+      "rdfs:comment": "eligibility criteria",
+      "rdfs:label": "eligibilityCriteria",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "criteria for inclusion in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.minimumAge",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "the minimum age for a participant to be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.minimumAge",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.maximumAge",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "the maximum age for a participant to be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.maximumAge",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.gender",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "the gender requirement to be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.gender",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.healthyVolunteers",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "a boolean to indicate whether or not healthy volunteers may be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.healthyVolunteers",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.stdAge",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "",
+      "rdfs:comment": "the age category of a participant to be included in the study if a minimum and maximum age is not specified",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.stdAge",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.exclusionCriteria",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "criteria for exclusion from the study",
+      "rdfs:label": "eligibilityCriteria.exclusionCriteria",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:citedBy",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "other articles or resources that cite this clinical trial",
+      "rdfs:label": "citedBy",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:citedBy.name",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "name of the citedBy resource",
+      "rdfs:label": "citedBy.name",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:citedBy.type",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "type (publication, protocol, dataset, code, etc.) of the citedBy resource. Note that this can include ClinicalTrial results",
+      "rdfs:label": "citedBy.type",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:citedBy.identifier",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "identifier (pmid, WHO protocol id, etc.) of the citedby resource",
+      "rdfs:label": "citedBy.identifier",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:citedBy.url",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "url of the cited by resource",
+      "rdfs:label": "citedBy.url",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Dataset"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:citedBy.datePublished",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "The date for which the other articles, resources, or results that cite this clinical trial were posted, published, or made available",
+      "rdfs:label": "citedBy.datePublished",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:isBasedOn",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Associated datasets, software, protocols, etc. used by the work described in this clinical study (includes study protocol documents, data analysis plans, reference publications. etc)",
+      "rdfs:label": "isBasedOn",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:isBasedOn.name",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "name of the associated dataset, software, protocols, etc used by the work described in this clinical study",
+      "rdfs:label": "isBasedOn.name",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:isBasedOn.type",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "type of the associated resource (dataset, protocols, analysis, etc.) used by the work described in this clinical study",
+      "rdfs:label": "isBasedOn.type",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:isBasedOn.identifier",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "Identifier of the associated datasets, software, protocols, etc.",
+      "rdfs:label": "isBasedOn.identifier",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:isBasedOn.versionDate",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "date of the version of the associated resource used by the work described in this clinical trial",
+      "rdfs:label": "isBasedOn.versionDate",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:isBasedOn.url",
+      "@type": "rdfs:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "url of the associated resource used by the work described in this clinical study (includes study protocol documents, data analysis plans, etc)",
+      "rdfs:label": "isBasedOn.url",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:relatedTo",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Other resources related to, but not a derivative of nor derived from this analysis",
+      "rdfs:label": "relatedTo",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:relatedTo.name",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "name of related resource",
+      "rdfs:label": "relatedTo.name",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:relatedTo.type",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "type of related resource",
+      "rdfs:label": "relatedTo.type",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:relatedTo.identifier",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per resource",
+      "rdfs:comment": "identifier (if available) of related resource",
+      "rdfs:label": "relatedTo.identifier",
+      "schema:domainIncludes": {
+        "@id": "[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol]"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:keywords",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "",
+      "rdfs:label": "keywords",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:topicCategory",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Applicable outbreak.info category",
+      "rdfs:label": "topicCategory",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ClinicalTrial"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "criteria for inclusion in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.minimumAge",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "the minimum age for a participant to be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.minimumAge",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.maximumAge",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "the maximum age for a participant to be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.maximumAge",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.gender",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "the gender requirement to be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.gender",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.healthyVolunteers",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "a boolean to indicate whether or not healthy volunteers may be included in the study",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.healthyVolunteers",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.inclusionCriteria.stdAge",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "the age category of a participant to be included in the study if a minimum and maximum age is not specified",
+      "rdfs:label": "eligibilityCriteria.inclusionCriteria.stdAge",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:eligibilityCriteria.exclusionCriteria",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "criteria for exclusion from the study",
+      "rdfs:label": "eligibilityCriteria.exclusionCriteria",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Eligibility"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the instrument",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:manufacturer",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the manufacturer of the instrument",
+      "rdfs:label": "manufacturer",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:brand",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The brand of the instrument",
+      "rdfs:label": "brand",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:model",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The model number of the instrument",
+      "rdfs:label": "model",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Instrument"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the organization, team or group",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:alternateName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Alternative names or commonly used abbreviations for the organization, team or group",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:affiliation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "An overarching consortia, multi-institutional team or group in which the organization/team/group is a member or affiliate",
+      "rdfs:label": "affiliation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:affiliation.status",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the organization's membership or affiliation in the overarching consortial, multi-institutional team or group (current, past)",
+      "rdfs:label": "affiliation.status",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:members",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Members of this organization, team, or group",
+      "rdfs:label": "members",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:members.status",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "Status of the members of this organization",
+      "rdfs:label": "members.status",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Organization"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:name",
+      "@type": "rdfs:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The name of the person",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:alternateName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Alternative ways in which the person's name is included in a record",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:givenName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The given name of the person",
+      "rdfs:label": "givenName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:familyName",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The family name of the person",
+      "rdfs:label": "familyName",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:affiliation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The organization with which the person is affiliated or has membership in",
+      "rdfs:label": "affiliation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:affiliation.status",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the person's membership or affiliation in an organization, team or group (current, past)",
+      "rdfs:label": "affiliation.status",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:orcid",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The ORCID ID of the person",
+      "rdfs:label": "orcid",
+      "schema:domainIncludes": {
+        "@id": "outbreak:Person"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.studyType",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Type of human study, can be subtypes of observational study or clinical studies",
+      "rdfs:label": "studyDesign.studyType",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.Phase",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Stage or phase of the study in the U.S.",
+      "rdfs:label": "studyDesign.Phase",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designAllocation",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The method by which the study participants were allocated into groups",
+      "rdfs:label": "studyDesign.designAllocation",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designInterventionModel",
+      "@type": "rdfs:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The general design of the strategy for assigning interventions to participants in a clinical study",
+      "rdfs:label": "studyDesign.designInterventionModel",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designPrimaryPurpose",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The primary purpose of the study",
+      "rdfs:label": "studyDesign.designPrimaryPurpose",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "outbreak:studyDesign.designWhoMasked",
+      "@type": "rdfs:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The people who not know which participants have been assigned to which interventions.",
+      "rdfs:label": "studyDesign.designWhoMasked",
+      "schema:domainIncludes": {
+        "@id": "outbreak:StudyDesign"
+      },
+      "schema:rangeIncludes": [],
+      "schema:sameAs": {}
+    },
+    {
+      "@id": "url",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "url where the protocol can be found",
+      "rdfs:subClassOf": {
+        "@id": "schema:url"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "name",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "description",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "status",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The status of the protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:creativeWorkStatus"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "MeasurementTechnique",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "This is the measurement technique or assay type covered described by the protocol",
+      "rdfs:subClassOf": {
+        "@id": "outbreak:Dataset:MeasurementTechnique"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "author",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "many",
+      "rdfs:comment": "person, people, or organization that created the protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:author"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:Person"
+        },
+        {
+          "@id": "outbreak:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "author.name",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one per author per resource",
+      "rdfs:comment": "The name of the author as provided by the resource",
+      "rdfs:subClassOf": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "author.affiliation",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The author's affiliation(s)",
+      "rdfs:subClassOf": {
+        "@id": "schema:affiliation"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "material",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "material or reagent used in this protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:material"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "outbreak:Reagent"
+      }
+    },
+    {
+      "@id": "name",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per material",
+      "rdfs:comment": "The name of the material or reagent",
+      "rdfs:subClassOf": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "manufacturer",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per material",
+      "rdfs:comment": "The manufacturer, brand, or vendor of the material or reagent",
+      "rdfs:subClassOf": {
+        "@id": "schema:manufacturer"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "identifier",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many per material",
+      "rdfs:comment": "The catalog number or identifier of the material or reagent",
+      "rdfs:subClassOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "type",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per material",
+      "rdfs:comment": "Type of material",
+      "rdfs:subClassOf": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "instrument",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.",
+      "rdfs:subClassOf": {
+        "@id": "bioschemas:instrument"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "outbreak:Instrument"
+      }
+    },
+    {
+      "@id": "name",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per instrument",
+      "rdfs:comment": "The name/model number of the instrument",
+      "rdfs:subClassOf": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "manufacturer",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one per instrument",
+      "rdfs:comment": "The manufacturer, brand, or vendor of the instrument",
+      "rdfs:subClassOf": {
+        "@id": "schema:manufacturer"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "warning",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Precautions, warnings, and/or safety warnings associated with the protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:warning"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "license",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "License",
+      "rdfs:subClassOf": {
+        "@id": "schema:license"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "funder",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "The funder of the study",
+      "rdfs:subClassOf": {
+        "@id": "schema:funder"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "datePublished",
+      "@type": "rdf:Property",
+      "marginality": "required",
+      "owl:cardinality": "one",
+      "rdfs:comment": "PublicationDate of the protocol online if available",
+      "rdfs:subClassOf": {
+        "@id": "schema:datePublished"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "dateModified",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Date of protocol update",
+      "rdfs:subClassOf": {
+        "@id": "schema:dateModified"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "correction",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "statement of what was updated/changed since prior version",
+      "rdfs:subClassOf": {
+        "@id": "schema:correction"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "identifier",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "identifier for the protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "citedBy",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Associated guidelines, protocols, publications, etc. that include, adapt, modify, expand, etc. this protocol.",
+      "rdfs:subClassOf": {
+        "@id": "schema:citation"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        }
+      ]
+    },
+    {
+      "@id": "name",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "name of the resource (publication, protocol, etc.) which was derived from this protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "type",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "type of resource which was derived from this protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "identifier",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "identifier for this resource which was derived from this protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "isBasedOn",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Associated resource (guidelines, protocols, publications, etc.) from which this protocol was derived",
+      "rdfs:subClassOf": {
+        "@id": "schema:isBasedOn"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        }
+      ]
+    },
+    {
+      "@id": "name",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "name of the associated resource from which this protocol was derived",
+      "rdfs:subClassOf": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "type",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "Type of resource (publication, analysis, ClinicalTrial, dataset, etc.) from which this protocol was derived",
+      "rdfs:subClassOf": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "identifier",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "Identifier for the resource",
+      "rdfs:subClassOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "versionDate",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "date of the version of the resource from which this protocol was derived",
+      "rdfs:subClassOf": {
+        "@id": "schema:releaseDate"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "relatedTo",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Other resources related to, but not a derivative of nor derived from this protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:relatedTo"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        }
+      ]
+    },
+    {
+      "@id": "name",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "name of related resource",
+      "rdfs:subClassOf": {
+        "@id": "schema:name"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "type",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "type of related resource",
+      "rdfs:subClassOf": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "identifier",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one per citation",
+      "rdfs:comment": "identifier (if available_ of related resource",
+      "rdfs:subClassOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "topicCategory",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Applicable outbreak.info category",
+      "rdfs:subClassOf": {
+        "@id": "schema:about"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "keywords",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "keywords",
+      "rdfs:subClassOf": {
+        "@id": "schema:keywords"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "usedToGenerate",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Type of evidence/data generated by the protocol",
+      "rdfs:subClassOf": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "inComplianceWith",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Guidelines or Standards to which these protocols adhere. ie- GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines must be met",
+      "rdfs:subClassOf": {
+        "@id": "schema:additionalType"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "duration",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "one",
+      "rdfs:comment": "The time it takes to actually carry out the protocol, in ISO 8601 date format.",
+      "rdfs:subClassOf": {
+        "@id": "bioschemas:duration"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Duration"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "Related articles such as pre-prints, publications in which the protocol was cited",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/citation/"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "publications"
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "one",
+      "rdfs:comment": "DOI of the related article",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "doi"
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "recommended",
+      "owl:cardinality": "many",
+      "rdfs:comment": "url of related article",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "url"
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "other articles referenced by the protocol",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/citation/"
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "publications"
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "optional",
+      "owl:cardinality": "many",
+      "rdfs:comment": "DOI for other articles referenced by this protocol",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": "doi"
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    },
+    {
+      "@id": "",
+      "@type": "rdf:Property",
+      "marginality": "",
+      "owl:cardinality": "",
+      "rdfs:comment": "",
+      "rdfs:subClassOf": {
+        "@id": ""
+      },
+      "schema:domainIncludes": {
+        "@id": "outbreak:Protocol"
+      },
+      "schema:rangeIncludes": {
+        "@id": ""
+      }
+    }
+  ],
+  "@id": "http://sulab.org/"
+}
