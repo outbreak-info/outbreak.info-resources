@@ -1,4 +1,4 @@
-Property,schema.org property,description,cardinality,marginality,domainIncludes,expected type,allowed values
+Property,sameAs,description,cardinality,marginality,domainIncludes,expected type,allowed values
 name,schema:name,The name of the monetary grant,one,required,outbreak:MonetaryGrant,schema:Text,
 identifier,schema:identifier,The grant ID or an identifier associated with the grant,one,recommended,outbreak:MonetaryGrant,schema:Text,
 url,schema:url,The url for the grant (if available),one,recommended,outbreak:MonetaryGrant,schema:URL,

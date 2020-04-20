@@ -1,4 +1,4 @@
-Property,schema.org property,description,cardinality,marginality,domainIncludes,expected type,allowed values
+Property,sameAs,description,cardinality,marginality,domainIncludes,expected type,allowed values
 name,schema:name,The name of the material or reagent,one,required,outbreak:Material,schema:Text,
 manufacturer,schema:manufacturer,"The name of the manufacturer of the material, biosample, or reagent",one,recommended,outbreak:Material,outbreak:Organization,
 brand,schema:brand,"The name of the brand of the reagent, material, or biological sample (if different from the manufacturer)",one,optional,outbreak:Material,"[schema:Text, outbreak:Organization]",
