@@ -79,9 +79,9 @@ with open("yaml/csvs/protocol.csv", "r") as fin:
             subClassOf = [f.strip() for f in subClassOf.replace('[', '').replace(']','').split(',')]
 
             if len(subClassOf) == 1:
-                prop["rdfs:subClassOf"] = {"@id" : subClassOf[0]}
+                prop["rdfs:sameAs"] = {"@id" : subClassOf[0]}
             else:
-                prop["rdfs:subClassOf"] = [{"@id" : f} for f in subClassOf]
+                prop["rdfs:sameAs"] = [{"@id" : f} for f in subClassOf]
 
             prop["rdfs:comment"] = row[cols.index("Description")]
             prop["owl:cardinality"] = row[cols.index("cardinality")]
