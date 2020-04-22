@@ -41,9 +41,9 @@ for class_file in class_files:
                 rangeIncludes = [f.strip() for f in rangeIncludes.replace('[', '').replace(']','').split(',')]
 
                 if len(rangeIncludes) == 1:
-                    class_prop.rangeIncludes = {"@id" : rangeIncludes[0]}
+                    class_prop.range_includes = {"@id" : rangeIncludes[0]}
                 else:
-                    class_prop.rangeIncludes = [{"@id" : f} for f in rangeIncludes]
+                    class_prop.range_includes = [{"@id" : f} for f in rangeIncludes]
 
                 sameAs = row[cols.index("sameAs")]
                 sameAs = [f.strip().replace(" ", "") for f in sameAs.replace('[', '').replace(']','').split(',')]
