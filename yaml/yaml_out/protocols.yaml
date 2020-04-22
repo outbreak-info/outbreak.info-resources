@@ -1436,7 +1436,7 @@
   marginality: required
   owl:cardinality: many
   rdfs:comment: url where the protocol can be found
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:url
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1447,7 +1447,7 @@
   marginality: required
   owl:cardinality: one
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:name
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1458,7 +1458,7 @@
   marginality: required
   owl:cardinality: one
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:description
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1469,7 +1469,7 @@
   marginality: recommended
   owl:cardinality: one
   rdfs:comment: The status of the protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:creativeWorkStatus
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1481,7 +1481,7 @@
   owl:cardinality: one
   rdfs:comment: This is the measurement technique or assay type covered described
     by the protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': outbreak:Dataset:MeasurementTechnique
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1492,7 +1492,7 @@
   marginality: required
   owl:cardinality: many
   rdfs:comment: person, people, or organization that created the protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:author
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1504,7 +1504,7 @@
   marginality: required
   owl:cardinality: one per author per resource
   rdfs:comment: The name of the author as provided by the resource
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:name
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1515,7 +1515,7 @@
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: The author's affiliation(s)
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:affiliation
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1526,7 +1526,7 @@
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: material or reagent used in this protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:material
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1537,7 +1537,7 @@
   marginality: recommended
   owl:cardinality: many per material
   rdfs:comment: The name of the material or reagent
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:name
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1548,7 +1548,7 @@
   marginality: recommended
   owl:cardinality: many per material
   rdfs:comment: The manufacturer, brand, or vendor of the material or reagent
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:manufacturer
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1559,7 +1559,7 @@
   marginality: recommended
   owl:cardinality: many per material
   rdfs:comment: The catalog number or identifier of the material or reagent
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:identifier
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1570,7 +1570,7 @@
   marginality: recommended
   owl:cardinality: one per material
   rdfs:comment: Type of material
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:additionalType
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1582,7 +1582,7 @@
   owl:cardinality: many
   rdfs:comment: For LabProtocols it would be a laboratory equipment use by a person
     to follow one or more steps described in this LabProtocol.
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': bioschemas:instrument
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1593,7 +1593,7 @@
   marginality: recommended
   owl:cardinality: one per instrument
   rdfs:comment: The name/model number of the instrument
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:name
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1604,7 +1604,7 @@
   marginality: recommended
   owl:cardinality: one per instrument
   rdfs:comment: The manufacturer, brand, or vendor of the instrument
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:manufacturer
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1616,7 +1616,7 @@
   owl:cardinality: many
   rdfs:comment: Precautions, warnings, and/or safety warnings associated with the
     protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:warning
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1627,7 +1627,7 @@
   marginality: required
   owl:cardinality: one
   rdfs:comment: License
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:license
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1638,7 +1638,7 @@
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: The funder of the study
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:funder
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1649,7 +1649,7 @@
   marginality: required
   owl:cardinality: one
   rdfs:comment: PublicationDate of the protocol online if available
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:datePublished
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1660,7 +1660,7 @@
   marginality: optional
   owl:cardinality: many
   rdfs:comment: Date of protocol update
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:dateModified
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1671,7 +1671,7 @@
   marginality: optional
   owl:cardinality: many
   rdfs:comment: statement of what was updated/changed since prior version
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:correction
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1682,7 +1682,7 @@
   marginality: recommended
   owl:cardinality: one
   rdfs:comment: identifier for the protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:identifier
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1694,7 +1694,7 @@
   owl:cardinality: many
   rdfs:comment: Associated guidelines, protocols, publications, etc. that include,
     adapt, modify, expand, etc. this protocol.
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:citation
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1710,7 +1710,7 @@
   owl:cardinality: one per citation
   rdfs:comment: name of the resource (publication, protocol, etc.) which was derived
     from this protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:name
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1721,7 +1721,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: type of resource which was derived from this protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:additionalType
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1732,7 +1732,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: identifier for this resource which was derived from this protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:identifier
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1744,7 +1744,7 @@
   owl:cardinality: many
   rdfs:comment: Associated resource (guidelines, protocols, publications, etc.) from
     which this protocol was derived
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:isBasedOn
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1759,7 +1759,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: name of the associated resource from which this protocol was derived
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:name
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1771,7 +1771,7 @@
   owl:cardinality: one per citation
   rdfs:comment: Type of resource (publication, analysis, ClinicalTrial, dataset, etc.)
     from which this protocol was derived
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:additionalType
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1782,7 +1782,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: Identifier for the resource
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:identifier
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1793,7 +1793,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: date of the version of the resource from which this protocol was derived
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:releaseDate
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1805,7 +1805,7 @@
   owl:cardinality: many
   rdfs:comment: Other resources related to, but not a derivative of nor derived from
     this protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:relatedTo
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1820,7 +1820,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: name of related resource
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:name
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1831,7 +1831,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: type of related resource
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:additionalType
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1842,7 +1842,7 @@
   marginality: optional
   owl:cardinality: one per citation
   rdfs:comment: identifier (if available_ of related resource
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:identifier
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1853,7 +1853,7 @@
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: Applicable outbreak.info category
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:about
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1864,7 +1864,7 @@
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: keywords
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:keywords
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1875,7 +1875,7 @@
   marginality: optional
   owl:cardinality: many
   rdfs:comment: Type of evidence/data generated by the protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:additionalType
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1888,7 +1888,7 @@
   rdfs:comment: Guidelines or Standards to which these protocols adhere. ie- GMP,
     GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines
     must be met
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': schema:additionalType
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1900,7 +1900,7 @@
   owl:cardinality: one
   rdfs:comment: The time it takes to actually carry out the protocol, in ISO 8601
     date format.
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': bioschemas:duration
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1913,7 +1913,7 @@
   owl:cardinality: many
   rdfs:comment: Related articles such as pre-prints, publications in which the protocol
     was cited
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': https://schema.org/citation/
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1924,7 +1924,7 @@
   marginality: recommended
   owl:cardinality: one
   rdfs:comment: DOI of the related article
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1935,7 +1935,7 @@
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: url of related article
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1946,7 +1946,7 @@
   marginality: optional
   owl:cardinality: many
   rdfs:comment: other articles referenced by the protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': https://schema.org/citation/
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1957,7 +1957,7 @@
   marginality: optional
   owl:cardinality: many
   rdfs:comment: DOI for other articles referenced by this protocol
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1968,7 +1968,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1979,7 +1979,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -1990,7 +1990,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2001,7 +2001,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2012,7 +2012,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2023,7 +2023,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2034,7 +2034,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2045,7 +2045,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2056,7 +2056,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2067,7 +2067,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2078,7 +2078,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2089,7 +2089,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2100,7 +2100,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
@@ -2111,7 +2111,7 @@
   marginality: ''
   owl:cardinality: ''
   rdfs:comment: ''
-  rdfs:subClassOf:
+  rdfs:sameAs:
     '@id': ''
   schema:domainIncludes:
     '@id': outbreak:Protocol
