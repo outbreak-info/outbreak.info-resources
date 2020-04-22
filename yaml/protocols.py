@@ -18,9 +18,6 @@ class_files = [os.path.join(os.getcwd(), "yaml/classes", f)
 
 for class_file in class_files:
 
-    if "StudyDesign" in class_file:
-        print("Hello")
-
     with open(class_file, "r") as fin:
         csv_reader = csv.reader(fin)
         cols = []
