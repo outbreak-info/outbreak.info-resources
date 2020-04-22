@@ -17,6 +17,10 @@ class_files = [os.path.join(os.getcwd(), "yaml/classes", f)
     for f in os.listdir(class_dir) if os.path.isfile(os.path.join(class_dir, f))]
 
 for class_file in class_files:
+
+    if "StudyDesign" in class_file:
+        print("Hello")
+
     with open(class_file, "r") as fin:
         csv_reader = csv.reader(fin)
         cols = []
@@ -42,12 +46,12 @@ for class_file in class_files:
                     class_prop.rangeIncludes = [{"@id" : f} for f in rangeIncludes]
 
                 sameAs = row[cols.index("sameAs")]
-                sameAs = [f.strip() for f in sameAs.replace('[', '').replace(']','').split(',')]
+                sameAs = [f.strip().replace(" ", "") for f in sameAs.replace('[', '').replace(']','').split(',')]
 
                 if len(sameAs) == 1:
-                    class_prop.sameAs = {"@id" : sameAs[0]}
+                    class_prop.same_as = {"@id" : sameAs[0]}
                 else:
-                    class_prop.sameAs = [{"@id" : f} for f in sameAs]
+                    class_prop.same_as = [{"@id" : f} for f in sameAs]
 
                 class_prop.cardinality = row[cols.index("cardinality")]
                 class_prop.marginality = row[cols.index("marginality")]
