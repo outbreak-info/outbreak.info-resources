@@ -73,8 +73,13 @@
   rdfs:label: armGroup.Name
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+  - '@id': prs:ArmGroupLabel
+  - '@id': InterventionName
+  - '@id': InterventionArmGroupLabel
+  - '@id': InterventionOtherName
 - '@id': outbreak:armGroup.Role
   '@type': rdfs:Property
   marginality: optional
@@ -84,8 +89,10 @@
   rdfs:label: armGroup.Role
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:ArmGroupType
 - '@id': outbreak:armGroup.Category
   '@type': rdfs:Property
   marginality: optional
@@ -94,8 +101,10 @@
   rdfs:label: armGroup.Category
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:InterventionType
 - '@id': outbreak:armGroup.Description
   '@type': rdfs:Property
   marginality: optional
@@ -104,8 +113,10 @@
   rdfs:label: armGroup.Description
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:ArmGroupDescriptionorInterventionDescription
 - '@id': outbreak:name
   '@type': rdfs:Property
   marginality: required
@@ -114,8 +125,10 @@
   rdfs:label: name
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:alternateName
   '@type': rdfs:Property
   marginality: optional
@@ -124,8 +137,10 @@
   rdfs:label: alternateName
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:alternateName
 - '@id': outbreak:identifier
   '@type': rdfs:Property
   marginality: required
@@ -134,8 +149,10 @@
   rdfs:label: identifier
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:identifier
 - '@id': outbreak:identifier.source
   '@type': rdfs:Property
   marginality: required
@@ -145,8 +162,10 @@
   rdfs:label: identifier.source
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:SecondaryIdType
 - '@id': outbreak:url
   '@type': rdfs:Property
   marginality: required
@@ -155,8 +174,10 @@
   rdfs:label: url
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:URL
+  schema:sameAs:
+    '@id': schema:url
 - '@id': outbreak:status
   '@type': rdfs:Property
   marginality: required
@@ -165,8 +186,10 @@
   rdfs:label: status
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:status
 - '@id': outbreak:status.expandedAccess
   '@type': rdfs:Property
   marginality: recommended
@@ -175,8 +198,10 @@
   rdfs:label: status.expandedAccess
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:HasExpandedAccess
 - '@id': outbreak:status.date
   '@type': rdfs:Property
   marginality: recommended
@@ -185,8 +210,10 @@
   rdfs:label: status.date
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Date
+  schema:sameAs:
+    '@id': prs:StatusVerifiedDate
 - '@id': outbreak:description
   '@type': rdfs:Property
   marginality: required
@@ -196,8 +223,10 @@
   rdfs:label: description
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:description
 - '@id': outbreak:studyEvent
   '@type': rdfs:Property
   marginality: recommended
@@ -207,8 +236,10 @@
   rdfs:label: studyEvent
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:temporal
 - '@id': outbreak:studyEvent.date
   '@type': rdfs:Property
   marginality: recommended
@@ -218,8 +249,15 @@
   rdfs:label: studyEvent.date
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Date
+  schema:sameAs:
+  - '@id': prs:StartDate
+  - '@id': PrimaryCompletionDate
+  - '@id': CompletionDate
+  - '@id': StudyFirstSubmitDate
+  - '@id': StudyFirstSubmitQCDate
+  - '@id': LastUpdateSubmitDate
 - '@id': outbreak:studyEvent.type
   '@type': rdfs:Property
   marginality: recommended
@@ -228,8 +266,12 @@
   rdfs:label: studyEvent.type
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+  - '@id': prs:StartDateType
+  - '@id': PrimaryCompletionDateType
+  - '@id': StudyFirstPostDateType
 - '@id': outbreak:dateModified
   '@type': rdfs:Property
   marginality: recommended
@@ -238,8 +280,10 @@
   rdfs:label: dateModified
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Date
+  schema:sameAs:
+    '@id': prs:LastUpdatePostDateType
 - '@id': outbreak:dateModified.type
   '@type': rdfs:Property
   marginality: recommended
@@ -248,8 +292,10 @@
   rdfs:label: dateModified.type
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:LastUpdatePostDateType
 - '@id': outbreak:funder
   '@type': rdfs:Property
   marginality: required
@@ -258,8 +304,10 @@
   rdfs:label: funder
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+  schema:sameAs:
+    '@id': schema:funder
 - '@id': outbreak:funder.name
   '@type': rdfs:Property
   marginality: recommended
@@ -268,8 +316,10 @@
   rdfs:label: funder.name
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:LeadSponsorNameorCollaboratorName
 - '@id': outbreak:funder.class
   '@type': rdfs:Property
   marginality: optional
@@ -278,8 +328,10 @@
   rdfs:label: funder.class
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:LeadSponsorClassorCollaboratorClass
 - '@id': outbreak:funder.role
   '@type': rdfs:Property
   marginality: recommended
@@ -288,8 +340,10 @@
   rdfs:label: funder.role
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:additionalType
 - '@id': outbreak:author
   '@type': rdfs:Property
   marginality: required
@@ -299,8 +353,13 @@
   rdfs:label: author
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+  - '@id': prs:OverallOfficial
+  - '@id': prs:OverallContact
+  schema:sameAs:
+    '@id': schema:author
 - '@id': outbreak:author.name
   '@type': rdfs:Property
   marginality: required
@@ -311,8 +370,10 @@
   rdfs:label: author.name
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:author.givenName
   '@type': rdfs:Property
   marginality: recommended
@@ -321,8 +382,10 @@
   rdfs:label: author.givenName
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:givenName
 - '@id': outbreak:author.familyName
   '@type': rdfs:Property
   marginality: recommended
@@ -331,8 +394,10 @@
   rdfs:label: author.familyName
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:familyName
 - '@id': outbreak:author.affiliation
   '@type': rdfs:Property
   marginality: recommended
@@ -341,8 +406,10 @@
   rdfs:label: author.affiliation
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:affiliation
 - '@id': outbreak:author.role
   '@type': rdfs:Property
   marginality: recommended
@@ -352,8 +419,10 @@
   rdfs:label: author.role
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:additionalType
 - '@id': outbreak:studyLocation
   '@type': rdfs:Property
   marginality: recommended
@@ -362,8 +431,10 @@
   rdfs:label: studyLocation
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': prs:Location
+  schema:sameAs:
+    '@id': schema:studyLocation
 - '@id': outbreak:studyLocation.City
   '@type': rdfs:Property
   marginality: recommended
@@ -372,8 +443,10 @@
   rdfs:label: studyLocation.City
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:Location:LocationCity
 - '@id': outbreak:studyLocation.LocationCountry
   '@type': rdfs:Property
   marginality: recommended
@@ -382,8 +455,10 @@
   rdfs:label: studyLocation.LocationCountry
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:Location:LocationCountry
 - '@id': outbreak:studyDesign
   '@type': rdfs:Property
   marginality: recommended
@@ -392,8 +467,10 @@
   rdfs:label: studyDesign
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': outbreak:StudyDesign
+  schema:sameAs:
+    '@id': prs:DesignModuleorDesignInfo
 - '@id': outbreak:studyDesign.studyType
   '@type': rdfs:Property
   marginality: recommended
@@ -403,8 +480,10 @@
   rdfs:label: studyDesign.studyType
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignModule:StudyType
 - '@id': outbreak:studyDesign.Phase
   '@type': rdfs:Property
   marginality: optional
@@ -413,8 +492,10 @@
   rdfs:label: studyDesign.Phase
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignModule:Phase
 - '@id': outbreak:studyDesign.designAllocation
   '@type': rdfs:Property
   marginality: recommended
@@ -423,8 +504,10 @@
   rdfs:label: studyDesign.designAllocation
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignAllocation
 - '@id': outbreak:studyDesign.designInterventionModel
   '@type': rdfs:Property
   marginality: optional
@@ -434,8 +517,10 @@
   rdfs:label: studyDesign.designInterventionModel
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignInfo:DesignInterventionModel
 - '@id': outbreak:studyDesign.designPrimaryPurpose
   '@type': rdfs:Property
   marginality: recommended
@@ -444,8 +529,10 @@
   rdfs:label: studyDesign.designPrimaryPurpose
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignInfo:DesignPrimaryPurpose
 - '@id': outbreak:studyDesign.designWhoMasked
   '@type': rdfs:Property
   marginality: recommended
@@ -455,8 +542,10 @@
   rdfs:label: studyDesign.designWhoMasked
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignMaskingInfo:DesignWhoMaskedList:DesignWhoMasked
 - '@id': outbreak:enrollmentCount
   '@type': rdfs:Property
   marginality: recommended
@@ -465,8 +554,10 @@
   rdfs:label: enrollmentCount
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Number
+  schema:sameAs:
+    '@id': prs:EnrollmentCount
 - '@id': outbreak:enrollmentType
   '@type': rdfs:Property
   marginality: recommended
@@ -476,8 +567,10 @@
   rdfs:label: enrollmentType
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EnrollmentType
 - '@id': outbreak:armGroup
   '@type': rdfs:Property
   marginality: optional
@@ -486,8 +579,10 @@
   rdfs:label: armGroup
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': outbreak:ArmGroup
+  schema:sameAs:
+    '@id': prs:ArmGroup
 - '@id': outbreak:armGroup.Name
   '@type': rdfs:Property
   marginality: optional
@@ -497,8 +592,13 @@
   rdfs:label: armGroup.Name
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+  - '@id': prs:ArmGroupLabel
+  - '@id': InterventionName
+  - '@id': InterventionArmGroupLabel
+  - '@id': InterventionOtherName
 - '@id': outbreak:armGroup.Role
   '@type': rdfs:Property
   marginality: optional
@@ -508,8 +608,10 @@
   rdfs:label: armGroup.Role
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:ArmGroupType
 - '@id': outbreak:armGroup.Category
   '@type': rdfs:Property
   marginality: optional
@@ -518,8 +620,10 @@
   rdfs:label: armGroup.Category
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:InterventionType
 - '@id': outbreak:armGroup.Description
   '@type': rdfs:Property
   marginality: optional
@@ -528,8 +632,10 @@
   rdfs:label: armGroup.Description
   schema:domainIncludes:
     '@id': outbreak:ArmGroup
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:ArmGroupDescriptionorInterventionDescription
 - '@id': outbreak:outcome
   '@type': rdfs:Property
   marginality: recommended
@@ -538,8 +644,10 @@
   rdfs:label: outcome
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': prs:Outcome
+  schema:sameAs:
+    '@id': prs:Outcome
 - '@id': outbreak:outcome.measure
   '@type': rdfs:Property
   marginality: recommended
@@ -548,8 +656,10 @@
   rdfs:label: outcome.measure
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:PrimaryOutcomeMeasureorSecondaryOutcomeMeasure
 - '@id': outbreak:outcome.timeFrame
   '@type': rdfs:Property
   marginality: recommended
@@ -559,8 +669,11 @@
   rdfs:label: outcome.timeFrame
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+  - '@id': schema:Duration
+  - '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:PrimaryOutcomeTimeFrameorSecondaryOutcomeTimeFrame
 - '@id': outbreak:outcome.type
   '@type': rdfs:Property
   marginality: recommended
@@ -570,8 +683,10 @@
   rdfs:label: outcome.type
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:additionalType
 - '@id': outbreak:healthCondition
   '@type': rdfs:Property
   marginality: required
@@ -580,8 +695,10 @@
   rdfs:label: healthCondition
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:MedicalCondition
 - '@id': outbreak:healthCondition.identifier
   '@type': rdfs:Property
   marginality: recommended
@@ -591,8 +708,10 @@
   rdfs:label: healthCondition.identifier
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:MedicalCode
 - '@id': outbreak:eligibilityCriteria
   '@type': rdfs:Property
   marginality: recommended
@@ -601,8 +720,10 @@
   rdfs:label: eligibilityCriteria
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': outbreak:Eligibility
+  schema:sameAs:
+    '@id': prs:EligibilityModule
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria
   '@type': rdfs:Property
   marginality: recommended
@@ -611,8 +732,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.EligibilityCriteria
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.minimumAge
   '@type': rdfs:Property
   marginality: recommended
@@ -621,8 +744,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.minimumAge
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Number
+  schema:sameAs:
+    '@id': prs:EligibilityModule.MinimumAge
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.maximumAge
   '@type': rdfs:Property
   marginality: recommended
@@ -631,8 +756,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.maximumAge
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': number
+  schema:sameAs:
+    '@id': prs:EligibilityModule.MaximumAge
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.gender
   '@type': rdfs:Property
   marginality: recommended
@@ -641,8 +768,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.gender
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.Gender
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.healthyVolunteers
   '@type': rdfs:Property
   marginality: recommended
@@ -652,8 +781,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.healthyVolunteers
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Boolean
+  schema:sameAs:
+    '@id': prs:EligibilityModule.HealthyVolunteers
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.stdAge
   '@type': rdfs:Property
   marginality: recommended
@@ -663,8 +794,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.stdAge
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.StdAge
 - '@id': outbreak:eligibilityCriteria.exclusionCriteria
   '@type': rdfs:Property
   marginality: recommended
@@ -673,8 +806,10 @@
   rdfs:label: eligibilityCriteria.exclusionCriteria
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.EligibilityCriteria
 - '@id': outbreak:citedBy
   '@type': rdfs:Property
   marginality: optional
@@ -683,8 +818,14 @@
   rdfs:label: citedBy
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  schema:sameAs:
+    '@id': schema:citation
 - '@id': outbreak:citedBy.name
   '@type': rdfs:Property
   marginality: optional
@@ -694,8 +835,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:citedBy.type
   '@type': rdfs:Property
   marginality: optional
@@ -706,8 +849,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:additionalType
 - '@id': outbreak:citedBy.identifier
   '@type': rdfs:Property
   marginality: optional
@@ -717,8 +862,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:identifier
 - '@id': outbreak:citedBy.url
   '@type': rdfs:Property
   marginality: optional
@@ -727,8 +874,10 @@
   rdfs:label: citedBy.url
   schema:domainIncludes:
     '@id': outbreak:Dataset
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:URL
+  schema:sameAs:
+    '@id': schema:url
 - '@id': outbreak:citedBy.datePublished
   '@type': rdfs:Property
   marginality: optional
@@ -739,8 +888,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:datePublished
 - '@id': outbreak:isBasedOn
   '@type': rdfs:Property
   marginality: optional
@@ -751,8 +902,14 @@
   rdfs:label: isBasedOn
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  schema:sameAs:
+    '@id': schema:isBasedOn
 - '@id': outbreak:isBasedOn.name
   '@type': rdfs:Property
   marginality: optional
@@ -763,8 +920,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:isBasedOn.type
   '@type': rdfs:Property
   marginality: optional
@@ -775,8 +934,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:additionalType
 - '@id': outbreak:isBasedOn.identifier
   '@type': rdfs:Property
   marginality: optional
@@ -786,8 +947,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:identifier
 - '@id': outbreak:isBasedOn.versionDate
   '@type': rdfs:Property
   marginality: optional
@@ -798,8 +961,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Date
+  schema:sameAs:
+    '@id': schema:releaseDate
 - '@id': outbreak:isBasedOn.url
   '@type': rdfs:Property
   marginality: ''
@@ -810,8 +975,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': ''
+  schema:sameAs:
+    '@id': schema:url
 - '@id': outbreak:relatedTo
   '@type': rdfs:Property
   marginality: optional
@@ -821,8 +988,14 @@
   rdfs:label: relatedTo
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  schema:sameAs:
+    '@id': schema:relatedTo
 - '@id': outbreak:relatedTo.name
   '@type': rdfs:Property
   marginality: optional
@@ -832,8 +1005,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:relatedTo.type
   '@type': rdfs:Property
   marginality: optional
@@ -843,8 +1018,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:additionalType
 - '@id': outbreak:relatedTo.identifier
   '@type': rdfs:Property
   marginality: optional
@@ -854,8 +1031,10 @@
   schema:domainIncludes:
     '@id': '[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset,
       outbreak:Protocol]'
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:identifier
 - '@id': outbreak:keywords
   '@type': rdfs:Property
   marginality: recommended
@@ -864,8 +1043,10 @@
   rdfs:label: keywords
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:keywords
 - '@id': outbreak:topicCategory
   '@type': rdfs:Property
   marginality: recommended
@@ -874,8 +1055,10 @@
   rdfs:label: topicCategory
   schema:domainIncludes:
     '@id': outbreak:ClinicalTrial
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:about
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria
   '@type': rdfs:Property
   marginality: recommended
@@ -884,8 +1067,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.EligibilityCriteria
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.minimumAge
   '@type': rdfs:Property
   marginality: recommended
@@ -894,8 +1079,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.minimumAge
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Number
+  schema:sameAs:
+    '@id': prs:EligibilityModule.MinimumAge
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.maximumAge
   '@type': rdfs:Property
   marginality: recommended
@@ -904,8 +1091,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.maximumAge
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': number
+  schema:sameAs:
+    '@id': prs:EligibilityModule.MaximumAge
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.gender
   '@type': rdfs:Property
   marginality: recommended
@@ -914,8 +1103,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.gender
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.Gender
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.healthyVolunteers
   '@type': rdfs:Property
   marginality: recommended
@@ -925,8 +1116,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.healthyVolunteers
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Boolean
+  schema:sameAs:
+    '@id': prs:EligibilityModule.HealthyVolunteers
 - '@id': outbreak:eligibilityCriteria.inclusionCriteria.stdAge
   '@type': rdfs:Property
   marginality: recommended
@@ -936,8 +1129,10 @@
   rdfs:label: eligibilityCriteria.inclusionCriteria.stdAge
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.StdAge
 - '@id': outbreak:eligibilityCriteria.exclusionCriteria
   '@type': rdfs:Property
   marginality: recommended
@@ -946,8 +1141,10 @@
   rdfs:label: eligibilityCriteria.exclusionCriteria
   schema:domainIncludes:
     '@id': outbreak:Eligibility
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:EligibilityModule.EligibilityCriteria
 - '@id': outbreak:name
   '@type': rdfs:Property
   marginality: required
@@ -956,8 +1153,10 @@
   rdfs:label: name
   schema:domainIncludes:
     '@id': outbreak:Instrument
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:manufacturer
   '@type': rdfs:Property
   marginality: recommended
@@ -966,8 +1165,10 @@
   rdfs:label: manufacturer
   schema:domainIncludes:
     '@id': outbreak:Instrument
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+  schema:sameAs:
+    '@id': schema:manufacturer
 - '@id': outbreak:brand
   '@type': rdfs:Property
   marginality: optional
@@ -976,8 +1177,11 @@
   rdfs:label: brand
   schema:domainIncludes:
     '@id': outbreak:Instrument
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+  - '@id': schema:Text
+  - '@id': outbreak:Organization
+  schema:sameAs:
+    '@id': schema:brand
 - '@id': outbreak:model
   '@type': rdfs:Property
   marginality: recommended
@@ -986,8 +1190,10 @@
   rdfs:label: model
   schema:domainIncludes:
     '@id': outbreak:Instrument
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:model
 - '@id': outbreak:name
   '@type': rdfs:Property
   marginality: required
@@ -996,8 +1202,10 @@
   rdfs:label: name
   schema:domainIncludes:
     '@id': outbreak:Organization
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:alternateName
   '@type': rdfs:Property
   marginality: recommended
@@ -1007,8 +1215,10 @@
   rdfs:label: alternateName
   schema:domainIncludes:
     '@id': outbreak:Organization
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:alternateName
 - '@id': outbreak:affiliation
   '@type': rdfs:Property
   marginality: recommended
@@ -1018,8 +1228,10 @@
   rdfs:label: affiliation
   schema:domainIncludes:
     '@id': outbreak:Organization
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+  schema:sameAs:
+    '@id': schema:affiliation
 - '@id': outbreak:affiliation.status
   '@type': rdfs:Property
   marginality: recommended
@@ -1029,8 +1241,10 @@
   rdfs:label: affiliation.status
   schema:domainIncludes:
     '@id': outbreak:Organization
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:status
 - '@id': outbreak:members
   '@type': rdfs:Property
   marginality: recommended
@@ -1039,8 +1253,11 @@
   rdfs:label: members
   schema:domainIncludes:
     '@id': outbreak:Organization
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+  schema:sameAs:
+    '@id': schema:members
 - '@id': outbreak:members.status
   '@type': rdfs:Property
   marginality: recommended
@@ -1049,8 +1266,10 @@
   rdfs:label: members.status
   schema:domainIncludes:
     '@id': outbreak:Organization
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:status
 - '@id': outbreak:name
   '@type': rdfs:Property
   marginality: required
@@ -1059,8 +1278,10 @@
   rdfs:label: name
   schema:domainIncludes:
     '@id': outbreak:Person
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:name
 - '@id': outbreak:alternateName
   '@type': rdfs:Property
   marginality: recommended
@@ -1069,8 +1290,10 @@
   rdfs:label: alternateName
   schema:domainIncludes:
     '@id': outbreak:Person
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:alternateName
 - '@id': outbreak:givenName
   '@type': rdfs:Property
   marginality: recommended
@@ -1079,8 +1302,10 @@
   rdfs:label: givenName
   schema:domainIncludes:
     '@id': outbreak:Person
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:givenName
 - '@id': outbreak:familyName
   '@type': rdfs:Property
   marginality: recommended
@@ -1089,8 +1314,10 @@
   rdfs:label: familyName
   schema:domainIncludes:
     '@id': outbreak:Person
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:familyName
 - '@id': outbreak:affiliation
   '@type': rdfs:Property
   marginality: recommended
@@ -1100,8 +1327,10 @@
   rdfs:label: affiliation
   schema:domainIncludes:
     '@id': outbreak:Person
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+  schema:sameAs:
+    '@id': schema:affiliation
 - '@id': outbreak:affiliation.status
   '@type': rdfs:Property
   marginality: recommended
@@ -1111,8 +1340,10 @@
   rdfs:label: affiliation.status
   schema:domainIncludes:
     '@id': outbreak:Person
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:status
 - '@id': outbreak:orcid
   '@type': rdfs:Property
   marginality: recommended
@@ -1121,71 +1352,85 @@
   rdfs:label: orcid
   schema:domainIncludes:
     '@id': outbreak:Person
-  schema:rangeIncludes: []
-  schema:sameAs: {}
-- '@id': outbreak:studyDesign.studyType
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': schema:identifier
+- '@id': outbreak:studyType
   '@type': rdfs:Property
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: Type of human study, can be subtypes of observational study or clinical
     studies
-  rdfs:label: studyDesign.studyType
+  rdfs:label: studyType
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
-- '@id': outbreak:studyDesign.Phase
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:StudyType
+- '@id': outbreak:phase
   '@type': rdfs:Property
   marginality: optional
   owl:cardinality: many
   rdfs:comment: Stage or phase of the study in the U.S.
-  rdfs:label: studyDesign.Phase
+  rdfs:label: phase
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
-- '@id': outbreak:studyDesign.designAllocation
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:Phase
+- '@id': outbreak:designAllocation
   '@type': rdfs:Property
   marginality: recommended
   owl:cardinality: one
   rdfs:comment: The method by which the study participants were allocated into groups
-  rdfs:label: studyDesign.designAllocation
+  rdfs:label: designAllocation
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
-- '@id': outbreak:studyDesign.designInterventionModel
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignAllocation
+- '@id': outbreak:designInterventionModel
   '@type': rdfs:Property
   marginality: optional
   owl:cardinality: one
   rdfs:comment: The general design of the strategy for assigning interventions to
     participants in a clinical study
-  rdfs:label: studyDesign.designInterventionModel
+  rdfs:label: designInterventionModel
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
-- '@id': outbreak:studyDesign.designPrimaryPurpose
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignInterventionModel
+- '@id': outbreak:designPrimaryPurpose
   '@type': rdfs:Property
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: The primary purpose of the study
-  rdfs:label: studyDesign.designPrimaryPurpose
+  rdfs:label: designPrimaryPurpose
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
-- '@id': outbreak:studyDesign.designWhoMasked
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignPrimaryPurpose
+- '@id': outbreak:designWhoMasked
   '@type': rdfs:Property
   marginality: recommended
   owl:cardinality: many
   rdfs:comment: The people who not know which participants have been assigned to which
     interventions.
-  rdfs:label: studyDesign.designWhoMasked
+  rdfs:label: designWhoMasked
   schema:domainIncludes:
     '@id': outbreak:StudyDesign
-  schema:rangeIncludes: []
-  schema:sameAs: {}
+  schema:rangeIncludes:
+    '@id': schema:Text
+  schema:sameAs:
+    '@id': prs:DesignWhoMaskedList:DesignWhoMasked
 - '@id': url
   '@type': rdf:Property
   marginality: required
