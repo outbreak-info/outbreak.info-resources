@@ -480,7 +480,7 @@
               "versionDate": {
                 "type": "string",
                 "format": "date"
-              },
+              }
             },
             "required": [
               "name",
