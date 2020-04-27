@@ -233,8 +233,8 @@
               }
             ]
           },
-          "contentURL": {
-            "description": "Link to the location where the dataset can be found, ideally a permanent URL.",
+          "dataDownload": {
+            "description": "Available downloads of the dataset.",
             "oneOf": [{
                 "$ref": "#/definitions/dataDownload"
               },
@@ -365,7 +365,7 @@
           "description",
           "measurementTechnique",
           "author",
-          "contentUrl",
+          "dataDownload",
           "dateModified",
           "funding"
         ],
