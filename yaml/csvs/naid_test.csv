@@ -1,0 +1,18 @@
+variable name,description,cardinality,marginality,expected type,allowed values,schema.org property
+Dataset:name,"Short, descriptive title for the dataset",one,required,text,,https://schema.org/name
+Dataset:description,"Longer description of what was contained in the dataset. For example, dataset fields, ...",one,required,text,,https://schema.org/description
+Dataset:measurementTechnique,"Measurement technique(s) used in collecting the dataset, e.g. RNA sequencing",many,required,text,"""DNA sequencing, HLA genotype""
+""RNA sequencing, viral sequencing""
+...
+all children of https://www.ebi.ac.uk/ols/ontologies/efo/",https://schema.org/measurementTechnique
+Creator:name,"Name of the author or organization that created the dataset.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired",many,required,text,,https://schema.org/creator
+DataDownload:contentUrl,"Link to the location where the dataset can be found, ideally a permanent URL",many,required,URL,,https://schema.org/distribution
+DataDownload:dateModified,Date which the particular DataDownload (file) has been changed,one,required,date,,https://schema.org/dateModified
+Grant:identifier,Unique identifier(s) for the grant(s) used to fund the Dataset,many,required,text,,https://schema.org/identifier
+Grant:funder name,"Name of the funding organization ofr the dataset.  Note: schema.org/funder and schema.org/Grant have additional fields that can provide more information about the funding organization, if desired",many,required,text,"All children of http://purl.obolibrary.org/obo/NCIT_C20172
+...",https://schema.org/funder
+Datset:species,Species(es) from which dataset has been collected,many,recommended,text,NCBI Taxonomy ID,
+Dataset:pathogen,Pathogen(s) which are the focus of the dataset,many,recommended,text,NCBI Taxonomy ID,
+Dataset:identifier,"Unique, single word identifier for the dataset",one,recommended,text,,https://schema.org/identifier
+Citation:identifier,"DOI (preferred) or PMID (e.g., 10.1126/sciimmunol.aaw6329, PMID:31471352)",many,recommended,text,,https://schema.org/identifier
+Dataset:license,License associated with re-use of the dataset,one,recommended,URL,,https://schema.org/license

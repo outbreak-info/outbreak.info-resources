@@ -1,0 +1,71 @@
+{
+  "$validation": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "Dataset:name": {
+        "description": "Dataset:name",
+        "type": "text"
+      },
+      "Dataset:description": {
+        "description": "Dataset:description",
+        "type": "text"
+      },
+      "Dataset:measurementTechnique": {
+        "description": "Dataset:measurementTechnique",
+        "type": "text"
+      },
+      "Creator:name": {
+        "description": "Creator:name",
+        "type": "text"
+      },
+      "DataDownload:contentUrl": {
+        "description": "DataDownload:contentUrl",
+        "type": "URL"
+      },
+      "DataDownload:dateModified": {
+        "description": "DataDownload:dateModified",
+        "type": "date"
+      },
+      "Grant:identifier": {
+        "description": "Grant:identifier",
+        "type": "text"
+      },
+      "Grant:funder name": {
+        "description": "Grant:funder name",
+        "type": "text"
+      },
+      "Datset:species": {
+        "description": "Datset:species",
+        "type": "text"
+      },
+      "Dataset:pathogen": {
+        "description": "Dataset:pathogen",
+        "type": "text"
+      },
+      "Dataset:identifier": {
+        "description": "Dataset:identifier",
+        "type": "text"
+      },
+      "Citation:identifier": {
+        "description": "Citation:identifier",
+        "type": "text"
+      },
+      "Dataset:license": {
+        "description": "Dataset:license",
+        "type": "URL"
+      }
+    },
+    "required": [
+      "Dataset:name",
+      "Dataset:description",
+      "Dataset:measurementTechnique",
+      "Creator:name",
+      "DataDownload:contentUrl",
+      "DataDownload:dateModified",
+      "Grant:identifier",
+      "Grant:funder name"
+    ],
+    "definitions": {}
+  }
+}
