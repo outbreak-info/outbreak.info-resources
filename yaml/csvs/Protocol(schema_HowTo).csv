@@ -1,0 +1,51 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+url,schema:url,url where the protocol can be found,many,required,outbreak:Protocol,schema:URL,
+identifier,schema:identifier,An identifier associated with the protocol (if available),one,recommended,outbreak:Protocol,schema:Text,
+doi,schema:identifier,A DOI associated with the protocol if available,one,recommended,outbreak:Protocol,schema:Text,
+name,schema:name,name of the protocol,one,required,outbreak:Protocol,schema:Text,
+description,schema:description,description of the protocol,one,required,outbreak:Protocol,schema:Text,
+status,schema:creativeWorkStatus,The status of the protocol,one,recommended,outbreak:Protocol,schema:Text,"""Working--In use by author"", ""Working--not in use by author"", ""Working--in use by others"", ""Not working"", ""In Development"", ""Deprecated"""
+measurementTechnique,outbreak:measurementTechnique,This is the measurement technique or assay type covered described by the protocol,one,required,outbreak:Protocol,schema:Text,"""DNA sequencing, HLA genotype""
+""RNA sequencing, viral sequencing""
+...
+all children of https://www.ebi.ac.uk/ols/ontologies/efo/"
+author,schema:author,"person, people, or organization that created the protocol",many,required,outbreak:Protocol,"[outbreak:Person,outbreak:Organization]",
+name,schema:name,The name of the author as provided by the resource,one per author per resource,required,"[outbreak:Person, outbreak:Organization]",schema:Text,
+affiliation,schema:affiliation,The author's affiliation(s),many,recommended,"[outbreak:Person, outbreak:Organization]",schema:Text,
+material,schema:Product,"the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol",many,recommended,outbreak:Protocol,outbreak:Product,children of material entities from https://www.ebi.ac.uk/ols/ontologies/efo/
+name,schema:name,The name of the material or reagent,many per material,recommended,outbreak:Product,schema:Text,
+manufacturer,schema:manufacturer,"The manufacturer, brand, or vendor of the material or reagent",many per material,recommended,outbreak:Product,schema:Text,
+identifier,schema:identifier,The catalog number or identifier of the material or reagent,many per material,recommended,outbreak:Product,schema:Text,
+type,schema:additionalType,Type of material,one per material,recommended,outbreak:Product,schema:Text,"chemical reagent, biological sample, PPE, etc."
+instrument,schema:Product,For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.,many,optional,outbreak:Protocol,outbreak:Instrument,
+name,schema:name,The name/model number of the instrument,one per instrument,recommended,outbreak:Instrument,schema:Text,
+manufacturer,schema:manufacturer,"The manufacturer, brand, or vendor of the instrument",one per instrument,recommended,outbreak:Instrument,schema:Text,
+warning,schema:warning,"Precautions, warnings, and/or safety warnings associated with the protocol",many,optional,outbreak:Protocol,schema:Text,
+license,schema:license,License,one,required,outbreak:Protocol,schema:Text,
+funder,schema:funder,The funder of the study,many,recommended,outbreak:Protocol,outbreak:MonetaryGrant,
+identifier,schema:identifier,The identifier of the grant (if available),many,recommended,outbreak:MonetaryGrant,schema:Text,
+datePublished,schema:datePublished,PublicationDate of the protocol online if available,one,required,outbreak:Protocol,schema:Date,
+dateModified,schema:dateModified,Date of protocol update,many,optional,outbreak:Protocol,schema:Date,
+correction,schema:correction,statement of what was updated/changed since prior version,many,optional,outbreak:Protocol,schema:Text,
+citedBy,schema:citation,"Associated guidelines, protocols, publications, etc. that include, adapt, modify, expand, etc. this protocol.",many,optional,outbreak:Protocol,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",
+name,schema:name,"name of the resource (publication, protocol, etc.) which was derived from this protocol",one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+type,schema:additionalType,type of resource which was derived from this protocol,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,"Protocols/guidelines, publications, analysis, dataset, etc"
+identifier,schema:identifier,identifier for this resource which was derived from this protocol,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+isBasedOn,schema:isBasedOn,"Associated resource (guidelines, protocols, publications, etc.) from which this protocol was derived",many,optional,outbreak:Protocol,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",
+name,schema:name,name of the associated resource from which this protocol was derived,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+type,schema:additionalType,"Type of resource (publication, analysis, ClinicalTrial, dataset, etc.) from which this protocol was derived",one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,"Protocols/guidelines, publications, analysis, dataset, etc"
+identifier,schema:identifier,Identifier for the resource,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+versionDate,schema:releaseDate,"date of the version of the resource from which this protocol was derived. Note this is NOT the same as dateModified, as the protocol may be based on an earlier 'dateModified' than is what is available from the resource",one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Date,
+relatedTo,schema:relatedTo,"Other resources related to, but not a derivative of nor derived from this protocol",many,optional,outbreak:Protocol,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",
+name,schema:name,name of related resource,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+type,schema:additionalType,type of related resource,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,"publications, analysis, datasets, clinicaltrials, etc."
+identifier,schema:identifier,identifier (if available_ of related resource,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+topicCategory,schema:about,Applicable outbreak.info category,many,recommended,outbreak:Protocol,schema:Text,categories probably derived Covid-19 primer
+keywords,schema:keywords,keywords,many,recommended,outbreak:Protocol,schema:Text,
+usedToGenerate,schema:additionalType,Type of evidence/data generated by the protocol,many,optional,outbreak:Protocol,schema:Text,ECO evidence codes
+inComplianceWith,schema:additionalType,"Guidelines or Standards to which these protocols adhere. ie- GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines must be met",many,optional,outbreak:Protocol,schema:Text,
+duration,schema:performTime,"The time it takes to actually carry out the protocol, in ISO 8601 date format.",one,optional,outbreak:Protocol,"[schema:Duration,schema:Text]",
+curatedBy,schema:citation,The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another,one,recommended,outbreak:Protocol,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",
+name,schema:name,name of the source from which this Analysis was identified for inclusion,one per citation,recommended,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+url,schema:url,The corresponding url for the item in the source from which this Analysis was identified (if available),one per citation,recommended,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
+versionDate,schema:releaseDate,The last date when items were pulled from the source,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Date,
