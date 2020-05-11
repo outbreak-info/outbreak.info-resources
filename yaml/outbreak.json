@@ -1251,10 +1251,8 @@
   "required": [
     "name",
     "description",
-    "license",
     "datePublished",
     "url",
-    "measurementTechnique",
     "author"
   ],
   "definitions": {
