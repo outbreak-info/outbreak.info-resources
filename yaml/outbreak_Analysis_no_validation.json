@@ -97,20 +97,6 @@
                   }
                 }
               ]
-            },
-            "funding": {
-              "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/funding"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/funding"
-                  }
-                }
-              ]
             }
           },
           "required": [
@@ -170,44 +156,6 @@
               },
               "required": [
                 "name"
-              ]
-            },
-            "funding": {
-              "type": "object",
-              "@type": "MonetaryGrant",
-              "description": "Information about funding support",
-              "properties": {
-                "name": {
-                  "type": "string",
-                  "description": "The name of the monetary grant that funded/funds the Dataset"
-                },
-                "identifier": {
-                  "type": "string",
-                  "description": "Unique identifier(s) for the grant(s) used to fund the Dataset"
-                },
-                "funder": {
-                  "description": "name of the funding organization",
-                  "type": "array",
-                  "oneOf": [
-                    {
-                      "$ref": "organization"
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "$ref": "organization"
-                      }
-                    }
-                  ]
-                },
-                "url": {
-                  "type": "string",
-                  "description": "award URL"
-                }
-              },
-              "required": [
-                "name",
-                "identifier"
               ]
             }
           }
