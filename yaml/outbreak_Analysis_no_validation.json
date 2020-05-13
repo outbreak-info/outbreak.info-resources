@@ -62,14 +62,6 @@
           "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
-            "identifier": {
-              "description": "An identifier associated with the analysis if available",
-              "type": "string"
-            },
-            "doi": {
-              "description": "A DOI associated with the analysis if available",
-              "type": "string"
-            },
             "name": {
               "description": "The name of the item.",
               "type": "string"
@@ -78,74 +70,10 @@
               "description": "A description of the item.",
               "type": "string"
             },
-            "hasDownloadableContent": {
-              "description": "Indicates the site has content that can be downloaded (raw data, data sheets, charts, etc)",
-              "type": "boolean"
-            },
-            "license": {
-              "description": "A license document that applies to this content, typically indicated by URL",
-              "type": "string"
-            },
             "url": {
               "description": "The url of the item",
               "format": "uri",
               "type": "string"
-            },
-            "domainUrl": {
-              "description": "The domain name or main site on which webpage or specific url can be found",
-              "format": "uri",
-              "type": "string"
-            },
-            "datePublished": {
-              "description": "PublicationDate of the analysis online if available",
-              "format": "date",
-              "type": "string"
-            },
-            "dateModified": {
-              "description": "Most recent date for which the analysis model itself was updated",
-              "format": "date",
-              "type": "string"
-            },
-            "assumption": {
-              "description": "Statement of assumptions / limitations of the model",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            },
-            "keywords": {
-              "description": "keywords",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            },
-            "topicCategory": {
-              "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
-              ]
             },
             "author": {
               "description": "The author of this content or rating.",
@@ -222,52 +150,6 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/definitions/citation"
-                  }
-                }
-              ]
-            },
-            "contributor": {
-              "description": "A secondary contributor to the CreativeWork or Event.",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/person"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/person"
-                  }
-                },
-                {
-                  "$ref": "#/definitions/organization"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/organization"
-                  }
-                }
-              ]
-            },
-            "maintainer": {
-              "description": "A maintainer of a Dataset, software package (SoftwareApplication), or other Project.",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/person"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/person"
-                  }
-                },
-                {
-                  "$ref": "#/definitions/organization"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/organization"
                   }
                 }
               ]

@@ -112,24 +112,12 @@
           "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
-            "identifier": {
-              "description": "An identifier associated with the protocol (if available)",
-              "type": "string"
-            },
-            "doi": {
-              "description": "A DOI associated with the protocol if available",
-              "type": "string"
-            },
             "name": {
               "description": "name of the protocol",
               "type": "string"
             },
             "description": {
               "description": "description of the protocol",
-              "type": "string"
-            },
-            "license": {
-              "description": "License",
               "type": "string"
             },
             "datePublished": {
@@ -149,78 +137,6 @@
                   "items": {
                     "type": "string",
                     "format": "uri"
-                  }
-                }
-              ]
-            },
-            "warning": {
-              "description": "Precautions, warnings, and/or safety warnings associated with the protocol",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            },
-            "dateModified": {
-              "description": "Date of protocol update",
-              "oneOf": [
-                {
-                  "type": "string",
-                  "format": "date"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "format": "date"
-                  }
-                }
-              ]
-            },
-            "correction": {
-              "description": "statement of what was updated/changed since prior version",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            },
-            "keywords": {
-              "description": "keywords",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            },
-            "inComplianceWith": {
-              "description": "Guidelines or Standards to which these protocols adhere. ie- GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines must be met",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
                   }
                 }
               ]
@@ -246,30 +162,6 @@
                     "$ref": "#/definitions/organization"
                   }
                 }
-              ]
-            },
-            "status": {
-              "description": "The status of the protocol",
-              "enum": [
-                "Working--In use by author",
-                "Working--not in use by author",
-                "Working--in use by others",
-                "Not working",
-                "In Development",
-                "Deprecated"
-              ]
-            },
-            "topicCategory": {
-              "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
               ]
             },
             "funding": {
