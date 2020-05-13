@@ -168,10 +168,24 @@
                   "$ref": "#/definitions/controlledVocabulary"
                 },
                 {
+                  "enum": [
+                    "predictive",
+                    "observational"
+                  ]
+                },
+                {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/controlledVocabulary"
-                  }
+                  "items": [
+                      {
+                        "$ref": "#/definitions/controlledVocabulary"
+                      },
+                      {
+                      "enum": [
+                        "predictive",
+                        "observational"
+                      ]
+                    }
+                  ]
                 }
               ]
             },
@@ -330,7 +344,6 @@
               "vocabulary": {
                 "ontology": [
                   "ncbi_taxon",
-                  "other",
                   "mamo",
                   "covid19",
                   "cido",
@@ -338,12 +351,6 @@
                 ],
                 "children_of": [
                   "http://purl.obolibrary.org/obo/ncbitaxon.owl",
-                  {
-                    "enum": [
-                      "predictive",
-                      "observational"
-                    ]
-                  },
                   "https://www.ebi.ac.uk/ols/ontologies/mamo",
                   "https://bioportal.bioontology.org/ontologies/COVID19/?p=classes&conceptid=root",
                   "http://bioportal.bioontology.org/ontologies/CIDO",
