@@ -91,6 +91,35 @@
               "description": "A license document that applies to this content, typically indicated by URL",
               "type": "string"
             },
+            "domainUrl": {
+              "description": "The domain name or main site on which webpage or specific url can be found",
+              "format": "uri",
+              "type": "string"
+            },
+            "datePublished": {
+              "description": "PublicationDate of the analysis online if available",
+              "format": "date",
+              "type": "string"
+            },
+            "dateModified": {
+              "description": "Most recent date for which the analysis model itself was updated",
+              "format": "date",
+              "type": "string"
+            },
+            "assumption": {
+              "description": "Statement of assumptions / limitations of the model",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
             "author": {
               "description": "The author of this content or rating.",
               "oneOf": [

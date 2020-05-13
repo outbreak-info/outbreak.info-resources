@@ -120,6 +120,33 @@
                 }
               ]
             },
+            "keywords": {
+              "description": "keywords",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "topicCategory": {
+              "description": "Applicable outbreak.info category",
+              "enum": [
+                "Clinical",
+                "Diagnosis",
+                "Forecasting",
+                "Mechanism",
+                "Prevention",
+                "Transmission",
+                "Treatment",
+                "Epidemiology"
+              ]
+            },
             "author": {
               "description": "The author of this content or rating.",
               "oneOf": [
