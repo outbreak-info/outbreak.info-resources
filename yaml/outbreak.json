@@ -776,17 +776,17 @@
             ]
           },
           "topicCategory": {
-            "description": "The overall outbreak.info categories to which this dataset belongs",
-            "oneOf": [{
-                "$ref": "#/definitions/miscControlledVocabulary"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/miscControlledVocabulary"
-                }
-              }
-            ]
+              "description": "Applicable outbreak.info category",
+              "enum": [
+                "Clinical",
+                "Diagnosis",
+                "Forecasting",
+                "Mechanism",
+                "Prevention",
+                "Transmission",
+                "Treatment",
+                "Epidemiology"
+              ]
           },
           "keywords": {
             "description": "A list of keywords associated with this dataset",
