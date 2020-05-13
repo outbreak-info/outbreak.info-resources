@@ -175,17 +175,9 @@
                 },
                 {
                   "type": "array",
-                  "items": [
-                      {
+                  "items": {
                         "$ref": "#/definitions/controlledVocabulary"
-                      },
-                      {
-                      "enum": [
-                        "predictive",
-                        "observational"
-                      ]
-                    }
-                  ]
+                  }
                 }
               ]
             },
