@@ -279,32 +279,15 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "oneOf":[
-                {
-                  "enum": [
-                    "Clinical",
-                    "Diagnosis",
-                    "Forecasting",
-                    "Mechanism",
-                    "Prevention",
-                    "Transmission",
-                    "Treatment",
-                    "Epidemiology"
-                  ]                    
-                },
-                {
-                  "type": "array",
-                  "enum": [
-                    "Clinical",
-                    "Diagnosis",
-                    "Forecasting",
-                    "Mechanism",
-                    "Prevention",
-                    "Transmission",
-                    "Treatment",
-                    "Epidemiology"
-                  ] 
-                }
+              "enum": [
+                "Clinical",
+                "Diagnosis",
+                "Forecasting",
+                "Mechanism",
+                "Prevention",
+                "Transmission",
+                "Treatment",
+                "Epidemiology"
               ]
             },
             "author": {
