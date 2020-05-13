@@ -165,7 +165,7 @@
               ]
             },
             "funding": {
-              "description": "The funder of the study",
+              "description": "The funder of the Protocol",
               "oneOf": [
                 {
                   "$ref": "#/definitions/funding"
