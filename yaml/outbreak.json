@@ -1955,7 +1955,872 @@
       },
       "schema:isPartOf": {
         "@id": "https://discovery.biothings.io/view/outbreak/"
-      }
+      },
+      "$validation": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Official or scientific title of the study",
+              "type": "string"
+            },
+            "abstract": {
+              "description": "A brief summary of the study",
+              "type": "string"
+            },
+            "description": {
+              "description": "A description of the study or the stated purpose of the study",
+              "type": "string"
+            },
+            "hasResults": {
+              "description": "Binary for if the clinical trial has published any results",
+              "type": "boolean"
+            },
+            "url": {
+              "description": "url where the study can be found",
+              "format": "uri",
+              "type": "string"
+            },
+            "dateCreated": {
+              "description": "Date the record was created",
+              "format": "date",
+              "type": "string"
+            },
+            "datePublished": {
+              "description": "Date the record was published",
+              "format": "date",
+              "type": "string"
+            },
+            "alternateName": {
+              "description": "Brief title, acronyms, or public titles for the study",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "identifier": {
+              "description": "Registration number or identifier assigned to the study",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "identifierSource": {
+              "description": "Source of identifier assignment or type of identifier (NCTid, China CTRid, EudraCT Number, etc.)",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "dateModified": {
+              "description": "LastUpdatePostDate",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              ]
+            },
+            "healthCondition": {
+              "description": "The health condition or disease being studied",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "healthConditionIidentifier": {
+              "description": "Ontological or controlled vocabulary identifier for the health condition or disease",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "keywords": {
+              "description": "keywords",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "dateModifiedType": {
+              "description": "LastUpdatePostDateType",
+              "enum": [
+                "actual",
+                "anticipated",
+                "estimated"
+              ]
+            },
+            "role": {
+              "description": "The role of this particular author in this study, this includes roles such as ResponsibleParty, Contacts, values of OverallOfficialRole, Investigator",
+              "enum": [
+                "responsible party",
+                "principal investigator",
+                "site sub-investigator",
+                "study chair",
+                "study director",
+                "study principal investigator",
+                "Contact"
+              ]
+            },
+            "topicCategory": {
+              "description": "Applicable outbreak.info category",
+              "enum": [
+                "Clinical",
+                "Diagnosis",
+                "Forecasting",
+                "Mechanism",
+                "Prevention",
+                "Transmission",
+                "Treatment",
+                "Epidemiology"
+              ]
+            },
+            "author": {
+              "description": "The study's author, this includes ResponsiblePartyInvestigator, Contacts, and OverallOfficials",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/person"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/person"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            },
+            "citedBy": {
+              "description": "other articles or resources that cite this clinical trial",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "isBasedOn": {
+              "description": "Associated datasets, software, protocols, etc. used by the work described in this clinical study (includes study protocol documents, data analysis plans, reference publications. etc)",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "relatedTo": {
+              "description": "Other resources related to, but not a derivative of nor derived from this analysis",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "curatedBy": {
+              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "studyStatus": {
+              "description": "The status of the study",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/studyStatus"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/studyStatus"
+                  }
+                }
+              ]
+            },
+            "studyEvent": {
+              "description": "an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/studyEvent"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/studyEvent"
+                  }
+                }
+              ]
+            },
+            "sponsor": {
+              "description": "A sponsor, funder, or collaborator for the study. ",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            },
+            "studyLocation": {
+              "description": "The location of the study",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/studylocation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/studylocation"
+                  }
+                }
+              ]
+            },
+            "studyDesign": {
+              "description": "The general design of the study",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/studydesign"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/studydesign"
+                  }
+                }
+              ]
+            },
+            "armGroup": {
+              "description": "The arm or factor of an interventional study",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/armgroup"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/armgroup"
+                  }
+                }
+              ]
+            },
+            "intervention": {
+              "description": "The interventions (if any) in this ArmGroup",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/intervention"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/intervention"
+                  }
+                }
+              ]
+            },
+            "outcome": {
+              "description": "The outcome (expected or actual) of a study",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/outcome"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/outcome"
+                  }
+                }
+              ]
+            },
+            "eligibilityCriteria": {
+              "description": "eligibility criteria",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/eligibility"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/eligibility"
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "url",
+            "description",
+            "identifier",
+            "identifierSource",
+            "healthCondition",
+            "sponsor",
+            "author"
+          ],
+          "definitions": {
+            "intervention": {
+              "type": "object",
+              "@type": "Thing",
+              "properties": {
+                "name": {
+                  "description": "The name of the intervention in the study",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "A description of the intervention in the study",
+                  "type": "string"
+                },
+                "category": {
+                  "description": "The category of an intervention in the study",
+                  "enum": [
+                    "drugs",
+                    "medical devices",
+                    "procedures",
+                    "vaccines",
+                    "education",
+                    "behavioral modification",
+                    "diet",
+                    "exercise",
+                    "counseling",
+                    "placebo",
+                    "other"
+                  ]
+                }
+              }
+            },
+            "armgroup": {
+              "type": "object",
+              "@type": "Thing",
+              "properties": {
+                "name": {
+                  "description": "The name of the arm or factor (can include a specific intervention, a placebo or even a lack of intervention, ie- 'no intervention' group)",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "A description of the arm or factor",
+                  "type": "string"
+                },
+                "role": {
+                  "description": "The role of the arm or factor in the study this is equivalent to the ArmType in ClinicalTrials.gov",
+                  "enum": [
+                    "experimental arm",
+                    "active comparator arm",
+                    "placebo comparator arm",
+                    "sham comparator arm",
+                    "no intervention arm"
+                  ]
+                },
+                "intervention": {
+                  "description": "The interventions (if any) in this ArmGroup",
+                  "type": "array",
+                  "oneOf": [
+                    {
+                      "$ref": "intervention"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "intervention"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "eligibility": {
+              "type": "object",
+              "@type": "Thing",
+              "properties": {
+                "minimumAge": {
+                  "description": "the minimum age for a participant to be included in the study",
+                  "type": "string"
+                },
+                "maximumAge": {
+                  "description": "the maximum age for a participant to be included in the study",
+                  "type": "string"
+                },
+                "criteriaText": {
+                  "description": "The descriptive criteria as published for the Clinical Trial",
+                  "type": "string"
+                },
+                "inclusionCriteria": {
+                  "description": "criteria for inclusion in the study",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "exclusionCriteria": {
+                  "description": "criteria for exclusion from the study",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "gender": {
+                  "description": "the sex requirement to be included in the study",
+                  "enum": [
+                    "male",
+                    "female",
+                    "all"
+                  ]
+                },
+                "genderBased": {
+                  "description": "Boolean for whether or not participation is based on gender",
+                  "type": "boolean"
+                },
+                "healthyVolunteers": {
+                  "description": "Boolean to indicate whether or not healthy volunteers may be included in the study",
+                  "type": "boolean"
+                },
+                "stdAge": {
+                  "description": "the age category of a participant to be included in the study if a minimum and maximum age is not specified",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "Child (birth-17)",
+                        " Adult (18-64)",
+                        "Older Adult (65+)"
+                      ]
+                    },
+                    {
+                      "items": {
+                        "enum": [
+                          "Child (birth-17)",
+                          " Adult (18-64)",
+                          "Older Adult (65+)"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "outcome": {
+              "type": "object",
+              "@type": "Thing",
+              "properties": {
+                "outcomeTimeFrame": {
+                  "description": "The specific time point(s) and overall duration of evaluation must be specified in this section. ",
+                  "type": "string"
+                },
+                "outcomeMeasure": {
+                  "description": "The outcome measure for the study",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "outcomeType": {
+                  "description": "The classification of the outcome measure as either primary, secondary, or exploratory",
+                  "enum": [
+                    "primary",
+                    "secondary",
+                    "other"
+                  ]
+                }
+              }
+            },
+            "studydesign": {
+              "type": "object",
+              "properties": {
+                "designStudyText": {
+                  "description": "String description of the study design if structured information not available",
+                  "type": "string"
+                },
+                "studyType": {
+                  "description": "Type of human study, can be subtypes of observational study or interventional studies and may include the temporal relationship of observation period to time of participant enrollment.",
+                  "enum": [
+                    "interventional",
+                    "observational"
+                  ]
+                },
+                "phase": {
+                  "description": "Stage or phase of the study in the U.S.",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "Early Phase 1",
+                        "Phase 1",
+                        "Phase 2",
+                        "Phase 3",
+                        "Phase 4",
+                        "Not Applicable"
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "Early Phase 1",
+                          "Phase 1",
+                          "Phase 2",
+                          "Phase 3",
+                          "Phase 4",
+                          "Not Applicable"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "phaseNumber": {
+                  "description": "The number of the phase or stage of the study",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "Not Applicable"
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "0",
+                          "1",
+                          "2",
+                          "3",
+                          "4",
+                          "Not Applicable"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "designAllocation": {
+                  "description": "The method by which the study participants were allocated into groups",
+                  "enum": [
+                    "randomized",
+                    "nonrandomized",
+                    "other"
+                  ]
+                },
+                "designModel": {
+                  "description": "The general design of the strategy for assigning interventions to participants in a clinical intervention study OR the general design of the strategy for identifying and following up with participants during an observational study.",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "single group assignment",
+                        "parallel assignment",
+                        "cross-over assignment",
+                        "factorial assignment",
+                        "cohort",
+                        "case-control",
+                        "case-only",
+                        "case-cross-over",
+                        "ecologic or community studies",
+                        "family-based",
+                        "other",
+                        "retrospective",
+                        "prospective",
+                        "cross-sectional"
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "single group assignment",
+                          "parallel assignment",
+                          "cross-over assignment",
+                          "factorial assignment",
+                          "cohort",
+                          "case-control",
+                          "case-only",
+                          "case-cross-over",
+                          "ecologic or community studies",
+                          "family-based",
+                          "other",
+                          "retrospective",
+                          "prospective",
+                          "cross-sectional"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "designPrimaryPurpose": {
+                  "description": "The primary purpose of the study",
+                  "enum": [
+                    "treatment",
+                    "prevention",
+                    "diagnostic",
+                    "supportive care",
+                    "screening",
+                    "health services research",
+                    "basic science",
+                    "other"
+                  ]
+                },
+                "designWhoMasked": {
+                  "description": "The people who not know which participants have been assigned to which interventions.",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "Participant",
+                        "Investigator",
+                        "Outcomes Assessor",
+                        "Care Provider"
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "Participant",
+                          "Investigator",
+                          "Outcomes Assessor",
+                          "Care Provider"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "studystatus": {
+              "type": "object",
+              "@type": "Thing",
+              "properties": {
+                "enrollmentCount": {
+                  "description": "The number of participants enrolled in the study",
+                  "type": "integer"
+                },
+                "whyStopped": {
+                  "description": "A brief explanation of the reason(s) why such clinical study was stopped (for a clinical study that is \"Suspended,\" \"Terminated,\" or \"Withdrawn\" prior to its planned completion as anticipated by the protocol)",
+                  "type": "string"
+                },
+                "statusDate": {
+                  "description": "The date that the status was verified. Equivalent to NCT's StatusVerifiedDate",
+                  "format": "date",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "The recruitment status of the study",
+                  "enum": [
+                    "not yet recruiting",
+                    "recruiting",
+                    "enrolling by invitation",
+                    "active",
+                    " not recruiting",
+                    "suspended",
+                    "terminated",
+                    "completed",
+                    "withdrawn",
+                    "unknown status"
+                  ]
+                },
+                "statusExpandedAccess": {
+                  "description": "Flag for whether or not the study has expanded Access status",
+                  "oneOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    }
+                  ]
+                },
+                "enrollmentType": {
+                  "description": "The type of estimation used to determine the enrollmentCount (actual counts, target size, etc.)",
+                  "enum": [
+                    "actual",
+                    "estimated"
+                  ]
+                }
+              },
+              "required": [
+                "status"
+              ]
+            },
+            "studyevent": {
+              "type": "object",
+              "@type": "Thing",
+              "properties": {
+                "studyEventDate": {
+                  "description": "StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate",
+                  "format": "date",
+                  "type": "string"
+                },
+                "studyEvent": {
+                  "description": "an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
+                  "type": "string"
+                },
+                "studyEventType": {
+                  "description": "Type of the event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
+                  "type": "string",
+                  "enum": [
+                    "study start date",
+                    "primary completion date",
+                    "study completion date",
+                    "study first submit date",
+                    "study first submit QC date",
+                    "last update Submit Date"
+                  ]
+                },
+                "studyEventDateType": {
+                  "description": "the type of date provided (actual, anticipated, or estimated)",
+                  "type": "string",
+                  "enum": [
+                    "actual",
+                    "anticipated",
+                    "estimated"
+                  ]
+                }
+              }
+            },
+            "studylocation": {
+              "description": "The study sites or the location of the study",
+              "type": "object",
+              "@type": "Location",
+              "properties": {
+                "studyLocation": {
+                  "description": "The location of the study as listed in the resouce.",
+                  "type": "string"
+                },
+                "studyLocationCity": {
+                  "description": "The city in which the facility used for the study is located",
+                  "type": "string"
+                },
+                "studyLocationState": {
+                  "description": "The state or province in which the facility used for the study is located",
+                  "type": "string"
+                },
+                "studyLocationCountry": {
+                  "description": "The country in which the facility used for the study is located",
+                  "type": "string"
+                },
+                "studyLocationStatus": {
+                  "description": "The recruitment status of the study at the specific study site",
+                  "enum": [
+                    "not yet recruiting",
+                    "recruiting",
+                    "enrolling by invitation",
+                    "active",
+                    "not recruiting",
+                    "suspended",
+                    "terminated",
+                    "completed",
+                    "withdrawn",
+                    "unknown status"
+                  ]
+                }
+              }
+            }
+          }
+        }
     },
     {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"Official or scientific title of the study","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:alternateName","@type":"rdf:Property","rdfs:comment":"Brief title, acronyms, or public titles for the study","rdfs:label":"alternateName","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:alternateName"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Registration number or identifier assigned to the study","rdfs:label":"identifier","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifierSource","@type":"rdf:Property","rdfs:comment":"Source of identifier assignment or type of identifier (NCTid, China CTRid, EudraCT Number, etc.)","rdfs:label":"identifierSource","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"url where the study can be found","rdfs:label":"url","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:URL"}},
     {"@id":"outbreak:studyStatus","@type":"rdf:Property","rdfs:comment":"The status of the study","rdfs:label":"studyStatus","owl:cardinality":"one","marginality":"recommended","schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"outbreak:StudyStatus"}},{"@id":"outbreak:status","@type":"rdf:Property","rdfs:comment":"The recruitment status of the study","rdfs:label":"status","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"outbreak:status"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:statusExpandedAccess","@type":"rdf:Property","rdfs:comment":"Flag for whether or not the study has expanded Access status","rdfs:label":"statusExpandedAccess","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:statusExpandedAccess"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:statusDate","@type":"rdf:Property","rdfs:comment":"The date that the status was verified. Equivalent to NCT's StatusVerifiedDate","rdfs:label":"statusDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:statusDate"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:enrollmentCount","@type":"rdf:Property","rdfs:comment":"The number of participants enrolled in the study","rdfs:label":"enrollmentCount","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:enrollmentCount"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Number"}},{"@id":"outbreak:enrollmentType","@type":"rdf:Property","rdfs:comment":"The type of estimation used to determine the enrollmentCount (actual counts, target size, etc.)","rdfs:label":"enrollmentType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:enrollmentType"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:whyStopped","@type":"rdf:Property","rdfs:comment":"A brief explanation of the reason(s) why such clinical study was stopped (for a clinical study that is \"Suspended,\" \"Terminated,\" or \"Withdrawn\" prior to its planned completion as anticipated by the protocol)","rdfs:label":"whyStopped","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:description"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}},
