@@ -167,6 +167,47 @@
                 }
               ]
             },
+            "dateModified": {
+              "description": "Date of protocol update",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              ]
+            },
+            "correction": {
+              "description": "statement of what was updated/changed since prior version",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "status": {
+              "description": "The status of the protocol",
+              "enum": [
+                "Working--In use by author",
+                "Working--not in use by author",
+                "Working--in use by others",
+                "Not working",
+                "In Development",
+                "Deprecated"
+              ]
+            },
             "material": {
               "description": "the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol",
               "oneOf": [
@@ -219,6 +260,50 @@
                   "items": {
                     "$ref": "#/definitions/controlledVocabulary"
                   }
+                }
+              ]
+            },
+            "keywords": {
+              "description": "keywords",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "topicCategory": {
+              "description": "Applicable outbreak.info category",
+              "oneOf":[
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]                    
+                },
+                {
+                  "type": "array",
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ] 
                 }
               ]
             },
