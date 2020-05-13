@@ -376,7 +376,7 @@
                 "children_of": [
                   "http://purl.obolibrary.org/obo/ncbitaxon.owl",
                   "https://www.ebi.ac.uk/ols/ontologies/mamo",
-                  "https://bioportal.bioontology.org/ontologies/COVID19/?p=classes&conceptid=root",
+                  "https://bioportal.bioontology.org/ontologies/COVID19",
                   "http://bioportal.bioontology.org/ontologies/CIDO",
                   "https://www.ebi.ac.uk/ols/ontologies/epo"
                 ]
