@@ -141,6 +141,34 @@
                 }
               ]
             },
+            "material": {
+              "description": "the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/product"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/product"
+                  }
+                }
+              ]
+            },
+            "instrument": {
+              "description": "For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/instrument"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/instrument"
+                  }
+                }
+              ]
+            },
             "author": {
               "description": "person, people, or organization that created the protocol",
               "oneOf": [
@@ -379,6 +407,77 @@
               "required": [
                 "name",
                 "identifier"
+              ]
+            },
+            "product": {
+              "type": "object",
+              "@type": "Product",
+              "description": "the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol",
+              "properties": {
+                "name": {
+                  "description": "The name of the material or reagent",
+                  "type": "string"
+                },
+                "manufacturer": {
+                  "description": "The name of the manufacturer of the material, biosample, or reagent",
+                  "$ref": "organization"
+                },
+                "brand": {
+                  "description": "The name of the brand of the reagent, material, or biological sample (if different from the manufacturer)",
+                  "type": "string"
+                },
+                "identifier": {
+                  "description": "The catalog number or identifier of the material or reagent",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "description": "The type of material. Reagent, PPE, biological samples, etc.",
+                  "enum": [
+                    "chemical or reagent",
+                    " biological sample",
+                    " PPE",
+                    " other"
+                  ]
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "instrument": {
+              "type": "object",
+              "@type": "Product",
+              "description": "A laboratory equipment use by a person to follow one or more steps described in this Protocol.",
+              "properties": {
+                "name": {
+                  "description": "The name of the instrument",
+                  "type": "string"
+                },
+                "manufacturer": {
+                  "description": "The name of the manufacturer of the material, biosample, or reagent",
+                  "$ref": "organization"
+                },
+                "brand": {
+                  "description": "The brand of the instrument",
+                  "type": "string"
+                },
+                "model": {
+                  "description": "The model number of the instrument",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
               ]
             }              
           }
