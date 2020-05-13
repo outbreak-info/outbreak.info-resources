@@ -306,7 +306,6 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "type": "string",
               "enum": [
                 "Clinical",
                 "Diagnosis",
@@ -527,7 +526,6 @@
                   "type": "integer"
                 },
                 "type": {
-                  "type": "string",
                   "enum": [
                     "ClinicalStudy",
                     "Analysis",
@@ -1149,7 +1147,6 @@
             },
             "status": {
               "description": "The status of the protocol",
-              "type": "string",
               "enum": [
                 "Working--In use by author",
                 "Working--not in use by author",
@@ -1161,7 +1158,6 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "type": "string",
               "enum": [
                 "Clinical",
                 "Diagnosis",
@@ -1352,7 +1348,6 @@
                   "type": "integer"
                 },
                 "type": {
-                  "type": "string",
                   "enum": [
                     "ClinicalStudy",
                     "Analysis",
@@ -1505,7 +1500,6 @@
                 },
                 "type": {
                   "description": "The type of material. Reagent, PPE, biological samples, etc.",
-                  "type": "string",
                   "enum": [
                     "chemical or reagent",
                     " biological sample",
@@ -1690,7 +1684,6 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "type": "string",
               "enum": [
                 "Clinical",
                 "Diagnosis",
@@ -1824,7 +1817,6 @@
                   "type": "integer"
                 },
                 "type": {
-                  "type": "string",
                   "enum": [
                     "ClinicalStudy",
                     "Analysis",
