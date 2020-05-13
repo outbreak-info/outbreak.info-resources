@@ -141,6 +141,73 @@
                 }
               ]
             },
+            "identifier": {
+              "description": "An identifier associated with the protocol (if available)",
+              "type": "string"
+            },
+            "doi": {
+              "description": "A DOI associated with the protocol if available",
+              "type": "string"
+            },
+            "license": {
+              "description": "License",
+              "type": "string"
+            },
+            "warning": {
+              "description": "Precautions, warnings, and/or safety warnings associated with the protocol",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "dateModified": {
+              "description": "Date of protocol update",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              ]
+            },
+            "correction": {
+              "description": "statement of what was updated/changed since prior version",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "status": {
+              "description": "The status of the protocol",
+              "enum": [
+                "Working--In use by author",
+                "Working--not in use by author",
+                "Working--in use by others",
+                "Not working",
+                "In Development",
+                "Deprecated"
+              ]
+            },
             "material": {
               "description": "the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol",
               "oneOf": [
