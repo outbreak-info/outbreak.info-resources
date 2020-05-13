@@ -181,8 +181,8 @@
                   },
                   {
                     "enum": [
-                        "predictive/forecasting analysis",
-                        "observation/visualization analysis"
+                        "predictive/forecasting models",
+                        "observation/visualization models"
                     ]
                   },
                   {
@@ -198,12 +198,6 @@
               "oneOf": [
                 {
                   "$ref": "#/definitions/controlledVocabulary"
-                },
-                {
-                  "enum": [
-                    "predictive",
-                    "observational"
-                  ]
                 },
                 {
                   "type": "array",

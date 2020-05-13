@@ -75,6 +75,22 @@
               "format": "uri",
               "type": "string"
             },
+            "identifier": {
+              "description": "An identifier associated with the analysis if available",
+              "type": "string"
+            },
+            "doi": {
+              "description": "A DOI associated with the analysis if available",
+              "type": "string"
+            },
+            "hasDownloadableContent": {
+              "description": "Indicates the site has content that can be downloaded (raw data, data sheets, charts, etc)",
+              "type": "boolean"
+            },
+            "license": {
+              "description": "A license document that applies to this content, typically indicated by URL",
+              "type": "string"
+            },
             "author": {
               "description": "The author of this content or rating.",
               "oneOf": [
@@ -140,66 +156,6 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/definitions/organization"
-                  }
-                }
-              ]
-            },
-            "analysisTechnique": {
-                "description": "A technique or technology used in a analysis.",
-                "oneOf": [{
-                    "$ref": "#/definitions/controlledVocabulary"
-                  },
-                  {
-                    "enum": [
-                        "predictive/forecasting models",
-                        "observation/visualization models"
-                    ]
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/controlledVocabulary"
-                    }
-                  }
-                ]
-              },
-            "analysisTopic": {
-              "description": "The underlying question, goal, or aim of the analysis",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/controlledVocabulary"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                        "$ref": "#/definitions/controlledVocabulary"
-                  }
-                }
-              ]
-            },
-            "infectiousAgent": {
-              "description": "infectious agents(s) which are the focus of the dataset",
-              "oneOf": [{
-                "$ref": "#/definitions/ControlledVocabulary"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/ControlledVocabulary"
-                  }
-                }
-              ]
-            },
-            "infectiousDisease": {
-              "description": "The disease caused by the infectious agent. Important as some agents may cause multiple diseases",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
                   }
                 }
               ]
@@ -282,28 +238,6 @@
             "author"
           ],
           "definitions": {
-            "controlledVocabulary": {
-              "definition": "collection of vocabulary terms defined in ontologies",
-              "@type": "CreativeWork",
-              "type": "string",
-              "strict": false,
-              "vocabulary": {
-                "ontology": [
-                  "ncbi_taxon",
-                  "mamo",
-                  "covid19",
-                  "cido",
-                  "epo"
-                ],
-                "children_of": [
-                  "http://purl.obolibrary.org/obo/ncbitaxon.owl",
-                  "https://www.ebi.ac.uk/ols/ontologies/mamo",
-                  "https://bioportal.bioontology.org/ontologies/COVID19",
-                  "http://bioportal.bioontology.org/ontologies/CIDO",
-                  "https://www.ebi.ac.uk/ols/ontologies/epo"
-                ]
-              }
-            },
             "person": {
               "description": "Reusable person definition",
               "@type": "Person",
