@@ -124,12 +124,12 @@
               "description": "infectious agents(s) which are the focus of the dataset",
               "oneOf": [
                 {
-                  "$ref": "#/definitions/ControlledVocabulary"
+                  "$ref": "#/definitions/controlledVocabulary"
                 },
                 {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/ControlledVocabulary"
+                    "$ref": "#/definitions/controlledVocabulary"
                   }
                 }
               ]
