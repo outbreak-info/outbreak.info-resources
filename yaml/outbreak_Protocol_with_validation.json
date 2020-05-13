@@ -263,6 +263,47 @@
                 }
               ]
             },
+            "inComplianceWith": {
+              "description": "Guidelines or Standards to which these protocols adhere. ie- GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines must be met",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "keywords": {
+              "description": "keywords",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "topicCategory": {
+              "description": "Applicable outbreak.info category",
+              "enum": [
+                "Clinical",
+                "Diagnosis",
+                "Forecasting",
+                "Mechanism",
+                "Prevention",
+                "Transmission",
+                "Treatment",
+                "Epidemiology"
+              ]
+            },
             "author": {
               "description": "person, people, or organization that created the protocol",
               "oneOf": [
