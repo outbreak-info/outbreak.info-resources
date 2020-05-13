@@ -374,7 +374,7 @@
                 "strict": false
           },
             "citation": {
-              "description": "A citation object for a resource which is cited by the dataset (ie- is a derivative of the dataset) , related to the dataset, or from which the dataset was based on (ie- is derived from).",
+              "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the analysis) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
               "@type": "CreativeWork",
               "type": "object",
               "properties": {
