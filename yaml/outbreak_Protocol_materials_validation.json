@@ -141,6 +141,20 @@
                 }
               ]
             },
+            "material": {
+              "description": "the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/product"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/product"
+                  }
+                }
+              ]
+            },
             "author": {
               "description": "person, people, or organization that created the protocol",
               "oneOf": [
@@ -177,6 +191,62 @@
                   }
                 }
               ]
+            },
+            "citedBy": {
+              "description": "Associated guidelines, protocols, publications, etc. that include, adapt, modify, expand, etc. this protocol.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "isBasedOn": {
+              "description": "Associated resource (guidelines, protocols, publications, etc.) from which this protocol was derived",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "relatedTo": {
+              "description": "Other resources related to, but not a derivative of nor derived from this protocol",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "curatedBy": {
+              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
             }
           },
           "required": [
@@ -187,6 +257,54 @@
             "author"
           ],
           "definitions": {
+            "citation": {
+                  "description": "A citation object for a resource which is cited by the dataset (ie- is a derivative of the dataset) , related to the dataset, or from which the dataset was based on (ie- is derived from).",
+                  "@type": "CreativeWork",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "description": "name of the referenced resource",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "type": "string"
+                    },
+                    "doi": {
+                      "type": "string"
+                    },
+                    "pmid": {
+                      "type": "integer"
+                    },
+                    "type": {
+                      "enum": [
+                        "ClinicalStudy",
+                        "Analysis",
+                        "Publication",
+                        "Dataset",
+                        "Protocol",
+                        "SoftwareApplication",
+                        "Other"
+                      ]
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "versionDate": {
+                      "description": "Date of the version of the resource that is referenced",
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "citeText": {
+                      "description": "The bibliographic citation for the referenced resource as is provided",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "type"
+                  ]
+            },
             "person": {
               "description": "Reusable person definition",
               "@type": "Person",
@@ -275,6 +393,51 @@
               "required": [
                 "name",
                 "identifier"
+              ]
+            },
+            "product": {
+              "type": "object",
+              "@type": "Product",
+              "description": "the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol",
+              "properties": {
+                "name": {
+                  "description": "The name of the material or reagent",
+                  "type": "string"
+                },
+                "manufacturer": {
+                  "description": "The name of the manufacturer of the material, biosample, or reagent",
+                  "$ref": "organization"
+                },
+                "brand": {
+                  "description": "The name of the brand of the reagent, material, or biological sample (if different from the manufacturer)",
+                  "type": "string"
+                },
+                "identifier": {
+                  "description": "The catalog number or identifier of the material or reagent",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "description": "The type of material. Reagent, PPE, biological samples, etc.",
+                  "enum": [
+                    "chemical or reagent",
+                    " biological sample",
+                    " PPE",
+                    " other"
+                  ]
+                }
+              },
+              "required": [
+                "name"
               ]
             }              
           }
