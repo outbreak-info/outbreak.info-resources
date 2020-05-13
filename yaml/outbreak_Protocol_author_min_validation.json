@@ -107,6 +107,125 @@
       },
       "schema:isPartOf": {
         "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "$validation": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "name of the protocol",
+              "type": "string"
+            },
+            "description": {
+              "description": "description of the protocol",
+              "type": "string"
+            },
+            "datePublished": {
+              "description": "PublicationDate of the protocol online if available",
+              "format": "date",
+              "type": "string"
+            },
+            "url": {
+              "description": "url where the protocol can be found",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              ]
+            },
+            "author": {
+              "description": "person, people, or organization that created the protocol",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/person"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/person"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "datePublished",
+            "url",
+            "author"
+          ],
+          "definitions": {
+            "person": {
+              "description": "Reusable person definition",
+              "@type": "Person",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "givenName": {
+                  "type": "string"
+                },
+                "familyName": {
+                  "type": "string"
+                },
+                "orcid": {
+                  "type": "string"
+                },
+                "affiliation": {
+                  "type": "array",
+                  "oneOf": [
+                    {
+                      "$ref": "organization"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "organization"
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "organization": {
+              "description": "Reusable organization definition",
+              "@type": "Organization",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "affiliation": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }              
+          }
       }
     },
     {"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"url where the protocol can be found","rdfs:label":"url","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"An identifier associated with the protocol (if available)","rdfs:label":"identifier","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:doi","@type":"rdf:Property","rdfs:comment":"A DOI associated with the protocol if available","rdfs:label":"doi","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the protocol","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:description","@type":"rdf:Property","rdfs:comment":"description of the protocol","rdfs:label":"description","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:description"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:status","@type":"rdf:Property","rdfs:comment":"The status of the protocol","rdfs:label":"status","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:creativeWorkStatus"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:measurementTechnique","@type":"rdf:Property","rdfs:comment":"This is the measurement technique or assay type covered described by the protocol","rdfs:label":"measurementTechnique","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"outbreak:measurementTechnique"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:author","@type":"rdf:Property","rdfs:comment":"person, people, or organization that created the protocol","rdfs:label":"author","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:author"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the author as provided by the resource","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"The author's affiliation(s)","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:material","@type":"rdf:Property","rdfs:comment":"the reagent, biological sample, or material such as PPE source materials) used or tested in this protocol","rdfs:label":"material","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:Product"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"outbreak:Product"}},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the material or reagent","rdfs:label":"name","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Product"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:manufacturer","@type":"rdf:Property","rdfs:comment":"The manufacturer, brand, or vendor of the material or reagent","rdfs:label":"manufacturer","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:manufacturer"},"schema:domainIncludes":{"@id":"outbreak:Product"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The catalog number or identifier of the material or reagent","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Product"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"Type of material","rdfs:label":"type","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Product"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:instrument","@type":"rdf:Property","rdfs:comment":"For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.","rdfs:label":"instrument","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:Product"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"outbreak:Instrument"}},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name\/model number of the instrument","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Instrument"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:manufacturer","@type":"rdf:Property","rdfs:comment":"The manufacturer, brand, or vendor of the instrument","rdfs:label":"manufacturer","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:manufacturer"},"schema:domainIncludes":{"@id":"outbreak:Instrument"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:warning","@type":"rdf:Property","rdfs:comment":"Precautions, warnings, and\/or safety warnings associated with the protocol","rdfs:label":"warning","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:warning"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:license","@type":"rdf:Property","rdfs:comment":"License","rdfs:label":"license","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:license"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"The funder of the study","rdfs:label":"funder","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"outbreak:MonetaryGrant"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The identifier of the grant (if available)","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"PublicationDate of the protocol online if available","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"Date of protocol update","rdfs:label":"dateModified","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:correction","@type":"rdf:Property","rdfs:comment":"statement of what was updated\/changed since prior version","rdfs:label":"correction","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:correction"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},
