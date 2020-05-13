@@ -98,6 +98,52 @@
                 }
               ]
             },
+            "contributor": {
+              "description": "A secondary contributor to the CreativeWork or Event.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/person"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/person"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            },
+            "maintainer": {
+              "description": "A maintainer of a Dataset, software package (SoftwareApplication), or other Project.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/person"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/person"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            },
             "funding": {
               "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
               "oneOf": [
@@ -108,6 +154,62 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/definitions/funding"
+                  }
+                }
+              ]
+            },
+            "citedBy": {
+              "description": "A resource (publication, protocol, dataset, etc.) which was derived from this protocol",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "isBasedOn": {
+              "description": "A resource (publication, protocol, dataset, etc) from which this analysis was derived",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "relatedTo": {
+              "description": "Other resources related to, but not a derivative of nor derived from this analysis",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "curatedBy": {
+              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
                   }
                 }
               ]
@@ -170,6 +272,54 @@
               },
               "required": [
                 "name"
+              ]
+            },
+            "citation": {
+              "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the analysis) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
+              "@type": "CreativeWork",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "name of the referenced resource",
+                  "type": "string"
+                },
+                "identifier": {
+                  "type": "string"
+                },
+                "doi": {
+                  "type": "string"
+                },
+                "pmid": {
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ClinicalStudy",
+                    "Analysis",
+                    "Publication",
+                    "Dataset",
+                    "Protocol",
+                    "SoftwareApplication",
+                    "Other"
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "versionDate": {
+                  "description": "Date of the version of the resource that is referenced",
+                  "type": "string",
+                  "format": "date"
+                },
+                "citeText": {
+                  "description": "The bibliographic citation for the referenced resource as is provided",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "type"
               ]
             },
             "funding": {
