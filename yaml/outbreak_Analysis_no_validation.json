@@ -106,33 +106,6 @@
               "format": "date",
               "type": "string"
             },
-            "infectiousAgent": {
-              "description": "infectious agents(s) which are the focus of the dataset",
-              "oneOf": [{
-                "$ref": "#/definitions/miscControlledVocabulary"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/miscControlledVocabulary"
-                  }
-                }
-              ]
-            },
-            "infectiousDisease": {
-              "description": "The disease caused by the infectious agent. Important as some agents may cause multiple diseases",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ]
-            },
             "assumption": {
               "description": "Statement of assumptions / limitations of the model",
               "oneOf": [
@@ -172,26 +145,6 @@
                 "Transmission",
                 "Treatment",
                 "Epidemiology"
-              ]
-            },
-            "analysisTopic": {
-              "description": "The underlying question, goal, or aim of the analysis",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/controlledVocabulary"
-                },
-                {
-                  "enum": [
-                    "predictive",
-                    "observational"
-                  ]
-                },
-                {
-                  "type": "array",
-                  "items": {
-                        "$ref": "#/definitions/controlledVocabulary"
-                  }
-                }
               ]
             },
             "author": {
@@ -341,38 +294,6 @@
             "author"
           ],
           "definitions": {
-            "controlledVocabulary": {
-              "definition": "collection of vocabulary terms defined in ontologies",
-              "@type": "CreativeWork",
-              "type": "string",
-              "strict": false,
-              "vocabulary": {
-                "ontology": [
-                  "ncbi_taxon",
-                  "mamo",
-                  "covid19",
-                  "cido",
-                  "epo"
-                ],
-                "children_of": [
-                  "http://purl.obolibrary.org/obo/ncbitaxon.owl",
-                  "https://www.ebi.ac.uk/ols/ontologies/mamo",
-                  "https://bioportal.bioontology.org/ontologies/COVID19/?p=classes&conceptid=root",
-                  "http://bioportal.bioontology.org/ontologies/CIDO",
-                  "https://www.ebi.ac.uk/ols/ontologies/epo"
-                ]
-              }
-            },
-            "miscControlledVocabulary": {
-                "description": "collection of vocabulary terms defined in ontologies",
-                "@type": "CreativeWork",
-                "type": "string",
-                "vocabulary": {
-                  "ontology": ["ncbi_taxon"],
-                  "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
-                },
-                "strict": false
-          },
             "citation": {
               "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the analysis) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
               "@type": "CreativeWork",
