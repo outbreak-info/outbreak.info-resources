@@ -163,6 +163,66 @@
         "@id": "https://discovery.biothings.io/view/outbreak/"
       }
     },
-    {"@id":"outbreak:studyLocation","@type":"rdf:Property","rdfs:comment":"The location of the study","rdfs:label":"studyLocation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Place"}},{"@id":"outbreak:studyLocationCity","@type":"rdf:Property","rdfs:comment":"The city in which the facility used for the study is located","rdfs:label":"studyLocationCity","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:City"}},{"@id":"outbreak:studyLocationState","@type":"rdf:Property","rdfs:comment":"The state or province in which the facility used for the study is located","rdfs:label":"studyLocationState","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:State"}},{"@id":"outbreak:studyLocationCountry","@type":"rdf:Property","rdfs:comment":"The country in which the facility used for the study is located","rdfs:label":"studyLocationCountry","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Country"}},{"@id":"outbreak:studyLocationStatus","@type":"rdf:Property","rdfs:comment":"The recruitment status of the study at the specific study site","rdfs:label":"studyLocationStatus","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}}
+    {"@id":"outbreak:studyLocation","@type":"rdf:Property","rdfs:comment":"The location of the study","rdfs:label":"studyLocation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Place"}},{"@id":"outbreak:studyLocationCity","@type":"rdf:Property","rdfs:comment":"The city in which the facility used for the study is located","rdfs:label":"studyLocationCity","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:City"}},{"@id":"outbreak:studyLocationState","@type":"rdf:Property","rdfs:comment":"The state or province in which the facility used for the study is located","rdfs:label":"studyLocationState","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:State"}},{"@id":"outbreak:studyLocationCountry","@type":"rdf:Property","rdfs:comment":"The country in which the facility used for the study is located","rdfs:label":"studyLocationCountry","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:studyLocation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Country"}},{"@id":"outbreak:studyLocationStatus","@type":"rdf:Property","rdfs:comment":"The recruitment status of the study at the specific study site","rdfs:label":"studyLocationStatus","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {
+      "@id": "outbreak:Analysis",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Analysis",
+      "rdfs:comment": "This is the schema for describing the Analysis schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:Dataset",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Dataset",
+      "rdfs:comment": "This is the schema for describing the Dataset schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:Dataset"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:Protocol",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Protocol",
+      "rdfs:comment": "This is the schema for describing the Protocol schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:HowTo"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:Publication",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Publication",
+      "rdfs:comment": "This is the schema for describing the Publication schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:ScholarlyArticle"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:ClinicalTrial",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClinicalTrial",
+      "rdfs:comment": "This is the schema for describing the ClinicalTrial schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalStudy"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    }
   ]
 }
