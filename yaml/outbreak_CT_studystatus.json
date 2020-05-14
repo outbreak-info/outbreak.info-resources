@@ -46,7 +46,7 @@
         "@id": "https://discovery.biothings.io/view/outbreak/"
       }
     },
-    {"@id":"outbreak:studyEvent","@type":"rdf:Property","rdfs:comment":"an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit","rdfs:label":"studyEvent","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:status"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:studyEventType","@type":"rdf:Property","rdfs:comment":"Type of the event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit","rdfs:label":"studyEventType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:studyEventDate","@type":"rdf:Property","rdfs:comment":"StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate","rdfs:label":"studyEventDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:temporal"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:studyEventDateType","@type":"rdf:Property","rdfs:comment":"the type of date provided (actual, anticipated, or estimated)","rdfs:label":"studyEventDateType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+      {"@id":"outbreak:studyEventType","@type":"rdf:Property","rdfs:comment":"Type of the event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit","rdfs:label":"studyEventType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:studyEventDate","@type":"rdf:Property","rdfs:comment":"StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate","rdfs:label":"studyEventDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:temporal"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:studyEventDateType","@type":"rdf:Property","rdfs:comment":"the type of date provided (actual, anticipated, or estimated)","rdfs:label":"studyEventDateType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {
       "@id": "outbreak:StudyStatus",
       "@type": "rdfs:Class",
@@ -367,8 +367,46 @@
                   }
                 }
               ]
+            },
+            "studyEvent": {
+              "description": "an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/studyevent"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/studyevent"
+                  }
+                }
+              ]
+            },
+            "studyStatus": {
+              "description": "The status of the study",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/studystatus"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/studystatus"
+                  }
+                }
+              ]
             }
           },
+          "required": [
+            "name",
+            "url",
+            "description",
+            "identifier",
+            "identifierSource",
+            "healthCondition",
+            "sponsor",
+            "author"
+          ],
           "definitions": {
             "person": {
               "description": "Reusable person definition",
@@ -450,6 +488,98 @@
               "required": [
                 "name"
               ]
+            },
+            "studyevent": {
+              "type": "object",
+              "@type": "Thing",
+              "description": "an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
+              "properties": {
+                "studyEventDate": {
+                  "description": "StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate",
+                  "format": "date",
+                  "type": "string"
+                },
+                "studyEventType": {
+                  "description": "Type of the event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
+                  "type": "string",
+                  "enum": [
+                    "study start date",
+                    "primary completion date",
+                    "study completion date",
+                    "study first submit date",
+                    "study first submit QC date",
+                    "last update Submit Date"
+                  ]
+                },
+                "studyEventDateType": {
+                  "description": "the type of date provided (actual, anticipated, or estimated)",
+                  "type": "string",
+                  "enum": [
+                    "actual",
+                    "anticipated",
+                    "estimated"
+                  ]
+                }
+              }
+            },
+            "studystatus": {
+              "type": "object",
+              "@type": "Thing",
+              "properties": {
+                "enrollmentCount": {
+                  "description": "The number of participants enrolled in the study",
+                  "type": "integer"
+                },
+                "whyStopped": {
+                  "description": "A brief explanation of the reason(s) why such clinical study was stopped (for a clinical study that is \"Suspended,\" \"Terminated,\" or \"Withdrawn\" prior to its planned completion as anticipated by the protocol)",
+                  "type": "string"
+                },
+                "statusDate": {
+                  "description": "The date that the status was verified. Equivalent to NCT's StatusVerifiedDate",
+                  "format": "date",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "The recruitment status of the study",
+                  "enum": [
+                    "not yet recruiting",
+                    "recruiting",
+                    "enrolling by invitation",
+                    "active",
+                    " not recruiting",
+                    "suspended",
+                    "terminated",
+                    "completed",
+                    "withdrawn",
+                    "unknown status"
+                  ]
+                },
+                "statusExpandedAccess": {
+                  "description": "Flag for whether or not the study has expanded Access status",
+                  "oneOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    }
+                  ]
+                },
+                "enrollmentType": {
+                  "description": "The type of estimation used to determine the enrollmentCount (actual counts, target size, etc.)",
+                  "enum": [
+                    "actual",
+                    "estimated"
+                  ]
+                }
+              },
+              "required": [
+                "status"
+              ]
             }
           }
         }
@@ -459,6 +589,8 @@
     {"@id":"outbreak:dateCreated","@type":"rdf:Property","rdfs:comment":"Date the record was created","rdfs:label":"dateCreated","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:dateCreated"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"Date the record was published","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"LastUpdatePostDate","rdfs:label":"dateModified","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:dateModifiedType","@type":"rdf:Property","rdfs:comment":"LastUpdatePostDateType","rdfs:label":"dateModifiedType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:healthCondition","@type":"rdf:Property","rdfs:comment":"The health condition or disease being studied","rdfs:label":"healthCondition","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:MedicalCondition"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:healthConditionIidentifier","@type":"rdf:Property","rdfs:comment":"Ontological or controlled vocabulary identifier for the health condition or disease","rdfs:label":"healthConditionIidentifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:MedicalCode"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}}, {"@id":"outbreak:keywords","@type":"rdf:Property","rdfs:comment":"keywords","rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable outbreak.info category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:hasResults","@type":"rdf:Property","rdfs:comment":"Binary for if the clinical trial has published any results","rdfs:label":"hasResults","owl:cardinality":"one","marginality":"optional","schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Boolean"}},
     {"@id":"outbreak:author","@type":"rdf:Property","rdfs:comment":"The study's author, this includes ResponsiblePartyInvestigator, Contacts, and OverallOfficials","rdfs:label":"author","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:author"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the study author as it appears in the registery. May include values from the following NCT fields: ResponsiblePartyInvestigatorFullName, OverallOfficialName, ContactName","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:givenName","@type":"rdf:Property","rdfs:comment":"The given name of the study author","rdfs:label":"givenName","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:givenName"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:familyName","@type":"rdf:Property","rdfs:comment":"The family name of the study author","rdfs:label":"familyName","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:familyName"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"Affiliation associated with the study author","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:role","@type":"rdf:Property","rdfs:comment":"The role of this particular author in this study, this includes roles such as ResponsibleParty, Contacts, values of OverallOfficialRole, Investigator","rdfs:label":"role","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},
-    {"@id":"outbreak:sponsor","@type":"rdf:Property","rdfs:comment":"A sponsor, funder, or collaborator for the study. ","rdfs:label":"sponsor","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:sponsor"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"outbreak:Organization"}},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the sponsoring or funding organization","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:class","@type":"rdf:Property","rdfs:comment":"The type of organization","rdfs:label":"class","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:role","@type":"rdf:Property","rdfs:comment":"LeadSponsor, funder, collaborator","rdfs:label":"role","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}}
+    {"@id":"outbreak:sponsor","@type":"rdf:Property","rdfs:comment":"A sponsor, funder, or collaborator for the study. ","rdfs:label":"sponsor","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:sponsor"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"outbreak:Organization"}},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the sponsoring or funding organization","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:class","@type":"rdf:Property","rdfs:comment":"The type of organization","rdfs:label":"class","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:role","@type":"rdf:Property","rdfs:comment":"LeadSponsor, funder, collaborator","rdfs:label":"role","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:studyEvent","@type":"rdf:Property","rdfs:comment":"an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit","rdfs:label":"studyEvent","owl:cardinality":"many","marginality":"recommended","schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"outbreak:StudyEvent"}},{"@id":"outbreak:studyEventType","@type":"rdf:Property","rdfs:comment":"Type of the event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit","rdfs:label":"studyEventType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:studyEventDate","@type":"rdf:Property","rdfs:comment":"StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate","rdfs:label":"studyEventDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:temporal"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:studyEventDateType","@type":"rdf:Property","rdfs:comment":"the type of date provided (actual, anticipated, or estimated)","rdfs:label":"studyEventDateType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":{"@id":"outbreak:StudyEvent"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:studyStatus","@type":"rdf:Property","rdfs:comment":"The status of the study","rdfs:label":"studyStatus","owl:cardinality":"one","marginality":"recommended","schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"outbreak:StudyStatus"}},{"@id":"outbreak:status","@type":"rdf:Property","rdfs:comment":"The recruitment status of the study","rdfs:label":"status","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"outbreak:status"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:statusExpandedAccess","@type":"rdf:Property","rdfs:comment":"Flag for whether or not the study has expanded Access status","rdfs:label":"statusExpandedAccess","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:statusExpandedAccess"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:statusDate","@type":"rdf:Property","rdfs:comment":"The date that the status was verified. Equivalent to NCT's StatusVerifiedDate","rdfs:label":"statusDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:statusDate"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:enrollmentCount","@type":"rdf:Property","rdfs:comment":"The number of participants enrolled in the study","rdfs:label":"enrollmentCount","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:enrollmentCount"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Number"}},{"@id":"outbreak:enrollmentType","@type":"rdf:Property","rdfs:comment":"The type of estimation used to determine the enrollmentCount (actual counts, target size, etc.)","rdfs:label":"enrollmentType","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:enrollmentType"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:whyStopped","@type":"rdf:Property","rdfs:comment":"A brief explanation of the reason(s) why such clinical study was stopped (for a clinical study that is \"Suspended,\" \"Terminated,\" or \"Withdrawn\" prior to its planned completion as anticipated by the protocol)","rdfs:label":"whyStopped","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:description"},"schema:domainIncludes":{"@id":"outbreak:StudyStatus"},"schema:rangeIncludes":{"@id":"schema:Text"}}
   ]
 }
