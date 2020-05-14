@@ -597,6 +597,7 @@
             },
             "studydesign": {
               "type": "object",
+              "@type":"Thing",
               "properties": {
                 "designStudyText": {
                   "description": "String description of the study design if structured information not available",
