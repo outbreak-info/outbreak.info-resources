@@ -136,16 +136,36 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
               ]
+
             },
             "analysisTechnique": {
                 "description": "A technique or technology used in a analysis.",
