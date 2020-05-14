@@ -1,0 +1,545 @@
+/* common mapping file for outbreak.info/resources
+combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical Trials, and PDB
+ */
+{
+  "@type": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "abstract": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "alternateName": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "armGroup": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "name": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "description": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "role": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "intervention": {
+        "properties": {
+          "@type": {
+            "normalizer": "keyword_lowercase_normalizer",
+            "type": "keyword"
+          },
+          "name": {
+            "type": "text",
+            "copy_to": ["all"]
+          },
+          "category": {
+            "normalizer": "keyword_lowercase_normalizer",
+            "type": "keyword",
+            "copy_to": ["all"]
+          },
+          "description": {
+            "type": "text",
+            "copy_to": ["all"]
+          }
+        }
+      }
+    }
+  },
+  "author": {
+    "properties": {
+      "@type": {
+        "type": "text"
+      },
+      "affiliation": {
+        "properties": {
+          "name": {
+            "normalizer": "keyword_lowercase_normalizer",
+            "type": "keyword",
+            "copy_to": ["all"]
+          }
+        }
+      },
+      "familyName": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "givenName": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "name": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "role": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text"
+      }
+    }
+  },
+  "citedBy": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "abstract": {
+        "type": "text"
+      },
+      "citation": {
+        "type": "text"
+      },
+      "datePublished": {
+        "type": "text"
+      },
+      "description": {
+        "type": "text"
+      },
+      "doi": {
+        "type": "text"
+      },
+      "identifier": {
+        "type": "text"
+      },
+      "name": {
+        "type": "text"
+      },
+      "pmid": {
+        "type": "text"
+      },
+      "url": {
+        "type": "text"
+      }
+    }
+  },
+  "curatedBy": {
+    "properties": {
+      "@type": {
+        "type": "text"
+      },
+      "name": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "url": {
+        "type": "text"
+      },
+      "versionDate": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+    }
+  },
+  "dateCreated": {
+    "type": "keyword"
+  },
+  "dateModified": {
+    "type": "keyword"
+  },
+  "datePublished": {
+    "type": "keyword"
+  },
+  "description": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "doi": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "eligibilityCriteria": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "inclusionCriteria": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "exclusionCriteria": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "minimumAge": {
+        "type": "text"
+      },
+      "maximumAge": {
+        "type": "text"
+      },
+      "gender": {
+        "type": "text"
+      },
+      "healthyVolunteers": {
+        "type": "boolean"
+      },
+      "stdAge": {
+        "type": "text",
+        "copy_to": ["all"]
+      }
+    }
+  },
+  "funding": {
+    "properties": {
+      "funder": {
+        "properties": {
+          "name": {
+            "type": "text",
+            "copy_to": ["all"]
+          },
+          "url": {
+            "type": "text",
+            "copy_to": ["all"]
+          }
+        }
+      },
+      "identifier": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "url": {
+        "type": "text",
+        "copy_to": ["all"]
+      }
+    }
+  },
+  "hasResults": {
+    "type": "boolean"
+  },
+  "healthCondition": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "identifier": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "identifierSource": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "interventionText": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "interventions": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "name": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "category": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "description": {
+        "type": "text",
+        "copy_to": ["all"]
+      }
+    }
+  },
+  "isBasedOn": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "abstract": {
+        "type": "text"
+      },
+      "citation": {
+        "type": "text"
+      },
+      "datePublished": {
+        "type": "text"
+      },
+      "description": {
+        "type": "text"
+      },
+      "doi": {
+        "type": "text"
+      },
+      "identifier": {
+        "type": "text"
+      },
+      "name": {
+        "type": "text"
+      },
+      "pmid": {
+        "type": "text"
+      },
+      "url": {
+        "type": "text"
+      }
+    }
+  },
+  "issueNumber": {
+    "type": "text"
+  },
+  "journalName": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "journalNameAbbrev": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "keywords": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "license": {
+    "type": "text"
+  },
+  "measurementParameter": {
+    "properties": {
+      "resolution": {
+        "type": "text"
+      }
+    }
+  },
+  "measurementTechnique": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "name": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "outcome": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "outcomeMeasure": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "outcomeTimeFrame": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "outcomeType": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+    }
+  },
+  "pmid": {
+    "type": "integer",
+    "copy_to": ["all"]
+  },
+  "publicationType": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "relatedTo": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "abstract": {
+        "type": "text"
+      },
+      "citation": {
+        "type": "text"
+      },
+      "datePublished": {
+        "type": "text"
+      },
+      "description": {
+        "type": "text"
+      },
+      "doi": {
+        "type": "text"
+      },
+      "identifier": {
+        "type": "text"
+      },
+      "name": {
+        "type": "text"
+      },
+      "pmid": {
+        "type": "text"
+      },
+      "url": {
+        "type": "text"
+      }
+    }
+  },
+  "sponsor": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "name": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "class": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "role": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      }
+    }
+  },
+  "studyDesign": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "studyType": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "designAllocation": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "studyDesignText": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "designModel": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "designPrimaryPurpose": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "designWhoMasked": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "phase": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "phaseNumber": {
+        "type": "half_float"
+      }
+    }
+  },
+  "studyEvent": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "studyEventType": {
+        "type": "text"
+      },
+      "studyEventDate": {
+        "type": "text"
+      },
+      "studyEventDateType": {
+        "type": "text"
+      }
+    }
+  },
+  "studyLocation": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "name": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "studyLocationCity": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "studyLocationState": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "studyLocationCountry": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "studyLocationStatus": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      }
+    }
+  },
+  "studyStatus": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "status": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword",
+        "copy_to": ["all"]
+      },
+      "statusDate": {
+        "type": "text"
+      },
+      "whyStopped": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "statusExpanded": {
+        "type": "boolean"
+      },
+      "enrollmentCount": {
+        "type": "integer"
+      },
+      "enrollmentType": {
+        "type": "text"
+      }
+    }
+  },
+  "url": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
+  "volumeNumber": {
+    "type": "text"
+  }
+}

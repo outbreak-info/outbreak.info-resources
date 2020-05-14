@@ -1,0 +1,30 @@
+topicCategory	category	description
+Clinical	Clinical	Descriptions of specific patient cases
+Case Descriptions	Clinical	
+Risk Factors	Clinical	
+Diagnosis	Diagnosis	Disease assessment through symptoms, test results, and radiological features
+Symptoms	Diagnosis	
+Rapid Diagnostics	Diagnosis	
+Antibody Detection	Diagnosis	Antibody-based detection
+Virus Detection	Diagnosis	RT-PCR detection
+Testing Prevalence	Diagnosis	Extent of testing
+Pathology/Radiology	Diagnosis	Diagnosis based off pathology and/or radiology
+Forecasting	Forecasting	Modelling and estimating the trend of covid-19 spread
+Public Health Interventions	Forecasting	Evaluations of the efficacy of public health interventions
+Case/Death Models	Forecasting	Estimating the spread of covid-19
+Mechanism	Mechanism	Underlying cause(s) of covid-19 infections and transmission & possible drug mechanism of action
+Virus Genetics	Mechanism	How virus genetic factors influence infection and transmission
+Host Genetics	Mechanism	How host genetic factors influence infection and transmission
+Immunological Response	Mechanism	Description of immunological response upon virus exposure
+Mechanism of Infection	Mechanism	Description of how the virus enters and infects human cells
+Mechanism of Transmission	Mechanism	Description of how the virus transmits between hosts
+Prevention	Prevention	Prevention, control, and management strategies
+Public Health Interventions	Prevention	
+Transmission	Transmission	Characteristics and modes of covid-19 transmissions, such as human-to-human
+Host/Intermediate Reservoirs	Transmission	
+Viral Shedding / Persistence	Transmission	How much the virus sheds from host and how long it persists in environments
+Treatment	Treatment	Treatment strategies, therapeutic procedures, and vaccine development
+Vaccines	Treatment	Vaccine development and immune response
+Pharmaceutical Treatments	Treatment	
+Medical Care	Treatment	
+Repurposing	Treatment	Repurposing candidates of approved drugs

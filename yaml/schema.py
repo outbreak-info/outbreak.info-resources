@@ -82,7 +82,7 @@ class Schema:
         return yaml
 
     def enforce_contexts(self, yaml, result):
-        namespaces = re.findall(r'([a-zA-Z]+):[a-zA-Z]+', yaml)
+        namespaces = re.findall(r'([a-zA-Z]+):[a-zA-Z:]+', yaml)
         namespaces = list(set(namespaces))
         for namespace in namespaces:
             if not namespace in result["@context"]:
