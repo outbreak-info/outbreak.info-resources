@@ -120,6 +120,47 @@
                 }
               ]
             },
+          "infectiousAgent": {
+            "description": "infectious agents(s) which are the focus of the analysis",
+            "oneOf": [{
+                "$ref": "#/definitions/miscControlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/miscControlledVocabulary"
+                }
+              }
+            ]
+          },
+            "infectiousDisease": {
+              "description": "The disease caused by the infectious agent. Important as some agents may cause multiple diseases",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "analysisTopic": {
+              "description": "The underlying question, goal, or aim of the analysis",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/controlledVocabulary"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                        "$ref": "#/definitions/controlledVocabulary"
+                  }
+                }
+              ]
+            },
             "author": {
               "description": "The author of this content or rating.",
               "oneOf": [
@@ -267,6 +308,36 @@
             "author"
           ],
           "definitions": {
+            "controlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": [
+                  "mamo",
+                  "covid19",
+                  "cido",
+                  "epo"
+                ],
+                "children_of": [
+                  "https://www.ebi.ac.uk/ols/ontologies/mamo",
+                  "https://bioportal.bioontology.org/ontologies/COVID19",
+                  "http://bioportal.bioontology.org/ontologies/CIDO",
+                  "https://www.ebi.ac.uk/ols/ontologies/epo"
+                ]
+              }
+            },
+            "miscControlledVocabulary": {
+              "description": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "vocabulary": {
+                "ontology": ["ncbi_taxon"],
+                "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+              },
+              "strict": false
+            },
             "person": {
               "description": "Reusable person definition",
               "@type": "Person",
