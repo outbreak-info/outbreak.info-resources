@@ -1,0 +1,610 @@
+{
+  "@context": {
+    "outbreak": "https://discovery.biothings.io/view/outbreak/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
+    "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
+    "schema": "http://schema.org/"
+  },
+  "@id": "https://discovery.biothings.io/view/outbreak/",
+  "@graph": [
+    {
+      "@id": "outbreak:Organization",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Organization",
+      "rdfs:comment": "This is the schema for describing the Organization schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:Organization"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the organization, team or group","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:alternateName","@type":"rdf:Property","rdfs:comment":"Alternative names or commonly used abbreviations for the organization, team or group","rdfs:label":"alternateName","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:alternateName"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"An overarching consortia, multi-institutional team or group in which the organization\/team\/group is a member or affiliate","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"outbreak:Organization"}},{"@id":"outbreak:affiliationStatus","@type":"rdf:Property","rdfs:comment":"The status of the organization's membership or affiliation in the overarching consortial, multi-institutional team or group (current, past)","rdfs:label":"affiliationStatus","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:members","@type":"rdf:Property","rdfs:comment":"Members of this organization, team, or group","rdfs:label":"members","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:members"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}]},{"@id":"outbreak:membershipStatus","@type":"rdf:Property","rdfs:comment":"Status of the members of this organization","rdfs:label":"membershipStatus","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"A resource which a person played a role","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":[{"@id":"schema:CreativeWork"},{"@id":"schema:HowTo"}]},{"@id":"outbreak:class","@type":"rdf:Property","rdfs:comment":"A classification of the organization by a resource. Eg- for ClinicalTrials funders, it's [\"U.S. National Institutes of Health\", \"Other U.S. Federal agencies\", \"Industry\", \"All others\"]","rdfs:label":"class","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":[{"@id":"schema:CreativeWork"},{"@id":"schema:HowTo"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:role","@type":"rdf:Property","rdfs:comment":"The role of an organization in its involvement with a resource","rdfs:label":"role","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"schema:CreativeWork"},{"@id":"schema:HowTo"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {
+      "@id": "outbreak:Person",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Person",
+      "rdfs:comment": "This is the schema for describing the Person schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:Person"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the person","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:alternateName","@type":"rdf:Property","rdfs:comment":"Alternative ways in which the person's name is included in a record","rdfs:label":"alternateName","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:alternateName"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:givenName","@type":"rdf:Property","rdfs:comment":"The given name of the person","rdfs:label":"givenName","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:givenName"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:familyName","@type":"rdf:Property","rdfs:comment":"The family name of the person","rdfs:label":"familyName","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:familyName"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"The organization with which the person is affiliated or has membership in","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"outbreak:Organization"}},{"@id":"outbreak:affiliationStatus","@type":"rdf:Property","rdfs:comment":"The status of the person's membership or affiliation in an organization, team or group (current, past)","rdfs:label":"affiliationStatus","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:orcid","@type":"rdf:Property","rdfs:comment":"The ORCID ID of the person","rdfs:label":"orcid","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"A resource which a person played a role","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Person"},"schema:rangeIncludes":[{"@id":"schema:CreativeWork"},{"@id":"schema:HowTo"}]},{"@id":"outbreak:role","@type":"rdf:Property","rdfs:comment":"The role a person played in the creation of a resource","rdfs:label":"role","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:addtionalType"},"schema:domainIncludes":[{"@id":"schema:CreativeWork"},{"@id":"schema:HowTo"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {
+      "@id": "outbreak:MonetaryGrant",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MonetaryGrant",
+      "rdfs:comment": "This is the schema for describing the MonetaryGrant schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:MonetaryGrant"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the monetary grant","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The grant ID or an identifier associated with the grant","rdfs:label":"identifier","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The url for the grant (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"The funding organization of the grant","rdfs:label":"funder","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"outbreak:Organization"}},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the funding organization","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Organization"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:recipient","@type":"rdf:Property","rdfs:comment":"The person or organization to whom or to which the grant was awarded","rdfs:label":"recipient","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:recipient"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the recipient of the grant","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"The affiliation of the recipient of the grant","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {
+      "@id": "outbreak:Analysis",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Analysis",
+      "rdfs:comment": "This is the schema for describing the Analysis schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      },
+      "$validation": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "The name of the item.",
+              "type": "string"
+            },
+            "description": {
+              "description": "A description of the item.",
+              "type": "string"
+            },
+            "url": {
+              "description": "The url of the item",
+              "format": "uri",
+              "type": "string"
+            },
+            "identifier": {
+              "description": "An identifier associated with the analysis if available",
+              "type": "string"
+            },
+            "doi": {
+              "description": "A DOI associated with the analysis if available",
+              "type": "string"
+            },
+            "hasDownloadableContent": {
+              "description": "Indicates the site has content that can be downloaded (raw data, data sheets, charts, etc)",
+              "type": "boolean"
+            },
+            "license": {
+              "description": "A license document that applies to this content, typically indicated by URL",
+              "type": "string"
+            },
+            "domainUrl": {
+              "description": "The domain name or main site on which webpage or specific url can be found",
+              "format": "uri",
+              "type": "string"
+            },
+            "datePublished": {
+              "description": "PublicationDate of the analysis online if available",
+              "format": "date",
+              "type": "string"
+            },
+            "dateModified": {
+              "description": "Most recent date for which the analysis model itself was updated",
+              "format": "date",
+              "type": "string"
+            },
+            "assumption": {
+              "description": "Statement of assumptions / limitations of the model",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "keywords": {
+              "description": "keywords",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "topicCategory": {
+              "description": "Applicable outbreak.info category",
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
+              ]
+
+            },
+            "analysisTechnique": {
+                "description": "A technique or technology used in a analysis.",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/controlledVocabulary"
+                  },
+                  {
+                    "enum": [
+                        "predictive/forecasting models",
+                        "observation/visualization models"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/controlledVocabulary"
+                    }
+                  },  
+                  {
+                    "type": "array",
+                    "enum": [
+                        "predictive/forecasting models",
+                        "observation/visualization models"
+                    ]
+                  }
+                ]
+              },
+            "infectiousAgent": {
+            "description": "infectious agents(s) which are the focus of the analysis",
+            "oneOf": [{
+                "$ref": "#/definitions/miscControlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/miscControlledVocabulary"
+                }
+              }
+            ]
+          },
+            "infectiousDisease": {
+              "description": "The disease caused by the infectious agent. Important as some agents may cause multiple diseases",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "analysisTopic": {
+              "description": "The underlying question, goal, or aim of the analysis",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/controlledVocabulary"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                        "$ref": "#/definitions/controlledVocabulary"
+                  }
+                }
+              ]
+            },
+            "author": {
+              "description": "The author of this content or rating.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/person"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/person"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            },
+            "contributor": {
+              "description": "A secondary contributor to the CreativeWork or Event.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/person"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/person"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            },
+            "maintainer": {
+              "description": "A maintainer of a Dataset, software package (SoftwareApplication), or other Project.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/person"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/person"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/organization"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/organization"
+                  }
+                }
+              ]
+            },
+            "funding": {
+              "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/funding"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/funding"
+                  }
+                }
+              ]
+            },
+            "citedBy": {
+              "description": "A resource (publication, protocol, dataset, etc.) which was derived from this protocol",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "isBasedOn": {
+              "description": "A resource (publication, protocol, dataset, etc) from which this analysis was derived",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "relatedTo": {
+              "description": "Other resources related to, but not a derivative of nor derived from this analysis",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            },
+            "curatedBy": {
+              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/citation"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/citation"
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "url",
+            "name",
+            "description",
+            "author"
+          ],
+          "definitions": {
+            "controlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": [
+                  "mamo",
+                  "covid19",
+                  "cido",
+                  "epo"
+                ],
+                "children_of": [
+                  "https://www.ebi.ac.uk/ols/ontologies/mamo",
+                  "https://bioportal.bioontology.org/ontologies/COVID19",
+                  "http://bioportal.bioontology.org/ontologies/CIDO",
+                  "https://www.ebi.ac.uk/ols/ontologies/epo"
+                ]
+              }
+            },
+            "miscControlledVocabulary": {
+              "description": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "vocabulary": {
+                "ontology": ["ncbi_taxon"],
+                "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+              },
+              "strict": false
+            },
+            "person": {
+              "description": "Reusable person definition",
+              "@type": "Person",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "givenName": {
+                  "type": "string"
+                },
+                "familyName": {
+                  "type": "string"
+                },
+                "orcid": {
+                  "type": "string"
+                },
+                "affiliation": {
+                  "type": "array",
+                  "oneOf": [
+                    {
+                      "$ref": "organization"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "organization"
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "organization": {
+              "description": "Reusable organization definition",
+              "@type": "Organization",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "affiliation": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "citation": {
+              "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the analysis) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
+              "@type": "CreativeWork",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "name of the referenced resource",
+                  "type": "string"
+                },
+                "identifier": {
+                  "type": "string"
+                },
+                "doi": {
+                  "type": "string"
+                },
+                "pmid": {
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ClinicalStudy",
+                    "Analysis",
+                    "Publication",
+                    "Dataset",
+                    "Protocol",
+                    "SoftwareApplication",
+                    "Other"
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "versionDate": {
+                  "description": "Date of the version of the resource that is referenced",
+                  "type": "string",
+                  "format": "date"
+                },
+                "citeText": {
+                  "description": "The bibliographic citation for the referenced resource as is provided",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ]
+            },
+            "funding": {
+              "type": "object",
+              "@type": "MonetaryGrant",
+              "description": "Information about funding support",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The name of the monetary grant that funded/funds the Analysis"
+                },
+                "identifier": {
+                  "type": "string",
+                  "description": "Unique identifier(s) for the grant(s) used to fund the Analysis"
+                },
+                "funder": {
+                  "description": "name of the funding organization",
+                  "type": "array",
+                  "oneOf": [
+                    {
+                      "$ref": "organization"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "organization"
+                      }
+                    }
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "description": "award URL"
+                }
+              },
+              "required": [
+                "name",
+                "identifier"
+              ]
+            }
+          }
+      }
+    },
+    {"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The url of the item","rdfs:label":"url","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:domainUrl","@type":"rdf:Property","rdfs:comment":"The domain name or main site on which webpage or specific url can be found","rdfs:label":"domainUrl","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"An identifier associated with the analysis if available","rdfs:label":"identifier","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:doi","@type":"rdf:Property","rdfs:comment":"A DOI associated with the analysis if available","rdfs:label":"doi","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the item.","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:description","@type":"rdf:Property","rdfs:comment":"A description of the item.","rdfs:label":"description","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:description"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:author","@type":"rdf:Property","rdfs:comment":"The author of this content or rating.","rdfs:label":"author","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:author"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the author as provided by the resource","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"The affiliation of the author","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:funding","@type":"rdf:Property","rdfs:comment":"Funding for the generation of the analysis","rdfs:label":"funding","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:MonetaryGrant"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"outbreak:MonetaryGrant"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"The funder of the analysis","rdfs:label":"funder","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The identifier of the grant (if available)","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:hasDownloadableContent","@type":"rdf:Property","rdfs:comment":"Indicates the site has content that can be downloaded (raw data, data sheets, charts, etc)","rdfs:label":"hasDownloadableContent","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:isAccessibleForFree"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Boolean"}},{"@id":"outbreak:infectiousAgent","@type":"rdf:Property","rdfs:comment":"The actual infectious agent, such as a specific bacterium","rdfs:label":"infectiousAgent","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:infectiousAgent"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:infectiousDisease","@type":"rdf:Property","rdfs:comment":"The disease caused by the infectious agent. Important as some agents may cause multiple diseases","rdfs:label":"infectiousDisease","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:infectousDisease"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:license","@type":"rdf:Property","rdfs:comment":"A license document that applies to this content, typically indicated by URL","rdfs:label":"license","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:license"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"PublicationDate of the analysis online if available","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"Most recent date for which the analysis model itself was updated","rdfs:label":"dateModified","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:analysisTechnique","@type":"rdf:Property","rdfs:comment":"This is the analysis type, analytical technique or mathematical model used in this analysis","rdfs:label":"analysisTechnique","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:analysisTopic","@type":"rdf:Property","rdfs:comment":"The underlying question, goal, or aim of the analysis","rdfs:label":"analysisTopic","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:purpose"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:assumption","@type":"rdf:Property","rdfs:comment":"Statement of assumptions \/ limitations of the model","rdfs:label":"assumption","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:text"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:citedBy","@type":"rdf:Property","rdfs:comment":"A resource (publication, protocol, dataset, etc.) which was derived from this protocol","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the citedBy resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type (publication, protocol, dataset, code, etc.) of the citedBy resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (pmid, WHO protocol id, etc.) of the citedby resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:isBasedOn","@type":"rdf:Property","rdfs:comment":"A resource (publication, protocol, dataset, etc) from which this analysis was derived","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},
+    {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the isBasedOn resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type (publication, protocol, dataset, code, etc.) of the isBasedOn resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (pmid, WHO protocol id, etc.) of the isBasedOn resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"date of the version of the resource from which this analysis was derived. Note this is NOT the same as dateModified, as the protocol may be based on an earlier 'dateModified' than is what is available from the resource","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"Other resources related to, but not a derivative of nor derived from this analysis","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of related resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (if available) of related resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:contributor","@type":"rdf:Property","rdfs:comment":"A secondary contributor to the CreativeWork or Event.","rdfs:label":"contributor","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:contributor"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"outbreak:author"}},{"@id":"outbreak:maintainer","@type":"rdf:Property","rdfs:comment":"A maintainer of a Dataset, software package (SoftwareApplication), or other Project.","rdfs:label":"maintainer","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:maintainer"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"outbreak:author"}},{"@id":"outbreak:keywords","@type":"rdf:Property","rdfs:comment":"keywords","rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable outbreak.info category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {
+      "@id": "outbreak:Dataset",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Dataset",
+      "rdfs:comment": "This is the schema for describing the Dataset schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:Dataset"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:Protocol",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Protocol",
+      "rdfs:comment": "This is the schema for describing the Protocol schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:HowTo"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:Publication",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Publication",
+      "rdfs:comment": "This is the schema for describing the Publication schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:ScholarlyArticle"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    },
+    {
+      "@id": "outbreak:ClinicalTrial",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ClinicalTrial",
+      "rdfs:comment": "This is the schema for describing the ClinicalTrial schema used for outbreak.info.",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalStudy"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/outbreak/"
+      }
+    }
+  ]
+}
