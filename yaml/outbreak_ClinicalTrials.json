@@ -885,7 +885,7 @@
             "studylocation": {
               "description": "The study sites or the location of the study",
               "type": "object",
-              "@type": "Location",
+              "@type": "Place",
               "properties": {
                 "studyLocation": {
                   "description": "The location of the study as listed in the resouce.",

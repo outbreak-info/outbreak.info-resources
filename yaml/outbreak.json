@@ -131,7 +131,7 @@
       "rdfs:label": "StudyLocation",
       "rdfs:comment": "This is the schema for describing the StudyLocation schema used for outbreak.info.",
       "rdfs:subClassOf": {
-        "@id": "schema:Location"
+        "@id": "schema:Place"
       },
       "schema:isPartOf": {
         "@id": "https://discovery.biothings.io/view/outbreak/"
@@ -2688,7 +2688,7 @@
             "studylocation": {
               "description": "The study sites or the location of the study",
               "type": "object",
-              "@type": "Location",
+              "@type": "Place",
               "properties": {
                 "studyLocation": {
                   "description": "The location of the study as listed in the resouce.",
