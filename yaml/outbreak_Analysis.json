@@ -152,6 +152,7 @@
                 {
                   "type": "array",
                   "items": {
+                      "type":"string",
                       "enum": [
                         "Clinical",
                         "Diagnosis",
