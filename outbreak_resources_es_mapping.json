@@ -4,13 +4,16 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
 {
   "@type": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword"
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "abstract": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "alternateName": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "armGroup": {
     "properties": {
@@ -19,14 +22,17 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "type": "keyword"
       },
       "name": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "description": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "role": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "intervention": {
         "properties": {
@@ -35,14 +41,17 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
             "type": "keyword"
           },
           "name": {
-            "type": "text"
+            "type": "text",
+            "copy_to": ["all"]
           },
           "category": {
             "normalizer": "keyword_lowercase_normalizer",
-            "type": "keyword"
+            "type": "keyword",
+            "copy_to": ["all"]
           },
           "description": {
-            "type": "text"
+            "type": "text",
+            "copy_to": ["all"]
           }
         }
       }
@@ -57,18 +66,22 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "properties": {
           "name": {
             "normalizer": "keyword_lowercase_normalizer",
-            "type": "keyword"
+            "type": "keyword",
+            "copy_to": ["all"]
           }
         }
       },
       "familyName": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "givenName": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "name": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "role": {
         "normalizer": "keyword_lowercase_normalizer",
@@ -120,7 +133,8 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "type": "text"
       },
       "name": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "url": {
         "type": "text"
@@ -141,10 +155,12 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
     "type": "keyword"
   },
   "description": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "doi": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "eligibilityCriteria": {
     "properties": {
@@ -153,10 +169,12 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "type": "keyword"
       },
       "inclusionCriteria": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "exclusionCriteria": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "minimumAge": {
         "type": "text"
@@ -171,7 +189,8 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "type": "boolean"
       },
       "stdAge": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       }
     }
   },
@@ -180,18 +199,22 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
       "funder": {
         "properties": {
           "name": {
-            "type": "text"
+            "type": "text",
+            "copy_to": ["all"]
           },
           "url": {
-            "type": "text"
+            "type": "text",
+            "copy_to": ["all"]
           }
         }
       },
       "identifier": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "url": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       }
     }
   },
@@ -199,17 +222,21 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
     "type": "boolean"
   },
   "healthCondition": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "identifier": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "identifierSource": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword"
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "interventionText": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "interventions": {
     "properties": {
@@ -218,14 +245,17 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "type": "keyword"
       },
       "name": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "category": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "description": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       }
     }
   },
@@ -269,11 +299,13 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
   },
   "journalName": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword"
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "journalNameAbbrev": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword"
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "keywords": {
     "normalizer": "keyword_lowercase_normalizer",
@@ -292,10 +324,12 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
   },
   "measurementTechnique": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword"
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "name": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "outcome": {
     "properties": {
@@ -304,23 +338,28 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "type": "keyword"
       },
       "outcomeMeasure": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "outcomeTimeFrame": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "outcomeType": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
     }
   },
   "pmid": {
-    "type": "integer"
+    "type": "integer",
+    "copy_to": ["all"]
   },
   "publicationType": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword"
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "relatedTo": {
     "properties": {
@@ -365,11 +404,13 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
       },
       "name": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "class": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "role": {
         "normalizer": "keyword_lowercase_normalizer",
@@ -385,29 +426,33 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
       },
       "studyType": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "designAllocation": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "studyDesignText": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "designModel": {
-        "type": "text"
-      },
-      "designTimePerspective": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "designPrimaryPurpose": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "designWhoMasked": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "phase": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "phaseNumber": {
         "type": "half_float"
@@ -438,21 +483,26 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
         "type": "keyword"
       },
       "name": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "studyLocationCity": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "studyLocationState": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "studyLocationCountry": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "studyLocationStatus": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       }
     }
   },
@@ -464,13 +514,15 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
       },
       "status": {
         "normalizer": "keyword_lowercase_normalizer",
-        "type": "keyword"
+        "type": "keyword",
+        "copy_to": ["all"]
       },
       "statusDate": {
         "type": "text"
       },
       "whyStopped": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "statusExpanded": {
         "type": "boolean"
@@ -484,7 +536,8 @@ combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical
     }
   },
   "url": {
-    "type": "text"
+    "type": "text",
+    "copy_to": ["all"]
   },
   "volumeNumber": {
     "type": "text"
