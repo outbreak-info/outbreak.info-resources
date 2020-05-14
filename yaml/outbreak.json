@@ -279,15 +279,34 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
               ]
             },
             "analysisTechnique": {
@@ -807,17 +826,36 @@
           },
           "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
               ]
-          },
+            },
           "keywords": {
             "description": "A list of keywords associated with this dataset",
             "type": "string"
@@ -1243,15 +1281,34 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
               ]
             },
             "author": {
@@ -1728,15 +1785,34 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
               ]
             },
             "author": {
@@ -2136,16 +2212,36 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
               ]
+
             },
             "hasResults": {
               "description": "Binary for if the clinical trial has published any results",

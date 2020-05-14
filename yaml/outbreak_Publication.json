@@ -223,16 +223,36 @@
             },
             "topicCategory": {
               "description": "Applicable outbreak.info category",
-              "enum": [
-                "Clinical",
-                "Diagnosis",
-                "Forecasting",
-                "Mechanism",
-                "Prevention",
-                "Transmission",
-                "Treatment",
-                "Epidemiology"
+              "oneOf": [
+                {
+                  "enum": [
+                    "Clinical",
+                    "Diagnosis",
+                    "Forecasting",
+                    "Mechanism",
+                    "Prevention",
+                    "Transmission",
+                    "Treatment",
+                    "Epidemiology"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                      "enum": [
+                        "Clinical",
+                        "Diagnosis",
+                        "Forecasting",
+                        "Mechanism",
+                        "Prevention",
+                        "Transmission",
+                        "Treatment",
+                        "Epidemiology"
+                      ]
+                  }
+                }
               ]
+
             },
             "author": {
               "description": "Name of the author or organization that created the dataset.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired",
