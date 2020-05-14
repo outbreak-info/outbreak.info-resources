@@ -1,0 +1,1585 @@
+'@context':
+  outbreak: https://discovery.biothings.io/view/outbreak/
+  owl: http://www.w3.org/2002/07/owl/
+  rdf: http://www.w3.org/1999/02/22/-rdf-syntax-ns/
+  rdfs: http://www.w3.org/2000/01/rdf/-schema/
+  schema: http://schema.org/
+'@graph':
+- '@id': outbreak:Product
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Product schema used for outbreak.info.
+  rdfs:label: Product
+  rdfs:subClassOf:
+    '@id': schema:Product
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the material or reagent
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:manufacturer
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The name of the manufacturer of the material, biosample, or reagent
+  rdfs:label: manufacturer
+  rdfs:sameAs:
+    '@id': schema:manufacturer
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+- '@id': outbreak:brand
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The name of the brand of the reagent, material, or biological sample
+    (if different from the manufacturer)
+  rdfs:label: brand
+  rdfs:sameAs:
+    '@id': schema:brand
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+  - '@id': schema:Text
+  - '@id': outbreak:Organization
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The catalog number or identifier of the material or reagent
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:type
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The type of material. Reagent, PPE, biological samples, etc.
+  rdfs:label: type
+  rdfs:sameAs:
+    '@id': schema:addtionalType
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:Instrument
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Instrument schema used for outbreak.info.
+  rdfs:label: Instrument
+  rdfs:subClassOf:
+    '@id': schema:Product
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the instrument
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:manufacturer
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The name of the manufacturer of the instrument
+  rdfs:label: manufacturer
+  rdfs:sameAs:
+    '@id': schema:manufacturer
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+- '@id': outbreak:brand
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The brand of the instrument
+  rdfs:label: brand
+  rdfs:sameAs:
+    '@id': schema:brand
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes:
+  - '@id': schema:Text
+  - '@id': outbreak:Organization
+- '@id': outbreak:model
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The model number of the instrument
+  rdfs:label: model
+  rdfs:sameAs:
+    '@id': schema:model
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:Organization
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Organization schema used for
+    outbreak.info.
+  rdfs:label: Organization
+  rdfs:subClassOf:
+    '@id': schema:Organization
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the organization, team or group
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:alternateName
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Alternative names or commonly used abbreviations for the organization,
+    team or group
+  rdfs:label: alternateName
+  rdfs:sameAs:
+    '@id': schema:alternateName
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:affiliation
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: An overarching consortia, multi-institutional team or group in which
+    the organization/team/group is a member or affiliate
+  rdfs:label: affiliation
+  rdfs:sameAs:
+    '@id': schema:affiliation
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+- '@id': outbreak:affiliationStatus
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The status of the organization's membership or affiliation in the
+    overarching consortial, multi-institutional team or group (current, past)
+  rdfs:label: affiliationStatus
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:members
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Members of this organization, team, or group
+  rdfs:label: members
+  rdfs:sameAs:
+    '@id': schema:members
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+- '@id': outbreak:membershipStatus
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: Status of the members of this organization
+  rdfs:label: membershipStatus
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:relatedTo
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: A resource which a person played a role
+  rdfs:label: relatedTo
+  rdfs:sameAs:
+    '@id': schema:relatedTo
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+  - '@id': schema:CreativeWork
+  - '@id': schema:HowTo
+- '@id': outbreak:class
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: A classification of the organization by a resource. Eg- for ClinicalTrials
+    funders, it's ["U.S. National Institutes of Health", "Other U.S. Federal agencies",
+    "Industry", "All others"]
+  rdfs:label: class
+  rdfs:sameAs:
+    '@id': schema:addtionalType
+  schema:domainIncludes:
+  - '@id': schema:CreativeWork
+  - '@id': schema:HowTo
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:role
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: The role of an organization in its involvement with a resource
+  rdfs:label: role
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+  - '@id': schema:CreativeWork
+  - '@id': schema:HowTo
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:Person
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Person schema used for outbreak.info.
+  rdfs:label: Person
+  rdfs:subClassOf:
+    '@id': schema:Person
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the person
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:alternateName
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Alternative ways in which the person's name is included in a record
+  rdfs:label: alternateName
+  rdfs:sameAs:
+    '@id': schema:alternateName
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:givenName
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The given name of the person
+  rdfs:label: givenName
+  rdfs:sameAs:
+    '@id': schema:givenName
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:familyName
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The family name of the person
+  rdfs:label: familyName
+  rdfs:sameAs:
+    '@id': schema:familyName
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:affiliation
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The organization with which the person is affiliated or has membership
+    in
+  rdfs:label: affiliation
+  rdfs:sameAs:
+    '@id': schema:affiliation
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+- '@id': outbreak:affiliationStatus
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The status of the person's membership or affiliation in an organization,
+    team or group (current, past)
+  rdfs:label: affiliationStatus
+  rdfs:sameAs:
+    '@id': schema:addtionalType
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:orcid
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The ORCID ID of the person
+  rdfs:label: orcid
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:relatedTo
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: A resource which a person played a role
+  rdfs:label: relatedTo
+  rdfs:sameAs:
+    '@id': schema:relatedTo
+  schema:domainIncludes:
+    '@id': outbreak:Person
+  schema:rangeIncludes:
+  - '@id': schema:CreativeWork
+  - '@id': schema:HowTo
+- '@id': outbreak:role
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The role a person played in the creation of a resource
+  rdfs:label: role
+  rdfs:sameAs:
+    '@id': schema:addtionalType
+  schema:domainIncludes:
+  - '@id': schema:CreativeWork
+  - '@id': schema:HowTo
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:MonetaryGrant
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the MonetaryGrant schema used for
+    outbreak.info.
+  rdfs:label: MonetaryGrant
+  rdfs:subClassOf:
+    '@id': schema:MonetaryGrant
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The name of the monetary grant
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:MonetaryGrant
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The grant ID or an identifier associated with the grant
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:MonetaryGrant
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:url
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The url for the grant (if available)
+  rdfs:label: url
+  rdfs:sameAs:
+    '@id': schema:url
+  schema:domainIncludes:
+    '@id': outbreak:MonetaryGrant
+  schema:rangeIncludes:
+    '@id': schema:URL
+- '@id': outbreak:funder
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: The funding organization of the grant
+  rdfs:label: funder
+  rdfs:sameAs:
+    '@id': schema:funder
+  schema:domainIncludes:
+    '@id': outbreak:MonetaryGrant
+  schema:rangeIncludes:
+    '@id': outbreak:Organization
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the funding organization
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:recipient
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The person or organization to whom or to which the grant was awarded
+  rdfs:label: recipient
+  rdfs:sameAs:
+    '@id': schema:recipient
+  schema:domainIncludes:
+    '@id': outbreak:MonetaryGrant
+  schema:rangeIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The name of the recipient of the grant
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:affiliation
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The affiliation of the recipient of the grant
+  rdfs:label: affiliation
+  rdfs:sameAs:
+    '@id': schema:affiliation
+  schema:domainIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:Analysis
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Analysis schema used for outbreak.info.
+  rdfs:label: Analysis
+  rdfs:subClassOf:
+    '@id': schema:CreativeWork
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:Dataset
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Dataset schema used for outbreak.info.
+  rdfs:label: Dataset
+  rdfs:subClassOf:
+    '@id': schema:Dataset
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- $validation:
+    $schema: http://json-schema.org/draft-07/schema#
+    definitions:
+      citation:
+        '@type': CreativeWork
+        description: A citation object for a resource which is cited by the dataset
+          (ie- is a derivative of the dataset) , related to the dataset, or from which
+          the dataset was based on (ie- is derived from).
+        properties:
+          citeText:
+            description: The bibliographic citation for the referenced resource as
+              is provided
+            type: string
+          doi:
+            type: string
+          identifier:
+            type: string
+          name:
+            description: name of the referenced resource
+            type: string
+          pmid:
+            type: integer
+          type:
+            enum:
+            - ClinicalStudy
+            - Analysis
+            - Publication
+            - Dataset
+            - Protocol
+            - SoftwareApplication
+            - Other
+          url:
+            format: uri
+            type: string
+          versionDate:
+            description: Date of the version of the resource that is referenced
+            format: date
+            type: string
+        required:
+        - name
+        - type
+        type: object
+      controlledVocabulary:
+        '@type': CreativeWork
+        definition: collection of vocabulary terms defined in ontologies
+        strict: false
+        type: string
+        vocabulary:
+          children_of:
+          - https://www.ebi.ac.uk/efo/EFO_0002694
+          - https://www.ebi.ac.uk/ols/ontologies/eco/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FECO_0000000
+          ontology:
+          - efo_exp
+          - eco_evid
+      funding:
+        '@type': MonetaryGrant
+        description: Information about funding support
+        properties:
+          funder:
+            description: name of the funding organization
+            oneOf:
+            - $ref: organization
+            - items:
+                $ref: organization
+              type: array
+            type: array
+          identifier:
+            description: Unique identifier(s) for the grant(s) used to fund the Protocol
+            type: string
+          name:
+            description: The name of the monetary grant that funded/funds the Protocol
+            type: string
+          url:
+            description: award URL
+            type: string
+        required:
+        - name
+        - identifier
+        type: object
+      instrument:
+        '@type': Product
+        description: A laboratory equipment use by a person to follow one or more
+          steps described in this Protocol.
+        properties:
+          brand:
+            description: The brand of the instrument
+            type: string
+          manufacturer:
+            $ref: organization
+            description: The name of the manufacturer of the material, biosample,
+              or reagent
+          model:
+            description: The model number of the instrument
+            type: string
+          name:
+            description: The name of the instrument
+            type: string
+        required:
+        - name
+        type: object
+      organization:
+        '@type': Organization
+        description: Reusable organization definition
+        properties:
+          affiliation:
+            type: string
+          name:
+            type: string
+        required:
+        - name
+        type: object
+      person:
+        '@type': Person
+        description: Reusable person definition
+        properties:
+          affiliation:
+            oneOf:
+            - $ref: organization
+            - items:
+                $ref: organization
+              type: array
+            type: array
+          familyName:
+            type: string
+          givenName:
+            type: string
+          name:
+            type: string
+          orcid:
+            type: string
+        required:
+        - name
+        type: object
+      product:
+        '@type': Product
+        description: the reagent, biological sample, or material such as PPE source
+          materials) used or tested in this protocol
+        properties:
+          brand:
+            description: The name of the brand of the reagent, material, or biological
+              sample (if different from the manufacturer)
+            type: string
+          identifier:
+            description: The catalog number or identifier of the material or reagent
+            oneOf:
+            - type: string
+            - items:
+                type: string
+              type: array
+          manufacturer:
+            $ref: organization
+            description: The name of the manufacturer of the material, biosample,
+              or reagent
+          name:
+            description: The name of the material or reagent
+            type: string
+          type:
+            description: The type of material. Reagent, PPE, biological samples, etc.
+            enum:
+            - chemical or reagent
+            - ' biological sample'
+            - ' PPE'
+            - ' other'
+        required:
+        - name
+        type: object
+    properties:
+      author:
+        description: person, people, or organization that created the protocol
+        oneOf:
+        - $ref: '#/definitions/person'
+        - items:
+            $ref: '#/definitions/person'
+          type: array
+        - $ref: '#/definitions/organization'
+        - items:
+            $ref: '#/definitions/organization'
+          type: array
+      citedBy:
+        description: Associated guidelines, protocols, publications, etc. that include,
+          adapt, modify, expand, etc. this protocol.
+        oneOf:
+        - $ref: '#/definitions/citation'
+        - items:
+            $ref: '#/definitions/citation'
+          type: array
+      correction:
+        description: statement of what was updated/changed since prior version
+        oneOf:
+        - type: string
+        - items:
+            type: string
+          type: array
+      curatedBy:
+        description: The source from which this Analysis was identified for inclusion
+          into Outbreak.info. Provides provenance for a resource which was curated
+          by another
+        oneOf:
+        - $ref: '#/definitions/citation'
+        - items:
+            $ref: '#/definitions/citation'
+          type: array
+      dateModified:
+        description: Date of protocol update
+        oneOf:
+        - format: date
+          type: string
+        - items:
+            format: date
+            type: string
+          type: array
+      datePublished:
+        description: PublicationDate of the protocol online if available
+        format: date
+        type: string
+      description:
+        description: description of the protocol
+        type: string
+      doi:
+        description: A DOI associated with the protocol if available
+        type: string
+      funding:
+        description: The funder of the Protocol
+        oneOf:
+        - $ref: '#/definitions/funding'
+        - items:
+            $ref: '#/definitions/funding'
+          type: array
+      identifier:
+        description: An identifier associated with the protocol (if available)
+        type: string
+      inComplianceWith:
+        description: Guidelines or Standards to which these protocols adhere. ie-
+          GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where
+          certain standards/guidelines must be met
+        oneOf:
+        - type: string
+        - items:
+            type: string
+          type: array
+      instrument:
+        description: For LabProtocols it would be a laboratory equipment use by a
+          person to follow one or more steps described in this LabProtocol.
+        oneOf:
+        - $ref: '#/definitions/instrument'
+        - items:
+            $ref: '#/definitions/instrument'
+          type: array
+      isBasedOn:
+        description: Associated resource (guidelines, protocols, publications, etc.)
+          from which this protocol was derived
+        oneOf:
+        - $ref: '#/definitions/citation'
+        - items:
+            $ref: '#/definitions/citation'
+          type: array
+      keywords:
+        description: keywords
+        oneOf:
+        - type: string
+        - items:
+            type: string
+          type: array
+      license:
+        description: License
+        type: string
+      material:
+        description: the reagent, biological sample, or material such as PPE source
+          materials) used or tested in this protocol
+        oneOf:
+        - $ref: '#/definitions/product'
+        - items:
+            $ref: '#/definitions/product'
+          type: array
+      measurementTechnique:
+        description: A technique or technology used in a Dataset, corresponding to
+          the method used for measuring the corresponding variable(s).
+        oneOf:
+        - $ref: '#/definitions/controlledVocabulary'
+        - items:
+            $ref: '#/definitions/controlledVocabulary'
+          type: array
+      name:
+        description: name of the protocol
+        type: string
+      relatedTo:
+        description: Other resources related to, but not a derivative of nor derived
+          from this protocol
+        oneOf:
+        - $ref: '#/definitions/citation'
+        - items:
+            $ref: '#/definitions/citation'
+          type: array
+      status:
+        description: The status of the protocol
+        enum:
+        - Working--In use by author
+        - Working--not in use by author
+        - Working--in use by others
+        - Not working
+        - In Development
+        - Deprecated
+      topicCategory:
+        description: Applicable outbreak.info category
+        oneOf:
+        - enum:
+          - Clinical
+          - Diagnosis
+          - Forecasting
+          - Mechanism
+          - Prevention
+          - Transmission
+          - Treatment
+          - Epidemiology
+        - items:
+            enum:
+            - Clinical
+            - Diagnosis
+            - Forecasting
+            - Mechanism
+            - Prevention
+            - Transmission
+            - Treatment
+            - Epidemiology
+          type: array
+      url:
+        description: url where the protocol can be found
+        oneOf:
+        - format: uri
+          type: string
+        - items:
+            format: uri
+            type: string
+          type: array
+      usedToGenerate:
+        description: Type of evidence/data generated by the protocol
+        oneOf:
+        - $ref: '#/definitions/controlledVocabulary'
+        - items:
+            $ref: '#/definitions/controlledVocabulary'
+          type: array
+      warning:
+        description: Precautions, warnings, and/or safety warnings associated with
+          the protocol
+        oneOf:
+        - type: string
+        - items:
+            type: string
+          type: array
+    required:
+    - name
+    - description
+    - datePublished
+    - url
+    - author
+    type: object
+  '@id': outbreak:Protocol
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Protocol schema used for outbreak.info.
+  rdfs:label: Protocol
+  rdfs:subClassOf:
+    '@id': schema:HowTo
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:url
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: url where the protocol can be found
+  rdfs:label: url
+  rdfs:sameAs:
+    '@id': schema:url
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:URL
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: An identifier associated with the protocol (if available)
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:doi
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: A DOI associated with the protocol if available
+  rdfs:label: doi
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: name of the protocol
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:description
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: description of the protocol
+  rdfs:label: description
+  rdfs:sameAs:
+    '@id': schema:description
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:status
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The status of the protocol
+  rdfs:label: status
+  rdfs:sameAs:
+    '@id': schema:creativeWorkStatus
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:measurementTechnique
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: This is the measurement technique or assay type covered described
+    by the protocol
+  rdfs:label: measurementTechnique
+  rdfs:sameAs:
+    '@id': outbreak:measurementTechnique
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:author
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: person, people, or organization that created the protocol
+  rdfs:label: author
+  rdfs:sameAs:
+    '@id': schema:author
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: The name of the author as provided by the resource
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:affiliation
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The author's affiliation(s)
+  rdfs:label: affiliation
+  rdfs:sameAs:
+    '@id': schema:affiliation
+  schema:domainIncludes:
+  - '@id': outbreak:Person
+  - '@id': outbreak:Organization
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:material
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: the reagent, biological sample, or material such as PPE source materials)
+    used or tested in this protocol
+  rdfs:label: material
+  rdfs:sameAs:
+    '@id': schema:Product
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': outbreak:Product
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The name of the material or reagent
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:manufacturer
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The manufacturer, brand, or vendor of the material or reagent
+  rdfs:label: manufacturer
+  rdfs:sameAs:
+    '@id': schema:manufacturer
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The catalog number or identifier of the material or reagent
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:type
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: Type of material
+  rdfs:label: type
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Product
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:instrument
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: For LabProtocols it would be a laboratory equipment use by a person
+    to follow one or more steps described in this LabProtocol.
+  rdfs:label: instrument
+  rdfs:sameAs:
+    '@id': schema:Product
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': outbreak:Instrument
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The name/model number of the instrument
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:manufacturer
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The manufacturer, brand, or vendor of the instrument
+  rdfs:label: manufacturer
+  rdfs:sameAs:
+    '@id': schema:manufacturer
+  schema:domainIncludes:
+    '@id': outbreak:Instrument
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:warning
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Precautions, warnings, and/or safety warnings associated with the
+    protocol
+  rdfs:label: warning
+  rdfs:sameAs:
+    '@id': schema:warning
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:license
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: License
+  rdfs:label: license
+  rdfs:sameAs:
+    '@id': schema:license
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:funding
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Funding for the generation of the protocol
+  rdfs:label: funding
+  rdfs:sameAs:
+    '@id': outbreak:MonetaryGrant
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': outbreak:MonetaryGrant
+- '@id': outbreak:funder
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The funder of the study
+  rdfs:label: funder
+  rdfs:sameAs:
+    '@id': schema:funder
+  schema:domainIncludes:
+    '@id': outbreak:MonetaryGrant
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: The identifier of the grant (if available)
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+    '@id': outbreak:MonetaryGrant
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:datePublished
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: one
+  rdfs:comment: PublicationDate of the protocol online if available
+  rdfs:label: datePublished
+  rdfs:sameAs:
+    '@id': schema:datePublished
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Date
+- '@id': outbreak:dateModified
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Date of protocol update
+  rdfs:label: dateModified
+  rdfs:sameAs:
+    '@id': schema:dateModified
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Date
+- '@id': outbreak:correction
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: statement of what was updated/changed since prior version
+  rdfs:label: correction
+  rdfs:sameAs:
+    '@id': schema:correction
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:citedBy
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  owl:inverseOf:
+    '@id': schema:isBasedOn
+  rdfs:comment: Associated guidelines, protocols, publications, etc. that include,
+    adapt, modify, expand, etc. this protocol.
+  rdfs:label: citedBy
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: name of the resource (publication, protocol, etc.) which was derived
+    from this protocol
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:type
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: type of resource which was derived from this protocol
+  rdfs:label: type
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: identifier for this resource which was derived from this protocol
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:isBasedOn
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Associated resource (guidelines, protocols, publications, etc.) from
+    which this protocol was derived
+  rdfs:label: isBasedOn
+  rdfs:sameAs:
+    '@id': schema:isBasedOn
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: name of the associated resource from which this protocol was derived
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:type
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: Type of resource (publication, analysis, ClinicalTrial, dataset, etc.)
+    from which this protocol was derived
+  rdfs:label: type
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: Identifier for the resource
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:versionDate
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: date of the version of the resource from which this protocol was derived.
+    Note this is NOT the same as dateModified, as the protocol may be based on an
+    earlier 'dateModified' than is what is available from the resource
+  rdfs:label: versionDate
+  rdfs:sameAs:
+    '@id': schema:releaseDate
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Date
+- '@id': outbreak:relatedTo
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Other resources related to, but not a derivative of nor derived from
+    this protocol
+  rdfs:label: relatedTo
+  rdfs:sameAs:
+    '@id': schema:relatedTo
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: name of related resource
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:type
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: type of related resource
+  rdfs:label: type
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:identifier
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: identifier (if available_ of related resource
+  rdfs:label: identifier
+  rdfs:sameAs:
+    '@id': schema:identifier
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:topicCategory
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: Applicable outbreak.info category
+  rdfs:label: topicCategory
+  rdfs:sameAs:
+    '@id': schema:about
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:keywords
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: many
+  rdfs:comment: keywords
+  rdfs:label: keywords
+  rdfs:sameAs:
+    '@id': schema:keywords
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:usedToGenerate
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Type of evidence/data generated by the protocol
+  rdfs:label: usedToGenerate
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:inComplianceWith
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: many
+  rdfs:comment: Guidelines or Standards to which these protocols adhere. ie- GMP,
+    GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines
+    must be met
+  rdfs:label: inComplianceWith
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:duration
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The time it takes to actually carry out the protocol, in ISO 8601
+    date format.
+  rdfs:label: duration
+  rdfs:sameAs:
+    '@id': schema:performTime
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+  - '@id': schema:Duration
+  - '@id': schema:Text
+- '@id': outbreak:curatedBy
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  owl:inverseOf:
+    '@id': schema:isBasedOn
+  rdfs:comment: The source from which this Analysis was identified for inclusion into
+    Outbreak.info. Provides provenance for a resource which was curated by another
+  rdfs:label: curatedBy
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+- '@id': outbreak:name
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: name of the source from which this Analysis was identified for inclusion
+  rdfs:label: name
+  rdfs:sameAs:
+    '@id': schema:name
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:url
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The corresponding url for the item in the source from which this Analysis
+    was identified (if available)
+  rdfs:label: url
+  rdfs:sameAs:
+    '@id': schema:url
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Text
+- '@id': outbreak:versionDate
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The last date when items were pulled from the source
+  rdfs:label: versionDate
+  rdfs:sameAs:
+    '@id': schema:releaseDate
+  schema:domainIncludes:
+  - '@id': outbreak:ClinicalTrial
+  - '@id': outbreak:Analysis
+  - '@id': outbreak:Publication
+  - '@id': outbreak:Dataset
+  - '@id': outbreak:Protocol
+  - '@id': schema:SoftwareApplication
+  - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Date
+- '@id': outbreak:Publication
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the Publication schema used for
+    outbreak.info.
+  rdfs:label: Publication
+  rdfs:subClassOf:
+    '@id': schema:ScholarlyArticle
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+- '@id': outbreak:ClinicalTrial
+  '@type': rdfs:Class
+  rdfs:comment: This is the schema for describing the ClinicalTrial schema used for
+    outbreak.info.
+  rdfs:label: ClinicalTrial
+  rdfs:subClassOf:
+    '@id': schema:MedicalStudy
+  schema:isPartOf:
+    '@id': https://discovery.biothings.io/view/outbreak/
+'@id': https://discovery.biothings.io/view/outbreak/
