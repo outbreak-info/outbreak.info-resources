@@ -423,20 +423,6 @@
                   }
                 }
               ]
-            },
-            "intervention": {
-              "description": "The interventions (if any) in this ArmGroup",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/intervention"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/intervention"
-                  }
-                }
-              ]
             }
           },
           "required": [
