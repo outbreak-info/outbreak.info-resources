@@ -1,6 +1,5 @@
-/* common mapping file for outbreak.info/resources
-combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical Trials, and PDB
- */
+# common mapping file for outbreak.info/resources
+# combines mapping for Litcovid, BioRxiv/MedRxiv, ClinicalTrials.gov, WHO Clinical Trials, and PDB
 {
   "@type": {
     "normalizer": "keyword_lowercase_normalizer",
