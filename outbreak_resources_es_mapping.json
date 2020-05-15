@@ -139,7 +139,7 @@
       "versionDate": {
         "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
-      },
+      }
     }
   },
   "dateCreated": {
