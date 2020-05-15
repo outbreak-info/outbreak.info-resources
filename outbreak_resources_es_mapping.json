@@ -124,6 +124,41 @@
       }
     }
   },
+  "creator": {
+    "properties": {
+      "@type": {
+        "type": "text"
+      },
+      "affiliation": {
+        "properties": {
+          "name": {
+            "normalizer": "keyword_lowercase_normalizer",
+            "type": "keyword",
+            "copy_to": ["all"]
+          }
+        }
+      },
+      "familyName": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "givenName": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "name": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
+      "role": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text"
+      }
+    }
+  },
   "curatedBy": {
     "properties": {
       "@type": {
