@@ -360,7 +360,7 @@
     "copy_to": ["all"]
   },
   "name": {
-    "type": "text",
+    "type": "keyword",
     "copy_to": ["all"]
   },
   "outcome": {
