@@ -19,7 +19,7 @@
         "type": "keyword"
       },
       "name": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "description": {
@@ -38,7 +38,7 @@
             "type": "keyword"
           },
           "name": {
-            "type": "text",
+            "type": "keyword",
             "copy_to": ["all"]
           },
           "category": {
