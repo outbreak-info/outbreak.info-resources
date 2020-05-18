@@ -165,7 +165,7 @@
         "type": "text"
       },
       "name": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "url": {
@@ -231,7 +231,7 @@
       "funder": {
         "properties": {
           "name": {
-            "type": "text",
+            "type": "keyword",
             "copy_to": ["all"]
           },
           "url": {
@@ -350,7 +350,7 @@
   "measurementParameter": {
     "properties": {
       "resolution": {
-        "type": "text"
+        "type": "keyword"
       }
     }
   },
@@ -567,8 +567,18 @@
       }
     }
   },
+  "topicCategory": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
   "url": {
     "type": "text",
+    "copy_to": ["all"]
+  },
+  "variableMeasured": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
     "copy_to": ["all"]
   },
   "volumeNumber": {
