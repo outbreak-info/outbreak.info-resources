@@ -462,7 +462,7 @@
         "copy_to": ["all"]
       },
       "designAllocation": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "studyDesignText": {
@@ -470,11 +470,11 @@
         "copy_to": ["all"]
       },
       "designModel": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "designPrimaryPurpose": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "designWhoMasked": {
@@ -515,15 +515,15 @@
         "type": "keyword"
       },
       "name": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "studyLocationCity": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "studyLocationState": {
-        "type": "text",
+        "type": "keyword",
         "copy_to": ["all"]
       },
       "studyLocationCountry": {
