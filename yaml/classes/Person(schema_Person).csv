@@ -4,5 +4,7 @@ alternateName,schema:alternateName,Alternative ways in which the person's name i
 givenName,schema:givenName,The given name of the person,one,recommended,outbreak:Person,schema:Text,
 familyName,schema:familyName,The family name of the person,one,recommended,outbreak:Person,schema:Text,
 affiliation,schema:affiliation,The organization with which the person is affiliated or has membership in,many,recommended,outbreak:Person,outbreak:Organization,
-affiliation.status,schema:status,"The status of the person's membership or affiliation in an organization, team or group (current, past)",one,recommended,outbreak:Person,schema:Text,"[""current"",""past""]"
+affiliationStatus,schema:addtionalType,"The status of the person's membership or affiliation in an organization, team or group (current, past)",one,recommended,outbreak:Person,schema:Text,"[""current"",""past""]"
 orcid,schema:identifier,The ORCID ID of the person,one,recommended,outbreak:Person,schema:Text,
+relatedTo,schema:relatedTo,A resource which a person played a role,many,optional,outbreak:Person,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",
+role,schema:addtionalType,The role a person played in the creation of a resource,one,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,

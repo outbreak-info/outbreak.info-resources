@@ -1,5 +1,5 @@
 Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
 name,schema:name,The name of the instrument,one,required,outbreak:Instrument,schema:Text,
 manufacturer,schema:manufacturer,The name of the manufacturer of the instrument,one,recommended,outbreak:Instrument,outbreak:Organization,
-brand,schema:brand,The brand of the instrument,one,optional,outbreak:Instrument,"[schema:Text, outbreak:Organization]",
+brand,schema:brand,The brand of the instrument,one,optional,outbreak:Instrument,schema:Text,
 model,schema:model,The model number of the instrument,one,recommended,outbreak:Instrument,schema:Text,

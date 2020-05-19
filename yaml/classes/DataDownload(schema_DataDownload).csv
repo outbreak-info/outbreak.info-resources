@@ -1,0 +1,3 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+contentUrl,schema:distribution,"Link to the location where the dataset can be found, ideally a permanent URL",one,required,outbreak:DataDownload,schema:URL,
+dateModified,schema:dateModified,Date which the particular DataDownload (file) has been changed,one,required,outbreak:DataDownload,schema:Date,

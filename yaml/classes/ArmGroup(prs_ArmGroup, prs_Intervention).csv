@@ -1,5 +1,0 @@
-Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
-armGroup.Name,"prs:ArmGroupLabel, InterventionName, InterventionArmGroupLabel, InterventionOtherName","The name of the arm or factor (can include a specific intervention, a placebo or even a lack of intervention, ie- 'no intervention' group)",one,optional,outbreak:ArmGroup,schema:Text,
-armGroup.Role,prs:ArmGroupType,The role of the arm or factor in the study this is equivalent to the ArmType in ClinicalTrials.gov,one,optional,outbreak:ArmGroup,schema:Text,"""experimental arm"", ""active comparator arm"", ""placebo comparator arm"", ""sham comparator arm"", and ""no intervention arm"""
-armGroup.Category,prs:InterventionType,The category of the arm or factor in the study,one,optional,outbreak:ArmGroup,schema:Text,"""drugs"", ""medical devices"", ""procedures"", ""vaccines"", ""education"", ""behavioral modification"", ""diet"", ""exercise"", ""counseling"", ""placebo"", ""other"""
-armGroup.Description,prs:ArmGroupDescription or InterventionDescription,A description of the arm or factor,one,optional,outbreak:ArmGroup,schema:Text,
