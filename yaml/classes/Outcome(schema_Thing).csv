@@ -1,0 +1,4 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+outcomeMeasure,schema:description,The outcome measure for the study,many,recommended,outbreak:Outcome,schema:Text,
+outcomeTimeFrame,schema:duration,The specific time point(s) and overall duration of evaluation must be specified in this section. ,one per outcome,recommended,outbreak:Outcome,schema:Text,
+outcomeType,schema:additionalType,"The classification of the outcome measure as either primary, secondary, or exploratory",one per outcome,recommended,outbreak:Outcome,schema:Text,"[primary,secondary,other]"

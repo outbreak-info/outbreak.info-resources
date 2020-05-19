@@ -1,0 +1,9 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+name,schema:name,The name of the monetary grant,one,recommended,outbreak:MonetaryGrant,schema:Text,
+identifier,schema:identifier,The grant ID or an identifier associated with the grant,one,required,outbreak:MonetaryGrant,schema:Text,
+url,schema:url,The url for the grant (if available),one,recommended,outbreak:MonetaryGrant,schema:URL,
+funder,schema:funder,The funding organization of the grant,many,required,outbreak:MonetaryGrant,outbreak:Organization,
+name,schema:name,The name of the funding organization,one,required,outbreak:Organization,schema:Text,
+recipient,schema:recipient,The person or organization to whom or to which the grant was awarded,many,recommended,outbreak:MonetaryGrant,"[outbreak:Person, outbreak:Organization]",
+name,schema:name,The name of the recipient of the grant,one,recommended,"[outbreak:Person, outbreak:Organization]",schema:Text,
+affiliation,schema:affiliation,The affiliation of the recipient of the grant,many,recommended,"[outbreak:Person, outbreak:Organization]",schema:Text,
