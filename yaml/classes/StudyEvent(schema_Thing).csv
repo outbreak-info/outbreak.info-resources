@@ -1,0 +1,5 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+studyEvent,schema:status,"an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",many,recommended,outbreak:StudyEvent,schema:Text,
+studyEventType,schema:additionalType,"Type of the event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",one per studyEvent,recommended,outbreak:StudyEvent,schema:Text,"[study start date,primary completion date,study completion date,study first submit date,study first submit QC date,last update Submit Date]"
+studyEventDate,schema:temporal,"StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate",one per studyEvent,recommended,outbreak:StudyEvent,schema:Date,
+studyEventDateType,schema:addtionalType,"the type of date provided (actual, anticipated, or estimated)",one per studyEvent,recommended,outbreak:StudyEvent,schema:Text,"[actual,anticipated,estimated]"

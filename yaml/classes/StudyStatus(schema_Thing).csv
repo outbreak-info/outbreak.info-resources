@@ -1,0 +1,7 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+status,schema:status,The recruitment status of the study,one,required,outbreak:StudyStatus,schema:Text,"[not yet recruiting,recruiting,enrolling by invitation,active, not recruiting,suspended,terminated,completed,withdrawn,unknown status]"
+statusExpandedAccess,schema:additionalType,Flag for whether or not the study has expanded Access status,one,recommended,outbreak:StudyStatus,schema:Text,"[yes,no,unknown"
+statusDate,schema:temporal,The date that the status was verified. Equivalent to NCT's StatusVerifiedDate,one,recommended,outbreak:StudyStatus,schema:Date,
+enrollmentCount,DELETE THIS,The number of participants enrolled in the study,one,recommended,outbreak:StudyStatus,schema:Number,
+enrollmentType,schema:additionalType,"The type of estimation used to determine the enrollmentCount (actual counts, target size, etc.)",one,recommended,outbreak:StudyStatus,schema:Text,"[actual,estimated]"
+whyStopped,schema:description,"A brief explanation of the reason(s) why such clinical study was stopped (for a clinical study that is ""Suspended,"" ""Terminated,"" or ""Withdrawn"" prior to its planned completion as anticipated by the protocol)",one,recommended,outbreak:StudyStatus,schema:Text,

@@ -1,0 +1,6 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+studyLocation,schema:studyLocation,The location of the study,many,recommended,outbreak:ClinicalTrial,schema:Place,
+studyLocationCity,schema:studyLocation,The city in which the facility used for the study is located,one per location,recommended,outbreak:ClinicalTrial,schema:City,
+studyLocationState,schema:studyLocation,The state or province in which the facility used for the study is located,one per location,recommended,outbreak:ClinicalTrial,schema:State,
+studyLocationCountry,schema:studyLocation,The country in which the facility used for the study is located,one per location,recommended,outbreak:ClinicalTrial,schema:Country,
+studyLocationStatus,schema:additionalType,The recruitment status of the study at the specific study site,one per location,recommended,outbreak:ClinicalTrial,schema:Text,

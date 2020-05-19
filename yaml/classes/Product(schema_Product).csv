@@ -1,0 +1,6 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+name,schema:name,The name of the material or reagent,one,required,outbreak:Product,schema:Text,
+manufacturer,schema:manufacturer,"The name of the manufacturer of the material, biosample, or reagent",one,recommended,outbreak:Product,outbreak:Organization,
+brand,schema:brand,"The name of the brand of the reagent, material, or biological sample (if different from the manufacturer)",one,optional,outbreak:Product,schema:Text,
+identifier,schema:identifier,The catalog number or identifier of the material or reagent,many,recommended,outbreak:Product,schema:Text,
+type,schema:addtionalType,"The type of material. Reagent, PPE, biological samples, etc.",one,recommended,outbreak:Product,schema:Text,"[chemical or reagent, biological sample, PPE, other]"

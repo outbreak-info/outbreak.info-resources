@@ -1,0 +1,10 @@
+Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
+inclusionCriteria,schema:qualifications,criteria for inclusion in the study,many,recommended,outbreak:Eligibility,schema:Text,
+minimumAge,schema:requiredMinAge,the minimum age for a participant to be included in the study,one,recommended,outbreak:Eligibility,schema:Text,
+maximumAge,schema:requiredMaxAge,the maximum age for a participant to be included in the study,one,recommended,outbreak:Eligibility,schema:Text,
+gender,schema:requiredGender,the sex requirement to be included in the study,one,recommended,outbreak:Eligibility,schema:Text,"[male,female,all]"
+genderBased,DELETE THIS,Boolean for whether or not participation is based on gender,one,recommended,outbreak:Eligibility,schema:Boolean,"[Yes,No]"
+healthyVolunteers,schema:additionalType,Boolean to indicate whether or not healthy volunteers may be included in the study,one,recommended,outbreak:Eligibility,schema:Boolean,"[Yes,No]"
+stdAge,schema:additionalType,the age category of a participant to be included in the study if a minimum and maximum age is not specified,many,recommended,outbreak:Eligibility,schema:Text,"[Child (birth-17), Adult (18-64),Older Adult (65+)]"
+exclusionCriteria,schema:qualifications,criteria for exclusion from the study,many,recommended,outbreak:Eligibility,schema:Text,
+criteriaText,schema:description,The descriptive criteria as published for the Clinical Trial,one,recommended,outbreak:Eligibility,schema:Text,
