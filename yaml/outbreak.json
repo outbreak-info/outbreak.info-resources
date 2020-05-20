@@ -1023,15 +1023,15 @@
               "vocabulary": {
                 "ontology": [
                   "efo",
-                  "covid19",
                   "cido",
-                  "epo"
+                  "epo",
+                  "covid19"
                 ],
                 "children_of": [
                   "https://www.ebi.ac.uk/efo/EFO_0001444",
-                  "https://bioportal.bioontology.org/ontologies/COVID19",
-                  "http://bioportal.bioontology.org/ontologies/CIDO",
-                  "https://www.ebi.ac.uk/ols/ontologies/epo"
+                  "http://purl.obolibrary.org/obo/cido.owl",
+                  "http://purl.obolibrary.org/obo/epo",
+                  "https://bioportal.bioontology.org/ontologies/COVID19"
                 ]
               }
             },
