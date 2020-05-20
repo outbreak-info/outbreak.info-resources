@@ -122,7 +122,7 @@
             ]
           },
           "identifier": {
-            "description": "Longer description of what is contained in the dataset",
+            "description": "identifier for the dataset",
             "type": "string"
           },
           "doi": {
