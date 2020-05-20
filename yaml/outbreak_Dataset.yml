@@ -435,9 +435,11 @@
           children_of:
           - https://www.ebi.ac.uk/efo/EFO_0002694
           - http://purl.obolibrary.org/obo/NCIT_C20368
+          - http://purl.obolibrary.org/obo/OBI_0000011
           ontology:
           - efo_exp
           - ncit_group
+          - obi
       dataDownload:
         '@type': DataDownload
         description: A dataset in downloadable form.
@@ -474,7 +476,7 @@
             description: award URL
             type: string
         required:
-        - name
+        - funder
         - identifier
         type: object
       miscControlledVocabulary:
@@ -488,6 +490,22 @@
           - http://purl.obolibrary.org/obo/NCBITaxon_131567l
           ontology:
           - ncbi_taxon
+      moreControlledVocabulary:
+        '@type': CreativeWork
+        definition: collection of vocabulary terms defined in ontologies
+        strict: false
+        type: string
+        vocabulary:
+          children_of:
+          - https://www.ebi.ac.uk/efo/EFO_0001444
+          - https://bioportal.bioontology.org/ontologies/COVID19
+          - http://bioportal.bioontology.org/ontologies/CIDO
+          - https://www.ebi.ac.uk/ols/ontologies/epo
+          ontology:
+          - efo_meas
+          - covid19
+          - cido
+          - epo
       organization:
         '@type': Organization
         description: Reusable organization definition
@@ -573,7 +591,7 @@
             $ref: '#/definitions/funding'
           type: array
       identifier:
-        description: Longer description of what is contained in the dataset
+        description: identifier for the dataset
         type: string
       infectiousAgent:
         description: infectious agents(s) which are the focus of the dataset
@@ -592,7 +610,11 @@
           type: array
       keywords:
         description: A list of keywords associated with this dataset
-        type: string
+        oneOf:
+        - type: string
+        - items:
+            type: string
+          type: array
       license:
         description: A license document that applies to this content, typically indicated
           by URL.
@@ -648,14 +670,20 @@
             - Treatment
             - Epidemiology
           type: array
+      variableMeasured:
+        description: A technique or technology used in a Dataset, corresponding to
+          the method used for measuring the corresponding variable(s).
+        oneOf:
+        - $ref: '#/definitions/moreControlledVocabulary'
+        - items:
+            $ref: '#/definitions/moreControlledVocabulary'
+          type: array
     required:
     - name
-    - description
     - measurementTechnique
+    - variableMeasured
+    - description
     - author
-    - dataDownload
-    - dateModified
-    - funding
     type: object
   '@id': outbreak:Dataset
   '@type': rdfs:Class
@@ -703,6 +731,18 @@
     '@id': outbreak:Dataset
   schema:rangeIncludes:
     '@id': schema:Text
+- '@id': outbreak:variableMeasured
+  '@type': rdf:Property
+  marginality: required
+  owl:cardinality: many
+  rdfs:comment: The factors or variables measured in the dataset
+  rdfs:label: variableMeasured
+  rdfs:sameAs:
+    '@id': schema:variableMeasured
+  schema:domainIncludes:
+    '@id': outbreak:Dataset
+  schema:rangeIncludes:
+    '@id': schema:Text
 - '@id': outbreak:author
   '@type': rdf:Property
   marginality: required
@@ -744,7 +784,7 @@
     '@id': schema:Text
 - '@id': outbreak:dataDownload
   '@type': rdf:Property
-  marginality: required
+  marginality: recommended
   owl:cardinality: many
   rdfs:comment: Available downloads of the dataset
   rdfs:label: dataDownload
@@ -781,7 +821,7 @@
     '@id': schema:Date
 - '@id': outbreak:funding
   '@type': rdf:Property
-  marginality: required
+  marginality: recommended
   owl:cardinality: many
   rdfs:comment: Funding for the generation of the dataset
   rdfs:label: funding
