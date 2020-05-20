@@ -394,13 +394,13 @@
               "strict": false,
               "vocabulary": {
                 "ontology": [
-                  "efo_meas"
+                  "efo_meas",
                   "covid19",
                   "cido",
                   "epo"
                 ],
                 "children_of": [
-                  "https://www.ebi.ac.uk/efo/EFO_0001444,
+                  "https://www.ebi.ac.uk/efo/EFO_0001444",
                   "https://bioportal.bioontology.org/ontologies/COVID19",
                   "http://bioportal.bioontology.org/ontologies/CIDO",
                   "https://www.ebi.ac.uk/ols/ontologies/epo"
