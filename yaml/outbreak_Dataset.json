@@ -371,7 +371,7 @@
             "@type": "CreativeWork",
             "type": "string",
             "vocabulary": {
-              "ontology": ["efo_exp", "ncit_group","obi"],
+              "ontology": ["efo", "ncit","obi"],
               "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
                              "http://purl.obolibrary.org/obo/OBI_0000011"]
             },
@@ -382,7 +382,7 @@
             "@type": "CreativeWork",
             "type": "string",
             "vocabulary": {
-              "ontology": ["ncbi_taxon"],
+              "ontology": ["ncbitaxon"],
               "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
             },
             "strict": false
@@ -394,7 +394,7 @@
               "strict": false,
               "vocabulary": {
                 "ontology": [
-                  "efo_meas",
+                  "efo",
                   "covid19",
                   "cido",
                   "epo"
