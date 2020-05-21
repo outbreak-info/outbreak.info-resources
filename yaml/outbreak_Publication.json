@@ -227,13 +227,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -241,13 +264,36 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
@@ -333,20 +379,37 @@
                 }
               ]
             },
-            "curatedBy": {
-              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/citation"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/citation"
-                  }
+          "curatedBy": {
+            "description": "The source from which this Publication was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
+            "oneOf": [{
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
                 }
-              ]
-            }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          }
           },
           "required": [
             "name",
@@ -491,7 +554,7 @@
                 }
               },
               "required": [
-                "name",
+                "funder",
                 "identifier"
               ]
             }

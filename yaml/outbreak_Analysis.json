@@ -1,4 +1,5 @@
 {
+{
   "@context": {
     "outbreak": "https://discovery.biothings.io/view/outbreak/",
     "owl": "http://www.w3.org/2002/07/owl/",
@@ -140,13 +141,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -154,24 +178,46 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
               ]
-
             },
             "analysisTechnique": {
                 "description": "A technique or technology used in a analysis.",
                 "oneOf": [
                   {
-                    "$ref": "#/definitions/controlledVocabulary"
+                    "$ref": "#/definitions/moreControlledVocabulary"
                   },
                   {
                     "enum": [
@@ -182,7 +228,7 @@
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/definitions/controlledVocabulary"
+                      "$ref": "#/definitions/moreControlledVocabulary"
                     }
                   },  
                   {
@@ -361,18 +407,36 @@
               ]
             },
             "curatedBy": {
-              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
+              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
               "oneOf": [
-                {
-                  "$ref": "#/definitions/citation"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/citation"
-                  }
+              {
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
                 }
-              ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
             }
           },
           "required": [
@@ -389,16 +453,14 @@
               "strict": false,
               "vocabulary": {
                 "ontology": [
-                  "mamo",
                   "covid19",
                   "cido",
                   "epo"
                 ],
                 "children_of": [
-                  "https://www.ebi.ac.uk/ols/ontologies/mamo",
                   "https://bioportal.bioontology.org/ontologies/COVID19",
-                  "http://bioportal.bioontology.org/ontologies/CIDO",
-                  "https://www.ebi.ac.uk/ols/ontologies/epo"
+                  "http://purl.obolibrary.org/obo/cido.owl",
+                  "http://purl.obolibrary.org/obo/epo"
                 ]
               }
             },
@@ -407,10 +469,24 @@
               "@type": "CreativeWork",
               "type": "string",
               "vocabulary": {
-                "ontology": ["ncbi_taxon"],
+                "ontology": ["ncbitaxon"],
                 "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
               },
               "strict": false
+            },
+            "moreControlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": [
+                  "mamo"
+                ],
+                "children_of": [
+                  "http://identifiers.org/mamo/MAMO_0000037"
+                ]
+              }
             },
             "person": {
               "description": "Reusable person definition",
@@ -546,7 +622,7 @@
                 }
               },
               "required": [
-                "name",
+                "funder",
                 "identifier"
               ]
             }

@@ -215,13 +215,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -229,13 +252,36 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
@@ -296,6 +342,24 @@
             "description": "A citation to a resource which curated this dataset enabling its review for appropriateness and/or integration into the site.",
             "oneOf": [{
                 "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
               },
               {
                 "type": "array",
