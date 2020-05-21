@@ -408,12 +408,10 @@
         type: string
         vocabulary:
           children_of:
-          - https://www.ebi.ac.uk/ols/ontologies/mamo
           - https://bioportal.bioontology.org/ontologies/COVID19
-          - http://bioportal.bioontology.org/ontologies/CIDO
-          - https://www.ebi.ac.uk/ols/ontologies/epo
+          - http://purl.obolibrary.org/obo/cido.owl
+          - http://purl.obolibrary.org/obo/epo
           ontology:
-          - mamo
           - covid19
           - cido
           - epo
@@ -439,7 +437,7 @@
             description: award URL
             type: string
         required:
-        - name
+        - funder
         - identifier
         type: object
       miscControlledVocabulary:
@@ -452,7 +450,17 @@
           - http://purl.obolibrary.org/obo/NCBITaxon_10239
           - http://purl.obolibrary.org/obo/NCBITaxon_131567l
           ontology:
-          - ncbi_taxon
+          - ncbitaxon
+      moreControlledVocabulary:
+        '@type': CreativeWork
+        definition: collection of vocabulary terms defined in ontologies
+        strict: false
+        type: string
+        vocabulary:
+          children_of:
+          - http://identifiers.org/mamo/MAMO_0000037
+          ontology:
+          - mamo
       organization:
         '@type': Organization
         description: Reusable organization definition
@@ -490,12 +498,12 @@
       analysisTechnique:
         description: A technique or technology used in a analysis.
         oneOf:
-        - $ref: '#/definitions/controlledVocabulary'
+        - $ref: '#/definitions/moreControlledVocabulary'
         - enum:
           - predictive/forecasting models
           - observation/visualization models
         - items:
-            $ref: '#/definitions/controlledVocabulary'
+            $ref: '#/definitions/moreControlledVocabulary'
           type: array
         - enum:
           - predictive/forecasting models
@@ -548,12 +556,25 @@
       curatedBy:
         description: The source from which this Analysis was identified for inclusion
           into Outbreak.info. Provides provenance for a resource which was curated
-          by another
+          by another.
         oneOf:
         - $ref: '#/definitions/citation'
+        - $ref: '#/definitions/person'
+        - $ref: '#/definitions/organization'
+        - items:
+            $ref: '#/definitions/person'
+          type: array
+        - items:
+            $ref: '#/definitions/organization'
+          type: array
         - items:
             $ref: '#/definitions/citation'
           type: array
+      curationDate:
+        description: The date this resource was added into outbreak.info, or was updated
+          in outbreak.info.
+        format: date
+        type: string
       dateModified:
         description: Most recent date for which the analysis model itself was updated
         format: date
@@ -650,23 +671,69 @@
         oneOf:
         - enum:
           - Clinical
+          - Case Descriptions
+          - Risk Factors
           - Diagnosis
+          - Symptoms
+          - Rapid Diagnostics
+          - Antibody Detection
+          - Virus Detection
+          - Testing Prevalence
+          - Pathology/Radiology
           - Forecasting
+          - Public Health Interventions
+          - Case/Death Models
           - Mechanism
+          - Virus Genetics
+          - Host Genetics
+          - Immunological Response
+          - Mechanism of Infection
+          - Mechanism of Transmission
           - Prevention
           - Transmission
+          - Host/Intermediate Reservoirs
+          - Viral Shedding / Persistence
           - Treatment
-          - Epidemiology
+          - Vaccines
+          - Pharmaceutical Treatments
+          - Medical Care
+          - Repurposing
+          - Behavioral Research
+          - Classical Epidemiology
+          - Molecular Epidemiology
         - items:
             enum:
             - Clinical
+            - Case Descriptions
+            - Risk Factors
             - Diagnosis
+            - Symptoms
+            - Rapid Diagnostics
+            - Antibody Detection
+            - Virus Detection
+            - Testing Prevalence
+            - Pathology/Radiology
             - Forecasting
+            - Public Health Interventions
+            - Case/Death Models
             - Mechanism
+            - Virus Genetics
+            - Host Genetics
+            - Immunological Response
+            - Mechanism of Infection
+            - Mechanism of Transmission
             - Prevention
             - Transmission
+            - Host/Intermediate Reservoirs
+            - Viral Shedding / Persistence
             - Treatment
-            - Epidemiology
+            - Vaccines
+            - Pharmaceutical Treatments
+            - Medical Care
+            - Repurposing
+            - Behavioral Research
+            - Classical Epidemiology
+            - Molecular Epidemiology
           type: array
       url:
         description: The url of the item
@@ -1307,6 +1374,19 @@
   - '@id': outbreak:Protocol
   - '@id': schema:SoftwareApplication
   - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Date
+- '@id': outbreak:curationDate
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The date this resource was added to outbreak.info, or the date when
+    this resource was updated in outbreak.info
+  rdfs:label: curationDate
+  rdfs:sameAs:
+    '@id': schema:releaseDate
+  schema:domainIncludes:
+    '@id': outbreak:Analysis
   schema:rangeIncludes:
     '@id': schema:Date
 - '@id': outbreak:Dataset
