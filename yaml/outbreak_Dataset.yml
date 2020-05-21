@@ -437,8 +437,8 @@
           - http://purl.obolibrary.org/obo/NCIT_C20368
           - http://purl.obolibrary.org/obo/OBI_0000011
           ontology:
-          - efo_exp
-          - ncit_group
+          - efo
+          - ncit
           - obi
       dataDownload:
         '@type': DataDownload
@@ -489,7 +489,7 @@
           - http://purl.obolibrary.org/obo/NCBITaxon_10239
           - http://purl.obolibrary.org/obo/NCBITaxon_131567l
           ontology:
-          - ncbi_taxon
+          - ncbitaxon
       moreControlledVocabulary:
         '@type': CreativeWork
         definition: collection of vocabulary terms defined in ontologies
@@ -498,14 +498,14 @@
         vocabulary:
           children_of:
           - https://www.ebi.ac.uk/efo/EFO_0001444
+          - http://purl.obolibrary.org/obo/cido.owl
+          - http://purl.obolibrary.org/obo/epo
           - https://bioportal.bioontology.org/ontologies/COVID19
-          - http://bioportal.bioontology.org/ontologies/CIDO
-          - https://www.ebi.ac.uk/ols/ontologies/epo
           ontology:
-          - efo_meas
-          - covid19
+          - efo
           - cido
           - epo
+          - covid19
       organization:
         '@type': Organization
         description: Reusable organization definition
@@ -562,13 +562,27 @@
             $ref: '#/definitions/citation'
           type: array
       curatedBy:
-        description: A citation to a resource which curated this dataset enabling
-          its review for appropriateness and/or integration into the site.
+        description: The source from which this Dataset was identified for inclusion
+          into Outbreak.info. Provides provenance for a resource which was curated
+          by another.
         oneOf:
         - $ref: '#/definitions/citation'
+        - $ref: '#/definitions/person'
+        - $ref: '#/definitions/organization'
+        - items:
+            $ref: '#/definitions/person'
+          type: array
+        - items:
+            $ref: '#/definitions/organization'
+          type: array
         - items:
             $ref: '#/definitions/citation'
           type: array
+      curationDate:
+        description: The date this resource was added into outbreak.info, or was updated
+          in outbreak.info.
+        format: date
+        type: string
       dataDownload:
         description: Available downloads of the dataset.
         oneOf:
@@ -652,23 +666,69 @@
         oneOf:
         - enum:
           - Clinical
+          - Case Descriptions
+          - Risk Factors
           - Diagnosis
+          - Symptoms
+          - Rapid Diagnostics
+          - Antibody Detection
+          - Virus Detection
+          - Testing Prevalence
+          - Pathology/Radiology
           - Forecasting
+          - Public Health Interventions
+          - Case/Death Models
           - Mechanism
+          - Virus Genetics
+          - Host Genetics
+          - Immunological Response
+          - Mechanism of Infection
+          - Mechanism of Transmission
           - Prevention
           - Transmission
+          - Host/Intermediate Reservoirs
+          - Viral Shedding / Persistence
           - Treatment
-          - Epidemiology
+          - Vaccines
+          - Pharmaceutical Treatments
+          - Medical Care
+          - Repurposing
+          - Behavioral Research
+          - Classical Epidemiology
+          - Molecular Epidemiology
         - items:
             enum:
             - Clinical
+            - Case Descriptions
+            - Risk Factors
             - Diagnosis
+            - Symptoms
+            - Rapid Diagnostics
+            - Antibody Detection
+            - Virus Detection
+            - Testing Prevalence
+            - Pathology/Radiology
             - Forecasting
+            - Public Health Interventions
+            - Case/Death Models
             - Mechanism
+            - Virus Genetics
+            - Host Genetics
+            - Immunological Response
+            - Mechanism of Infection
+            - Mechanism of Transmission
             - Prevention
             - Transmission
+            - Host/Intermediate Reservoirs
+            - Viral Shedding / Persistence
             - Treatment
-            - Epidemiology
+            - Vaccines
+            - Pharmaceutical Treatments
+            - Medical Care
+            - Repurposing
+            - Behavioral Research
+            - Classical Epidemiology
+            - Molecular Epidemiology
           type: array
       variableMeasured:
         description: A technique or technology used in a Dataset, corresponding to
@@ -1071,8 +1131,8 @@
   marginality: optional
   owl:cardinality: one
   rdfs:comment: date of the version of the resource from which this dataset was derived.
-    Note this is NOT the same as dateModified, as the protocol may be based on an
-    earlier 'dateModified' than is what is available from the resource
+    Note this is NOT the same as dateModified, as the dataset may be based on an earlier
+    'dateModified' than is what is available from the resource
   rdfs:label: versionDate
   rdfs:sameAs:
     '@id': schema:releaseDate
@@ -1255,6 +1315,19 @@
   - '@id': outbreak:Protocol
   - '@id': schema:SoftwareApplication
   - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Date
+- '@id': outbreak:curationDate
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The date this resource was added to outbreak.info, or the date when
+    this resource was updated in outbreak.info
+  rdfs:label: curationDate
+  rdfs:sameAs:
+    '@id': schema:releaseDate
+  schema:domainIncludes:
+    '@id': outbreak:Dataset
   schema:rangeIncludes:
     '@id': schema:Date
 - '@id': outbreak:Protocol
