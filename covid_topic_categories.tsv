@@ -1,7 +1,7 @@
 topicCategory	category	description								
 Clinical	Clinical	[General category] Clinical presentations of COVID-19								
 Case Descriptions	Clinical	Descriptions of specific patient cases								
-Risk Factors	Clinical	"Risk factors associated with case presentation,  serverity, or mortality"								
+Risk Factors	Clinical	"Risk factors associated with case presentation, severity, or mortality"								
 Diagnosis	Diagnosis	"[General category] Disease assessment through symptoms, test results, and radiological features"								
 Symptoms	Diagnosis	Diagnosis based off clinical symptoms								
 Rapid Diagnostics	Diagnosis	Diagnosis based off of rapid testing procedures								
@@ -10,7 +10,7 @@ Virus Detection	Diagnosis	RT-PCR detection
 Testing Prevalence	Diagnosis	Extent of testing								
 Pathology/Radiology	Diagnosis	Diagnosis based off pathology and/or radiology								
 Forecasting	Forecasting	[General category] Modelling and estimating the trend of COVID-19 spread								
-Mechanism	Mechanism	[General category] Underlying cause(s) of covid-19 infections and transmission & possible drug mechanism of action								
+Mechanism	Mechanism	[General category] Underlying cause(s) of COVID-19 infections and transmission & possible drug mechanism of action								
 Virus Factors	Mechanism	How virus factors influence infection and transmission								
 Host Factors	Mechanism	How host genetic factors influence infection and transmission								
 Immunological Response	Mechanism	Description of immunological response upon virus exposure								
@@ -18,7 +18,7 @@ Mechanism of Infection	Mechanism	Description of how the virus enters and infects
 Mechanism of Transmission	Mechanism	Description of how the virus transmits between hosts								
 Prevention	Prevention	"[General category] Prevention, control, and management strategies either at the individual or societal level"								
 Public Health Interventions	Prevention	Descriptions of public health interventions and/or evaluations of their efficacy								
-Individual Prevention	Prevention	"Descriptions of individual transmission prevention methods and/or their efficacy, including behavior change campagins"								
+Individual Prevention	Prevention	"Descriptions of individual transmission prevention methods and/or their efficacy, including behavior change campaigns"								
 Transmission	Transmission	"Characteristics and modes of COVID-19 transmissions, such as human-to-human"								
 Host/Intermediate Reservoirs	Transmission	Descriptions of the host source of SARS-CoV-2 and its spread through intermediate reservoirs								
 Viral Shedding / Persistence	Transmission	How much the virus sheds from host and how long it persists in environments								
@@ -30,5 +30,5 @@ Biologics	Treatment	"Development of biologically based treatments of COVID-19, i
 Medical Care	Treatment	"Medical interventions or procedures to treat COVID-19 such as dialysis, ventilators, etc."								
 Epidemiology	Epidemiology	[General category] Description of the spread of cases								
 Molecular epidemiology	Epidemiology	"Description of chains of transmission, R0, doubling time, dating outbreak in specific regions/overall based on molecular/genetic assays"								
-Classical epidemiology	Epidemiology	"Description of cases, chains of transmission, broader scale dynamics (R0, doubling time, duration of infectiousness,...) based on classical epidemilogical methods like case counts and contact tracing"								
+Classical epidemiology	Epidemiology	"Description of cases, chains of transmission, broader scale dynamics (R0, doubling time, duration of infectiousness,...) based on classical epidemiological methods like case counts and contact tracing"								
 Behavioral Research	Behavioral Research	"[General category] Mental health, behavioral, or social science research directly or indirectly related to COVID-19"								
