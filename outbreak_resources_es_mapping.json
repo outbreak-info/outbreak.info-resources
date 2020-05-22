@@ -190,6 +190,33 @@
     "type": "text",
     "copy_to": ["all"]
   },
+  "distribution": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "contentUrl": {
+        "type": "text"
+      },
+      "dateCreated": {
+        "type": "keyword"
+      },
+      "dateModified": {
+        "type": "keyword"
+      },
+      "datePublished": {
+        "type": "keyword"
+      },
+      "description": {
+        "type": "keyword"
+      },
+      "name": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      }
+    }
+  },
   "doi": {
     "type": "text",
     "copy_to": ["all"]
