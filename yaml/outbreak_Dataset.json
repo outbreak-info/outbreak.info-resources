@@ -209,7 +209,7 @@
               }
             ]
           },
-          "topicCategory": {
+            "topicCategory": {
               "description": "Applicable outbreak.info category",
               "oneOf": [
                 {
@@ -225,15 +225,15 @@
                     "Testing Prevalence",
                     "Pathology/Radiology",
                     "Forecasting",
-                    "Public Health Interventions",
-                    "Case/Death Models",
                     "Mechanism",
-                    "Virus Genetics",
-                    "Host Genetics",
+                    "Virus Factors",
+                    "Host Factors",
                     "Immunological Response",
                     "Mechanism of Infection",
                     "Mechanism of Transmission",
                     "Prevention",
+                    "Public Health Interventions",
+                    "Individual Prevention",
                     "Transmission",
                     "Host/Intermediate Reservoirs",
                     "Viral Shedding / Persistence",
@@ -242,7 +242,9 @@
                     "Pharmaceutical Treatments",
                     "Medical Care",
                     "Repurposing",
+                    "Biologics",
                     "Behavioral Research",
+                    "Epidemiology",
                     "Classical Epidemiology",
                     "Molecular Epidemiology"
                   ]
@@ -262,15 +264,15 @@
                         "Testing Prevalence",
                         "Pathology/Radiology",
                         "Forecasting",
-                        "Public Health Interventions",
-                        "Case/Death Models",
                         "Mechanism",
-                        "Virus Genetics",
-                        "Host Genetics",
+                        "Virus Factors",
+                        "Host Factors",
                         "Immunological Response",
                         "Mechanism of Infection",
                         "Mechanism of Transmission",
                         "Prevention",
+                        "Public Health Interventions",
+                        "Individual Prevention",
                         "Transmission",
                         "Host/Intermediate Reservoirs",
                         "Viral Shedding / Persistence",
@@ -279,7 +281,9 @@
                         "Pharmaceutical Treatments",
                         "Medical Care",
                         "Repurposing",
+                        "Biologics",
                         "Behavioral Research",
+                        "Epidemiology",
                         "Classical Epidemiology",
                         "Molecular Epidemiology"
                       ]
