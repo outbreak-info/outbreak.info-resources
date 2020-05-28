@@ -812,26 +812,20 @@
         description: name of the protocol
         type: string
       protocolCategory:
-        description: The type of 'protocol' based on setting and specificity
-        oneOf:
-        - enum:
-          - clinical
-          - experimental
-          - field
-          - protocol
-          - procedure
-          - policy
-          - guideline
-        - items:
-            enum:
-            - clinical
-            - experimental
-            - field
-            - protocol
-            - procedure
-            - policy
-            - guideline
-          type: array
+        description: The type of 'protocol' based on degree of specificity and purpose
+        enum:
+        - protocol
+        - procedure
+        - policy
+        - guideline
+      protocolSetting:
+        description: The type of 'protocol' based on setting in which it would apply
+        enum:
+        - clinical
+        - experimental
+        - field
+        - computational
+        - public
       relatedTo:
         description: Other resources related to, but not a derivative of nor derived
           from this protocol
@@ -1046,10 +1040,23 @@
     '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': schema:Text
+- '@id': outbreak:protocolSetting
+  '@type': rdf:Property
+  marginality: optional
+  owl:cardinality: one
+  rdfs:comment: The type of research setting in which a "protocol" is appropriate,
+    such as 'clinical', 'experimental', 'field', 'computational'
+  rdfs:label: protocolSetting
+  rdfs:sameAs:
+    '@id': schema:additionalType
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
+  schema:rangeIncludes:
+    '@id': schema:Text
 - '@id': outbreak:protocolCategory
   '@type': rdf:Property
   marginality: optional
-  owl:cardinality: many
+  owl:cardinality: one
   rdfs:comment: The type of "protocol" such as guideline, procedure, policy, etc.
   rdfs:label: protocolCategory
   rdfs:sameAs:

@@ -255,7 +255,8 @@
                     "clinical",
                     "experimental",
                     "field",
-                    "computational"
+                    "computational",
+                    "public"
               ]
             },
             "protocolCategory": {
