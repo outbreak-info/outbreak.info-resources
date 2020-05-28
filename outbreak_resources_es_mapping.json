@@ -419,6 +419,11 @@
     "type": "integer",
     "copy_to": ["all"]
   },
+  "protocolCategory": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
   "publicationType": {
     "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
