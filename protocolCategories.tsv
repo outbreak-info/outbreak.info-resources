@@ -1,7 +1,4 @@
 protocolCategory	description
-clinical	"A type of research setting which includes hospitals, clinics, medical offices, and any other purveyor of human health services"
-experimental	"A type of research setting which facilitates experimental research such as a research laboratory, rather than immediate patient health objectives"
-field	"A type of research setting outside human health services and experimental research facilities such as bat caves, residential facilities, airports, etc."
 policy	"A statement of values or principles on a given subject. A means of steering stakeholders towards the desired outcomes. Policies convey the rationale behind procedures, protocols, and guidelines"
 procedure	"Instructions that describe the approved and recommended steps of a particular act or sequence of events. Procedures supplement polices and describe how the policy will be implemented and met. They are generally more detailed than policies, but less detailed than protocols. Procedures convey what must be done to implement a policy."
 protocol	Detailed instructions for how to perform a particular procedure. Protocols describe how a procedure is done with situationally specific detail.
