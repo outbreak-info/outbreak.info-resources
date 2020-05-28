@@ -124,6 +124,9 @@
       }
     }
   },
+  "correction": {
+    "type": "text"
+  },
   "creator": {
     "properties": {
       "@type": {
@@ -221,6 +224,9 @@
     "type": "text",
     "copy_to": ["all"]
   },
+  "duration": {
+    "type": "text"
+  },
   "eligibilityCriteria": {
     "properties": {
       "@type": {
@@ -295,6 +301,13 @@
   "identifierSource": {
     "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "inComplianceWith": {
+    "type": "text"
+  },
+  "instrument": {
+    "type": "text",
     "copy_to": ["all"]
   },
   "interventionText": {
@@ -377,6 +390,10 @@
   },
   "license": {
     "type": "text"
+  },
+  "material": {
+    "type": "text",
+    "copy_to": ["all"]
   },
   "measurementParameter": {
     "properties": {
@@ -611,6 +628,9 @@
   "url": {
     "type": "text",
     "copy_to": ["all"]
+  },
+  "usedToGenerate": {
+    "type": "text"
   },
   "variableMeasured": {
     "normalizer": "keyword_lowercase_normalizer",
