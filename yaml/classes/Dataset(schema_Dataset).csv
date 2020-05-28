@@ -5,14 +5,15 @@ measurementTechnique,schema:measurementTechnique,"Measurement technique(s) used 
 ""RNA sequencing, viral sequencing""
 ...
 efo_exp--https://www.ebi.ac.uk/ols/ontologies/efo/terms?iri=http%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2FEFO_0002694]"
+variableMeasured,schema:variableMeasured,The factors or variables measured in the dataset,many,required,outbreak:Dataset,schema:Text,
 author,schema:author,"person, people, or organization that created the dataset",many,required,outbreak:Dataset,"[outbreak:Person,outbreak:Organization]",
 name,schema:name,The name of the author as provided by the resource,one per author per resource,required,"[outbreak:Person, outbreak:Organization]",schema:Text,
 affiliation,schema:affiliation,The author's affiliation(s),many,recommended,"[outbreak:Person, outbreak:Organization]",schema:Text,
-dataDownload,schema:DataDownload,Available downloads of the dataset,many,required,outbreak:Dataset,outbreak:DataDownload,
+dataDownload,schema:DataDownload,Available downloads of the dataset,many,recommended,outbreak:Dataset,outbreak:DataDownload,
 contentUrl,schema:distribution,"Link to the location where the dataset can be found, ideally a permanent URL",one,required,outbreak:DataDownload,schema:URL,
 dateModified,schema:dateModified,Date which the particular DataDownload (file) has been changed,one,required,outbreak:DataDownload,schema:Date,
-funding,outbreak:MonetaryGrant,Funding for the generation of the dataset,many,required,outbreak:Dataset,outbreak:MonetaryGrant,
-funder,schema:funder,"Name of the funding organization ofr the dataset. Note: schema.org/funder and schema.org/Grant have additional fields that can provide more information about the funding organization, if desired",many,required,outbreak:MonetaryGrant,schema:Text,"ncit_group--http://purl.obolibrary.org/obo/NCIT_C20172
+funding,outbreak:MonetaryGrant,Funding for the generation of the dataset,many,recommended,outbreak:Dataset,outbreak:MonetaryGrant,
+funder,schema:funder,"Name of the funding organization ofr the dataset. Note: schema.org/funder and schema.org/Grant have additional fields that can provide more information about the funding organization, if desired",many,recommended,outbreak:MonetaryGrant,schema:Text,"ncit_group--http://purl.obolibrary.org/obo/NCIT_C20172
 "
 identifier,schema:identifier,The identifier of the grant (if available),many,recommended,outbreak:MonetaryGrant,schema:Text,
 species,schema:additionalType,Species(es) from which dataset has been collected,many,recommended,outbreak:Dataset,schema:Text,ncbi_taxon--http://purl.obolibrary.org/obo/ncbitaxon.owl
@@ -39,3 +40,4 @@ curatedBy,schema:citation,The source from which this Analysis was identified for
 name,schema:name,name of the source from which this Analysis was identified for inclusion,one per citation,recommended,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
 url,schema:url,The corresponding url for the item in the source from which this Analysis was identified (if available),one per citation,recommended,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Text,
 versionDate,schema:releaseDate,The last date when items were pulled from the source,one per citation,optional,"[outbreak:ClinicalTrial, outbreak:Analysis, outbreak:Publication, outbreak:Dataset, outbreak:Protocol, schema:SoftwareApplication, schema:Thing]",schema:Date,
+curationDate,schema:releaseDate,"The date the resource was added to outbreak.info, or the resource was updated in outbreak.info",one,recommended,outbreak:Dataset,schema:Date,

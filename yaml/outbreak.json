@@ -283,13 +283,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -297,13 +320,36 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
@@ -313,7 +359,7 @@
                 "description": "A technique or technology used in a analysis.",
                 "oneOf": [
                   {
-                    "$ref": "#/definitions/controlledVocabulary"
+                    "$ref": "#/definitions/moreControlledVocabulary"
                   },
                   {
                     "enum": [
@@ -324,7 +370,7 @@
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/definitions/controlledVocabulary"
+                      "$ref": "#/definitions/moreControlledVocabulary"
                     }
                   },  
                   {
@@ -503,19 +549,42 @@
               ]
             },
             "curatedBy": {
-              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
+              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
               "oneOf": [
-                {
-                  "$ref": "#/definitions/citation"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/citation"
-                  }
+              {
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
                 }
-              ]
-            }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+            },
+            "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
+          }
           },
           "required": [
             "url",
@@ -531,16 +600,14 @@
               "strict": false,
               "vocabulary": {
                 "ontology": [
-                  "mamo",
                   "covid19",
                   "cido",
                   "epo"
                 ],
                 "children_of": [
-                  "https://www.ebi.ac.uk/ols/ontologies/mamo",
                   "https://bioportal.bioontology.org/ontologies/COVID19",
-                  "http://bioportal.bioontology.org/ontologies/CIDO",
-                  "https://www.ebi.ac.uk/ols/ontologies/epo"
+                  "http://purl.obolibrary.org/obo/cido.owl",
+                  "http://purl.obolibrary.org/obo/epo"
                 ]
               }
             },
@@ -549,10 +616,24 @@
               "@type": "CreativeWork",
               "type": "string",
               "vocabulary": {
-                "ontology": ["ncbi_taxon"],
+                "ontology": ["ncbitaxon"],
                 "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
               },
               "strict": false
+            },
+            "moreControlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": [
+                  "mamo"
+                ],
+                "children_of": [
+                  "http://identifiers.org/mamo/MAMO_0000037"
+                ]
+              }
             },
             "person": {
               "description": "Reusable person definition",
@@ -688,7 +769,7 @@
                 }
               },
               "required": [
-                "name",
+                "funder",
                 "identifier"
               ]
             }
@@ -700,6 +781,7 @@
     {"@id":"outbreak:hasDownloadableContent","@type":"rdf:Property","rdfs:comment":"Indicates the site has content that can be downloaded (raw data, data sheets, charts, etc)","rdfs:label":"hasDownloadableContent","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:isAccessibleForFree"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Boolean"}},{"@id":"outbreak:infectiousAgent","@type":"rdf:Property","rdfs:comment":"The actual infectious agent, such as a specific bacterium","rdfs:label":"infectiousAgent","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:infectiousAgent"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:infectiousDisease","@type":"rdf:Property","rdfs:comment":"The disease caused by the infectious agent. Important as some agents may cause multiple diseases","rdfs:label":"infectiousDisease","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:infectousDisease"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:license","@type":"rdf:Property","rdfs:comment":"A license document that applies to this content, typically indicated by URL","rdfs:label":"license","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:license"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"PublicationDate of the analysis online if available","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"Most recent date for which the analysis model itself was updated","rdfs:label":"dateModified","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:analysisTechnique","@type":"rdf:Property","rdfs:comment":"This is the analysis type, analytical technique or mathematical model used in this analysis","rdfs:label":"analysisTechnique","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:analysisTopic","@type":"rdf:Property","rdfs:comment":"The underlying question, goal, or aim of the analysis","rdfs:label":"analysisTopic","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:purpose"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:assumption","@type":"rdf:Property","rdfs:comment":"Statement of assumptions \/ limitations of the model","rdfs:label":"assumption","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:text"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:citedBy","@type":"rdf:Property","rdfs:comment":"A resource (publication, protocol, dataset, etc.) which was derived from this protocol","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the citedBy resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type (publication, protocol, dataset, code, etc.) of the citedBy resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (pmid, WHO protocol id, etc.) of the citedby resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:isBasedOn","@type":"rdf:Property","rdfs:comment":"A resource (publication, protocol, dataset, etc) from which this analysis was derived","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},
     {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the isBasedOn resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type (publication, protocol, dataset, code, etc.) of the isBasedOn resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (pmid, WHO protocol id, etc.) of the isBasedOn resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"date of the version of the resource from which this analysis was derived. Note this is NOT the same as dateModified, as the protocol may be based on an earlier 'dateModified' than is what is available from the resource","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"Other resources related to, but not a derivative of nor derived from this analysis","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of related resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (if available) of related resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:contributor","@type":"rdf:Property","rdfs:comment":"A secondary contributor to the CreativeWork or Event.","rdfs:label":"contributor","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:contributor"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"outbreak:author"}},{"@id":"outbreak:maintainer","@type":"rdf:Property","rdfs:comment":"A maintainer of a Dataset, software package (SoftwareApplication), or other Project.","rdfs:label":"maintainer","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:maintainer"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"outbreak:author"}},{"@id":"outbreak:keywords","@type":"rdf:Property","rdfs:comment":"keywords","rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable outbreak.info category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added to outbreak.info, or the date when this resource was updated in outbreak.info","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"outbreak:Analysis"},"schema:rangeIncludes":{"@id":"schema:Date"}},
     {
       "@id": "outbreak:Dataset",
       "@type": "rdfs:Class",
@@ -736,8 +818,21 @@
               }
             ]
           },
+          "variableMeasured": {
+            "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
+            "oneOf": [{
+                "$ref": "#/definitions/moreControlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/moreControlledVocabulary"
+                }
+              }
+            ]
+          },
           "identifier": {
-            "description": "Longer description of what is contained in the dataset",
+            "description": "identifier for the dataset",
             "type": "string"
           },
           "doi": {
@@ -830,13 +925,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -844,21 +962,52 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
               ]
+
             },
           "keywords": {
             "description": "A list of keywords associated with this dataset",
-            "type": "string"
+            "oneOf": [
+                {"type":"string"},
+                {"type":"array",
+                 "items":{
+                     "type":"string"
+                 }
+                }
+            ]
           },
           "isBasedOn": {
             "description": "A citation to a resource (eg- publication, protocol, etc.) on which this dataset was derived (stored as an object, not a string)",
@@ -900,9 +1049,27 @@
             ]
           },
           "curatedBy": {
-            "description": "A citation to a resource which curated this dataset enabling its review for appropriateness and/or integration into the site.",
+            "description": "The source from which this Dataset was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
             "oneOf": [{
                 "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
               },
               {
                 "type": "array",
@@ -911,16 +1078,19 @@
                 }
               }
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
           "name",
-          "description",
           "measurementTechnique",
-          "author",
-          "dataDownload",
-          "dateModified",
-          "funding"
+          "variableMeasured",
+          "description",
+          "author"
         ],
         "definitions": {
           "person": {
@@ -980,8 +1150,9 @@
             "@type": "CreativeWork",
             "type": "string",
             "vocabulary": {
-              "ontology": ["efo_exp", "ncit_group"],
-              "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368"]
+              "ontology": ["efo", "ncit","obi"],
+              "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
+                             "http://purl.obolibrary.org/obo/OBI_0000011"]
             },
             "strict": false
           },
@@ -990,11 +1161,31 @@
             "@type": "CreativeWork",
             "type": "string",
             "vocabulary": {
-              "ontology": ["ncbi_taxon"],
+              "ontology": ["ncbitaxon"],
               "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
             },
             "strict": false
           },
+          "moreControlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": [
+                  "efo",
+                  "cido",
+                  "epo",
+                  "covid19"
+                ],
+                "children_of": [
+                  "https://www.ebi.ac.uk/efo/EFO_0001444",
+                  "http://purl.obolibrary.org/obo/cido.owl",
+                  "http://purl.obolibrary.org/obo/epo",
+                  "https://bioportal.bioontology.org/ontologies/COVID19"
+                ]
+              }
+            },
           "funding": {
             "type": "object",
             "@type": "MonetaryGrant",
@@ -1029,7 +1220,7 @@
               }
             },
             "required": [
-              "name",
+              "funder",
               "identifier"
             ]
           },
@@ -1083,8 +1274,11 @@
         }
       }
     },
-    {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"Short, descriptive title for the dataset","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:description","@type":"rdf:Property","rdfs:comment":"Longer description of what was contained in the dataset. For example, dataset fields, ...","rdfs:label":"description","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:description"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:measurementTechnique","@type":"rdf:Property","rdfs:comment":"Measurement technique(s) used in collecting the dataset, e.g. RNA sequencing","rdfs:label":"measurementTechnique","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:measurementTechnique"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:author","@type":"rdf:Property","rdfs:comment":"person, people, or organization that created the dataset","rdfs:label":"author","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:author"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the author as provided by the resource","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"The author's affiliation(s)","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:dataDownload","@type":"rdf:Property","rdfs:comment":"Available downloads of the dataset","rdfs:label":"dataDownload","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:DataDownload"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"outbreak:DataDownload"}},{"@id":"outbreak:contentUrl","@type":"rdf:Property","rdfs:comment":"Link to the location where the dataset can be found, ideally a permanent URL","rdfs:label":"contentUrl","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:distribution"},"schema:domainIncludes":{"@id":"outbreak:DataDownload"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"Date which the particular DataDownload (file) has been changed","rdfs:label":"dateModified","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:DataDownload"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:funding","@type":"rdf:Property","rdfs:comment":"Funding for the generation of the dataset","rdfs:label":"funding","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"outbreak:MonetaryGrant"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"outbreak:MonetaryGrant"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"Name of the funding organization ofr the dataset. Note: schema.org\/funder and schema.org\/Grant have additional fields that can provide more information about the funding organization, if desired","rdfs:label":"funder","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The identifier of the grant (if available)","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:species","@type":"rdf:Property","rdfs:comment":"Species(es) from which dataset has been collected","rdfs:label":"species","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:infectiousAgent","@type":"rdf:Property","rdfs:comment":"The actual infectious agent, such as a specific bacterium","rdfs:label":"infectiousAgent","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:infectiousAgent"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Unique identifier for the dataset","rdfs:label":"identifier","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:doi","@type":"rdf:Property","rdfs:comment":"DOI for the dataset if available","rdfs:label":"doi","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:license","@type":"rdf:Property","rdfs:comment":"License associated with re-use of the dataset","rdfs:label":"license","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:license"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:URL"}},
-    {"@id":"outbreak:citedBy","@type":"rdf:Property","rdfs:comment":"Associated resource (protocols, publications, etc.) that utilized or was derived from this dataset.","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"owl:inverseOf: schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the resource (publication, protocol, etc.) utilize or was derived from this dataset","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of resource which utilized or was derived from this dataset","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier for this resource which utilized or was derived from this dataset","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:isBasedOn","@type":"rdf:Property","rdfs:comment":"Associated resource (guidelines, protocols, publications, etc.) from which this dataset was derived","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the associated resource from which this dataset was derived","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"Type of resource (publication, analysis, ClinicalTrial, dataset, etc.) from which this dataset was derived","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Identifier for the resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"date of the version of the resource from which this dataset was derived. Note this is NOT the same as dateModified, as the protocol may be based on an earlier 'dateModified' than is what is available from the resource","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"Other resources related to, but not a derivative of nor derived from this dataset","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of related resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (if available) of related resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable outbreak.info category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:keywords","@type":"rdf:Property","rdfs:comment":"keywords","rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:citation"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"Short, descriptive title for the dataset","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:description","@type":"rdf:Property","rdfs:comment":"Longer description of what was contained in the dataset. For example, dataset fields, ...","rdfs:label":"description","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:description"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:measurementTechnique","@type":"rdf:Property","rdfs:comment":"Measurement technique(s) used in collecting the dataset, e.g. RNA sequencing","rdfs:label":"measurementTechnique","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:measurementTechnique"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:variableMeasured","@type":"rdf:Property","rdfs:comment":"The factors or variables measured in the dataset","rdfs:label":"variableMeasured","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:variableMeasured"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:author","@type":"rdf:Property","rdfs:comment":"person, people, or organization that created the dataset","rdfs:label":"author","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:author"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the author as provided by the resource","rdfs:label":"name","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:affiliation","@type":"rdf:Property","rdfs:comment":"The author's affiliation(s)","rdfs:label":"affiliation","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:affiliation"},"schema:domainIncludes":[{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:dataDownload","@type":"rdf:Property","rdfs:comment":"Available downloads of the dataset","rdfs:label":"dataDownload","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:DataDownload"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"outbreak:DataDownload"}},{"@id":"outbreak:contentUrl","@type":"rdf:Property","rdfs:comment":"Link to the location where the dataset can be found, ideally a permanent URL","rdfs:label":"contentUrl","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:distribution"},"schema:domainIncludes":{"@id":"outbreak:DataDownload"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"Date which the particular DataDownload (file) has been changed","rdfs:label":"dateModified","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:DataDownload"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:funding","@type":"rdf:Property","rdfs:comment":"Funding for the generation of the dataset","rdfs:label":"funding","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:MonetaryGrant"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"outbreak:MonetaryGrant"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"Name of the funding organization ofr the dataset. Note: schema.org\/funder and schema.org\/Grant have additional fields that can provide more information about the funding organization, if desired","rdfs:label":"funder","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The identifier of the grant (if available)","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:species","@type":"rdf:Property","rdfs:comment":"Species(es) from which dataset has been collected","rdfs:label":"species","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:infectiousAgent","@type":"rdf:Property","rdfs:comment":"The actual infectious agent, such as a specific bacterium","rdfs:label":"infectiousAgent","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:infectiousAgent"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Unique identifier for the dataset","rdfs:label":"identifier","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:doi","@type":"rdf:Property","rdfs:comment":"DOI for the dataset if available","rdfs:label":"doi","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:license","@type":"rdf:Property","rdfs:comment":"License associated with re-use of the dataset","rdfs:label":"license","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:license"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:URL"}},
+    {"@id":"outbreak:citedBy","@type":"rdf:Property","rdfs:comment":"Associated resource (protocols, publications, etc.) that utilized or was derived from this dataset.","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"owl:inverseOf: schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the resource (publication, protocol, etc.) utilize or was derived from this dataset","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of resource which utilized or was derived from this dataset","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier for this resource which utilized or was derived from this dataset","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:isBasedOn","@type":"rdf:Property","rdfs:comment":"Associated resource (guidelines, protocols, publications, etc.) from which this dataset was derived","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the associated resource from which this dataset was derived","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"Type of resource (publication, analysis, ClinicalTrial, dataset, etc.) from which this dataset was derived","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Identifier for the resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"date of the version of the resource from which this dataset was derived. Note this is NOT the same as dateModified, as the dataset may be based on an earlier 'dateModified' than is what is available from the resource","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"Other resources related to, but not a derivative of nor derived from this dataset","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of related resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (if available) of related resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable outbreak.info category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:keywords","@type":"rdf:Property","rdfs:comment":"keywords","rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:citation"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added to outbreak.info, or the date when this resource was updated in outbreak.info","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Date"}},
     {
       "@id": "outbreak:Protocol",
       "@type": "rdfs:Class",
@@ -1225,7 +1419,7 @@
               ]
             },
             "measurementTechnique": {
-                "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
+                "description": "A technique or technology used in this protocol.",
                 "oneOf": [{
                     "$ref": "#/definitions/controlledVocabulary"
                   },
@@ -1241,12 +1435,12 @@
               "description": "Type of evidence/data generated by the protocol",
               "oneOf": [
                 {
-                  "$ref": "#/definitions/controlledVocabulary"
+                  "$ref": "#/definitions/miscControlledVocabulary"
                 },
                 {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/controlledVocabulary"
+                    "$ref": "#/definitions/miscControlledVocabulary"
                   }
                 }
               ]
@@ -1285,13 +1479,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -1299,17 +1516,41 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
               ]
+
             },
             "author": {
               "description": "person, people, or organization that created the protocol",
@@ -1391,19 +1632,41 @@
               ]
             },
             "curatedBy": {
-              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/citation"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/citation"
-                  }
+            "description": "The source from which this Protocol was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
+            "oneOf": [{
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
                 }
-              ]
-            }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          },
+            "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
+          }
           },
           "required": [
             "name",
@@ -1420,12 +1683,28 @@
               "strict": false,
               "vocabulary": {
                 "ontology": [
-                  "efo_exp",
-                  "eco_evid"
+                  "efo",
+                  "eco",
+                  "obi"
                 ],
                 "children_of": [
                   "https://www.ebi.ac.uk/efo/EFO_0002694",
-                  "https://www.ebi.ac.uk/ols/ontologies/eco/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FECO_0000000"
+                  "http://purl.obolibrary.org/obo/ECO_0000000",
+                  "http://purl.obolibrary.org/obo/OBI_0000011"
+                ]
+              }
+            },
+            "miscControlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": [
+                  "eco"
+                ],
+                "children_of": [
+                  "http://purl.obolibrary.org/obo/ECO_0000000"
                 ]
               }
             },
@@ -1563,7 +1842,7 @@
                 }
               },
               "required": [
-                "name",
+                "funder",
                 "identifier"
               ]
             },
@@ -1645,6 +1924,7 @@
     {"@id":"outbreak:funding","@type":"rdf:Property","rdfs:comment":"Funding for the generation of the protocol","rdfs:label":"funding","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:MonetaryGrant"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"outbreak:MonetaryGrant"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"The funder of the study","rdfs:label":"funder","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The identifier of the grant (if available)","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"PublicationDate of the protocol online if available","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"Date of protocol update","rdfs:label":"dateModified","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:correction","@type":"rdf:Property","rdfs:comment":"statement of what was updated\/changed since prior version","rdfs:label":"correction","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:correction"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:citedBy","@type":"rdf:Property","rdfs:comment":"Associated guidelines, protocols, publications, etc. that include, adapt, modify, expand, etc. this protocol.","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the resource (publication, protocol, etc.) which was derived from this protocol","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of resource which was derived from this protocol","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier for this resource which was derived from this protocol","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:isBasedOn","@type":"rdf:Property","rdfs:comment":"Associated resource (guidelines, protocols, publications, etc.) from which this protocol was derived","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the associated resource from which this protocol was derived","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"Type of resource (publication, analysis, ClinicalTrial, dataset, etc.) from which this protocol was derived","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Identifier for the resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"date of the version of the resource from which this protocol was derived. Note this is NOT the same as dateModified, as the protocol may be based on an earlier 'dateModified' than is what is available from the resource","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"Other resources related to, but not a derivative of nor derived from this protocol","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of related resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (if available_ of related resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable outbreak.info category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:keywords","@type":"rdf:Property","rdfs:comment":"keywords","rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:usedToGenerate","@type":"rdf:Property","rdfs:comment":"Type of evidence\/data generated by the protocol","rdfs:label":"usedToGenerate","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:inComplianceWith","@type":"rdf:Property","rdfs:comment":"Guidelines or Standards to which these protocols adhere. ie- GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards\/guidelines must be met","rdfs:label":"inComplianceWith","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:duration","@type":"rdf:Property","rdfs:comment":"The time it takes to actually carry out the protocol, in ISO 8601 date format.","rdfs:label":"duration","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:performTime"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":[{"@id":"schema:Duration"},{"@id":"schema:Text"}]},{"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added to outbreak.info, or the date when this resource was updated in outbreak.info","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"outbreak:Protocol"},"schema:rangeIncludes":{"@id":"schema:Date"}},
     {
       "@id": "outbreak:Publication",
       "@type": "rdfs:Class",
@@ -1789,13 +2069,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -1803,17 +2106,41 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
               ]
+
             },
             "author": {
               "description": "Name of the author or organization that created the dataset.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired",
@@ -1895,19 +2222,41 @@
               ]
             },
             "curatedBy": {
-              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/citation"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/citation"
-                  }
+            "description": "The source from which this Publication was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
+            "oneOf": [{
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
                 }
-              ]
-            }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          },
+            "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
+          }
           },
           "required": [
             "name",
@@ -2052,7 +2401,7 @@
                 }
               },
               "required": [
-                "name",
+                "funder",
                 "identifier"
               ]
             }
@@ -2065,6 +2414,7 @@
     {"@id":"outbreak:citedBy","@type":"rdf:Property","rdfs:comment":"other articles or resources that cite this publication","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the citedBy resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type (publicatoin, protocol, dataset, code, etc.) of the citedBy resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (pmid, WHO protocol id, etc.) of the citedby resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:isBasedOn","@type":"rdf:Property","rdfs:comment":"Associated datasets, software, protocols, etc. used by the work described in this publication, including reference publications","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the associated dataset, software, protocols, etc used by the work described in this publication","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of the associated resource (dataset, protocols, analysis, etc.) used by the work described in this publication","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Identifier of the associated datasets, software, protocols, etc.","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"date of the version of the resource from which this publication was derived. Note this is NOT the same as dateModified, as the protocol may be based on an earlier 'dateModified' than is what is available from the resource","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
     {"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"Related articles or resources such as pre-prints, comments, editorial summaries of the article, etc. Helpful for de-duplication between pre-print and peer-reviewed version","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of related resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Identifier of related articles or resources such as pre-prints, comments, editorial summaries","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:keywords","@type":"rdf:Property","rdfs:comment":null,"rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable outbreak.info category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added to outbreak.info, or the date when this resource was updated in outbreak.info","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":{"@id":"schema:Date"}},
     {
       "@id": "outbreak:ClinicalTrial",
       "@type": "rdfs:Class",
@@ -2216,13 +2566,36 @@
                 {
                   "enum": [
                     "Clinical",
+                    "Case Descriptions",
+                    "Risk Factors",
                     "Diagnosis",
+                    "Symptoms",
+                    "Rapid Diagnostics",
+                    "Antibody Detection",
+                    "Virus Detection",
+                    "Testing Prevalence",
+                    "Pathology/Radiology",
                     "Forecasting",
+                    "Public Health Interventions",
+                    "Case/Death Models",
                     "Mechanism",
+                    "Virus Genetics",
+                    "Host Genetics",
+                    "Immunological Response",
+                    "Mechanism of Infection",
+                    "Mechanism of Transmission",
                     "Prevention",
                     "Transmission",
+                    "Host/Intermediate Reservoirs",
+                    "Viral Shedding / Persistence",
                     "Treatment",
-                    "Epidemiology"
+                    "Vaccines",
+                    "Pharmaceutical Treatments",
+                    "Medical Care",
+                    "Repurposing",
+                    "Behavioral Research",
+                    "Classical Epidemiology",
+                    "Molecular Epidemiology"
                   ]
                 },
                 {
@@ -2230,13 +2603,36 @@
                   "items": {
                       "enum": [
                         "Clinical",
+                        "Case Descriptions",
+                        "Risk Factors",
                         "Diagnosis",
+                        "Symptoms",
+                        "Rapid Diagnostics",
+                        "Antibody Detection",
+                        "Virus Detection",
+                        "Testing Prevalence",
+                        "Pathology/Radiology",
                         "Forecasting",
+                        "Public Health Interventions",
+                        "Case/Death Models",
                         "Mechanism",
+                        "Virus Genetics",
+                        "Host Genetics",
+                        "Immunological Response",
+                        "Mechanism of Infection",
+                        "Mechanism of Transmission",
                         "Prevention",
                         "Transmission",
+                        "Host/Intermediate Reservoirs",
+                        "Viral Shedding / Persistence",
                         "Treatment",
-                        "Epidemiology"
+                        "Vaccines",
+                        "Pharmaceutical Treatments",
+                        "Medical Care",
+                        "Repurposing",
+                        "Behavioral Research",
+                        "Classical Epidemiology",
+                        "Molecular Epidemiology"
                       ]
                   }
                 }
@@ -2421,19 +2817,41 @@
               ]
             },
             "curatedBy": {
-              "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another",
-              "oneOf": [
-                {
-                  "$ref": "#/definitions/citation"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/citation"
-                  }
+            "description": "The source from which this Clinical Study was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
+            "oneOf": [{
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
                 }
-              ]
-            }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          },
+            "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
+          }
           },
           "required": [
             "name",
@@ -3075,6 +3493,7 @@
     {"@id":"outbreak:citedBy","@type":"rdf:Property","rdfs:comment":"other articles or resources that cite this clinical trial","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","owl:inverseOf":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the citedBy resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type (publication, protocol, dataset, code, etc.) of the citedBy resource. Note that this can include ClinicalTrial results","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (pmid, WHO protocol id, etc.) of the citedby resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"url of the cited by resource","rdfs:label":"url","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"The date for which the other articles, resources, or results that cite this clinical trial were posted, published, or made available","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:isBasedOn","@type":"rdf:Property","rdfs:comment":"Associated datasets, software, protocols, etc. used by the work described in this clinical study (includes study protocol documents, data analysis plans, reference publications. etc)","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the associated dataset, software, protocols, etc used by the work described in this clinical study","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of the associated resource (dataset, protocols, analysis, etc.) used by the work described in this clinical study","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Identifier of the associated datasets, software, protocols, etc.","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"date of the version of the associated resource used by the work described in this clinical trial","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":[{"@id":"schema:releaseDate"},{"@id":"schema:dateModified"}],"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"url of the associated resource used by the work described in this clinical study (includes study protocol documents, data analysis plans, etc)","rdfs:label":"url","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:URL"}},
     {"@id":"outbreak:relatedTo","@type":"rdf:Property","rdfs:comment":"Other resources related to, but not a derivative of nor derived from this analysis","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:type","@type":"rdf:Property","rdfs:comment":"type of related resource","rdfs:label":"type","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"identifier (if available) of related resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
-    {"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:citation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}}
+    {"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:citation"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}]},{"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this Analysis was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The corresponding url for the item in the source from which this Analysis was identified (if available)","rdfs:label":"url","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:versionDate","@type":"rdf:Property","rdfs:comment":"The last date when items were pulled from the source","rdfs:label":"versionDate","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added to outbreak.info, or the date when this resource was updated in outbreak.info","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"outbreak:ClinicalTrial"},"schema:rangeIncludes":{"@id":"schema:Date"}}
   ]
 }

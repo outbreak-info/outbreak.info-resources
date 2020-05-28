@@ -552,10 +552,12 @@
         vocabulary:
           children_of:
           - https://www.ebi.ac.uk/efo/EFO_0002694
-          - https://www.ebi.ac.uk/ols/ontologies/eco/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FECO_0000000
+          - http://purl.obolibrary.org/obo/ECO_0000000
+          - http://purl.obolibrary.org/obo/OBI_0000011
           ontology:
-          - efo_exp
-          - eco_evid
+          - efo
+          - eco
+          - obi
       funding:
         '@type': MonetaryGrant
         description: Information about funding support
@@ -578,7 +580,7 @@
             description: award URL
             type: string
         required:
-        - name
+        - funder
         - identifier
         type: object
       instrument:
@@ -602,6 +604,16 @@
         required:
         - name
         type: object
+      miscControlledVocabulary:
+        '@type': CreativeWork
+        definition: collection of vocabulary terms defined in ontologies
+        strict: false
+        type: string
+        vocabulary:
+          children_of:
+          - http://purl.obolibrary.org/obo/ECO_0000000
+          ontology:
+          - eco
       organization:
         '@type': Organization
         description: Reusable organization definition
@@ -696,14 +708,27 @@
             type: string
           type: array
       curatedBy:
-        description: The source from which this Analysis was identified for inclusion
+        description: The source from which this Protocol was identified for inclusion
           into Outbreak.info. Provides provenance for a resource which was curated
-          by another
+          by another.
         oneOf:
         - $ref: '#/definitions/citation'
+        - $ref: '#/definitions/person'
+        - $ref: '#/definitions/organization'
+        - items:
+            $ref: '#/definitions/person'
+          type: array
+        - items:
+            $ref: '#/definitions/organization'
+          type: array
         - items:
             $ref: '#/definitions/citation'
           type: array
+      curationDate:
+        description: The date this resource was added into outbreak.info, or was updated
+          in outbreak.info.
+        format: date
+        type: string
       dateModified:
         description: Date of protocol update
         oneOf:
@@ -777,8 +802,7 @@
             $ref: '#/definitions/product'
           type: array
       measurementTechnique:
-        description: A technique or technology used in a Dataset, corresponding to
-          the method used for measuring the corresponding variable(s).
+        description: A technique or technology used in this protocol.
         oneOf:
         - $ref: '#/definitions/controlledVocabulary'
         - items:
@@ -809,23 +833,69 @@
         oneOf:
         - enum:
           - Clinical
+          - Case Descriptions
+          - Risk Factors
           - Diagnosis
+          - Symptoms
+          - Rapid Diagnostics
+          - Antibody Detection
+          - Virus Detection
+          - Testing Prevalence
+          - Pathology/Radiology
           - Forecasting
+          - Public Health Interventions
+          - Case/Death Models
           - Mechanism
+          - Virus Genetics
+          - Host Genetics
+          - Immunological Response
+          - Mechanism of Infection
+          - Mechanism of Transmission
           - Prevention
           - Transmission
+          - Host/Intermediate Reservoirs
+          - Viral Shedding / Persistence
           - Treatment
-          - Epidemiology
+          - Vaccines
+          - Pharmaceutical Treatments
+          - Medical Care
+          - Repurposing
+          - Behavioral Research
+          - Classical Epidemiology
+          - Molecular Epidemiology
         - items:
             enum:
             - Clinical
+            - Case Descriptions
+            - Risk Factors
             - Diagnosis
+            - Symptoms
+            - Rapid Diagnostics
+            - Antibody Detection
+            - Virus Detection
+            - Testing Prevalence
+            - Pathology/Radiology
             - Forecasting
+            - Public Health Interventions
+            - Case/Death Models
             - Mechanism
+            - Virus Genetics
+            - Host Genetics
+            - Immunological Response
+            - Mechanism of Infection
+            - Mechanism of Transmission
             - Prevention
             - Transmission
+            - Host/Intermediate Reservoirs
+            - Viral Shedding / Persistence
             - Treatment
-            - Epidemiology
+            - Vaccines
+            - Pharmaceutical Treatments
+            - Medical Care
+            - Repurposing
+            - Behavioral Research
+            - Classical Epidemiology
+            - Molecular Epidemiology
           type: array
       url:
         description: url where the protocol can be found
@@ -839,9 +909,9 @@
       usedToGenerate:
         description: Type of evidence/data generated by the protocol
         oneOf:
-        - $ref: '#/definitions/controlledVocabulary'
+        - $ref: '#/definitions/miscControlledVocabulary'
         - items:
-            $ref: '#/definitions/controlledVocabulary'
+            $ref: '#/definitions/miscControlledVocabulary'
           type: array
       warning:
         description: Precautions, warnings, and/or safety warnings associated with
@@ -1562,6 +1632,19 @@
   - '@id': outbreak:Protocol
   - '@id': schema:SoftwareApplication
   - '@id': schema:Thing
+  schema:rangeIncludes:
+    '@id': schema:Date
+- '@id': outbreak:curationDate
+  '@type': rdf:Property
+  marginality: recommended
+  owl:cardinality: one
+  rdfs:comment: The date this resource was added to outbreak.info, or the date when
+    this resource was updated in outbreak.info
+  rdfs:label: curationDate
+  rdfs:sameAs:
+    '@id': schema:releaseDate
+  schema:domainIncludes:
+    '@id': outbreak:Protocol
   schema:rangeIncludes:
     '@id': schema:Date
 - '@id': outbreak:Publication
