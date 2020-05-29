@@ -1097,9 +1097,9 @@
         properties:
           affiliation:
             oneOf:
-            - $ref: organization
+            - $ref: '#/definitions/organization'
             - items:
-                $ref: organization
+                $ref: '#/definitions/organization'
               type: array
             type: array
           familyName:

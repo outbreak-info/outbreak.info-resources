@@ -461,9 +461,9 @@
           funder:
             description: name of the funding organization
             oneOf:
-            - $ref: organization
+            - $ref: '#/definitions/organization'
             - items:
-                $ref: organization
+                $ref: '#/definitions/organization'
               type: array
             type: array
           identifier:
@@ -523,9 +523,9 @@
         properties:
           affiliation:
             oneOf:
-            - $ref: organization
+            - $ref: '#/definitions/organization'
             - items:
-                $ref: organization
+                $ref: '#/definitions/organization'
               type: array
             type: array
           familyName:

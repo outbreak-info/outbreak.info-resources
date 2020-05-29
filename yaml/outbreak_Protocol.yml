@@ -565,9 +565,9 @@
           funder:
             description: name of the funding organization
             oneOf:
-            - $ref: organization
+            - $ref: '#/definitions/organization'
             - items:
-                $ref: organization
+                $ref: '#/definitions/organization'
               type: array
             type: array
           identifier:
@@ -592,7 +592,7 @@
             description: The brand of the instrument
             type: string
           manufacturer:
-            $ref: organization
+            $ref: '#/definitions/organization'
             description: The name of the manufacturer of the material, biosample,
               or reagent
           model:
@@ -631,9 +631,9 @@
         properties:
           affiliation:
             oneOf:
-            - $ref: organization
+            - $ref: '#/definitions/organization'
             - items:
-                $ref: organization
+                $ref: '#/definitions/organization'
               type: array
             type: array
           familyName:
@@ -664,7 +664,7 @@
                 type: string
               type: array
           manufacturer:
-            $ref: organization
+            $ref: '#/definitions/organization'
             description: The name of the manufacturer of the material, biosample,
               or reagent
           name:

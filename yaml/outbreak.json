@@ -661,12 +661,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -758,12 +758,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -1123,12 +1123,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -1213,12 +1213,12 @@
                 "type": "array",
                 "oneOf": [
               {
-                "$ref": "organization"
+                "$ref": "#/definitions/organization"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "organization"
+                  "$ref": "#/definitions/organization"
                 }
               }
             ]
@@ -1809,12 +1809,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -1858,12 +1858,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -1889,7 +1889,7 @@
                 },
                 "manufacturer": {
                   "description": "The name of the manufacturer of the material, biosample, or reagent",
-                  "$ref": "organization"
+                  "$ref": "#/definitions/organization"
                 },
                 "brand": {
                   "description": "The name of the brand of the reagent, material, or biological sample (if different from the manufacturer)",
@@ -1934,7 +1934,7 @@
                 },
                 "manufacturer": {
                   "description": "The name of the manufacturer of the material, biosample, or reagent",
-                  "$ref": "organization"
+                  "$ref": "#/definitions/organization"
                 },
                 "brand": {
                   "description": "The brand of the instrument",
@@ -2374,12 +2374,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -2423,12 +2423,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -2927,12 +2927,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
