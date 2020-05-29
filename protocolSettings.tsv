@@ -1,0 +1,6 @@
+protocolSetting	description
+clinical	"A type of research setting which includes hospitals, clinics, medical offices, and any other purveyor of human health services"
+experimental	"A type of research setting which facilitates experimental research such as a research laboratory, rather than immediate patient health objectives"
+field	"A type of research setting outside human health services and experimental research facilities such as bat caves, residential facilities, airports, etc."
+computational	A type of research setting primarily involving digitized data
+public	"protocols, procedures, guidelines, or policies aimed at the public at large such as statewide public policies"
