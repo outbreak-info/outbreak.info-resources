@@ -498,12 +498,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
@@ -547,12 +547,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "organization"
+                      "$ref": "#/definitions/organization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "organization"
+                        "$ref": "#/definitions/organization"
                       }
                     }
                   ]
