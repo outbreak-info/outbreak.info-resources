@@ -1,30 +1,34 @@
-topicCategory	category	description
-Clinical	Clinical	Descriptions of specific patient cases
-Case Descriptions	Clinical	
-Risk Factors	Clinical	
-Diagnosis	Diagnosis	Disease assessment through symptoms, test results, and radiological features
-Symptoms	Diagnosis	
-Rapid Diagnostics	Diagnosis	
-Antibody Detection	Diagnosis	Antibody-based detection
-Virus Detection	Diagnosis	RT-PCR detection
-Testing Prevalence	Diagnosis	Extent of testing
-Pathology/Radiology	Diagnosis	Diagnosis based off pathology and/or radiology
-Forecasting	Forecasting	Modelling and estimating the trend of covid-19 spread
-Public Health Interventions	Forecasting	Evaluations of the efficacy of public health interventions
-Case/Death Models	Forecasting	Estimating the spread of covid-19
-Mechanism	Mechanism	Underlying cause(s) of covid-19 infections and transmission & possible drug mechanism of action
-Virus Genetics	Mechanism	How virus genetic factors influence infection and transmission
-Host Genetics	Mechanism	How host genetic factors influence infection and transmission
-Immunological Response	Mechanism	Description of immunological response upon virus exposure
-Mechanism of Infection	Mechanism	Description of how the virus enters and infects human cells
-Mechanism of Transmission	Mechanism	Description of how the virus transmits between hosts
-Prevention	Prevention	Prevention, control, and management strategies
-Public Health Interventions	Prevention	
-Transmission	Transmission	Characteristics and modes of covid-19 transmissions, such as human-to-human
-Host/Intermediate Reservoirs	Transmission	
-Viral Shedding / Persistence	Transmission	How much the virus sheds from host and how long it persists in environments
-Treatment	Treatment	Treatment strategies, therapeutic procedures, and vaccine development
-Vaccines	Treatment	Vaccine development and immune response
-Pharmaceutical Treatments	Treatment	
-Medical Care	Treatment	
-Repurposing	Treatment	Repurposing candidates of approved drugs
+topicCategory	category	description	subcategory
+Clinical	Clinical	Clinical presentations of COVID-19	false
+Case Descriptions	Clinical	Descriptions of specific patient cases	true
+Risk Factors	Clinical	"Risk factors associated with case presentation, severity, or mortality"	true
+Diagnosis	Diagnosis	"Disease assessment through symptoms, test results, and radiological features"	false
+Symptoms	Diagnosis	Diagnosis based off clinical symptoms	true
+Rapid Diagnostics	Diagnosis	Diagnosis based off of rapid testing procedures	true
+Antibody Detection	Diagnosis	Antibody-based detection	true
+Virus Detection	Diagnosis	RT-PCR detection	true
+Testing Prevalence	Diagnosis	Extent of testing	true
+Pathology/Radiology	Diagnosis	Diagnosis based off pathology and/or radiology	true
+Forecasting	Forecasting	Modelling and estimating the trend of COVID-19 spread	false
+Mechanism	Mechanism	Underlying cause(s) of COVID-19 infections and transmission & possible drug mechanism of action	false
+Virus Factors	Mechanism	How virus factors influence infection and transmission	true
+Host Factors	Mechanism	How host genetic factors influence infection and transmission	true
+Immunological Response	Mechanism	Description of immunological response upon virus exposure	true
+Mechanism of Infection	Mechanism	Description of how the virus enters and infects human cells	true
+Mechanism of Transmission	Mechanism	Description of how the virus transmits between hosts	true
+Prevention	Prevention	"Prevention, control, and management strategies either at the individual or societal level"	false
+Public Health Interventions	Prevention	Descriptions of public health interventions and/or evaluations of their efficacy	true
+Individual Prevention	Prevention	"Descriptions of individual transmission prevention methods and/or their efficacy, including behavior change campaigns"	true
+Transmission	Transmission	"Characteristics and modes of COVID-19 transmissions, such as human-to-human"	false
+Host/Intermediate Reservoirs	Transmission	Descriptions of the host source of SARS-CoV-2 and its spread through intermediate reservoirs	true
+Viral Shedding / Persistence	Transmission	How much the virus sheds from host and how long it persists in environments	true
+Treatment	Treatment	"Treatment strategies, therapeutic procedures, and vaccine development"	false
+Vaccines	Treatment	Vaccine development and immune response	true
+Pharmaceutical Treatments	Treatment	"Development of new pharmaceutical treatments of COVID-19, especially small molecule development"	true
+Repurposing	Treatment	Repurposing candidates of approved drugs	true
+Biologics	Treatment	"Development of biologically based treatments of COVID-19, including the use of convalescent plasma"	true
+Medical Care	Treatment	"Medical interventions or procedures to treat COVID-19 such as dialysis, ventilators, etc."	true
+Epidemiology	Epidemiology	Description of the spread of cases	false
+Molecular epidemiology	Epidemiology	"Description of chains of transmission, R0, doubling time, dating outbreak in specific regions/overall based on molecular/genetic assays"	true
+Classical epidemiology	Epidemiology	"Description of cases, chains of transmission, broader scale dynamics (R0, doubling time, duration of infectiousness,...) based on classical epidemiological methods like case counts and contact tracing"	true
+Behavioral Research	Behavioral Research	"Mental health, behavioral, or social science research directly or indirectly related to COVID-19"	false

@@ -124,6 +124,9 @@
       }
     }
   },
+  "correction": {
+    "type": "text"
+  },
   "creator": {
     "properties": {
       "@type": {
@@ -190,9 +193,39 @@
     "type": "text",
     "copy_to": ["all"]
   },
+  "distribution": {
+    "properties": {
+      "@type": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      },
+      "contentUrl": {
+        "type": "text"
+      },
+      "dateCreated": {
+        "type": "keyword"
+      },
+      "dateModified": {
+        "type": "keyword"
+      },
+      "datePublished": {
+        "type": "keyword"
+      },
+      "description": {
+        "type": "keyword"
+      },
+      "name": {
+        "normalizer": "keyword_lowercase_normalizer",
+        "type": "keyword"
+      }
+    }
+  },
   "doi": {
     "type": "text",
     "copy_to": ["all"]
+  },
+  "duration": {
+    "type": "text"
   },
   "eligibilityCriteria": {
     "properties": {
@@ -244,6 +277,10 @@
         "type": "text",
         "copy_to": ["all"]
       },
+      "description": {
+        "type": "text",
+        "copy_to": ["all"]
+      },
       "url": {
         "type": "text",
         "copy_to": ["all"]
@@ -264,6 +301,13 @@
   "identifierSource": {
     "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "inComplianceWith": {
+    "type": "text"
+  },
+  "instrument": {
+    "type": "text",
     "copy_to": ["all"]
   },
   "interventionText": {
@@ -347,6 +391,10 @@
   "license": {
     "type": "text"
   },
+  "material": {
+    "type": "text",
+    "copy_to": ["all"]
+  },
   "measurementParameter": {
     "properties": {
       "resolution": {
@@ -386,6 +434,11 @@
   },
   "pmid": {
     "type": "integer",
+    "copy_to": ["all"]
+  },
+  "protocolCategory": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
     "copy_to": ["all"]
   },
   "publicationType": {
@@ -575,6 +628,9 @@
   "url": {
     "type": "text",
     "copy_to": ["all"]
+  },
+  "usedToGenerate": {
+    "type": "text"
   },
   "variableMeasured": {
     "normalizer": "keyword_lowercase_normalizer",
