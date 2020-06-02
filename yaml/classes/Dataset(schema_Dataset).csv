@@ -1,11 +1,11 @@
 Property,sameAs,Description,cardinality,marginality,domainIncludes,expected type,allowed values
 name,schema:name,"Short, descriptive title for the dataset",one,required,outbreak:Dataset,schema:Text,
 description,schema:description,"Longer description of what was contained in the dataset. For example, dataset fields, ...",one,required,outbreak:Dataset,schema:Text,
-measurementTechnique,schema:measurementTechnique,"Measurement technique(s) used in collecting the dataset, e.g. RNA sequencing",many,required,outbreak:Dataset,schema:Text,"[""DNA sequencing, HLA genotype""
+measurementTechnique,schema:measurementTechnique,"Measurement technique(s) used in collecting the dataset, e.g. RNA sequencing",many,recommended,outbreak:Dataset,schema:Text,"[""DNA sequencing, HLA genotype""
 ""RNA sequencing, viral sequencing""
 ...
 efo_exp--https://www.ebi.ac.uk/ols/ontologies/efo/terms?iri=http%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2FEFO_0002694]"
-variableMeasured,schema:variableMeasured,The factors or variables measured in the dataset,many,required,outbreak:Dataset,schema:Text,
+variableMeasured,schema:variableMeasured,The factors or variables measured in the dataset,many,recommended,outbreak:Dataset,schema:Text,
 author,schema:author,"person, people, or organization that created the dataset",many,required,outbreak:Dataset,"[outbreak:Person,outbreak:Organization]",
 name,schema:name,The name of the author as provided by the resource,one per author per resource,required,"[outbreak:Person, outbreak:Organization]",schema:Text,
 affiliation,schema:affiliation,The author's affiliation(s),many,recommended,"[outbreak:Person, outbreak:Organization]",schema:Text,

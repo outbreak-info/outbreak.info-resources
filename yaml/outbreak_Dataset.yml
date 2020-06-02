@@ -744,8 +744,6 @@
           type: array
     required:
     - name
-    - measurementTechnique
-    - variableMeasured
     - description
     - author
     type: object
@@ -784,7 +782,7 @@
     '@id': schema:Text
 - '@id': outbreak:measurementTechnique
   '@type': rdf:Property
-  marginality: required
+  marginality: recommended
   owl:cardinality: many
   rdfs:comment: Measurement technique(s) used in collecting the dataset, e.g. RNA
     sequencing
@@ -797,7 +795,7 @@
     '@id': schema:Text
 - '@id': outbreak:variableMeasured
   '@type': rdf:Property
-  marginality: required
+  marginality: recommended
   owl:cardinality: many
   rdfs:comment: The factors or variables measured in the dataset
   rdfs:label: variableMeasured
