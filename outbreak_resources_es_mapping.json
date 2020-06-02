@@ -441,6 +441,11 @@
     "type": "keyword",
     "copy_to": ["all"]
   },
+  "protocolSetting": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
   "publicationType": {
     "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
