@@ -108,16 +108,19 @@
         "type": "text"
       },
       "doi": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "identifier": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "name": {
         "type": "text"
       },
       "pmid": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "url": {
         "type": "text"
@@ -354,16 +357,19 @@
         "type": "text"
       },
       "doi": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "identifier": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "name": {
         "type": "text"
       },
       "pmid": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "url": {
         "type": "text"
@@ -470,13 +476,16 @@
         "type": "text"
       },
       "doi": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "identifier": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "name": {
-        "type": "text"
+        "type": "text",
+        "copy_to": ["all"]
       },
       "pmid": {
         "type": "text"
