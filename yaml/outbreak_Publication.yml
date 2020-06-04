@@ -274,7 +274,7 @@
     '@id': schema:Text
 - '@id': outbreak:identifier
   '@type': rdf:Property
-  marginality: required
+  marginality: recommended
   owl:cardinality: one
   rdfs:comment: The grant ID or an identifier associated with the grant
   rdfs:label: identifier
@@ -448,7 +448,6 @@
             type: string
         required:
         - funder
-        - identifier
         type: object
       organization:
         '@type': Organization
