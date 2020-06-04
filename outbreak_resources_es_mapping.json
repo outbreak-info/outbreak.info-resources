@@ -170,6 +170,9 @@
       "@type": {
         "type": "text"
       },
+      "identifier": {
+        "type": "keyword"
+      },
       "name": {
         "type": "keyword",
         "copy_to": ["all"]
