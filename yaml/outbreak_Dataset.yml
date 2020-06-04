@@ -477,7 +477,6 @@
             type: string
         required:
         - funder
-        - identifier
         type: object
       miscControlledVocabulary:
         '@type': CreativeWork

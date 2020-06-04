@@ -1,0 +1,54 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "name": "List of travel restrictions",
+  "description": "List of air travel restrictions by country.\nTravel news powered by IATA Timatic",
+  "measurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "variableMeasured": "travel restrictions",
+  "identifier": "MCD23",
+  "author": {
+    "name": "Timatic Solutions",
+    "affiliation": "International Air Transport Association"
+  },
+  "license": "https://www.iatatravelcentre.com/iata-travel-centre-terms-of-use.htm",
+  "species": "human",
+  "infectiousAgent": "SARS coronavirus 2",
+  "topicCategory": "Public Health Interventions",
+  "keywords": [
+    "air travel",
+    "travel restrictions"
+  ],
+  "curatedBy": [
+    {
+      "name": "Craig Lazarchick",
+      "familyName": "Lazarchick",
+      "givenName": "Craig",
+      "affiliation": "Mark2Cure"
+    },
+    {
+      "name": "Thomas Adams",
+      "familyName": "Adams",
+      "givenName": "Thomas",
+      "affiliation": "Mark2Cure"
+    },
+    {
+      "name": "Laura Hughes",
+      "familyName": "Hughes",
+      "givenName": "Laura",
+      "affiliation": ["Scripps Research", "Center for Viral Systems Biology"]
+    },
+    {
+      "name": "Ginger Tsueng",
+      "affiliation": ["Scripps Research", "Mark2Cure"]
+    }
+  ]
+}
