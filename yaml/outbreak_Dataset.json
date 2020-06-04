@@ -512,8 +512,7 @@
               }
             },
             "required": [
-              "funder",
-              "identifier"
+              "funder"
             ]
           },
           "dataDownload": {
