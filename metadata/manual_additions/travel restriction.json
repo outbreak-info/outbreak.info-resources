@@ -10,12 +10,13 @@
     "niaid": "https://discovery.biothings.io/view/niaid/",
     "outbreak": "https://discovery.biothings.io/view/outbreak/"
   },
-  "name": "List of travel restrictions",
+  "name": "IATA List of travel restrictions",
   "description": "List of air travel restrictions by country.\nTravel news powered by IATA Timatic",
   "measurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
   "variableMeasured": "travel restrictions",
   "identifier": "MCD23",
   "author": {
+    "@type": "Organization",
     "name": "Timatic Solutions",
     "affiliation": "International Air Transport Association"
   },
@@ -27,28 +28,65 @@
     "air travel",
     "travel restrictions"
   ],
+  "funding": [
+    {
+      "@type": "Monetary Grant",
+      "funder": [
+          {
+            "name": "International Air Transport Association"
+          }
+        ]
+    }],
   "curatedBy": [
     {
+      "@type": "Person",
       "name": "Craig Lazarchick",
       "familyName": "Lazarchick",
       "givenName": "Craig",
-      "affiliation": "Mark2Cure"
+      "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
     },
     {
+      "@type": "Person",
       "name": "Thomas Adams",
       "familyName": "Adams",
       "givenName": "Thomas",
-      "affiliation": "Mark2Cure"
+      "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
     },
     {
+      "@type": "Person",
       "name": "Laura Hughes",
       "familyName": "Hughes",
       "givenName": "Laura",
-      "affiliation": ["Scripps Research", "Center for Viral Systems Biology"]
+      "affiliation": [
+          {
+            "name": "Scripps Research"
+          }, 
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+      ]
     },
     {
+      "@type": "Person",
       "name": "Ginger Tsueng",
-      "affiliation": ["Scripps Research", "Mark2Cure"]
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": [
+          {
+            "name": "Scripps Research"
+          }, 
+          {
+            "name": "Mark2Cure"
+          }
+      ]
     }
   ]
 }
