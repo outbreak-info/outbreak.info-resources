@@ -1,0 +1,473 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "name": "GISAID EpiCoV SARS-CoV-2 Genomic Sequences",
+  "description": "The GISAID Initiative promotes the rapid sharing of data from all influenza viruses and the coronavirus causing COVID-19. This includes genetic sequence and related clinical and epidemiological data associated with human viruses, and geographical as well as species-specific data associated with avian and other animal viruses, to help researchers understand how viruses evolve and spread during epidemics and pandemics.\nGISAID does so by overcoming disincentive hurdles and restrictions, which discourage or prevented sharing of virological data prior to formal publication.\nThe Initiative ensures that open access to data in GISAID is provided free-of-charge to all individuals that agreed to identify themselves and agreed to uphold the GISAID sharing mechanism governed through its Database Access Agreement.\nAll bonafide users with GISAID access credentials agreed to the basic premise of upholding a scientific etiquette, by acknowledging the Originating laboratories providing the specimens, and the Submitting laboratories generating sequence and other metadata, ensuring fair exploitation of results derived from the data, and that all users agree that no restrictions shall be attached to data submitted to GISAID, to promote collaboration among researchers on the basis of open sharing of data and respect for all rights and interests.",
+  "identifier": "GISAID",
+  "curatedBy": {
+    "@type": "WebSite",
+    "name": "GISAID",
+    "url": "https://gisaid.org/CoV2020",
+    "author": [
+      {
+        "name": "Suma Tiruvayipati",
+        "affiliation": [
+          {
+            "name": "Genome Institute of Singapore A*Star Suma Tiruvayipati"
+          }
+        ]
+      },
+      {
+        "name": "Amandine Perrin",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Stephanie Goya",
+        "affiliation": [
+          {
+            "name": "Hospital de Niños Dr. Ricardo Gutiérrez, Buenos Aires"
+          }
+        ]
+      },
+      {
+        "name": "Paola Cristina Resende Silva",
+        "affiliation": [
+          {
+            "name": "Fundação Oswaldo Cruz (Fiocruz), Rio de Janeiro"
+          }
+        ]
+      },
+      {
+        "name": "Amaury Vaysse",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Shirleen Soh",
+        "affiliation": [
+          {
+            "name": "Genome Institute of Singapore A*STAR"
+          }
+        ]
+      },
+      {
+        "name": "Christophe Malabat",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Aengus Stewart",
+        "affiliation": [
+          {
+            "name": "The Francis Crick Institute, London"
+          }
+        ]
+      },
+      {
+        "name": "Sheila Ons",
+        "affiliation": [
+          {
+            "name": "Universidad Nacional de La Plata, Buenos Aires"
+          }
+        ]
+      },
+      {
+        "name": "Thomas Bigot",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Daniel See Rui En",
+        "affiliation": [
+          {
+            "name": "Bioinformatics Institute Singapore A*Star"
+          }
+        ]
+      },
+      {
+        "name": "Deborah Schneider-Luftman",
+        "affiliation": [
+          {
+            "name": "The Francis Crick Institute, London"
+          }
+        ]
+      },
+      {
+        "name": "Kirsten Roomp",
+        "affiliation": [
+          {
+            "name": "Luxembourg Centre for Systems Biomedicine"
+          }
+        ]
+      },
+      {
+        "name": "Pablo Soro Barrio",
+        "affiliation": [
+          {
+            "name": "The Francis Crick Institute, London"
+          }
+        ]
+      },
+      {
+        "name": "Natalia Pietrosemoli",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Marcos Sterkel",
+        "affiliation": [
+          {
+            "name": "Universidad Nacional de La Plata, Buenos Aires"
+          }
+        ]
+      },
+      {
+        "name": "Richard Mitter",
+        "affiliation": [
+          {
+            "name": "The Francis Crick Institute, London"
+          }
+        ]
+      },
+      {
+        "name": "Mariana Viegas",
+        "affiliation": [
+          {
+            "name": "National Council of Scientific & Technical Research, Buenos Aires"
+          }
+        ]
+      },
+      {
+        "name": "Claudia Chica",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Kathryn A. Jackson-Jones",
+        "affiliation": [
+          {
+            "name": "University of Edinburgh, MRC Human Genetics Unit"
+          }
+        ]
+      },
+      {
+        "name": "Raphael Lee Tze Chuen",
+        "affiliation": [
+          {
+            "name": "Bioinformatics Institute Singapore A*Star"
+          }
+        ]
+      },
+      {
+        "name": "Jose Manuel Latorre",
+        "affiliation": [
+          {
+            "name": "National Council of Scientific & Technical Research, Buenos Aires"
+          }
+        ]
+      },
+      {
+        "name": "Hervé Ménager",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Shilpa Yadahalli",
+        "affiliation": [
+          {
+            "name": "Bioinformatics Institute Singapore A*Star"
+          }
+        ]
+      },
+      {
+        "name": "Gael Millot",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Gavin Kelly",
+        "affiliation": [
+          {
+            "name": "The Francis Crick Institute, London"
+          }
+        ]
+      },
+      {
+        "name": "Gabriel Lihue Rojo",
+        "affiliation": [
+          {
+            "name": "Hospital de Niños Dr. Ricardo Gutierrez, Buenos Aires"
+          }
+        ]
+      },
+      {
+        "name": "Olov Svartström",
+        "affiliation": [
+          {
+            "name": "Public Health Agency of Sweden"
+          }
+        ]
+      },
+      {
+        "name": "Emmanuelle Permal",
+        "affiliation": [
+          {
+            "name": "Pasteur Institute, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Fernanda Sirota",
+        "affiliation": [
+          {
+            "name": "Bioinformatics Institute Singapore A*Star"
+          }
+        ]
+      },
+      {
+        "name": "Emna Achouri",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Lucila Traverso",
+        "affiliation": [
+          {
+            "name": "National Council of Scientific & Technical Research, Buenos Aires"
+          }
+        ]
+      },
+      {
+        "name": "Damien Mornico",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Xingyu Zhu",
+        "affiliation": [
+          {
+            "name": "Bioinformatics Institute Singapore A*Star"
+          }
+        ]
+      },
+      {
+        "name": "Corinne Maufrais",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Yi Hong Chew",
+        "affiliation": [
+          {
+            "name": "Bioinformatics Institute Singapore A*Star"
+          }
+        ]
+      },
+      {
+        "name": "Probir Chakravarty",
+        "affiliation": [
+          {
+            "name": "The Francis Crick Institute, London"
+          }
+        ]
+      },
+      {
+        "name": "Xiaofeng Wei",
+        "affiliation": [
+          {
+            "name": "CNGb Beijing Genomics Institute, Shenzhen"
+          }
+        ]
+      },
+      {
+        "name": "Amine Ghozlane",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Sarasvathi Easwvaran",
+        "affiliation": [
+          {
+            "name": "Adelaide, Australia"
+          }
+        ]
+      },
+      {
+        "name": "Quentin Giai Gianetto",
+        "affiliation": [
+          {
+            "name": "CNRS & Institut Pasteur, Paris"
+          }
+        ]
+      },
+      {
+        "name": "Yu Xing Teo",
+        "affiliation": [
+          {
+            "name": "Bioinformatics Institute Singapore A*Star"
+          }
+        ]
+      },
+      {
+        "name": "Lina Wang",
+        "affiliation": [
+          {
+            "name": "CNGb Beijing Genomics Institute, Shenzhen"
+          }
+        ]
+      }
+    ]
+  },
+  "author": {
+    "name": "GISAID",
+    "affiliation": "GISAID - Global Initiative on Sharing All Influenza Data"
+  },
+  "measurementTechnique": [
+    "http://purl.obolibrary.org/obo/NCIT_C146817",
+    "http://purl.obolibrary.org/obo/NCIT_C146818",
+    "http://purl.obolibrary.org/obo/OBI_0001177",
+    "http://purl.obolibrary.org/obo/OBI_0001271"
+  ],
+  "variableMeasured": "virus RNA sequence",
+  "dataDownload": {
+    "dateModified": "2020-06-03",
+    "url": "https://www.epicov.org/epi3/"
+  },
+  "license": "https://www.gisaid.org/registration/terms-of-use/",
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "topicCategory": "Virus Factors",
+  "keywords": [
+    "virus sequencing",
+    "RNA sequencing"
+  ],
+  "funding": [
+    {
+      "@type": "Organization",
+      "name": [
+        "PREDEMICS consortium (Preparedness",
+        " Prediction and Prevention of Emerging Zoonotic Viruses with Pandemic Potential using Multidisciplinary Approaches)"
+      ],
+      "identifier": "278433",
+      "funder": "European Commission",
+      "url": "https://cordis.europa.eu/project/id/278433"
+    },
+    {
+      "@type": "Organization",
+      "name": "Enhancing Communication and Information Sharing among International Influenza Networks",
+      "identifier": "APHL",
+      "funder": "Association of Public Health Laboratories",
+      "url": "https://www.aphl.org/rfp/Pages/default.aspx"
+    },
+    {
+      "@type": "Organization",
+      "name": "Cooperative Agreement with the Federal Republic of Germany",
+      "identifier": "GISAID EpiFlu",
+      "funder": "Federal Republic of Germany",
+      "url": "http://www.bmel.de/EN/Ministry/Research-Innovation/_Texte/FLI-Influenza-GISAID.html"
+    },
+    {
+      "@type": "Organization",
+      "name": "In-kind contribution from the Centers for Disease Control and Prevention",
+      "identifier": "CDC-GISAID",
+      "funder": "Centers for Disease Control and Prevention",
+      "url": "https://www.gisaid.org/about-us/public-private-partnerships/"
+    },
+    {
+      "@type": "Organization",
+      "name": [
+        "Cooperative Agreement with Singapore Agency for Science",
+        " Technology and Research (A*STAR)"
+      ],
+      "identifier": "A*STAR-GISAID",
+      "funder": [
+        "Singapore Agency for Science",
+        " Technology and Research (A*STAR)"
+      ],
+      "url": "https://www.a-star.edu.sg/News-and-Events/a-star-news/news/covid-19/knowing-the-enemy-to-fight-the-covid-19-war"
+    },
+    {
+      "@type": "Organization",
+      "name": "Global Influenza Hospital-based Surveillance Network",
+      "identifier": "GIHSN",
+      "funder": "Sanofi Pasteur Foundation for Influenza Epidemiology",
+      "url": "https://www.gihsn.org/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Seqirus Public-Private Partnership",
+      "identifier": "Seqirus-GISAID",
+      "funder": "Seqirus",
+      "url": "https://www.seqirus.com/partnering"
+    },
+    {
+      "@type": "Organization",
+      "name": "Rapid alert system for scientists",
+      "identifier": "8286670",
+      "funder": "Max Planck Foundation",
+      "url": "https://www.mpg.de/8286670/project_gisaid"
+    },
+    {
+      "@type": "Organization",
+      "identifier": "5736710",
+      "funder": [
+        "Swiss State Secretariat for Education",
+        " Research and Innovation (SERI) and the Federal Office of Public Health (FOPH)"
+      ],
+      "url": "https://www.swissinfo.ch/eng/flu-database-pools-pandemic-knowhow/5736710"
+    },
+    {
+      "@type": "Organization",
+      "name": "GISAID's EpiFlu™ database application",
+      "identifier": "HHS-GISAID",
+      "funder": "Department of Health and Human Services",
+      "url": "https://www.gisaid.org/about-us/grants/"
+    }
+  ]
+}
