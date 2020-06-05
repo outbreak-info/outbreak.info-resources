@@ -186,6 +186,9 @@
       }
     }
   },
+  "date": {
+    "type": "keyword"
+  },
   "dateCreated": {
     "type": "keyword"
   },
