@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form action="/dataset_browser">
+            <div>
+                Select a Dataset that you would like to help categorize
+            </div>
+            <div>
+                <span style="font-weight: bold">Dataset Id:</span>
+                <select name="dataset_id" onchange="this.form.submit()">
+                    {% for dataset_id, dataset_document_id in dataset_ids %}
+                        <option value= "{{dataset_id}}" SELECTED>{{dataset_document_id}}</option>"
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="hidden" name="user_id" value="{{user_id}}">
+        </form>
+
+        {% if dataset_id != "" and display_classifications == False %}
+            <form action="/classify_dataset">
+                <div style="font-weight:bold;">
+                    Dataset name
+                </div>
+                <div>
+                    {{dataset_name}}
+                </div>
+                <div style="font-weight:bold;">
+                    Dataset description
+                </div>
+                <div>
+                    {{dataset_description}}
+                </div>
+                <div style="font-weight:bold;">
+                    Dataset keywords
+                </div>
+                <div>
+                    {{dataset_keywords}}
+                </div>
+                <button>Classify this dataset</button>
+                <input type="hidden" name="user_id" value="{{user_id}}">
+                <input type="hidden" name="dataset_id" value="{{dataset_id}}">
+            </form>
+        {% elif dataset_id != "" and display_classifications == True %}
+            <div>
+                <div style="font-weight:bold;">
+                    Dataset name
+                </div>
+                <div>
+                    {{dataset_name}}
+                </div>
+                <div style="font-weight:bold;">
+                    Dataset description
+                </div>
+                <div>
+                    {{dataset_description}}
+                </div>
+                <div style="font-weight:bold;">
+                    Dataset keywords
+                </div>
+                <div>
+                    {{dataset_keywords}}
+                </div>
+
+                <form action="/save_classifications" method="POST">
+                    <div>
+                        From what you can see of the available information on the dataset, is there enough information to make an educated guess about what the dataset contains OR its purpose?
+                    </div>
+                    <input type="radio" name="enough_info" value="True" checked="checked">
+                    <label for="enough_info">Yes</label><br>
+                    <input type="radio" name="enough_info" value="False">
+                    <label for="enough_info">No</label><br>
+                    <div>
+                        Based on the category definitions, please pick the top 5 (most specific) categories that best describe this dataset in order of most relevant (1) to least relevant (5). Whenever appropriate, select the more specific category (eg- classical epidemiology) over the more specific category (eg- epidemiology)
+                    </div>
+                    <div>
+                        Choice 1
+                        <select name="choice_1">
+                            {% for category_id, category_name in categories %}
+                                <option value= "{{category_id}}" SELECTED>{{category_name}}</option>"
+                            {% endfor %}
+                        </select> 
+                    </div>
+                    <div>
+                        Choice 2
+                        <select name="choice_2">
+                            {% for category_id, category_name in categories %}
+                                <option value= "{{category_id}}" SELECTED>{{category_name}}</option>"
+                            {% endfor %}
+                        </select>      
+                    </div>
+                    <div>
+                        Choice 3
+                        <select name="choice_3">
+                            {% for category_id, category_name in categories %}
+                                <option value= "{{category_id}}" SELECTED>{{category_name}}</option>"
+                            {% endfor %}
+                        </select> 
+                    </div>
+                    <div>
+                        Choice 4
+                        <select name="choice_4">
+                            {% for category_id, category_name in categories %}
+                                <option value= "{{category_id}}" SELECTED>{{category_name}}</option>"
+                            {% endfor %}
+                        </select> 
+                    </div>
+                    <div>
+                        Choice 5
+                        <select name="choice_5">
+                            {% for category_id, category_name in categories %}
+                                <option value= "{{category_id}}" SELECTED>{{category_name}}</option>"
+                            {% endfor %}
+                        </select> 
+                    </div>
+                    <input type="hidden" name="user_id" value="{{user_id}}">
+                    <input type="hidden" name="dataset_id" value="{{dataset_id}}">
+                    <button>Save And Try Another</button>
+                </form>
+            </div>
+        {% endif %}
+    </body>
+</html>
