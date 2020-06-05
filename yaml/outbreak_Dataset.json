@@ -156,12 +156,12 @@
           "dataDownload": {
             "description": "Available downloads of the dataset.",
             "oneOf": [{
-                "$ref": "#/definitions/dataDownload"
+                "$ref": "#/definitions/datadownload"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/dataDownload"
+                  "$ref": "#/definitions/datadownload"
                 }
               }
             ]
@@ -430,7 +430,7 @@
                 "type": "string"
               },
               "affiliation": {
-                "$ref": "#/definitions/organization"
+                "type": "string"
               }
             },
             "required": [
@@ -515,7 +515,7 @@
               "funder"
             ]
           },
-          "dataDownload": {
+          "datadownload": {
             "description": "A dataset in downloadable form.",
             "@type": "DataDownload",
             "type": "object",
@@ -560,15 +560,7 @@
               },
               "type": {
                 "description": "The type of resource",
-                "enum": [
-                  "Dataset",
-                  "Publication",
-                  "ClinicalTrial", 
-                  "Analysis",
-                  "Protocol", 
-                  "SoftwareApplication",
-                  "Other"
-                  ]
+                "type": "string"
               },
               "url": {
                 "description": "The url of the resource cited."
