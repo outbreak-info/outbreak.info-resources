@@ -563,12 +563,12 @@
                 "type": "string"
               },
               "url": {
-                "description": "The url of the resource cited."
+                "description": "The url of the resource cited.",
                 "type": "string",
                 "format": "uri"
               },
               "versionDate": {
-                "description": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.
+                "description": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.",
                 "type": "string",
                 "format": "date"
               }
