@@ -539,7 +539,16 @@
           },
           "citation": {
             "description": "A citation object for a resource which is cited by the dataset (ie- is a derivative of the dataset) , related to the dataset, or from which the dataset was based on (ie- is derived from).",
-            "@type": "Thing",
+            "@type": {
+                "enum":[
+                  "Dataset",
+                  "Publication",
+                  "ClinicalTrial", 
+                  "Analysis",
+                  "Protocol", 
+                  "SoftwareApplication",
+                  "Thing" 
+                ]},
             "type": "object",
             "properties": {
               "name": {
@@ -560,15 +569,7 @@
               },
               "type": {
                 "description": "The type of resource",
-                "enum": [
-                  "Dataset",
-                  "Publication",
-                  "ClinicalTrial", 
-                  "Analysis",
-                  "Protocol", 
-                  "SoftwareApplication",
-                  "Other"
-                  ]
+                "type": "string"
               },
               "url": {
                 "description": "The url of the resource cited.",
