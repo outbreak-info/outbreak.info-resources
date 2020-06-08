@@ -386,7 +386,7 @@
           "author"
         ],
         "definitions": {
-          "baseOrganization":{
+          "baseOrgObject":{
             "description": "A barebones Organization object to work around recursion issues in DDE",
             "@type": "Organization",
             "type": "object",
@@ -394,6 +394,10 @@
               "name": {
                 "type": "string"
               },
+              "alternateName": {
+                "type": "string"
+              }
+            },
             "required": [
               "name"
             ]              
@@ -419,12 +423,12 @@
                 "affiliation": {
                   "oneOf": [
                     {
-                      "$ref": "#/definitions/baseOrganization"
+                      "$ref": "#/definitions/baseOrgObject"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "#/definitions/baseOrganization"
+                        "$ref": "#/definitions/baseOrgObject"
                       }
                     }
                   ]
@@ -477,8 +481,11 @@
               "name": {
                 "type": "string"
               },
+              "alternateName": {
+                "type": "string"
+              },
               "affiliation": {
-                "$ref": "#/definitions/baseOrganization"
+                "$ref": "#/definitions/baseOrgObject"
               },
               "members": {
                  "oneOf": [
@@ -556,12 +563,12 @@
                 "description": "name of the funding organization",
                 "oneOf": [
               {
-                "$ref": "#/definitions/organization"
+                "$ref": "#/definitions/baseOrgObject"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/organization"
+                  "$ref": "#/definitions/baseOrgObject"
                 }
               }
             ]
