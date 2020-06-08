@@ -431,6 +431,19 @@
               },
               "affiliation": {
                 "type": "string"
+              },
+              "members": {
+                 "oneOf": [
+                    {
+                      "$ref": "#/definitions/person"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/person"
+                      }
+                    }
+                  ]
               }
             },
             "required": [
