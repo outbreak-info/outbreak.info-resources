@@ -406,12 +406,12 @@
                 "affiliation": {
                   "oneOf": [
                     {
-                      "$ref": "#/definitions/organization"
+                      "$ref": "#/definitions/baseOrganization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "#/definitions/organization"
+                        "$ref": "#/definitions/baseOrganization"
                       }
                     }
                   ]
@@ -441,12 +441,12 @@
                 "affiliation": {
                   "oneOf": [
                     {
-                      "type": "string"
+                      "$ref": "#/definitions/baseOrganization"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "type": "string"
+                        "$ref": "#/definitions/baseOrganization"
                       }
                     }
                   ]
@@ -456,6 +456,19 @@
                 "name"
               ]
             },
+          baseOrganization:{
+            "description": "A barebones Organization object to work around recursion issues in DDE",
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+            "required": [
+              "name"
+            ]              
+          },
+            
           "organization": {
             "description": "Reusable organization definition",
             "@type": "Organization",
@@ -465,7 +478,7 @@
                 "type": "string"
               },
               "affiliation": {
-                "type": "string"
+                "$ref": "#/definitions/baseOrganization"
               },
               "members": {
                  "oneOf": [
