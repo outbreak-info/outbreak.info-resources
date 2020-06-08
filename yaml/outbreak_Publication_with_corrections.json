@@ -510,10 +510,10 @@
                 },
                 "type": {
                   "enum": [
-                    "Correction", 
-                    "Retraction", 
-                    "Expression of Concern", 
-                    "Withdrawal", 
+                    "Correction",
+                    "Retraction",
+                    "Expression of Concern",
+                    "Withdrawal",
                     "Erratum",
                     "Correction/Republication",
                     "peer reviewed version (for preprints only)"
