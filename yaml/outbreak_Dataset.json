@@ -386,6 +386,24 @@
           "author"
         ],
         "definitions": {
+          "baseOrgObject":{
+            "description": "A barebones Organization object to work around recursion issues in DDE",
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "name of the organization",
+                "type": "string"
+              },
+              "alternateName": {
+                "description": "Alternate name or Acronym for the organization.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]              
+          }, 
           "person": {
               "description": "Reusable person definition",
               "@type": "Person",
@@ -406,12 +424,12 @@
                 "affiliation": {
                   "oneOf": [
                     {
-                      "$ref": "#/definitions/organization"
+                      "$ref": "#/definitions/baseOrgObject"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "#/definitions/organization"
+                        "$ref": "#/definitions/baseOrgObject"
                       }
                     }
                   ]
@@ -420,7 +438,7 @@
               "required": [
                 "name"
               ]
-          },
+            },
           "memberObject": {
               "description": "Reusable person definition accounting for recursion issues in DDE",
               "@type": "Person",
@@ -441,12 +459,12 @@
                 "affiliation": {
                   "oneOf": [
                     {
-                      "type": "string"
+                      "$ref": "#/definitions/baseOrgObject"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "type": "string"
+                        "$ref": "#/definitions/baseOrgObject"
                       }
                     }
                   ]
@@ -455,7 +473,7 @@
               "required": [
                 "name"
               ]
-          },
+            },
           "organization": {
             "description": "Reusable organization definition",
             "@type": "Organization",
@@ -464,8 +482,11 @@
               "name": {
                 "type": "string"
               },
-              "affiliation": {
+              "alternateName": {
                 "type": "string"
+              },
+              "affiliation": {
+                "$ref": "#/definitions/baseOrgObject"
               },
               "members": {
                  "oneOf": [
@@ -525,7 +546,7 @@
                   "https://bioportal.bioontology.org/ontologies/COVID19"
                 ]
               }
-          },
+            },
           "funding": {
             "type": "object",
             "@type": "MonetaryGrant",
@@ -543,12 +564,12 @@
                 "description": "name of the funding organization",
                 "oneOf": [
               {
-                "$ref": "#/definitions/organization"
+                "$ref": "#/definitions/baseOrgObject"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/organization"
+                  "$ref": "#/definitions/baseOrgObject"
                 }
               }
             ]
