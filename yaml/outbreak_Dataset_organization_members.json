@@ -421,6 +421,41 @@
                 "name"
               ]
             },
+          "memberObject": {
+              "description": "Reusable person definition accounting for recursion issues in DDE",
+              "@type": "Person",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "givenName": {
+                  "type": "string"
+                },
+                "familyName": {
+                  "type": "string"
+                },
+                "orcid": {
+                  "type": "string"
+                },
+                "affiliation": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
           "organization": {
             "description": "Reusable organization definition",
             "@type": "Organization",
@@ -435,12 +470,12 @@
               "members": {
                  "oneOf": [
                     {
-                      "$ref": "#/definitions/person"
+                      "$ref": "#/definitions/memberObject"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "#/definitions/person"
+                        "$ref": "#/definitions/memberObject"
                       }
                     }
                   ]
