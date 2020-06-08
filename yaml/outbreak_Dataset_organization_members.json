@@ -386,6 +386,19 @@
           "author"
         ],
         "definitions": {
+          "baseOrganization":{
+            "description": "A barebones Organization object to work around recursion issues in DDE",
+            "@type": "Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+            "required": [
+              "name"
+            ]              
+          }
+          }, 
           "person": {
               "description": "Reusable person definition",
               "@type": "Person",
@@ -456,19 +469,6 @@
                 "name"
               ]
             },
-          "baseOrganization":{
-            "description": "A barebones Organization object to work around recursion issues in DDE",
-            "@type": "Organization",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-            "required": [
-              "name"
-            ]              
-          },
-            
           "organization": {
             "description": "Reusable organization definition",
             "@type": "Organization",
