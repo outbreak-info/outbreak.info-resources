@@ -1,0 +1,111 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "name": "AmeriGEOSS COVID19 repository",
+  "description": "World Health Organization repository for information regarding the outbreak of novel coronavirus (COVID-19) Situation Reports - text narrative in PDF format. ",
+  "identifier": "MCD2",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "AmeriGEO"
+    },
+    {
+      "@type": "Organization",
+      "name": "World Health Organization"
+    }
+  ],
+  "funding": {
+    "@type": "MonetaryGrant",
+    "funder": {
+      "name": "World Health Organization"
+    }
+  },
+  "measurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "CC-By",
+  "species": "Homo Sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "variableMeasured": [
+    "cumulative incidence ratio",
+    "cumulative death rate",
+    "infection rate"
+  ],
+  "topicCategory": [
+      "Prevention",
+      "Transmission",
+      "Classical epidemiology"
+  ],
+  "keywords": [
+    "WHO Covid-19 Situation Reports",
+    "cumulative incidence ratio by country",
+    "cumulative death rate by country",
+    "infection rate by country",
+    "Epidemic curve of confirmed COVID-19 by date of report and WHO region",
+    "WHO’s strategic objectives for COVID-19 response"
+  ],
+  "curationDate": "2020-06-08",
+  "curatedBy": {
+      "@type": "Organization",
+      "name": "Mark2Curators against covid19",
+      "members": [
+        {
+          "@type": "Person",
+          "name": "Craig Lazarchick",
+          "familyName": "Lazarchick",
+          "givenName": "Craig",
+          "affiliation": [
+              {
+                "name": "Mark2Cure"
+              }
+            ]
+        },
+        {
+          "@type": "Person",
+          "name": "Thomas Adams",
+          "familyName": "Adams",
+          "givenName": "Thomas",
+          "affiliation": [
+              {
+                "name": "Mark2Cure"
+              }
+            ]
+        },
+        {
+          "@type": "Person",
+          "name": "Ginger Tsueng",
+          "familyName": "Tsueng",
+          "givenName": "Ginger",
+          "affiliation": [
+              {
+                "name": "Scripps Research"
+              }, 
+              {
+                "name": "Mark2Cure"
+              }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Laura Hughes",
+          "familyName": "Hughes",
+          "givenName": "Laura",
+          "affiliation": [
+              {
+                "name": "Scripps Research"
+              }, 
+              {
+                "name": "Center for Viral Systems Biology"
+              }
+          ]
+        }
+        ]
+    }
+}
