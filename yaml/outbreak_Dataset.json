@@ -420,7 +420,42 @@
               "required": [
                 "name"
               ]
-            },
+          },
+          "memberObject": {
+              "description": "Reusable person definition accounting for recursion issues in DDE",
+              "@type": "Person",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "givenName": {
+                  "type": "string"
+                },
+                "familyName": {
+                  "type": "string"
+                },
+                "orcid": {
+                  "type": "string"
+                },
+                "affiliation": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name"
+              ]
+          },
           "organization": {
             "description": "Reusable organization definition",
             "@type": "Organization",
@@ -431,6 +466,19 @@
               },
               "affiliation": {
                 "type": "string"
+              },
+              "members": {
+                 "oneOf": [
+                    {
+                      "$ref": "#/definitions/memberObject"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/memberObject"
+                      }
+                    }
+                  ]
               }
             },
             "required": [
@@ -477,7 +525,7 @@
                   "https://bioportal.bioontology.org/ontologies/COVID19"
                 ]
               }
-            },
+          },
           "funding": {
             "type": "object",
             "@type": "MonetaryGrant",
