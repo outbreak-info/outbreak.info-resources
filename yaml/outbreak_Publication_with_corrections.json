@@ -59,7 +59,7 @@
         "@id": "https://discovery.biothings.io/view/outbreak/"
       }
     },
-    {"@id":"outbreak:correctionType","@type":"rdf:Property","rdfs:comment":"Type of notice: (Correction, Retraction, Expression of Convern, Withdrawal, Erratum,  Correction\/Republication)","rdfs:label":"correctionType","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The url to the notice if available","rdfs:label":"url","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"DOI (preferred) or PMID (e.g., 10.1126\/sciimmunol.aaw6329, PMID:31471352)","rdfs:label":"identifier","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:doi","@type":"rdf:Property","rdfs:comment":"DOI","rdfs:label":"doi","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:pmid","@type":"rdf:Property","rdfs:comment":"PMID","rdfs:label":"pmid","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Number"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"PublicationDate online if available","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:correctionType","@type":"rdf:Property","rdfs:comment":"Type of notice: (Correction, Retraction, Expression of Convern, Withdrawal, Erratum,  Correction\/Republication)","rdfs:label":"correctionType","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:url","@type":"rdf:Property","rdfs:comment":"The url to the notice if available","rdfs:label":"url","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:url"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"DOI (preferred) or PMID (e.g., 10.1126\/sciimmunol.aaw6329, PMID:31471352)","rdfs:label":"identifier","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:doi","@type":"rdf:Property","rdfs:comment":"DOI","rdfs:label":"doi","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:pmid","@type":"rdf:Property","rdfs:comment":"PMID","rdfs:label":"pmid","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Number"}},{"@id":"outbreak:datePublished","@type":"rdf:Property","rdfs:comment":"Publication Date online if available","rdfs:label":"datePublished","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:datePublished"},"schema:domainIncludes":{"@id":"outbreak:Correction"},"schema:rangeIncludes":{"@id":"schema:Date"}},
     {
       "@id": "outbreak:Analysis",
       "@type": "rdfs:Class",
@@ -495,10 +495,6 @@
               "@type": "Correction",
               "type": "object",
               "properties": {
-                "name": {
-                  "description": "name of the referenced resource",
-                  "type": "string"
-                },
                 "identifier": {
                   "type": "string"
                 },
@@ -509,6 +505,7 @@
                   "type": "integer"
                 },
                 "correctionType": {
+                  "description": "Type of correction or change referenced.",
                   "enum": [
                     "Correction",
                     "Retraction",
@@ -516,6 +513,7 @@
                     "Withdrawal",
                     "Erratum",
                     "Correction/Republication",
+                    "Update",
                     "peer reviewed version (for preprints only)"
                   ]
                 },
