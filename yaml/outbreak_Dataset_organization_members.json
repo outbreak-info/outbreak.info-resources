@@ -456,7 +456,7 @@
                 "name"
               ]
             },
-          baseOrganization:{
+          "baseOrganization":{
             "description": "A barebones Organization object to work around recursion issues in DDE",
             "@type": "Organization",
             "type": "object",
