@@ -429,6 +429,126 @@
             "author"
           ],
           "definitions": {
+            "baseOrgObject":{
+                "description": "A barebones Organization object to work around recursion issues in DDE",
+                "@type": "Organization",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "name of the organization",
+                    "type": "string"
+                  },
+                  "alternateName": {
+                    "description": "Alternate name or Acronym for the organization.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]              
+              }, 
+            "person": {
+                  "description": "Reusable person definition",
+                  "@type": "Person",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "givenName": {
+                      "type": "string"
+                    },
+                    "familyName": {
+                      "type": "string"
+                    },
+                    "orcid": {
+                      "type": "string"
+                    },
+                    "affiliation": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/definitions/baseOrgObject"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/definitions/baseOrgObject"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                },
+            "memberObject": {
+                  "description": "Reusable person definition accounting for recursion issues in DDE",
+                  "@type": "Person",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "givenName": {
+                      "type": "string"
+                    },
+                    "familyName": {
+                      "type": "string"
+                    },
+                    "orcid": {
+                      "type": "string"
+                    },
+                    "affiliation": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/definitions/baseOrgObject"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/definitions/baseOrgObject"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                },
+            "organization": {
+                "description": "Reusable organization definition",
+                "@type": "Organization",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "alternateName": {
+                    "type": "string"
+                  },
+                  "affiliation": {
+                    "$ref": "#/definitions/baseOrgObject"
+                  },
+                  "members": {
+                     "oneOf": [
+                        {
+                          "$ref": "#/definitions/memberObject"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/definitions/memberObject"
+                          }
+                        }
+                      ]
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
             "citation": {
               "description": "A citation object for a resource which is cited by the publication (ie- is a derivative of the publication) , related to the publication, or from which the publication was based on (ie- is derived from).",
               "@type": "CreativeWork",
@@ -477,58 +597,6 @@
                 "type"
               ]
             },
-            "person": {
-              "description": "Reusable person definition",
-              "@type": "Person",
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "givenName": {
-                  "type": "string"
-                },
-                "familyName": {
-                  "type": "string"
-                },
-                "orcid": {
-                  "type": "string"
-                },
-                "affiliation": {
-                  "type": "array",
-                  "oneOf": [
-                    {
-                      "$ref": "#/definitions/organization"
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/definitions/organization"
-                      }
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "name"
-              ]
-            },
-            "organization": {
-              "description": "Reusable organization definition",
-              "@type": "Organization",
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "affiliation": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ]
-            },
             "funding": {
               "type": "object",
               "@type": "MonetaryGrant",
@@ -547,12 +615,12 @@
                   "type": "array",
                   "oneOf": [
                     {
-                      "$ref": "#/definitions/organization"
+                      "$ref": "#/definitions/baseOrgObject"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "#/definitions/organization"
+                        "$ref": "#/definitions/baseOrgObject"
                       }
                     }
                   ]
