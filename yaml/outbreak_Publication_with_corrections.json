@@ -492,7 +492,7 @@
             },
             "correctionObject": {
               "description": "a special type of citation object for errata, retraction statements, expressions of concern, corrections/republications, peer-reviewed versions (in the case of preprints).",
-              "@type": "CreativeWork",
+              "@type": "Correction",
               "type": "object",
               "properties": {
                 "name": {
