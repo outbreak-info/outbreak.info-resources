@@ -392,16 +392,17 @@
             "type": "object",
             "properties": {
               "name": {
+                "description": "name of the organization",
                 "type": "string"
               },
               "alternateName": {
+                "description": "Alternate name or Acronym for the organization.",
                 "type": "string"
               }
             },
             "required": [
               "name"
             ]              
-          }
           }, 
           "person": {
               "description": "Reusable person definition",
