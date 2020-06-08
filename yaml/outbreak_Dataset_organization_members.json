@@ -458,12 +458,12 @@
                 "affiliation": {
                   "oneOf": [
                     {
-                      "$ref": "#/definitions/baseOrganization"
+                      "$ref": "#/definitions/baseOrgObject"
                     },
                     {
                       "type": "array",
                       "items": {
-                        "$ref": "#/definitions/baseOrganization"
+                        "$ref": "#/definitions/baseOrgObject"
                       }
                     }
                   ]
