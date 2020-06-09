@@ -571,7 +571,6 @@
                   "format": "uri"
                 },
                 "type": {
-                  "type": "string",
                   "enum": [
                     "Correction",
                     "Retraction",
@@ -585,7 +584,8 @@
                 }
               },
               "required": [
-                  "url"
+                  "url",
+                  "type"
               ]
             },  
             "citation": {
