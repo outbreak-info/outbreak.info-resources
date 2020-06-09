@@ -210,12 +210,12 @@
               "description": "Version number or correction statement",
               "oneOf": [
                 {
-                  "type": "string"
+                  "$ref": "#/definitions/correctionObject"
                 },
                 {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/definitions/correctionObject"
                   }
                 }
               ]
@@ -562,6 +562,32 @@
                   "name"
                 ]
               },
+            "correctionObject":{
+              "@type": "Thing",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "enum": [
+                    "Correction",
+                    "Retraction",
+                    "Expression of Concern",
+                    "Withdrawal",
+                    "Erratum",
+                    "Update",
+                    "Correction/Republication",
+                    "Peer reviewed version (preprints only)"
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "type",
+                "url"
+              ]
+            },
             "citation": {
               "description": "A citation object for a resource which is cited by the publication (ie- is a derivative of the publication) , related to the publication, or from which the publication was based on (ie- is derived from).",
               "@type": "CreativeWork",
