@@ -571,13 +571,16 @@
                   "format": "uri"
                 },
                 "type": {
+                  "type": "string",
                   "enum": [
                     "Correction",
                     "Retraction",
                     "Expression of Concern",
                     "Withdrawal",
                     "Erratum",
-                    "Update"
+                    "Update",
+                    "Correction\/Republication",
+                    "Peer reviewed version \(preprints only\)"
                   ]
                 }
               },
