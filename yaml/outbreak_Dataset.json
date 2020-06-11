@@ -210,7 +210,7 @@
               }
             ]
           },
-            "topicCategory": {
+          "topicCategory": {
               "description": "Applicable outbreak.info category",
               "oneOf": [
                 {
@@ -291,7 +291,6 @@
                   }
                 }
               ]
-
             },
           "keywords": {
             "description": "A list of keywords associated with this dataset",
@@ -386,6 +385,69 @@
           "author"
         ],
         "definitions": {
+          "controlledVocabulary": {
+            "description": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "string",
+            "vocabulary": {
+              "ontology": ["efo", "ncit","obi"],
+              "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
+                             "http://purl.obolibrary.org/obo/OBI_0000011"]
+            },
+            "strict": false
+          },
+          "miscControlledVocabulary": {
+            "description": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "string",
+            "vocabulary": {
+              "ontology": ["ncbitaxon"],
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+            },
+            "strict": false
+          },
+          "moreControlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": [
+                  "efo",
+                  "cido",
+                  "epo",
+                  "covid19"
+                ],
+                "children_of": [
+                  "https://www.ebi.ac.uk/efo/EFO_0001444",
+                  "http://purl.obolibrary.org/obo/cido.owl",
+                  "http://purl.obolibrary.org/obo/epo",
+                  "https://bioportal.bioontology.org/ontologies/COVID19"
+                ]
+              }
+            },
+          "datadownload": {
+            "description": "A dataset in downloadable form.",
+            "@type": "DataDownload",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "dateModified": {
+                "type": "string",
+                "format": "date"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "dateModified",
+              "url"
+            ]
+          },
           "baseOrgObject":{
             "description": "A barebones Organization object to work around recursion issues in DDE",
             "@type": "Organization",
@@ -506,47 +568,6 @@
               "name"
             ]
           },
-          "controlledVocabulary": {
-            "description": "collection of vocabulary terms defined in ontologies",
-            "@type": "CreativeWork",
-            "type": "string",
-            "vocabulary": {
-              "ontology": ["efo", "ncit","obi"],
-              "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
-                             "http://purl.obolibrary.org/obo/OBI_0000011"]
-            },
-            "strict": false
-          },
-          "miscControlledVocabulary": {
-            "description": "collection of vocabulary terms defined in ontologies",
-            "@type": "CreativeWork",
-            "type": "string",
-            "vocabulary": {
-              "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
-            },
-            "strict": false
-          },
-          "moreControlledVocabulary": {
-              "definition": "collection of vocabulary terms defined in ontologies",
-              "@type": "CreativeWork",
-              "type": "string",
-              "strict": false,
-              "vocabulary": {
-                "ontology": [
-                  "efo",
-                  "cido",
-                  "epo",
-                  "covid19"
-                ],
-                "children_of": [
-                  "https://www.ebi.ac.uk/efo/EFO_0001444",
-                  "http://purl.obolibrary.org/obo/cido.owl",
-                  "http://purl.obolibrary.org/obo/epo",
-                  "https://bioportal.bioontology.org/ontologies/COVID19"
-                ]
-              }
-            },
           "funding": {
             "type": "object",
             "@type": "MonetaryGrant",
@@ -582,28 +603,6 @@
             },
             "required": [
               "funder"
-            ]
-          },
-          "datadownload": {
-            "description": "A dataset in downloadable form.",
-            "@type": "DataDownload",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "dateModified": {
-                "type": "string",
-                "format": "date"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": [
-              "dateModified",
-              "url"
             ]
           },
           "citation": {
