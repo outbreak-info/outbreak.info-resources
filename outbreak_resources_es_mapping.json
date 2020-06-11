@@ -221,7 +221,7 @@
         "type": "keyword"
       },
       "description": {
-        "type": "keyword"
+        "type": "text"
       },
       "@id": {
         "type": "keyword"
