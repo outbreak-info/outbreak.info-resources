@@ -132,7 +132,7 @@
           },
           "author": {
             "description": "Name of the author or organization that created the dataset.  Note: schema.org/author and schema.org/organization have additional fields that can provide more information about the author/organization, if desired.",
-            "oneOf": [
+            "anyOf": [
               {
                 "$ref": "#/definitions/person"
               },
