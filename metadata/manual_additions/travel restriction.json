@@ -37,56 +37,60 @@
           }
         ]
     }],
-  "curatedBy": [
-    {
-      "@type": "Person",
-      "name": "Craig Lazarchick",
-      "familyName": "Lazarchick",
-      "givenName": "Craig",
-      "affiliation": [
-          {
-            "name": "Mark2Cure"
-          }
+  "curatedBy": {
+      "@type": "Organization",
+      "name": "Mark2Curators Against COVID-19",
+      "members": [
+        {
+          "@type": "Person",
+          "name": "Craig Lazarchick",
+          "familyName": "Lazarchick",
+          "givenName": "Craig",
+          "affiliation": [
+              {
+                "name": "Mark2Cure"
+              }
+            ]
+        },
+        {
+          "@type": "Person",
+          "name": "Thomas Adams",
+          "familyName": "Adams",
+          "givenName": "Thomas",
+          "affiliation": [
+              {
+                "name": "Mark2Cure"
+              }
+            ]
+        },
+        {
+          "@type": "Person",
+          "name": "Ginger Tsueng",
+          "familyName": "Tsueng",
+          "givenName": "Ginger",
+          "affiliation": [
+              {
+                "name": "Scripps Research"
+              }, 
+              {
+                "name": "Mark2Cure"
+              }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Laura Hughes",
+          "familyName": "Hughes",
+          "givenName": "Laura",
+          "affiliation": [
+              {
+                "name": "Scripps Research"
+              }, 
+              {
+                "name": "Center for Viral Systems Biology"
+              }
+          ]
+        }
         ]
-    },
-    {
-      "@type": "Person",
-      "name": "Thomas Adams",
-      "familyName": "Adams",
-      "givenName": "Thomas",
-      "affiliation": [
-          {
-            "name": "Mark2Cure"
-          }
-        ]
-    },
-    {
-      "@type": "Person",
-      "name": "Laura Hughes",
-      "familyName": "Hughes",
-      "givenName": "Laura",
-      "affiliation": [
-          {
-            "name": "Scripps Research"
-          }, 
-          {
-            "name": "Center for Viral Systems Biology"
-          }
-      ]
-    },
-    {
-      "@type": "Person",
-      "name": "Ginger Tsueng",
-      "familyName": "Tsueng",
-      "givenName": "Ginger",
-      "affiliation": [
-          {
-            "name": "Scripps Research"
-          }, 
-          {
-            "name": "Mark2Cure"
-          }
-      ]
     }
-  ]
 }
