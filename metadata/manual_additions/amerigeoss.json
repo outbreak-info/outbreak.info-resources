@@ -20,7 +20,8 @@
     },
     {
       "@type": "Organization",
-      "name": "World Health Organization"
+      "name": "World Health Organization",
+      "alternateName": "WHO"
     }
   ],
   "funding": {

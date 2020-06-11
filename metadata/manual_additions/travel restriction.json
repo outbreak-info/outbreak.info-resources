@@ -18,79 +18,85 @@
   "author": {
     "@type": "Organization",
     "name": "Timatic Solutions",
-    "affiliation": "International Air Transport Association"
+    "affiliation": {
+      "name": "International Air Transport Association",
+      "alternateName": "IATA"
+    }
   },
+  "funding": [
+    {
+      "@type": "Monetary Grant",
+      "funder": [
+        {
+          "name": "International Air Transport Association"
+        }
+      ]
+    }
+  ],
   "license": "https://www.iatatravelcentre.com/iata-travel-centre-terms-of-use.htm",
-  "species": "human",
-  "infectiousAgent": "SARS coronavirus 2",
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
   "topicCategory": "Public Health Interventions",
   "keywords": [
     "air travel",
     "travel restrictions"
   ],
-  "funding": [
-    {
-      "@type": "Monetary Grant",
-      "funder": [
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Mark2Curators Against COVID-19",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
           {
-            "name": "International Air Transport Association"
+            "name": "Mark2Cure"
           }
         ]
-    }],
-  "curatedBy": {
-      "@type": "Organization",
-      "name": "Mark2Curators Against COVID-19",
-      "members": [
-        {
-          "@type": "Person",
-          "name": "Craig Lazarchick",
-          "familyName": "Lazarchick",
-          "givenName": "Craig",
-          "affiliation": [
-              {
-                "name": "Mark2Cure"
-              }
-            ]
-        },
-        {
-          "@type": "Person",
-          "name": "Thomas Adams",
-          "familyName": "Adams",
-          "givenName": "Thomas",
-          "affiliation": [
-              {
-                "name": "Mark2Cure"
-              }
-            ]
-        },
-        {
-          "@type": "Person",
-          "name": "Ginger Tsueng",
-          "familyName": "Tsueng",
-          "givenName": "Ginger",
-          "affiliation": [
-              {
-                "name": "Scripps Research"
-              }, 
-              {
-                "name": "Mark2Cure"
-              }
-          ]
-        },
-        {
-          "@type": "Person",
-          "name": "Laura Hughes",
-          "familyName": "Hughes",
-          "givenName": "Laura",
-          "affiliation": [
-              {
-                "name": "Scripps Research"
-              }, 
-              {
-                "name": "Center for Viral Systems Biology"
-              }
-          ]
-        }
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
         ]
-    }
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "curationDate": "2020-06-11"
 }
+
