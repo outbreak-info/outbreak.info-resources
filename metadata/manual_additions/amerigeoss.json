@@ -12,37 +12,60 @@
   },
   "name": "AmeriGEOSS COVID19 repository",
   "description": "World Health Organization repository for information regarding the outbreak of novel coronavirus (COVID-19) Situation Reports - text narrative in PDF format. ",
-  "identifier": "MCD2",
-  "author": [
-    {
-      "@type": "Organization",
-      "name": "AmeriGEO"
-    },
-    {
-      "@type": "Organization",
-      "name": "World Health Organization",
-      "alternateName": "WHO"
-    }
-  ],
-  "funding": {
-    "@type": "MonetaryGrant",
-    "funder": {
-      "name": "World Health Organization"
-    }
-  },
   "measurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
-  "license": "CC-By",
-  "species": "Homo Sapiens",
-  "infectiousAgent": "SARS-CoV-2",
   "variableMeasured": [
     "cumulative incidence ratio",
     "cumulative death rate",
     "infection rate"
   ],
+  "identifier": "MCD2",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "World Health Organization",
+      "alternateName": "WHO",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "AmeriGEO",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "funding": {
+    "@type": "MonetaryGrant",
+    "funder": {
+      "name": "World Health Organization",
+      "alternateName": "WHO"
+    }
+  },
+  "license": "CC-By",
+  "species": "Homo Sapiens",
+  "infectiousAgent": "SARS-CoV-2",
   "topicCategory": [
-      "Prevention",
-      "Transmission",
-      "Classical epidemiology"
+    "Prevention",
+    "Transmission",
+    "Classical Epidemiology"
   ],
   "keywords": [
     "WHO Covid-19 Situation Reports",
@@ -52,61 +75,61 @@
     "Epidemic curve of confirmed COVID-19 by date of report and WHO region",
     "WHO’s strategic objectives for COVID-19 response"
   ],
-  "curationDate": "2020-06-08",
   "curatedBy": {
-      "@type": "Organization",
-      "name": "Mark2Curators Against COVID-19",
-      "members": [
-        {
-          "@type": "Person",
-          "name": "Craig Lazarchick",
-          "familyName": "Lazarchick",
-          "givenName": "Craig",
-          "affiliation": [
-              {
-                "name": "Mark2Cure"
-              }
-            ]
-        },
-        {
-          "@type": "Person",
-          "name": "Thomas Adams",
-          "familyName": "Adams",
-          "givenName": "Thomas",
-          "affiliation": [
-              {
-                "name": "Mark2Cure"
-              }
-            ]
-        },
-        {
-          "@type": "Person",
-          "name": "Ginger Tsueng",
-          "familyName": "Tsueng",
-          "givenName": "Ginger",
-          "affiliation": [
-              {
-                "name": "Scripps Research"
-              }, 
-              {
-                "name": "Mark2Cure"
-              }
-          ]
-        },
-        {
-          "@type": "Person",
-          "name": "Laura Hughes",
-          "familyName": "Hughes",
-          "givenName": "Laura",
-          "affiliation": [
-              {
-                "name": "Scripps Research"
-              }, 
-              {
-                "name": "Center for Viral Systems Biology"
-              }
-          ]
-        }
+    "@type": "Organization",
+    "name": "Mark2Curators Against COVID-19",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
         ]
-    }
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "curationDate": "2020-06-08"
 }
