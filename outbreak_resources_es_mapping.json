@@ -662,5 +662,8 @@
   },
   "volumeNumber": {
     "type": "text"
+  },
+  "@id": {
+      "type": "keyword"
   }
 }
