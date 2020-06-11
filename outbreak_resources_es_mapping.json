@@ -223,6 +223,9 @@
       "description": {
         "type": "keyword"
       },
+      "@id": {
+        "type": "keyword"
+       },
       "name": {
         "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
