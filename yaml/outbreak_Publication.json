@@ -657,11 +657,11 @@
               "properties": {
                 "name": {
                   "type": "string",
-                  "description": "The name of the monetary grant that funded/funds the Dataset"
+                  "description": "The name of the monetary grant that funded/funds the publication"
                 },
                 "identifier": {
                   "type": "string",
-                  "description": "Unique identifier(s) for the grant(s) used to fund the Dataset"
+                  "description": "Unique identifier(s) for the grant(s) used to fund the publication"
                 },
                 "funder": {
                   "description": "name of the funding organization",
