@@ -36,9 +36,9 @@ def import_documents(db_file, json_file):
 
     with open(json_file, 'r') as fin:
         datas = json.load(fin)
-        for data in datas:
+        for data in datas['hits']:
             keywords = ''
-            if not data['keywords'] is None:
+            if 'keywords' in data and not data['keywords'] is None:
                 keywords = ','.join(data['keywords'])
             
             c.execute("""select count(1) from Datasets where DocumentId = ?""", (data['_id'],))

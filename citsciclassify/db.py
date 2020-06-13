@@ -1,7 +1,8 @@
 import sqlite3
 from sqlite3 import Error
 
-def save_classification(user_id, dataset_id, time, enough_information, choice_1, choice_2, choice_3, choice_4, choice_5):
+def save_classification(user_id, dataset_id, time, enough_information, 
+        choice_1, choice_2, choice_3, choice_4, choice_5):
     conn = sqlite3.connect('classifications.db')
     c = conn.cursor()
 
@@ -12,16 +13,16 @@ def save_classification(user_id, dataset_id, time, enough_information, choice_1,
     created_id = c.lastrowid
 
     if enough_information:
-        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId) 
-            values (?,?,?,?)""", (choice_1, dataset_id, user_id, created_id))
-        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId) 
-                values (?,?,?,?)""", (choice_2, dataset_id, user_id, created_id))
-        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId) 
-                values (?,?,?,?)""", (choice_3, dataset_id, user_id, created_id))
-        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId) 
-                values (?,?,?,?)""", (choice_4, dataset_id, user_id, created_id))
-        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId) 
-                values (?,?,?,?)""", (choice_5, dataset_id, user_id, created_id))
+        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId, Rank) 
+            values (?,?,?,?,?)""", (choice_1, dataset_id, user_id, created_id, 1))
+        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId, Rank) 
+                values (?,?,?,?,?)""", (choice_2, dataset_id, user_id, created_id, 2))
+        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId, Rank) 
+                values (?,?,?,?,?)""", (choice_3, dataset_id, user_id, created_id, 3))
+        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId, Rank) 
+                values (?,?,?,?,?)""", (choice_4, dataset_id, user_id, created_id, 4))
+        c.execute(""" insert into UserCompletedDatasetClassifications (CategoryId, DatasetId, UserId, UserCompletedDatasetId, Rank) 
+                values (?,?,?,?,?)""", (choice_5, dataset_id, user_id, created_id, 5))
     conn.commit()
 
     c.close()
@@ -30,7 +31,7 @@ def save_classification(user_id, dataset_id, time, enough_information, choice_1,
 def get_categories():
     conn = sqlite3.connect('classifications.db')
     c = conn.cursor()
-    c.execute(""" select Id, Name from Categories""")
+    c.execute(""" select Id, Name from Categories order by Id desc""")
     results = c.fetchall()
     c.close()
     conn.close()
@@ -56,7 +57,8 @@ def get_available_dataset_ids_for_user(user_id):
     c = conn.cursor()
 
     c.execute(""" select Id, DocumentId from Datasets
-        where Id not in (select DatasetId from UserCompletedDatasets where UserId = ?) """, (user_id,))
+        where Id not in (select DatasetId from UserCompletedDatasets where UserId = ?)
+        and Id not in (select DatasetId from UserCompletedDatasets group by DatasetId having count(*)) < 3""", (user_id,))
     result = c.fetchall()
 
     c.close()
