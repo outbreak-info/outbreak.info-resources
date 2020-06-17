@@ -101,26 +101,30 @@
     "Other SARS-CoV-2 structures",
     "PanDDA analysis structures and main protease with unliganded active site",
     "A collection of 149 structures obtained by experimental means"
+  ],  
+    "topicCategory": [
+    "Virus Factors",
+    "Host Factors"
   ],
-  "MeasurementTechnique": "-1",
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
   "license": "https://www.rcsb.org/pages/policies",
   "funding": [
     {
       "@type": "MonetaryGrant",
       "funder": {
-        "name": "National Institutes of Health",
-        "alternateName": "NIH"
+        "name": "National Science Foundation",
+        "alternateName": "NSF"
       },
-      "identifier": "R01GM133198",
+      "identifier": "DBI-1832184",
       "name": ""
     },
     {
       "@type": "MonetaryGrant",
       "funder": {
-        "name": "National Institutes of Health",
-        "alternateName": "NIH"
+        "name": "US Department of Energy",
+        "alternateName": "DoE"
       },
-      "identifier": "R01GM133198",
+      "identifier": "DE-SC0019749",
       "name": ""
     },
     {

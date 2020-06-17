@@ -99,6 +99,9 @@
     "Institutional(Educational)-response-to-COVID",
     "Information obtained from educational institutions"
   ],
+  "topicCategory": [
+    "Public Health Interventions"
+  ],
   "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
   "dataDownload": {
     "dateModified": "2020-04-27",

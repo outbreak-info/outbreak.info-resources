@@ -472,7 +472,10 @@
   "keywords": [
     "Past 2 weeks of COVID-19 activity in the USA"
   ],
-  "MeasurementTechnique": "-1",
+  "topicCategory": [
+    "Classical Epidemiology"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0001000",
   "dataDownload": {
     "dateModified": "2020-05-12",
     "url": "https://covidnearyou.org/#!/"

@@ -110,6 +110,9 @@
     "Washington State Department of Health, Washington State COVID-19 Demographics",
     "Data gathering by state agency"
   ],
+  "topicCategory": [
+    "Classical Epidemiology"
+  ],
   "variableMeasured": [
     "Cases and deaths by week, county and age",
     "COVID-19 Cumulative Hospitalizations"

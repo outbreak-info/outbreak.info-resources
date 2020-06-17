@@ -113,9 +113,9 @@
     "total confirmed cases",
     "total recovered cases",
     "total death cases",
-    "COVID-19 ",
-    "Epidemic ",
-    "Spatio-Temporal ",
+    "COVID-19",
+    "Epidemic",
+    "Spatio-Temporal",
     "Dataset"
   ],
   "topicCategory": [
@@ -128,7 +128,7 @@
     "cumulative death rate",
     "survival rate"
   ],
-  "MeasurementTechnique": "-1",
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
   "dataDownload": {
     "dateModified": "2020-02-19",
     "url": "https://www.researchgate.net/publication/339446004_COVID-19-Epidemic-Dataset_Updated_2020-2-22/link/5e535f40a6fdcc2f8f5d77dd/download"

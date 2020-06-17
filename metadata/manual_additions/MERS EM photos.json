@@ -137,10 +137,13 @@
     "MERS-CoV Photos",
     "Microphotography"
   ],
+  "topicCategory": [
+    "Virus Factors"
+  ],
   "variableMeasured": [
     "micrographs"
   ],
-  "MeasurementTechnique": "Microscopy",
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0001631",
   "license": "https://www.cdc.gov/Other/policies.html",
   "dataDownload": {
     "dateModified": "2019-08-2",

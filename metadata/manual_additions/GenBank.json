@@ -171,7 +171,8 @@
   "topicCategory": [
     "Virus Factors"
   ],
-  "MeasurementTechnique": "RNA sequencing",
+  "MeasurementTechnique": ["http://purl.obolibrary.org/obo/OBI_0001177",
+                           "http://purl.obolibrary.org/obo/OBI_0302914"],
   "license": "U. S. Government public information",
   "dataDownload": {
     "dateModified": "2020-03-26",

@@ -89,7 +89,7 @@
       }
     }
   ],
-  "MeasurementTechnique": "digital curation",
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
   "license": "Creative Commons Zero v1.0 Universal",
   "dataDownload": {
     "dateModified": "2020-05-8",
