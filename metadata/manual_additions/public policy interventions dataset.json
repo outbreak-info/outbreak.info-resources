@@ -139,7 +139,7 @@
   "variableMeasured": [
     "cumulative incidence"
   ],
-  "MeasurementTechnique": "-1",
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
   "license": "Creative Commons Attribution CC BY standard",
   "dataDownload": {
     "dateModified": "2020-05-12",

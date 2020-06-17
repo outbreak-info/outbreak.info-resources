@@ -126,6 +126,10 @@
     "ICU cases",
     "COVID-19 cases"
   ],
+  "topicCategory": [
+    "Forecasting",
+    "Classical Epidemiology"
+  ],
   "variableMeasured": [
     "event rate",
     "cumulative death rate",

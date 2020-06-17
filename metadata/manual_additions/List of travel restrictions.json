@@ -81,7 +81,10 @@
     "Timatic",
     "air travel restrictions"
   ],
-  "MeasurementTechnique": "-1",
+  "topicCategory": [
+    "Public Health Interventions
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
   "license": "\u00a9 2020 IATA Timatic. All rights reserved. Information sourced and provided by IATA.",
   "funding": [
     {

@@ -98,7 +98,7 @@
   "keywords": [
     ""
   ],
-  "MeasurementTechnique": "-1",
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/IAO_0000650",
   "license": "MIT License",
   "dataDownload": {
     "dateModified": "2020-05-11",

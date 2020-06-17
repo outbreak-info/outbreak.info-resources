@@ -94,7 +94,7 @@
     "Treatment",
     "Vaccines"
   ],
-  "MeasurementTechnique": "-1",
+  "MeasurementTechnique": "",
   "license": "\u00a9 2020 STAT;https://www.statnews.com/terms-conditions/",
   "dataDownload": {
     "dateModified": "2020-05-12",
