@@ -1,0 +1,104 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "coronavirus drugs and vaccines in development",
+  "description": "An updated guide to the coronavirus drugs and vaccines in development",
+  "identifier": "MCD26",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Damian Garde",
+      "familyName": "Garde",
+      "givenName": "Damian",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Coronavirus",
+    "drug",
+    "vaccine",
+    "News reports"
+  ],
+  "topicCategory": [
+    "Treatment",
+    "Vaccines"
+  ],
+  "MeasurementTechnique": "-1",
+  "license": "\u00a9 2020 STAT;https://www.statnews.com/terms-conditions/",
+  "dataDownload": {
+    "dateModified": "2020-05-12",
+    "url": "https://www.statnews.com/2020/03/19/an-updated-guide-to-the-coronavirus-drugs-and-vaccines-in-development/"
+  },
+  "curationDate": "2020-05-12"
+}

@@ -1,0 +1,112 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "ECDC epi data",
+  "description": "COVID-19 situation update worldwide, as of 6 May 2020/nGeographic distribution of COVID-19 cases worldwide/nCases and deaths organized by report date and country",
+  "identifier": "MCD6",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "European Centre for Disease Prevention and Control",
+      "alternateName": "ECDC",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "Compiled from other sources"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "cumulative death rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "https://www.ecdc.europa.eu/en/copyright; https://www.ecdc.europa.eu/en/publications-data/european-surveillance-system-tessy; https://www.ecdc.europa.eu/en/legal-notice;",
+  "dataDownload": [
+    {
+      "dateModified": "2020-05-6",
+      "url": "https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide"
+    },
+    {
+      "dateModified": "2020-05-6",
+      "url": "https://opendata.ecdc.europa.eu/covid19/casedistribution/json/"
+    }
+  ],
+  "curationDate": "2020-05-12"
+}

@@ -1,0 +1,173 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "Snohomish county",
+  "description": "COVID-19 CASE COUNT INFO CASE INFORMATION FOR SNOHOMISH COUNTY RESIDENTS/nNOVEL CORONAVIRUS 2019-Snohomish Health District/nTabular and graphical presentations of Case Count, Current Status, Type of Contact,  Gender, CASE COUNT BY CITY, TOTAL CASES OF COVID-19 IN SNOHOMISH COUNTY BY DATE, NEW CASES OF COVID-19 REPORTED IN SNOHOMISH COUNTY BY DATE, STATUS OF COVID-19 CASES IN SNOHOMISH COUNTY BY DATE, NUMBER OF CASES BY SYMPTOM ONSET DATE, CASE RATES PER 100,000 BY RACE AND ETHNICITY, DEATHS OF SNOHOMISH COUNTY RESIDENTS by Gender, Underlying conditions, Type of contact, DEATHS BY AGE, Deaths by city, COVID-19 RELATED DEATHS IN SNOHOMISH COUNTY BY DATE, SNOHOMISH COUNTY COVID-19 TESTING BY DATE",
+  "identifier": "MCD16",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Snohomish Health District",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    " Case Count",
+    "Cases by Type of Contact",
+    "Current Location Status of cases",
+    "Current status of cases",
+    "Long-term care facilities cases",
+    "Cases by gender",
+    "Cases by age",
+    "Cases by race and ethnicity",
+    "Case count by city",
+    "TOTAL CASES OF COVID-19 IN SNOHOMISH COUNTY BY DATE",
+    "NEW CASES OF COVID-19 REPORTED IN SNOHOMISH COUNTY BY DATE",
+    "TATUS OF COVID-19 CASES IN SNOHOMISH COUNTY BY DATE",
+    "NUMBER OF CASES BY SYMPTOM ONSET DATE",
+    "CASE RATES PER 100,000 BY RACE AND ETHNICITY",
+    "DEATHS OF SNOHOMISH COUNTY RESIDENTS",
+    "Deaths by gender",
+    "Deaths with underlying conditions",
+    "Deaths by infection relating to types of contact",
+    "Long-term care facility deaths",
+    "Deaths by age",
+    "Deaths by city",
+    "COVID-19 RELATED DEATHS IN SNOHOMISH COUNTY BY DATE",
+    "SNOHOMISH COUNTY COVID-19 TESTING BY DATE",
+    "compiled from reports"
+  ],
+  "topicCategory": [
+    "Risk Factors",
+    "Testing Prevalence",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "event rate",
+    "cumulative incidence",
+    "cumulative death rate",
+    "survival rate",
+    "age-specific rate",
+    "gender-specific rate",
+    "race and ethnicity-specific rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "https://www.snohd.org/319/Terms-Of-Use",
+  "dataDownload": [
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/484/Novel-Coronavirus-2019"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/495/COVID-19-General-Information"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/491/COVID-19-Info-for-Schools-Child-Cares"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/492/COVID-19-Info-for-BusinessesEmployers"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/497/COVID-19-Info-for-Elder-Care"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/493/COVID-19-Info-for-Health-Care-Providers"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/498/COVID-19-Info-for-Community-Organization"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/494/COVID-19-Info-for-Travelers"
+    },
+    {
+      "dateModified": "2020-05-11",
+      "url": "https://www.snohd.org/500/Info-for-people-with-COVID-19"
+    }
+  ],
+  "curationDate": "2020-05-12"
+}

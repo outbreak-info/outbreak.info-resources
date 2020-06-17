@@ -1,0 +1,481 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "COVID Near You",
+  "description": "COVID Near You -- crowdsourced reporting of symptoms/nGeodisplay of individuals who have reported COVID-19 symptoms, or reported taking a COVID-19 test, in USA, Canada, Mexico.",
+  "identifier": "MCD27",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Aly Cabral",
+      "familyName": "Cabral",
+      "givenName": "Aly",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Amrit Dhir",
+      "familyName": "Dhir",
+      "givenName": "Amrit",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ashish Jha",
+      "familyName": "Jha",
+      "givenName": "Ashish",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Chase Rigby",
+      "familyName": "Rigby",
+      "givenName": "Chase",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Domino Weir",
+      "familyName": "Weir",
+      "givenName": "Domino",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Eric Chen",
+      "familyName": "Chen",
+      "givenName": "Eric",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jared Hawkins",
+      "familyName": "Hawkins",
+      "givenName": "Jared",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jeffrey Ling",
+      "familyName": "Ling",
+      "givenName": "Jeffrey",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jishnu Menon",
+      "familyName": "Menon",
+      "givenName": "Jishnu",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "John Brownstein",
+      "familyName": "Brownstein",
+      "givenName": "John",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jorge Imperial",
+      "familyName": "Imperial",
+      "givenName": "Jorge",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Kara Sewalk",
+      "familyName": "Sewalk",
+      "givenName": "Kara",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Lakshmi Yajurvedi",
+      "familyName": "Yajurvedi",
+      "givenName": "Lakshmi",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Leobardo Castro Mora",
+      "familyName": "Castro Mora",
+      "givenName": "Leobardo",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Mark Oglia",
+      "familyName": "Oglia",
+      "givenName": "Mark",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Matthew G Monteleone",
+      "familyName": "Monteleone",
+      "givenName": "Matthew G",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Mohamed El Mahallawy",
+      "familyName": "Mahallawy",
+      "givenName": "Mohamed El",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Nick Jonas",
+      "familyName": "Jonas",
+      "givenName": "Nick",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Nitin Gujral",
+      "familyName": "Gujral",
+      "givenName": "Nitin",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Prem Ramaswami",
+      "familyName": "Ramaswami",
+      "givenName": "Prem",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Pujaa Rajan",
+      "familyName": "Rajan",
+      "givenName": "Pujaa",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sahir Azam",
+      "familyName": "Azam",
+      "givenName": "Sahir",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sampath Chennuri",
+      "familyName": "Chennuri",
+      "givenName": "Sampath",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Shailesh Mahajan",
+      "familyName": "Mahajan",
+      "givenName": "Shailesh",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sindy Tan",
+      "familyName": "Tan",
+      "givenName": "Sindy",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Steven Baker",
+      "familyName": "Baker",
+      "givenName": "Steven",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Tim Driscoll",
+      "familyName": "Driscoll",
+      "givenName": "Tim",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Trey Guinn",
+      "familyName": "Guinn",
+      "givenName": "Trey",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Veronica Pinchin",
+      "familyName": "Pinchin",
+      "givenName": "Veronica",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Xiaoming Jia",
+      "familyName": "Jia",
+      "givenName": "Xiaoming",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "University of Toronto",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Toronto Public Health",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Boston Children\u2019s Hospital",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "HealthMap",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": " Harvard Medical School",
+      "familyName": "Harvard Medical School",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": " Boston Children's Hospital",
+      "familyName": "Boston Children's Hospital",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Past 2 weeks of COVID-19 activity in the USA"
+  ],
+  "MeasurementTechnique": "-1",
+  "dataDownload": {
+    "dateModified": "2020-05-12",
+    "url": "https://covidnearyou.org/#!/"
+  },
+  "curationDate": "2020-05-12"
+}

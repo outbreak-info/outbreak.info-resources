@@ -1,0 +1,137 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "Florida Department of Health testing",
+  "description": "Coronavirus: summary of persons being monitored, persons under investigation, and cases/nWhat you need to know now about COVID-19 in Florida/nvarious views of detailed tabular data in PDF format",
+  "identifier": "MCD14",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Florida Department of Health",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "COVID-19 prevention",
+    "What do I do if I\u2019m sick?",
+    "COVID-19 symptoms",
+    "Health Care Providers Guidance",
+    "County Health Departments Guidance' Laboratory Testing and Specimen Collection",
+    "Reporting COVID-19 PUIs and Cases in Merlin",
+    "Organizers of Community Events Guidance",
+    "Businesses and Employers Guidance",
+    "Schools and Child Care Programs Guidance",
+    "Travelers Guidance",
+    "Mental Health Support",
+    "Current Situation in Florida in cases and deaths",
+    "Long-term care facilities with positive COVID-19 cases",
+    "Long-term care facility deaths",
+    "Florida Department of Corrections deaths",
+    "High Risk Population Guidance",
+    "Nursing Home Guidance",
+    "Compiled from reports"
+  ],
+  "topicCategory": [
+    "Risk Factors",
+    "Diagnosis",
+    "Symptoms",
+    "Testing Prevalence",
+    "Public Health Interventions",
+    "Mechanism of Transmission",
+    "Prevention",
+    "Transmission",
+    "Viral Shedding / Persistence",
+    "Treatment",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "cumulative death rate",
+    "event rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "parse from: https://floridahealthcovid19.gov/",
+  "dataDownload": {
+    "dateModified": "2020-05-2",
+    "url": "https://floridadisaster.org/globalassets/covid19/dailies/covid-19-data---daily-report-2020-05-02-0953.pdf"
+  },
+  "curationDate": "2020-05-12"
+}

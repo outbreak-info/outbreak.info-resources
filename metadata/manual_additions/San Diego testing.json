@@ -1,0 +1,202 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "San Diego testing",
+  "description": "Coronavirus Disease 2019 (COVID-19)/nCoronavirus Disease 2019 Information/nvarious kinds of summary information available in PDF files",
+  "identifier": "MCD15",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "San Diego County Health and Human Services Agency",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "Coronavirus in San Diego County",
+    "COVID-19 cases by age",
+    "COVID-19 cases by gender",
+    "COVID-19 cases by race",
+    "COVID-19 ICU cases",
+    "COVID-19-Associated Hospitalizations",
+    "COVID-19-Associated Deaths",
+    "Compiled from reports"
+  ],
+  "topicCategory": [
+    "Risk Factors",
+    "Symptoms",
+    "Testing Prevalence"
+  ],
+  "variableMeasured": [
+    "age-specific rate",
+    "cumulative death rate",
+    "event rate",
+    "cumulative incidence rate",
+    "gender-specific rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "dataDownload": [
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/status.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV.html.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/materials.html#handwashingstationmap"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/bhs/covid19_resources.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/prepare.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/materials.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Healthcare_Providers_Community_Clinics_Hospitals_and_Pharmacies.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/about.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Chambers_of_Commerce_and_Businesses.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov//content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Childcare_Centers.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Cities.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Community-Based_Organizations_and_Faith-Based_Organizations.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Faith-Based_Organizations.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Homeless_Service_Providers.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Residential_Facilities.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Military_and_Veterans.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Older_Adults_and_Disability_Service_Providers.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Restaurants_Food_and_Beverage_Providers.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov//content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Schools_SDCOE_K12.html"
+    },
+    {
+      "dateModified": "2020-05-10",
+      "url": "https://www.sandiegocounty.gov//content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/CommunitySectors/Schools_Colleges_and_Universities.html"
+    }
+  ],
+  "curationDate": "2020-05-12"
+}

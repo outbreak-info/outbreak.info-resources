@@ -1,0 +1,149 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "public policy interventions dataset",
+  "description": "Relationship between number of COVID-19 cases and government response/nData API endpoint. This endpoint provides JSON by with country stringency data, confirmed cases and deaths on a day by day basis as collected by our data collection team. The stringency_actual field is the daily calculated data. The stringency field is a convenience field for visualisations which holds previous day data (up to 7 days) if data in unavailable for a given day.",
+  "identifier": "MCD31",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Thomas Hale",
+      "familyName": "Hale",
+      "givenName": "Thomas",
+      "affiliation": [
+        {
+          "name": "Blavatnik School of Government "
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sam  Webster",
+      "familyName": " Webster",
+      "givenName": "Sam",
+      "affiliation": [
+        {
+          "name": "Blavatnik School of Government"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Anna  Petherick",
+      "familyName": " Petherick",
+      "givenName": "Anna",
+      "affiliation": [
+        {
+          "name": "Blavatnik School of Government "
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Toby Phillips",
+      "familyName": "Phillips",
+      "givenName": "Toby",
+      "affiliation": [
+        {
+          "name": "Blavatnik School of Government"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Beatriz Kira",
+      "familyName": "Kira",
+      "givenName": "Beatriz",
+      "affiliation": [
+        {
+          "name": "Blavatnik School of Government"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Public policy information gathered from multiple nations"
+  ],
+  "topicCategory": [
+    "Testing Prevalence",
+    "Public Health Interventions",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence"
+  ],
+  "MeasurementTechnique": "-1",
+  "license": "Creative Commons Attribution CC BY standard",
+  "dataDownload": {
+    "dateModified": "2020-05-12",
+    "url": "https://covidtracker.bsg.ox.ac.uk/stringency-map"
+  },
+  "curationDate": "2020-05-12"
+}

@@ -1,0 +1,1203 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "NYT list of how virus was contracted",
+  "description": "Coronavirus in the U.S.: Latest Map and Case Count/nCoronavirus in the U.S.: Latest Map and Case Count/nNote: Data are based on reports by states and counties at the time of publication. Local governments may revise reported numbers as they get new information. Some deaths may be reported by officials in two different jurisdictions. When possible, deaths have been reported here in the jurisdiction where the death occurred. While the first known case in the United States was announced on Jan. 21, charts show cases since Feb. 26, when American public health officials first identified community transmission of the virus.",
+  "identifier": "MCD11",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Sarah Almukhtar",
+      "familyName": "Almukhtar",
+      "givenName": "Sarah",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Aliza Aufrichtig",
+      "familyName": "Aufrichtig",
+      "givenName": "Aliza",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Matthew Bloch",
+      "familyName": "Bloch",
+      "givenName": "Matthew",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Julia Calderone",
+      "familyName": "Calderone",
+      "givenName": "Julia",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Keith Collins",
+      "familyName": "Collins",
+      "givenName": "Keith",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Amy Harmon",
+      "familyName": "Harmon",
+      "givenName": "Amy",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Rich Harris",
+      "familyName": "Harris",
+      "givenName": "Rich",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Adeel Hassan",
+      "familyName": "Hassan",
+      "givenName": "Adeel",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jon Huang",
+      "familyName": "Huang",
+      "givenName": "Jon",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Danielle Ivory",
+      "familyName": "Ivory",
+      "givenName": "Danielle",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Rebecca Lai",
+      "familyName": "Lai",
+      "givenName": "Rebecca",
+      "affiliation": [
+        {
+          "name": "K.K."
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Allison McCann",
+      "familyName": "McCann",
+      "givenName": "Allison",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Richard Oppel",
+      "familyName": "Oppel",
+      "givenName": "Richard",
+      "affiliation": [
+        {
+          "name": "A. Jr."
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "K. Patel",
+      "familyName": "Patel",
+      "givenName": "K.",
+      "affiliation": [
+        {
+          "name": "Jugal"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Julie  Shaver",
+      "familyName": " Shaver",
+      "givenName": "Julie",
+      "affiliation": [
+        {
+          "name": "Walton"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Anjali  Singhvi",
+      "familyName": " Singhvi",
+      "givenName": "Anjali",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Charlie Smart",
+      "familyName": "Smart",
+      "givenName": "Charlie",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Mitch Smith",
+      "familyName": "Smith",
+      "givenName": "Mitch",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Derek Watkins",
+      "familyName": "Watkins",
+      "givenName": "Derek",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Timothy Williams",
+      "familyName": "Williams",
+      "givenName": "Timothy",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jin Wu",
+      "familyName": "Wu",
+      "givenName": "Jin",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Karen Yourish",
+      "familyName": "Yourish",
+      "givenName": "Karen",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jordan Allen",
+      "familyName": "Allen",
+      "givenName": "Jordan",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jeff Arnold",
+      "familyName": "Arnold",
+      "givenName": "Jeff",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ian Austen",
+      "familyName": "Austen",
+      "givenName": "Ian",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Mike Baker",
+      "familyName": "Baker",
+      "givenName": "Mike",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ellen Barry",
+      "familyName": "Barry",
+      "givenName": "Ellen",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Samone Blair",
+      "familyName": "Blair",
+      "givenName": "Samone",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Nicholas Bogel-Burroughs",
+      "familyName": "Bogel-Burroughs",
+      "givenName": "Nicholas",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Aurelien Breeden",
+      "familyName": "Breeden",
+      "givenName": "Aurelien",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Emma Bubola",
+      "familyName": "Bubola",
+      "givenName": "Emma",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Maddie Burakoff",
+      "familyName": "Burakoff",
+      "givenName": "Maddie",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Christopher Calabrese",
+      "familyName": "Calabrese",
+      "givenName": "Christopher",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sarah Cahalan",
+      "familyName": "Cahalan",
+      "givenName": "Sarah",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Robert Chiarito",
+      "familyName": "Chiarito",
+      "givenName": "Robert",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Matt Craig",
+      "familyName": "Craig",
+      "givenName": "Matt",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Brandon Dupr\u00e9",
+      "familyName": "Dupr\u00e9",
+      "givenName": "Brandon",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Melissa Eddy",
+      "familyName": "Eddy",
+      "givenName": "Melissa",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "John Eligon",
+      "familyName": "Eligon",
+      "givenName": "John",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Timmy Facciola",
+      "familyName": "Facciola",
+      "givenName": "Timmy",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Matt Furber",
+      "familyName": "Furber",
+      "givenName": "Matt",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Robert Gebeloff",
+      "familyName": "Gebeloff",
+      "givenName": "Robert",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Matthew Goldstein",
+      "familyName": "Goldstein",
+      "givenName": "Matthew",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Rebecca Griesbach",
+      "familyName": "Griesbach",
+      "givenName": "Rebecca",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Lauryn Higgins",
+      "familyName": "Higgins",
+      "givenName": "Lauryn",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jake Holland",
+      "familyName": "Holland",
+      "givenName": "Jake",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jon Huang",
+      "familyName": "Huang",
+      "givenName": "Jon",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Danya Issawi",
+      "familyName": "Issawi",
+      "givenName": "Danya",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Anna Joyce",
+      "familyName": "Joyce",
+      "givenName": "Anna",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Hinga Klein",
+      "familyName": "Klein",
+      "givenName": "Hinga",
+      "affiliation": [
+        {
+          "name": "Ann"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jacob LaGesse",
+      "familyName": "LaGesse",
+      "givenName": "Jacob",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Alex Lemonides",
+      "familyName": "Lemonides",
+      "givenName": "Alex",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Patricia Mazzei",
+      "familyName": "Mazzei",
+      "givenName": "Patricia",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jesse McKinley",
+      "familyName": "McKinley",
+      "givenName": "Jesse",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Miles McKinley",
+      "familyName": "McKinley",
+      "givenName": "Miles",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sarah Mervosh",
+      "familyName": "Mervosh",
+      "givenName": "Sarah",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Lauren Messman",
+      "familyName": "Messman",
+      "givenName": "Lauren",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Andrea Michelson",
+      "familyName": "Michelson",
+      "givenName": "Andrea",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Steven Moity",
+      "familyName": "Moity",
+      "givenName": "Steven",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Thomas Gibbons-Neff",
+      "familyName": "Gibbons-Neff",
+      "givenName": "Thomas",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Azi Paybarah",
+      "familyName": "Paybarah",
+      "givenName": "Azi",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Elian Peltier",
+      "familyName": "Peltier",
+      "givenName": "Elian",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sean Plambeck",
+      "familyName": "Plambeck",
+      "givenName": "Sean",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Elisabetta Povoledo",
+      "familyName": "Povoledo",
+      "givenName": "Elisabetta",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Scott Reinhard",
+      "familyName": "Reinhard",
+      "givenName": "Scott",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Thomas Rivas",
+      "familyName": "Rivas",
+      "givenName": "Thomas",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Alison Saldanha",
+      "familyName": "Saldanha",
+      "givenName": "Alison",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Alex Schwartz",
+      "familyName": "Schwartz",
+      "givenName": "Alex",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Emily Schwing",
+      "familyName": "Schwing",
+      "givenName": "Emily",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Libby Seline",
+      "familyName": "Seline",
+      "givenName": "Libby",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Anjali Singhvi",
+      "familyName": "Singhvi",
+      "givenName": "Anjali",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Alex Traub",
+      "familyName": "Traub",
+      "givenName": "Alex",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Maura Turcotte",
+      "familyName": "Turcotte",
+      "givenName": "Maura",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Tracey Tully",
+      "familyName": "Tully",
+      "givenName": "Tracey",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Waananen Jones",
+      "familyName": "Jones",
+      "givenName": "Waananen",
+      "affiliation": [
+        {
+          "name": "Lisa"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Schoenfeld  Walker",
+      "familyName": " Walker",
+      "givenName": "Schoenfeld",
+      "affiliation": [
+        {
+          "name": "Amy"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jeremy White",
+      "familyName": "White",
+      "givenName": "Jeremy",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Will Houp",
+      "familyName": "Houp",
+      "givenName": "Will",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Andrew Chavez",
+      "familyName": "Chavez",
+      "givenName": "Andrew",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Michael Strickland",
+      "familyName": "Strickland",
+      "givenName": "Michael",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Tiff Fehr",
+      "familyName": "Fehr",
+      "givenName": "Tiff",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Miles Watkins",
+      "familyName": "Watkins",
+      "givenName": "Miles",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Josh Williams",
+      "familyName": "Williams",
+      "givenName": "Josh",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Albert Sun",
+      "familyName": "Sun",
+      "givenName": "Albert",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Shelly Seroussi",
+      "familyName": "Seroussi",
+      "givenName": "Shelly",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Nina Pavlich",
+      "familyName": "Pavlich",
+      "givenName": "Nina",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Carmen Cincotti",
+      "familyName": "Cincotti",
+      "givenName": "Carmen",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ben Smithgall",
+      "familyName": "Smithgall",
+      "givenName": "Ben",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Andrew Fischer",
+      "familyName": "Fischer",
+      "givenName": "Andrew",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Rachel Shorey",
+      "familyName": "Shorey",
+      "givenName": "Rachel",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Blacki Migliozzi",
+      "familyName": "Migliozzi",
+      "givenName": "Blacki",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Alastair Coote",
+      "familyName": "Coote",
+      "givenName": "Alastair",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Steven Speicher",
+      "familyName": "Speicher",
+      "givenName": "Steven",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Hugh Mandeville",
+      "familyName": "Mandeville",
+      "givenName": "Hugh",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Robin Berjon",
+      "familyName": "Berjon",
+      "givenName": "Robin",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Thu Trinh",
+      "familyName": "Trinh",
+      "givenName": "Thu",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Carolyn Price",
+      "familyName": "Price",
+      "givenName": "Carolyn",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Michael Robles",
+      "familyName": "Robles",
+      "givenName": "Michael",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Reported cases in the United States",
+    "Where new cases are increasing",
+    "Where new cases are mostly the same",
+    "Where new cases are decreasing",
+    "Cases and deaths by state and county",
+    "New reported cases by day in the United States",
+    "New reported deaths by day in the United States",
+    "Hot spots: Counties with the highest number of cases per resident",
+    "Cases in select prison populations",
+    "What You Can Do",
+    "Coronavirus Tips: Frequently Asked Questions and Advice"
+  ],
+  "topicCategory": [
+    "Risk Factors",
+    "Testing Prevalence",
+    "Public Health Interventions",
+    "Mechanism of Transmission",
+    "Prevention",
+    "Transmission",
+    "Viral Shedding / Persistence",
+    "Treatment",
+    "Repurposing",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "cumulative death rate",
+    "infection rate",
+    "event rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "https://help.nytimes.com/hc/en-us/articles/115014893428-Terms-of-service",
+  "dataDownload": {
+    "dateModified": "2020-05-8",
+    "url": "https://github.com/nytimes/covid-19-data"
+  },
+  "curationDate": "2020-05-12"
+}

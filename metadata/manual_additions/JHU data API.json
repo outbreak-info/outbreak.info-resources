@@ -1,0 +1,108 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "JHU data API",
+  "description": "COVID19-API/nCOVID-19 API | Simply Fast API for covid-19 cases exploration/ndatabase not yet populated?",
+  "identifier": "MCD17",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Sophia Castellarin",
+      "familyName": "Castellarin",
+      "givenName": "Sophia",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Nuttaphat Arunoprayoch",
+      "familyName": "Arunoprayoch",
+      "givenName": "Nuttaphat",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    ""
+  ],
+  "MeasurementTechnique": "-1",
+  "license": "MIT License",
+  "dataDownload": {
+    "dateModified": "2020-05-11",
+    "url": "https://github.com/nat236919/covid19-api"
+  },
+  "curationDate": "2020-05-12"
+}

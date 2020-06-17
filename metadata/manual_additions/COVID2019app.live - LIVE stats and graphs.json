@@ -1,0 +1,121 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "COVID2019app.live - LIVE stats and graphs",
+  "description": "spreadsheet with columns: Territories, Confirmed cases, Deaths, Recovered, Severe/critical, Tested, Active cases",
+  "identifier": "MCD8",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jo Di",
+      "familyName": "Di",
+      "givenName": "Jo",
+      "affiliation": [
+        {
+          "name": "jodigraphics15"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Leon Yuan",
+      "familyName": "Yuan",
+      "givenName": "Leon",
+      "affiliation": [
+        {
+          "name": "yxlearn"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Confirmed cases ",
+    "Deaths",
+    "Recovered cases",
+    "Severe/Critical cases",
+    "Active cases",
+    "Number of tested"
+  ],
+  "topicCategory": [
+    "Testing Prevalence",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "cumulative death rate",
+    "survival rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "dataDownload": {
+    "dateModified": "2020-05-7",
+    "url": "https://docs.google.com/spreadsheets/d/1Z7VQ5xlf3BaTx_LBBblsW4hLoGYWnZyog3jqsS9Dbgc/edit#gid=957283529"
+  },
+  "curationDate": "2020-05-12"
+}

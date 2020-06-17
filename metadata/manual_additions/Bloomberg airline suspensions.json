@@ -1,0 +1,183 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "Bloomberg airline suspensions",
+  "description": "Airlines Halting Flights Due to Coronavirus Outbreak\\nBloomberg.com article summarizing: Airlines Halting Flights Due to Coronavirus Outbreak From first cancellation on Jan. 23 through April 30. Data as March 13, 2020, 5:00 AM PDT",
+  "identifier": "MCD1",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Demetrios Pogkas",
+      "familyName": "Pogkas",
+      "givenName": "Demetrios",
+      "affiliation": [
+        {
+          "name": "Bloomberg"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Cedric Sam",
+      "familyName": "Sam",
+      "givenName": "Cedric",
+      "affiliation": [
+        {
+          "name": "Bloomberg"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Chloe Whiteaker",
+      "familyName": "Whiteaker",
+      "givenName": "Chloe",
+      "affiliation": [
+        {
+          "name": "Bloomberg"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Hannah Recht",
+      "familyName": "Recht",
+      "givenName": "Hannah",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Wout Vergauwen",
+      "familyName": "Vergauwen",
+      "givenName": "Wout",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Cho Young-Sam",
+      "familyName": "Young-Sam",
+      "givenName": "Cho",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Anthony Palazzo",
+      "familyName": "Palazzo",
+      "givenName": "Anthony",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Halted flights",
+    "Suspended flights",
+    "Airlines Halting Flights Due to Coronavirus Outbreak",
+    "journalistic data gathering",
+    "airline flights"
+  ],
+  "topicCategory": [
+    "Public Health Interventions",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "Suspended flights",
+    "Dates of suspension"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "\u00a92020 Bloomberg L.P. All Rights Reserved\\nhttps://www.bloomberg.com/notices/tos/",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "Bloomberg"
+      }
+    }
+  ],
+  "dataDownload": {
+    "dateModified": "2020-03-13",
+    "url": "https://www.bloomberg.com/graphics/2020-china-coronavirus-airlines-business-effects/"
+  },
+  "curationDate": "2020-05-12"
+}
