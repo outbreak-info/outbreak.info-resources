@@ -1,0 +1,135 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "Open Data Hong Kong",
+  "description": "Data in Coronavirus Disease (COVID-19)/nData in Coronavirus Disease (COVID-19)/n37 files available in CSV format; updated daily",
+  "identifier": "MCD12",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Department of Health (Hong Kong)",
+      "alternateName": "DATA.GOV.HK",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "Details of probable/confirmed cases of COVID-19 infection in Hong Kong",
+    "Residential buildings in which probable/confirmed cases have resided in the past 14 days or non-residential building with 2 or more probable/confirmed cases in the past 14 days",
+    "Latest situation of reported cases of COVID-19 in Hong Kong",
+    "List of flights/trains/ships/cars taken by probable/confirmed cases of COVID-19 during the symptomatic phase in the past 14 days",
+    "Collection points for submission of specimens by patients of private doctors for COVID-19 testing",
+    "List of buildings of the home confinees under mandatory home quarantine according to Cap. 599A of Hong Kong Laws",
+    "List of buildings of the home confinees under mandatory home quarantine according to Cap. 599C of Hong Kong Laws",
+    "Statistics of newly issued quarantine orders under the Compulsory Quarantine of Certain Persons Arriving at Hong Kong Regulation (Cap. 599C)",
+    "Statistics of active quarantine orders (within 14-day quarantine period) under the Compulsory Quarantine of Certain Persons Arriving at Hong Kong Regulation (Cap. 599C)",
+    "Latest situation of reported cases of COVID-19 in Mainland China",
+    "The areas in Mainland China have reported cases of COVID-19",
+    "The distribution of COVID-19 cases reported in Guangdong Province",
+    "Countries/areas outside Mainland China have reported cases of COVID-19",
+    "Countries/areas have reported cases of COVID-19",
+    "The distribution of COVID-19 cases reported in Korea",
+    "Daily statistics on testing for COVID-19 in Hong Kong",
+    "Monthly statistics on testing for COVID-19 in Hong Kong",
+    "The countries/areas visited by the cases with travel history outside Hong Kong during the incubation period (imported and possibly local cases)",
+    "Mode of detection for confirmed and probable cases in Hong Kong",
+    "Occupancy of quarantine centres",
+    "Number of confines by types in the quarantine centres",
+    "Large clusters with 10 or more cases",
+    "Compiled from records"
+  ],
+  "topicCategory": [
+    "Testing Prevalence",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "event rate",
+    "cumulative death rate",
+    "infection rate",
+    "survival rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "https://1.data.gov.hk/en/terms-and-conditions",
+  "dataDownload": {
+    "dateModified": "2020-05-8",
+    "url": "https://1.data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent"
+  },
+  "curationDate": "2020-05-12"
+}

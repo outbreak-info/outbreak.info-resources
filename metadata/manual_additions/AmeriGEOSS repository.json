@@ -1,0 +1,141 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "AmeriGEOSS repository",
+  "description": "World Health Organization regarding the current outbreak of novel coronavirus (COVID-19)\\nSituation Reports - text narrative in PDF format",
+  "identifier": "MCD2",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "AmeriGEO",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "World Health Organization",
+      "alternateName": "WHO",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "WHO Covid-19 Situation Reports",
+    "cumulative incidence ratio by country",
+    "cumulative death rate by country",
+    "infection rate by country Epidemic curve of confirmed COVID-19, by date of report and WHO region",
+    "WHO\u2019s strategic objectives for COVID-19 response"
+  ],
+  "topicCategory": [
+    "Prevention",
+    "Transmission",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence ratio",
+    "cumulative death rate",
+    "infection rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "Open Definition 2.1 License; Creative Commons Attribution License;",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "World Health Organization",
+        "alternateName": "WHO"
+      }
+    }
+  ],
+  "dataDownload": {
+    "dateModified": "2020-03-26",
+    "url": "https://data.amerigeoss.org/he/dataset/novel-coronavirus-2019-ncov"
+  },
+  "curationDate": "2020-05-12"
+}

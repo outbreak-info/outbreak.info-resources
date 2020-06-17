@@ -1,0 +1,184 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "National Genomics Data Center, China",
+  "description": "China National Center for Bioinformation 2019 Novel Coronavirus Resource (2019nCoVR)/nVarious resources related to 2019nCoVR. FTP download site includes Coronaviridae genome and protein files in FASTA and FAA formats. Also resources on genome variation, clinical records, and publications.",
+  "identifier": "MCD22",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "National Genomics Data Center",
+      "alternateName": "NGDC",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "China National Center for Bioinformation",
+      "alternateName": "CNCB",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "Genome Variations",
+    "AI Diagnosis & Online Tools",
+    "Genome Warehouse",
+    "Released Genome Sequences"
+  ],
+  "topicCategory": [
+    "Case Descriptions",
+    "Virus Factors",
+    "Virus Factors;Case Descriptions",
+    "Diagnosis",
+    "Classical Epidemiology"
+  ],
+  "MeasurementTechnique": "Various means",
+  "license": "https://bigd.big.ac.cn/policies",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "CAS Key Technology Talent Program",
+        "alternateName": ""
+      },
+      "identifier": "",
+      "name": ""
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "CAS Key Technology Talent Program",
+        "alternateName": ""
+      },
+      "identifier": "",
+      "name": ""
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "CAS Key Technology Talent Program",
+        "alternateName": ""
+      },
+      "identifier": "",
+      "name": ""
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "CAS Key Technology Talent Program",
+        "alternateName": ""
+      },
+      "identifier": "",
+      "name": ""
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "CAS Key Technology Talent Program",
+        "alternateName": ""
+      },
+      "identifier": "",
+      "name": ""
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "CAS Key Technology Talent Program",
+        "alternateName": ""
+      },
+      "identifier": "",
+      "name": ""
+    }
+  ],
+  "dataDownload": {
+    "dateModified": "2020-05-11",
+    "url": "https://bigd.big.ac.cn/ncov/?lang=en"
+  },
+  "curationDate": "2020-05-12"
+}

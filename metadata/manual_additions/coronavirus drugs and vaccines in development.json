@@ -10,47 +10,9 @@
     "niaid": "https://discovery.biothings.io/view/niaid/",
     "outbreak": "https://discovery.biothings.io/view/outbreak/"
   },
-  "name": "IATA List of travel restrictions",
-  "description": "List of air travel restrictions by country.\nTravel news powered by IATA Timatic",
-  "measurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
-  "variableMeasured": "travel restrictions",
-  "identifier": "MCD23",
-  "author": {
-    "@type": "Organization",
-    "name": "Timatic Solutions",
-    "affiliation": {
-      "name": "International Air Transport Association",
-      "alternateName": "IATA"
-    },
-    "members": {
-      "name": "",
-      "givenName": "",
-      "familyName": "",
-      "orcid": "",
-      "affiliation": ""
-    }
-  },
-  "funding": [
-    {
-      "@type": "Monetary Grant",
-      "funder": [
-        {
-          "name": "International Air Transport Association"
-        }
-      ]
-    }
-  ],
-  "license": "https://www.iatatravelcentre.com/iata-travel-centre-terms-of-use.htm",
-  "species": "Homo sapiens",
-  "infectiousAgent": "SARS-CoV-2",
-  "topicCategory": "Public Health Interventions",
-  "keywords": [
-    "air travel",
-    "travel restrictions"
-  ],
   "curatedBy": {
     "@type": "Organization",
-    "name": "Mark2Curators Against COVID-19",
+    "name": "Data Discovery Engine",
     "members": [
       {
         "@type": "Person",
@@ -104,5 +66,39 @@
       }
     ]
   },
-  "curationDate": "2020-06-11"
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "coronavirus drugs and vaccines in development",
+  "description": "An updated guide to the coronavirus drugs and vaccines in development",
+  "identifier": "MCD26",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Damian Garde",
+      "familyName": "Garde",
+      "givenName": "Damian",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Coronavirus",
+    "drug",
+    "vaccine",
+    "News reports"
+  ],
+  "topicCategory": [
+    "Treatment",
+    "Vaccines"
+  ],
+  "MeasurementTechnique": "-1",
+  "license": "\u00a9 2020 STAT;https://www.statnews.com/terms-conditions/",
+  "dataDownload": {
+    "dateModified": "2020-05-12",
+    "url": "https://www.statnews.com/2020/03/19/an-updated-guide-to-the-coronavirus-drugs-and-vaccines-in-development/"
+  },
+  "curationDate": "2020-05-12"
 }

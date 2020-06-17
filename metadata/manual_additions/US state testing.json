@@ -1,0 +1,243 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "US state testing",
+  "description": "The COVID Tracking Project collects and publishes the most complete testing data available for US states and territories.",
+  "identifier": "MCD13",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Robinson Meyer",
+      "familyName": "Meyer",
+      "givenName": "Robinson",
+      "affiliation": [
+        {
+          "name": "The Atlantic"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Alexis Madrigal",
+      "familyName": "Madrigal",
+      "givenName": "Alexis",
+      "affiliation": [
+        {
+          "name": "The Atlantic"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jeff Hammerbacher",
+      "familyName": "Hammerbacher",
+      "givenName": "Jeff",
+      "affiliation": [
+        {
+          "name": "Related Sciences"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Zach Lipton",
+      "familyName": "Lipton",
+      "givenName": "Zach",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Josh Ellnger",
+      "familyName": "Ellnger",
+      "givenName": "Josh",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ken Riley",
+      "familyName": "Riley",
+      "givenName": "Ken",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Kai Curry",
+      "familyName": "Curry",
+      "givenName": "Kai",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Mat Marquis",
+      "familyName": "Marquis",
+      "givenName": "Mat",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Lucas Gonze",
+      "familyName": "Gonze",
+      "givenName": "Lucas",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ethan Marcotte",
+      "familyName": "Marcotte",
+      "givenName": "Ethan",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Julia Kodysh",
+      "familyName": "Kodysh",
+      "givenName": "Julia",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Danny Yang",
+      "familyName": "Yang",
+      "givenName": "Danny",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Eric Czech",
+      "familyName": "Czech",
+      "givenName": "Eric",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "hospitalization rates",
+    " ICU rates",
+    "ventilation status",
+    "US state data quality",
+    "test data completeness"
+  ],
+  "topicCategory": [
+    "Testing Prevalence",
+    "Forecasting",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "event rate",
+    "cumulative death rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "Apache License 2.0",
+  "dataDownload": {
+    "dateModified": "2020-04-30",
+    "url": "https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vRwAqp96T9sYYq2-i7Tj0pvTf6XVHjDSMIKBdZHXiCGGdNC0ypEU9NbngS8mxea55JuCFuua1MUeOj5/pubhtml"
+  },
+  "curationDate": "2020-05-12"
+}

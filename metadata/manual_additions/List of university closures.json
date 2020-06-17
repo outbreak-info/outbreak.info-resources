@@ -1,0 +1,108 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "List of university closures",
+  "description": "List of university closures/nInstitutional(Educational)-response-to-COVID/nA spreadsheet with the following columns: School; City; State; Country; Intl Ban 1: Areas banned from official uni travel; and others",
+  "identifier": "MCD20",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Gina Neff",
+      "familyName": "Neff",
+      "givenName": "Gina",
+      "affiliation": [
+        {
+          "name": "University of Oxford"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Laura E. Noren",
+      "familyName": "Noren",
+      "givenName": "Laura E.",
+      "affiliation": [
+        {
+          "name": "Obsidian Security"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Institutional(Educational)-response-to-COVID",
+    "Information obtained from educational institutions"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "dataDownload": {
+    "dateModified": "2020-04-27",
+    "url": "https://docs.google.com/spreadsheets/d/1IbF_wlmldVssG5spcmNE82nR9btcbF7rUlEqtcXW03o/edit#gid=0"
+  },
+  "curationDate": "2020-05-12"
+}

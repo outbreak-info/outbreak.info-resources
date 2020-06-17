@@ -1,0 +1,181 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "GenBank",
+  "description": "Severe acute respiratory syndrome coronavirus 2 data hub/nAllows selection and downloading of (a) nucleotide sequences in FASTA format; (b) protein sequences in FASTA format. Also allows search for related PubMed articles; multiple sequence alignment; building of phylogenetic trees.",
+  "identifier": "MCD21",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Hatcher EL",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Zhdanov SA",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Bao Y",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Blinkova O",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Nawrocki EP",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ostapchuck Y",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Schaffer AA",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Brister JR.",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "nucleotide",
+    "protein",
+    "alignment",
+    "phylogenetic",
+    "Multiple datasets obtained experimentally"
+  ],
+  "topicCategory": [
+    "Virus Factors"
+  ],
+  "MeasurementTechnique": "RNA sequencing",
+  "license": "U. S. Government public information",
+  "dataDownload": {
+    "dateModified": "2020-03-26",
+    "url": "https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=Wuhan%20seafood%20market%20pneumonia%20virus,%20taxid:2697049&utm_campaign=wuhan_nCoV&utm_source=insights&utm_medium=referral"
+  },
+  "curationDate": "2020-05-12"
+}

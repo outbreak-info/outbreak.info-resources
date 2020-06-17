@@ -1,0 +1,137 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "The COVID-19 Epidemic Spatio-Temporal Dataset",
+  "description": "COVID-19-Epidemic-Dataset (Updated 2020-2-22)/nZipfile containing userguides in English and Chinese and a collection of text data tables listing cases, deaths, recovered in China broken down by prefectural and provincial levels.",
+  "identifier": "MCD30",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Zhou Qi",
+      "familyName": "Qi",
+      "givenName": "Zhou",
+      "affiliation": [
+        {
+          "name": "China University of Geosciences (Wuhan)"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Junya Bao",
+      "familyName": "Bao",
+      "givenName": "Junya",
+      "affiliation": [
+        {
+          "name": "China University of Geosciences (Wuhan)"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Hao  Lin",
+      "familyName": "Lin",
+      "givenName": "Hao ",
+      "affiliation": [
+        {
+          "name": "China University of Geosciences (Wuhan)"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "new confirmed cases",
+    "new recovered cases",
+    "new death cases",
+    "total confirmed cases",
+    "total recovered cases",
+    "total death cases",
+    "COVID-19 ",
+    "Epidemic ",
+    "Spatio-Temporal ",
+    "Dataset"
+  ],
+  "topicCategory": [
+    "Testing Prevalence",
+    "Forecasting",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "cumulative death rate",
+    "survival rate"
+  ],
+  "MeasurementTechnique": "-1",
+  "dataDownload": {
+    "dateModified": "2020-02-19",
+    "url": "https://www.researchgate.net/publication/339446004_COVID-19-Epidemic-Dataset_Updated_2020-2-22/link/5e535f40a6fdcc2f8f5d77dd/download"
+  },
+  "curationDate": "2020-05-12"
+}

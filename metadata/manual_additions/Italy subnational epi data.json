@@ -1,0 +1,151 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "Italy subnational epi data",
+  "description": "COVID-19 Italy - Situation monitoring/nMultiple datasets found at https://github.com/pcm-dpc/COVID-19/tree/master/dati-json",
+  "identifier": "MCD7",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Ministry of Health Processing",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Department of Civil Protection",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Umberto Rosini",
+      "familyName": "Rosini",
+      "givenName": "Umberto",
+      "affiliation": [
+        {
+          "name": "National Civil Protection Department"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Italy hospitalizations by region",
+    "Italy ICU cases by region",
+    "Italy home isolation by region",
+    "Italy deaths by region",
+    "Italy positive discharges by region",
+    "Italy tested cases by region",
+    "Italy province and region identification",
+    "Italy medical supply status by region",
+    "Italy medical supply status by type",
+    "Italy medical supply status by supplier",
+    "Italy medical supply status by quantity",
+    "Italy medical supply status by unit price",
+    "Italy medical supply status by total articles",
+    "Gathered from other sources"
+  ],
+  "topicCategory": [
+    "Testing Prevalence"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "cumulative death rate",
+    "survival rate",
+    "event rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "CC-BY-4.0",
+  "dataDownload": {
+    "dateModified": "2020-05-6",
+    "url": "https://github.com/pcm-dpc/COVID-19"
+  },
+  "curationDate": "2020-05-12"
+}

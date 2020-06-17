@@ -1,0 +1,134 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "CDC case-testing count",
+  "description": "Cases in the U.S. (COVID-19)\\nCDC-Coronavirus Disease 2019 (COVID-19)-Cases, Data, & Surveillance in the U.S.\\nWeb page table with the following columns: Jurisdiction, Cases, Deaths, Community Transmission; obtainable by web scraping",
+  "identifier": "MCD3",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Centers for Disease Control and Prevention",
+      "alternateName": "CDC",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "USAFacts.org",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "synopsized from state reports"
+  ],
+  "topicCategory": [
+    "Testing Prevalence"
+  ],
+  "variableMeasured": [
+    "cumulative incidence ratio",
+    "cumulative death rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "Public Domain;https://www.cdc.gov/other/agencymaterials.html",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "Centers for Disease Control and Prevention",
+        "alternateName": " CDC"
+      }
+    }
+  ],
+  "dataDownload": {
+    "dateModified": "2020-05-12",
+    "url": "https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html"
+  },
+  "curationDate": "2020-05-12"
+}

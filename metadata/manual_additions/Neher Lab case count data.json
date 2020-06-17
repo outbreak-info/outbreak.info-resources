@@ -1,0 +1,142 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "Neher Lab case count data",
+  "description": "data files and software for the COVID-19 Scenarios project ",
+  "identifier": "MCD9",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Nicholas Noll",
+      "familyName": "Noll",
+      "givenName": "Nicholas",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Richard Neher",
+      "familyName": "Neher",
+      "givenName": "Richard",
+      "affiliation": [
+        {
+          "name": "University of Basel"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ivan Aksamentov",
+      "familyName": "Aksamentov",
+      "givenName": "Ivan",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Nils Ole Tippenhauer",
+      "familyName": "Tippenhauer",
+      "givenName": "Nils Ole",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "simulation",
+    "ICU capacity",
+    "Hospital capacity",
+    "Recovered cases",
+    "hospitalized cases",
+    "ICU cases",
+    "COVID-19 cases"
+  ],
+  "variableMeasured": [
+    "event rate",
+    "cumulative death rate",
+    "cumulative incidence rate",
+    "survival rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "Mixed MIT License",
+  "dataDownload": {
+    "dateModified": "2020-04-1",
+    "url": "https://github.com/neherlab/covid19_scenarios_data"
+  },
+  "curationDate": "2020-05-12"
+}

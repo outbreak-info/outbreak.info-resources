@@ -1,0 +1,150 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "MERS EM photos",
+  "description": "Microphotographs of Coronaviruses/nMERS-CoV Photos",
+  "identifier": "MCD24",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "National Center for Immunization and Respiratory Diseases Division of Viral Diseases",
+      "alternateName": "NCIRD",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Cynthia  Goldsmith",
+      "familyName": " Goldsmith",
+      "givenName": "Cynthia",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Azaibi Tamin",
+      "familyName": "Tamin",
+      "givenName": "Azaibi",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Jennifer L. Harcourt",
+      "familyName": "Harcourt",
+      "givenName": "Jennifer L.",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Maureen Metcalfe",
+      "familyName": "Metcalfe",
+      "givenName": "Maureen",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MERS-CoV Photos",
+    "Microphotography"
+  ],
+  "variableMeasured": [
+    "micrographs"
+  ],
+  "MeasurementTechnique": "Microscopy",
+  "license": "https://www.cdc.gov/Other/policies.html",
+  "dataDownload": {
+    "dateModified": "2019-08-2",
+    "url": "https://www.cdc.gov/coronavirus/mers/photos.html"
+  },
+  "curationDate": "2020-05-12"
+}

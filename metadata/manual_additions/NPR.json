@@ -1,0 +1,215 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "NPR",
+  "description": "Tracking The Pandemic: How Quickly Is The Coronavirus Spreading State By State?/nState-by-state geodisplay of Coronavirus cases and deaths (counts and per capita)",
+  "identifier": "MCD28",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Wood NPR Daniel",
+      "familyName": "Daniel",
+      "givenName": "Wood NPR",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Stephanie NPR Adeline",
+      "familyName": "Adeline",
+      "givenName": "Stephanie NPR",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Sean NPR  McMinn",
+      "familyName": " McMinn",
+      "givenName": "Sean NPR",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Thomas NPR  Wilburn",
+      "familyName": " Wilburn",
+      "givenName": "Thomas NPR",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ruth  Talbot",
+      "familyName": " Talbot",
+      "givenName": "Ruth",
+      "affiliation": [
+        {
+          "name": "NPR"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Connie Hanzhang Jin",
+      "familyName": "Jin",
+      "givenName": "Connie Hanzhang",
+      "affiliation": [
+        {
+          "name": "NPR"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Alyson Hurt",
+      "familyName": "Hurt",
+      "givenName": "Alyson",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Elena  Renken",
+      "familyName": " Renken",
+      "givenName": "Elena",
+      "affiliation": [
+        {
+          "name": "NPR"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Center for Systems Science and Engineering at Johns Hopkins University Centers for Disease Control and Prevention",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "World Health Organization",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "1point3acres",
+      "familyName": "",
+      "givenName": "",
+      "affiliation": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "Information compiled from sources"
+  ],
+  "topicCategory": [
+    "Testing Prevalence",
+    "Classical Epidemiology"
+  ],
+  "variableMeasured": [
+    "cumulative incidence",
+    "cumulative death rate"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "\u00a9 2020 npr;https://www.npr.org/about-npr/179876898/terms-of-use",
+  "dataDownload": {
+    "dateModified": "2020-05-12",
+    "url": "https://www.npr.org/sections/health-shots/2020/03/16/816707182/map-tracking-the-spread-of-the-coronavirus-in-the-u-s"
+  },
+  "curationDate": "2020-05-12"
+}

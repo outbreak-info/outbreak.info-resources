@@ -1,0 +1,130 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "Department of Health, Washington",
+  "description": "Latest dataset for cases and deaths by week of illness onset, county, and age (XLSX) \\nCovid-19 in Washington State-Current Status.  Confirmed cases and death by county, epidemiologic curves, cumulative case and death counts, demographics, testing, and hospitalizations., Number of Individuals Tested, Hospital and ICU Bed Occupancy, Confirmed Cases and Deaths by Age, Confirmed Cases and Deaths by Sex, Confirmed Cases by Race/Ethnicity and Deaths by Race/Ethnicity.",
+  "identifier": "MCD4",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Washington State Department of Health",
+      "alternateName": "WADeptHealth",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Microsoft's AI for Health team",
+      "alternateName": "Microsoft Corporation",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "Washington State COVID-19 Data Dashboard",
+    "Washington State Department of Health, Washington State COVID-19 Demographics",
+    "Data gathering by state agency"
+  ],
+  "variableMeasured": [
+    "Cases and deaths by week, county and age",
+    "COVID-19 Cumulative Hospitalizations"
+  ],
+  "MeasurementTechnique": "http://purl.obolibrary.org/obo/OBI_0302914",
+  "license": "https://www.doh.wa.gov/PrivacyandCopyright",
+  "dataDownload": [
+    {
+      "dateModified": "2020-05-4",
+      "url": "https://www.doh.wa.gov/Portals/1/Documents/1600/coronavirus/data-tables/PUBLIC-CDC-Event-Date-SARS.xlsx?ver=20200504211832"
+    },
+    {
+      "dateModified": "2020-05-4",
+      "url": "https://www.doh.wa.gov/Portals/1/Documents/1600/coronavirus/data-tables/PUBLIC-CDC-Event-Date-SARS.xlsx"
+    }
+  ],
+  "curationDate": "2020-05-12"
+}

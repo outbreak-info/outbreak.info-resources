@@ -1,0 +1,102 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "List of travel restrictions",
+  "description": "List of air travel restrictions by country./nTravel news powered by IATA Timatic",
+  "identifier": "MCD23",
+  "author": [],
+  "keywords": [
+    "Travel restrictions by country due to COVID-19 outbreak",
+    "IATA",
+    "Timatic",
+    "travel restrictions",
+    "IATA",
+    "Timatic",
+    "air travel restrictions"
+  ],
+  "MeasurementTechnique": "-1",
+  "license": "\u00a9 2020 IATA Timatic. All rights reserved. Information sourced and provided by IATA.",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "International Air Transport Association",
+        "alternateName": "IATA"
+      },
+      "identifier": "",
+      "name": ""
+    }
+  ],
+  "dataDownload": {
+    "dateModified": "2020-05-12",
+    "url": "https://www.iatatravelcentre.com/international-travel-document-news/1580226297.htm"
+  },
+  "curationDate": "2020-05-12"
+}

@@ -1,0 +1,141 @@
+{
+  "@type": "outbreak:Dataset",
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://schema.biothings.io/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/"
+  },
+  "curatedBy": {
+    "@type": "Organization",
+    "name": "Data Discovery Engine",
+    "members": [
+      {
+        "@type": "Person",
+        "name": "Craig Lazarchick",
+        "familyName": "Lazarchick",
+        "givenName": "Craig",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Adams",
+        "familyName": "Adams",
+        "givenName": "Thomas",
+        "affiliation": [
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ginger Tsueng",
+        "familyName": "Tsueng",
+        "givenName": "Ginger",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Mark2Cure"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Laura Hughes",
+        "familyName": "Hughes",
+        "givenName": "Laura",
+        "affiliation": [
+          {
+            "name": "Scripps Research"
+          },
+          {
+            "name": "Center for Viral Systems Biology"
+          }
+        ]
+      }
+    ]
+  },
+  "species": "Homo sapiens",
+  "infectiousAgent": "SARS-CoV-2",
+  "name": "PDB",
+  "description": "COVID-19/SARS-CoV-2 Resources/nCOVID-19/SARS-CoV-2 Resources/nCOVID19-related PDB structures (149 structures; each structure has an associated DOI and a link to a downloadable FASTA file)",
+  "identifier": "MCD19",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Research Collaboratory for Structural Bioinformatics",
+      "alternateName": "",
+      "affiliation": {
+        "name": "",
+        "alternateName": ""
+      },
+      "members": {
+        "name": "",
+        "givenName": "",
+        "familyName": "",
+        "orcid": "",
+        "affiliation": ""
+      }
+    }
+  ],
+  "keywords": [
+    "Access all COVID19-related PDB structures",
+    "Table of PDB structures complexed with Ligands of Interest (LOI)",
+    "LOI Molecular Weight",
+    "LOI InCHIKey (TSV)",
+    "SARS-CoV-2-reactive human antibody",
+    "Main protease PDB structures",
+    "Spike protein PDB structures",
+    "Papain-like SARS-CoV-2 structures",
+    "Other SARS-CoV-2 structures",
+    "PanDDA analysis structures and main protease with unliganded active site",
+    "A collection of 149 structures obtained by experimental means"
+  ],
+  "MeasurementTechnique": "-1",
+  "license": "https://www.rcsb.org/pages/policies",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "National Institutes of Health",
+        "alternateName": "NIH"
+      },
+      "identifier": "R01GM133198",
+      "name": ""
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "National Institutes of Health",
+        "alternateName": "NIH"
+      },
+      "identifier": "R01GM133198",
+      "name": ""
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "name": "National Institutes of Health",
+        "alternateName": "NIH"
+      },
+      "identifier": "R01GM133198",
+      "name": ""
+    }
+  ],
+  "dataDownload": {
+    "dateModified": "2020-03-25",
+    "url": "https://github.com/cmrivers/ncov/blob/master/COVID-19.pdf"
+  },
+  "curationDate": "2020-05-12"
+}
