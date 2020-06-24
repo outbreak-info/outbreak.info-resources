@@ -438,15 +438,13 @@
                 "items": {
                   "$ref": "#/definitions/citation"
                 }
-              },
-              {
-                "curationDate":{
-                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                  "type": "string",
-                  "format": "date"
-                }
               }
             ]
+          },
+            "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
           },
           "required": [
