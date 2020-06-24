@@ -412,13 +412,38 @@
             },
          "curatedBy": {
             "description": "The source from which this Dataset was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
-            "oneOf": [{
-                "$ref": "#/definitions/curationObject"
+            "anyOf": [{
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "$ref": "#/definitions/organization"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/curationObject"
+                  "$ref": "#/definitions/person"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              },
+              {
+                "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
                 }
               }
             ]
@@ -646,46 +671,6 @@
                   "type"
                 ]
           },
-            "curationObject": {
-                "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
-                "@type": "Thing",
-                "type": "object",
-                "anyOf": [{
-                    "$ref": "#/definitions/citation"
-                  },
-                  {
-                    "$ref": "#/definitions/person"
-                  },
-                  {
-                    "$ref": "#/definitions/organization"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/person"
-                    }
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/organization"
-                    }
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/citation"
-                    }
-                  }
-                ],
-                "properties": {
-                  "curationDate":{
-                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                  "type": "string",
-                  "format": "date"
-                }                   
-                }
-            },
             "funding": {
                 "type": "object",
                 "@type": "MonetaryGrant",
