@@ -657,18 +657,53 @@
                   "citeText": {
                     "description": "The bibliographic citation for the referenced resource as is provided",
                     "type": "string"
-                  },
-                  "curationDate":{
-                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                  "type": "string",
-                  "format": "date"
-                }
+                  }
                 },
                 "required": [
                   "name",
                   "type"
                 ]
           },
+            "curationObject": {
+                "description": "The source from which this Analysis was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
+                "@type": "Thing",
+                "type": "object",
+                "anyOf": [{
+                    "$ref": "#/definitions/citation"
+                  },
+                  {
+                    "$ref": "#/definitions/person"
+                  },
+                  {
+                    "$ref": "#/definitions/organization"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/person"
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/organization"
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/citation"
+                    }
+                  }
+                ],
+                "properties": {
+                  "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
+                }                   
+                }
+            },
             "funding": {
                 "type": "object",
                 "@type": "MonetaryGrant",
