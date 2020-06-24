@@ -412,31 +412,13 @@
             },
          "curatedBy": {
             "description": "The source from which this Dataset was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
-            "anyOf": [{
-                "$ref": "#/definitions/citation"
-              },
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "$ref": "#/definitions/organization"
+            "oneOf": [{
+                "$ref": "#/definitions/curationObject"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/person"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/organization"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/citation"
+                  "$ref": "#/definitions/curationObject"
                 }
               }
             ]
