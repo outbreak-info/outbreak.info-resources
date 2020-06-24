@@ -440,11 +440,6 @@
                 }
               }
             ]
-          },
-            "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
           }
           },
           "required": [
@@ -662,7 +657,12 @@
                   "citeText": {
                     "description": "The bibliographic citation for the referenced resource as is provided",
                     "type": "string"
-                  }
+                  },
+                  "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
+                }
                 },
                 "required": [
                   "name",
