@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Outbreak.info Resource Tagger</title>
+
+    <meta name="description" content="Organizing information for COVID-19 researchers with the help of citizen science">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="obHeaderBar">
+				<h2 class="landingDescriptor-heading">
+					Outbreak.info Resource Tagger
+				</h2>
+            </div>
+            <div class="obGeneralBody">
+				<h1>
+                  Thank you for your help
+                </h1>
+                <p>
+                  There may still be datasets in need of categorization.
+                  <br>
+                  Please help if you have time.
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<form action="/dataset_browser" method="POST">
+                <div class="landingForm">
+                    <button id="doAnotherButton" type="submit" class="obButton">
+                        Help Again
+                    </button> 
+                    <input type="hidden" name="user_id" id-"user_id" value="{{user_id}}">     
+                </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+  </body>
+</html>

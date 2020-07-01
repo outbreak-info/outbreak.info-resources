@@ -38,14 +38,14 @@ organize the information in Outbreak.info
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<form role="form">
+			<form role="form" action="/find_user" method="POST">
 				<div class="landingForm">
 					<label for="email">
 						To get started, enter your email address below (required).
                         <br>(The purpose of this is to ensure you do not tag the same dataset more than once)
 					</label>
                     <p>
-					<input type="email" class="landingForm-textInput" id="email">
+					<input type="email" class="landingForm-textInput" id="email" name="email">
 				</div>
 				<div class="landingForm">
 					 
@@ -53,7 +53,7 @@ organize the information in Outbreak.info
 						If you would like to be acknowledged or credited, enter your name as you would like it to appear in any credits (optional)
 					</label>
                     <p>
-					<input type="name" class="landingForm-textInput" id="name">
+					<input type="name" class="landingForm-textInput" id="name" name="name">
 				</div>
                 <p>
                 <div class="landingForm">
