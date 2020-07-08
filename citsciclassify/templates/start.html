@@ -1,28 +1,70 @@
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <form action="/find_user" method="POST">
-            <div>
-                Please help to categorize these datasets for inclusion in our Covid19 research resource portal
-                To help, please select a dataset to categorize from the drop down menu. This will populate the form with the information available on the dataset to make a judgement.  Then follow the prompts to pick the top 5 most appropriate categories for the dataset.
-            </div>
-            <div>
-                To start, enter your email address (required):
-            </div>
-            <div>
-                <input type="text" id="email" name="email">
-            </div>
-            <div>
-                If you would like to be acknowledged or credited, enter your name as you would like it to appear in any credits (optional)
-            </div>
-            <div>
-                <input type="text" id="name" name="name">
-            </div>
-            <button>
-                Proceed
-            </button>
-        </form>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Outbreak.info Resource Tagger</title>
+
+    <meta name="description" content="Organizing information for COVID-19 researchers with the help of citizen science">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="landingDescriptor">
+				<h2 class="landingDescriptor-heading">
+					Outbreak.info Resource Tagger
+				</h2>
+				<p class="landingDescriptor-text">
+Outbreak.info is a resource to aggregate, integrate, organize, and share information crucial for scientific 
+research on emerging diseases such as COVID-19.
+Your help is needed for organizing sources of information.
+                </p>
+<p class="landingDescriptor-text">
+This involves reading short definitions for the categories of information in Outbreak.info, looking at the titles, descriptions, 
+and keywords of dataset described in Outbreak.info and categorizing them based on the definitions. 
+Your best guesses will be combined with others to identify the best ways to
+organize the information in Outbreak.info
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<form role="form" action="/find_user" method="POST">
+				<div class="landingForm">
+					<label for="email">
+						To get started, enter your email address below (required).
+                        <br>(The purpose of this is to ensure you do not tag the same dataset more than once)
+					</label>
+                    <p>
+					<input type="email" class="landingForm-textInput" id="email" name="email">
+				</div>
+				<div class="landingForm">
+					 
+					<label for="name">
+						If you would like to be acknowledged or credited, enter your name as you would like it to appear in any credits (optional)
+					</label>
+                    <p>
+					<input type="name" class="landingForm-textInput" id="name" name="name">
+				</div>
+                <p>
+                <div class="landingForm">
+				<button id="emailSubmitButton" type="submit" class="obButton">
+					Proceed
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+  </body>
 </html>

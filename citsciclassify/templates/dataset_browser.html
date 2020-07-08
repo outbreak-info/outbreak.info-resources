@@ -1,42 +1,91 @@
 <html>
     <head>
-        <title></title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>Outbreak.info Resource Tagger</title>
+    
+        <meta name="description" content="Organizing information for COVID-19 researchers with the help of citizen science">
+    
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    
     </head>
     <body>
-        <form action="/dataset_browser">
-            <div>
-                Select a Dataset that you would like to help categorize
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="obHeaderBar">
+                        <h2 class="landingDescriptor-heading">
+                            Outbreak.info Resource Tagger
+                        </h2>
+                    </div>
+                </div>
+            </div> 
+            <div class="dataViewerStart">
+                <div class="dataViewerStart">
+                    Please select a dataset you would like to help categorize (see <a href="definitions.html" target="_blank">category definitions</a>)<p></p>
+                    <form role="form" action="/dataset_browser"
+                        <label for="datasetSelector">
+                            <b>select one</b>
+                        </label><br>
+                        <select id="datasetSelector" name="dataset_id" onchange="this.form.submit()">
+                            <p>
+                            {% for id, dataset_document_id in dataset_ids %}
+                                <option value= "{{id}}" {% if id == dataset_id|int %} SELECTED {% endif %}>
+                                    {{dataset_document_id}}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <input type="hidden" name="user_id" value="{{user_id}}">
+                    </form>
+                </div>
             </div>
-            <div>
-                <span style="font-weight: bold">Dataset Id:</span>
-                <select name="dataset_id" onchange="this.form.submit()">
-                    {% for dataset_id, dataset_document_id in dataset_ids %}
-                        <option value= "{{dataset_id}}" SELECTED>{{dataset_document_id}}</option>"
-                    {% endfor %}
-                </select>
-            </div>
-            <input type="hidden" name="user_id" value="{{user_id}}">
-        </form>
+        </div>
 
         {% if dataset_id != "" and display_classifications == False %}
             <form action="/classify_dataset">
-                <div style="font-weight:bold;">
-                    Dataset name
-                </div>
-                <div>
-                    {{dataset_name}}
-                </div>
-                <div style="font-weight:bold;">
-                    Dataset description
-                </div>
-                <div>
-                    {{dataset_description}}
-                </div>
-                <div style="font-weight:bold;">
-                    Dataset keywords
-                </div>
-                <div>
-                    {{dataset_keywords}}
+                <div class="dataViewerDatasetShow">
+                    <h3 class="text-center">
+                        Dataset Information
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dataViewerDatasetMeta">
+                                <b>Dataset Name</b>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dataViewerDatasetName">
+                                {{dataset_name}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dataViewerDatasetMeta">
+                            <b>Dataset Description</b>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dataViewerDatasetDescription">
+                                {{dataset_description}}
+                            </div>
+                        </div>
+                   </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dataViewerDatasetMeta">
+                            <b>Dataset Keywords</b>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dataViewerDatasetKeywords">
+                                {{dataset_keywords}}
+                            </div>
+                        </div>
+                   </div>                
                 </div>
                 <button>Classify this dataset</button>
                 <input type="hidden" name="user_id" value="{{user_id}}">
@@ -44,79 +93,208 @@
             </form>
         {% elif dataset_id != "" and display_classifications == True %}
             <div>
-                <div style="font-weight:bold;">
-                    Dataset name
-                </div>
-                <div>
-                    {{dataset_name}}
-                </div>
-                <div style="font-weight:bold;">
-                    Dataset description
-                </div>
-                <div>
-                    {{dataset_description}}
-                </div>
-                <div style="font-weight:bold;">
-                    Dataset keywords
-                </div>
-                <div>
-                    {{dataset_keywords}}
+                <div class="dataViewerDatasetShow">
+                    <h3 class="text-center">
+                        Dataset Information
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dataViewerDatasetMeta">
+                                <b>Dataset Name</b>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dataViewerDatasetName">
+                                {{dataset_name}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dataViewerDatasetMeta">
+                            <b>Dataset Description</b>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dataViewerDatasetDescription">
+                                {{dataset_description}}
+                            </div>
+                        </div>
+                   </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dataViewerDatasetMeta">
+                            <b>Dataset Keywords</b>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dataViewerDatasetKeywords">
+                                {{dataset_keywords}}
+                            </div>
+                        </div>
+                   </div>                
                 </div>
 
                 <form action="/save_classifications" method="POST">
-                    <div>
-                        From what you can see of the available information on the dataset, is there enough information to make an educated guess about what the dataset contains OR its purpose?
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form role="form">
+                                <div class="dataViewerAnnotator">
+                                    From what you can see of the available information on the dataset, are there enough clues to make an educated guess about what the dataset contains OR its purpose?
+                                    <p>
+                                    <div class="radio-toolbar">
+                                        <input type="radio" id="radioYes" name="enough_info" value="True" checked="checked">
+                                        <label for="radioYes">Yes</label>
+                                        <input type="radio" id="radioNo" name="enough_info" value="False">
+                                        <label for="radioNo">No</label>
+                                    </div>
+                                    <p>
+                                    Based on the category definitions, please pick the top 5 (most specific) categories that best describe this dataset in order of most relevant (1) to least relevant (5). <br>Whenever appropriate, select the more specific category (eg- classical epidemiology) over the more specific category (eg- epidemiology)
+                                    <p>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerMeta">
+                                                    <label for="choice1">
+                                                        1. Most Relevant
+                                                    </label>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerOptions">
+                                                        <select name="choice_1">
+                                                            {% for category_id, category_name in categories %}
+                                                                <option value= "{{category_id}}">{{category_name}}</option>"
+                                                            {% endfor %}
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerMeta">
+                                                        <label for="choice2">
+                                                            2. Second Choice
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerOptions">
+                                                        <select name="choice_2">
+                                                            {% for category_id, category_name in categories %}
+                                                                <option value= "{{category_id}}">{{category_name}}</option>"
+                                                            {% endfor %}
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>                        
+                
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerMeta">
+                                                        <label for="choice3">
+                                                            3. Third Choice
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerOptions">
+                                                        <select name="choice_3">
+                                                            {% for category_id, category_name in categories %}
+                                                                <option value= "{{category_id}}">{{category_name}}</option>"
+                                                            {% endfor %}
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerMeta">
+                                                        <label for="choice4">
+                                                            4. Fourth Choice
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerOptions">
+                                                        <select name="choice_4">
+                                                            {% for category_id, category_name in categories %}
+                                                                <option value= "{{category_id}}">{{category_name}}</option>"
+                                                            {% endfor %}
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerMeta">
+                                                        <label for="choice5">
+                                                            5. Last Choice
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="citTaggerOptions">
+                                                        <select name="choice_5">
+                                                            {% for category_id, category_name in categories %}
+                                                                <option value= "{{category_id}}">{{category_name}}</option>"
+                                                            {% endfor %}
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="user_id" value="{{user_id}}">
+                                    <input type="hidden" name="dataset_id" value="{{dataset_id}}">               
+                                    <button id="saveButton" type="submit" class="obButton">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <input type="radio" name="enough_info" value="True" checked="checked">
-                    <label for="enough_info">Yes</label><br>
-                    <input type="radio" name="enough_info" value="False">
-                    <label for="enough_info">No</label><br>
-                    <div>
-                        Based on the category definitions, please pick the top 5 (most specific) categories that best describe this dataset in order of most relevant (1) to least relevant (5). Whenever appropriate, select the more specific category (eg- classical epidemiology) over the more specific category (eg- epidemiology)
-                    </div>
-                    <div>
-                        Choice 1
-                        <select name="choice_1">
-                            {% for category_id, category_name in categories %}
-                                <option value= "{{category_id}}">{{category_name}}</option>"
-                            {% endfor %}
-                        </select> 
-                    </div>
-                    <div>
-                        Choice 2
-                        <select name="choice_2">
-                            {% for category_id, category_name in categories %}
-                                <option value= "{{category_id}}">{{category_name}}</option>"
-                            {% endfor %}
-                        </select>      
-                    </div>
-                    <div>
-                        Choice 3
-                        <select name="choice_3">
-                            {% for category_id, category_name in categories %}
-                                <option value= "{{category_id}}">{{category_name}}</option>"
-                            {% endfor %}
-                        </select> 
-                    </div>
-                    <div>
-                        Choice 4
-                        <select name="choice_4">
-                            {% for category_id, category_name in categories %}
-                                <option value= "{{category_id}}">{{category_name}}</option>"
-                            {% endfor %}
-                        </select> 
-                    </div>
-                    <div>
-                        Choice 5
-                        <select name="choice_5">
-                            {% for category_id, category_name in categories %}
-                                <option value= "{{category_id}}">{{category_name}}</option>"
-                            {% endfor %}
-                        </select> 
-                    </div>
-                    <input type="hidden" name="user_id" value="{{user_id}}">
-                    <input type="hidden" name="dataset_id" value="{{dataset_id}}">
-                    <button>Save And Try Another</button>
                 </form>
             </div>
         {% endif %}

@@ -15,6 +15,7 @@ activate
 *.so
 
 # Distribution / packaging
+myenv/
 .Python
 build/
 develop-eggs/

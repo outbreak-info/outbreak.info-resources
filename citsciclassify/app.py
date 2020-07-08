@@ -27,9 +27,12 @@ def find_user():
     id = db.get_user(user_email, user_name)
     return redirect(url_for('dataset_browser', user_id = id))
 
-@app.route('/dataset_browser')
+@app.route('/dataset_browser', methods=['POST', 'GET'])
 def dataset_browser():
-    user_id = int(request.args['user_id'])
+    if 'user_id' in request.args:
+        user_id = int(request.args['user_id'])
+    else:
+        user_id = int(request.form['user_id'])
     dataset_ids = db.get_available_dataset_ids_for_user(user_id)
 
     name = ""
@@ -37,7 +40,7 @@ def dataset_browser():
     keywords = ""
     dataset_id = ""
 
-    if "dataset_id" in request.args:
+    if "dataset_id" in request  .args:
         dataset_id = request.args["dataset_id"]
         name, description, keywords = db.get_dataset_details(dataset_id)
 
@@ -45,6 +48,10 @@ def dataset_browser():
         user_id = user_id, dataset_id = dataset_id, dataset_name = name,
         dataset_description = remove_html_tags(description), dataset_keywords = keywords,
         display_classifications = False, categories = None)
+
+@app.route("/definitions.html")
+def definitions():
+    return render_template("definitions.html")
 
 @app.route("/classify_dataset")
 def classify_dataset():
@@ -76,4 +83,9 @@ def save_classifications():
     db.save_classification(user_id, int(dataset_id), now, bool(enough_info),
         int(choice_1), int(choice_2), int(choice_3), int(choice_4), int(choice_5)) 
 
-    return redirect(url_for('dataset_browser', user_id = user_id))
+    return redirect(url_for('thankyou', user_id = user_id))
+
+
+@app.route("/thankyou.html")
+def thankyou():
+    return render_template("thankyou.html", user_id = request.args["user_id"])
