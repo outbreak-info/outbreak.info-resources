@@ -31,7 +31,7 @@ def save_classification(user_id, dataset_id, time, enough_information,
 def get_categories():
     conn = sqlite3.connect('/db/classifications.db')
     c = conn.cursor()
-    c.execute(""" select Id, Name from Categories order by Id desc""")
+    c.execute(""" select Id, Name from Categories order by Id asc""")
     results = c.fetchall()
     c.close()
     conn.close()
