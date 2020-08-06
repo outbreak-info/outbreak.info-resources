@@ -40,9 +40,11 @@ def dataset_browser():
     keywords = ""
     dataset_id = ""
 
-    if "dataset_id" in request  .args:
+    if "dataset_id" in request.args:
         dataset_id = request.args["dataset_id"]
         name, description, keywords = db.get_dataset_details(dataset_id)
+    else:
+        dataset_ids.insert(0, (-1, "Select dataset"))
 
     return render_template('dataset_browser.html', dataset_ids = dataset_ids, 
         user_id = user_id, dataset_id = dataset_id, dataset_name = name,
