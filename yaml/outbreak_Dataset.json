@@ -429,7 +429,7 @@
               "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]
             },
             "strict": false
-          },,
+          },
           "moreControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
