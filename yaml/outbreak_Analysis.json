@@ -245,7 +245,7 @@
                 ]
               },
             "infectiousAgent": {
-            "description": "infectious agents(s) which are the focus of the analysis",
+            "description": "infectious agents(s) which are the focus of the dataset",
             "oneOf": [{
                 "$ref": "#/definitions/miscControlledVocabulary"
               },
@@ -258,15 +258,15 @@
             ]
           },
             "infectiousDisease": {
-              "description": "The disease caused by the infectious agent. Important as some agents may cause multiple diseases",
+              "description": "The disease or medical conditions caused by the infectious agent. Important as some agents may cause multiple diseases",
               "oneOf": [
                 {
-                  "type": "string"
+                  "$ref": "#/definitions/diseaseVocabulary"
                 },
                 {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/definitions/diseaseVocabulary"
                   }
                 }
               ]
@@ -478,10 +478,20 @@
               "type": "string",
               "vocabulary": {
                 "ontology": ["ncbitaxon"],
-                "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+                "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
               },
               "strict": false
             },
+            "diseaseVocabulary": {
+            "description": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "string",
+            "vocabulary": {
+              "ontology": ["mondo"],
+              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]
+            },
+            "strict": false
+          },
             "moreControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
