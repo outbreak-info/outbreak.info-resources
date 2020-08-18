@@ -420,7 +420,6 @@
             },
             "strict": false
           },
-          },
           "speciesControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
