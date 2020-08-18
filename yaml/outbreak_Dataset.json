@@ -357,7 +357,7 @@
             ]
           },
           "curatedBy": {
-            "description": "The source from which this Protocol was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
+            "description": "The source from which this Dataset was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
             "anyOf": [{
                 "$ref": "#/definitions/citation"
               },
