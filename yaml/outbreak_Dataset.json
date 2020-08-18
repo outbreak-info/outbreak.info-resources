@@ -356,46 +356,41 @@
               }
             ]
           },
-          "curatedBy": {
-            "description": "The source from which this Dataset was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
-            "allOf":[
-                {"anyOf": [{
+            "curatedBy": {
+            "description": "The source from which this Protocol was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
+            "anyOf": [{
                 "$ref": "#/definitions/citation"
               },
-                {
+              {
                 "$ref": "#/definitions/person"
               },
-                {
+              {
                 "$ref": "#/definitions/organization"
               },
-                {
+              {
                 "type": "array",
                 "items": {
                   "$ref": "#/definitions/person"
                 }
               },
-                {
+              {
                 "type": "array",
                 "items": {
                   "$ref": "#/definitions/organization"
                 }
               },
-                {
+              {
                 "type": "array",
                 "items": {
                   "$ref": "#/definitions/citation"
                 }
               }
-            ]},
-                {"properties":
-                    {"curationDate":{
-                        "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                        "type": "string",
-                        "format": "date"
-                        }
-                    }
-                }
             ]
+          },
+            "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -421,7 +416,18 @@
             "type": "string",
             "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
+            },
+            "strict": false
+          },
+          },
+          "speciesControlledVocabulary": {
+            "description": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "string",
+            "vocabulary": {
+              "ontology": ["ncbitaxon"],
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567", "http://purl.obolibrary.org/obo/NCBITaxon_10239"]
             },
             "strict": false
           },
