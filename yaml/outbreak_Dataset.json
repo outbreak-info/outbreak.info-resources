@@ -187,12 +187,12 @@
           "species": {
             "description": "Species(es) from which dataset has been collected",
             "oneOf": [{
-                "$ref": "#/definitions/miscControlledVocabulary"
+                "$ref": "#/definitions/speciesControlledVocabulary"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/miscControlledVocabulary"
+                  "$ref": "#/definitions/speciesControlledVocabulary"
                 }
               }
             ]
@@ -210,7 +210,7 @@
               }
             ]
           },
-            "infectiousDisease": {
+          "infectiousDisease": {
               "description": "The disease or medical conditions caused by the infectious agent. Important as some agents may cause multiple diseases",
               "oneOf": [
                 {
@@ -356,7 +356,7 @@
               }
             ]
           },
-            "curatedBy": {
+          "curatedBy": {
             "description": "The source from which this Protocol was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
             "anyOf": [{
                 "$ref": "#/definitions/citation"
@@ -387,7 +387,7 @@
               }
             ]
           },
-            "curationDate":{
+          "curationDate":{
             "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
             "type": "string",
             "format": "date"
