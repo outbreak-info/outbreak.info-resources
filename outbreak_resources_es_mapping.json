@@ -89,6 +89,9 @@
       }
     }
   },
+  "citation": {
+    "type": "text"
+  },
   "citedBy": {
     "properties": {
       "@type": {
@@ -503,6 +506,10 @@
         "type": "text"
       }
     }
+  },
+  "species": {
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "sponsor": {
     "properties": {
