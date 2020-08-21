@@ -89,6 +89,9 @@
       }
     }
   },
+  "citation": {
+    "type": "text"
+  },
   "citedBy": {
     "properties": {
       "@type": {
@@ -503,6 +506,20 @@
         "type": "text"
       }
     }
+  },
+  "infectiousDisease": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "infectiousAgent": {
+    "normalizer": "keyword_lowercase_normalizer",
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
+  "species": {
+    "type": "keyword",
+    "copy_to": ["all"]
   },
   "sponsor": {
     "properties": {
