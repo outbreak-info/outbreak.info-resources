@@ -58,7 +58,7 @@ def get_available_dataset_ids_for_user(user_id):
 
     c.execute(""" select Id, DocumentId from Datasets
         where Id not in (select DatasetId from UserCompletedDatasets where UserId = ?)
-        and Id not in (select DatasetId from UserCompletedDatasets group by DatasetId having count(*)) < 3""", (user_id,))
+        and Id in (select DatasetId from UserCompletedDatasets group by DatasetId having count(*)) < 3""", (user_id,))
     result = c.fetchall()
 
     c.close()
