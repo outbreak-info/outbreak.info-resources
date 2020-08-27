@@ -1,5 +1,6 @@
 import sqlite3
 from sqlite3 import Error
+import os
 
 def save_classification(user_id, dataset_id, time, enough_information, 
         choice_1, choice_2, choice_3, choice_4, choice_5):
@@ -67,6 +68,7 @@ def get_available_dataset_ids_for_user(user_id):
     return [(r[0], r[1]) for r in result]
 
 def get_user(user_email, user_name):
+    pwd = os.getcwd()
     conn = sqlite3.connect('/db/classifications.db')
     c = conn.cursor()
     c.execute("""CREATE TABLE IF NOT EXISTS users (
