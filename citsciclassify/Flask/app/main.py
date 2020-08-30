@@ -1,7 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
-import os
 import db
+
+app.config.from_object('config.DevelopmentConfig')
+
+db.initialize_database(app)
+
+import os
 import re
 from datetime import datetime
 

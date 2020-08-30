@@ -1,0 +1,27 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    build: ./MariaDb
+    restart: always
+    environment:
+      MYSQL_DATABASE: citsciclassify
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql-root-password
+      MYSQL_USER_FILE: /run/secrets/mysql-user-name
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql-user-password
+    volumes:
+      # change this in production
+      - ./mariadb/databasefiles:/var/lib/mysql:rw
+      - ./mariadb/schema.sql:/docker-entrypoint-initdb.d/dump.sql
+    ports:
+      - 3306:3306
+
+  flask:
+    build: ./Flask
+    depends_on: 
+      - db
+    restart: always
+    ports:
+      - 8080:80
