@@ -13,8 +13,8 @@ services:
       MYSQL_PASSWORD_FILE: /run/secrets/mysql-user-password
     volumes:
       # change this in production
-      - ./mariadb/databasefiles:/var/lib/mysql:rw
-      - ./mariadb/schema.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./MariaDb/databasefiles:/var/lib/mysql:rw
+      - ./MariaDb/schema.sql:/docker-entrypoint-initdb.d/dump.sql
     ports:
       - 3306:3306
 
@@ -24,4 +24,4 @@ services:
       - db
     restart: always
     ports:
-      - 8080:80
+      - 9000:80

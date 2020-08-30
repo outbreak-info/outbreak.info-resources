@@ -80,11 +80,11 @@ def get_user(user_email, user_name):
     conn = mysql.connect()
     c = conn.cursor()
 
-    c.execute("""select id from users where email = %s""", (user_email,))
+    c.execute("""select id from Users where email = %s""", (user_email,))
     ids = c.fetchall()
     ret = 0
     if len(ids) == 0:
-        c.execute("""insert into users ( email, name) values (%s,%s)""", (user_email, user_name))
+        c.execute("""insert into Users ( email, name) values (%s,%s)""", (user_email, user_name))
         conn.commit()
         ret = c.lastrowid
     else:
