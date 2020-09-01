@@ -1,6 +1,5 @@
 {
   "@type": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
@@ -15,7 +14,6 @@
   "armGroup": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "name": {
@@ -27,14 +25,12 @@
         "copy_to": ["all"]
       },
       "role": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
       "intervention": {
         "properties": {
           "@type": {
-            "normalizer": "keyword_lowercase_normalizer",
             "type": "keyword"
           },
           "name": {
@@ -42,7 +38,6 @@
             "copy_to": ["all"]
           },
           "category": {
-            "normalizer": "keyword_lowercase_normalizer",
             "type": "keyword",
             "copy_to": ["all"]
           },
@@ -62,7 +57,6 @@
       "affiliation": {
         "properties": {
           "name": {
-            "normalizer": "keyword_lowercase_normalizer",
             "type": "keyword",
             "copy_to": ["all"]
           }
@@ -81,7 +75,6 @@
         "copy_to": ["all"]
       },
       "role": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "title": {
@@ -95,7 +88,6 @@
   "citedBy": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "abstract": {
@@ -141,7 +133,6 @@
       "affiliation": {
         "properties": {
           "name": {
-            "normalizer": "keyword_lowercase_normalizer",
             "type": "keyword",
             "copy_to": ["all"]
           }
@@ -160,7 +151,6 @@
         "copy_to": ["all"]
       },
       "role": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "title": {
@@ -184,7 +174,6 @@
         "type": "text"
       },
       "versionDate": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       }
     }
@@ -208,7 +197,6 @@
   "distribution": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "contentUrl": {
@@ -230,7 +218,6 @@
         "type": "keyword"
        },
       "name": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       }
     }
@@ -245,7 +232,6 @@
   "eligibilityCriteria": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "inclusionCriteria": {
@@ -314,7 +300,6 @@
     "copy_to": ["all"]
   },
   "identifierSource": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
@@ -332,7 +317,6 @@
   "interventions": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "name": {
@@ -340,7 +324,6 @@
         "copy_to": ["all"]
       },
       "category": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
@@ -353,7 +336,6 @@
   "isBasedOn": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "abstract": {
@@ -392,17 +374,14 @@
     "type": "text"
   },
   "journalName": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
   "journalNameAbbrev": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
   "keywords": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
@@ -421,7 +400,6 @@
     }
   },
   "measurementTechnique": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
@@ -432,7 +410,6 @@
   "outcome": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "outcomeMeasure": {
@@ -444,7 +421,6 @@
         "copy_to": ["all"]
       },
       "outcomeType": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       }
@@ -455,24 +431,20 @@
     "copy_to": ["all"]
   },
   "protocolCategory": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
   "protocolSetting": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
   "publicationType": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
   "relatedTo": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "abstract": {
@@ -524,21 +496,17 @@
   "sponsor": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "name": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
       "class": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
       "role": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       }
     }
@@ -546,11 +514,9 @@
   "studyDesign": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "studyType": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
@@ -575,7 +541,6 @@
         "copy_to": ["all"]
       },
       "phase": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
@@ -587,7 +552,6 @@
   "studyEvent": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "studyEventType": {
@@ -604,7 +568,6 @@
   "studyLocation": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "name": {
@@ -620,12 +583,10 @@
         "copy_to": ["all"]
       },
       "studyLocationCountry": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
       "studyLocationStatus": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       }
@@ -634,11 +595,9 @@
   "studyStatus": {
     "properties": {
       "@type": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword"
       },
       "status": {
-        "normalizer": "keyword_lowercase_normalizer",
         "type": "keyword",
         "copy_to": ["all"]
       },
@@ -661,7 +620,6 @@
     }
   },
   "topicCategory": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
@@ -673,7 +631,6 @@
     "type": "text"
   },
   "variableMeasured": {
-    "normalizer": "keyword_lowercase_normalizer",
     "type": "keyword",
     "copy_to": ["all"]
   },
