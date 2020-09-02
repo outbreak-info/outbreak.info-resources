@@ -402,49 +402,77 @@
           "controlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "string",
-            "vocabulary": {
+            "type": "object",
+            "properties":{
+              "name": {"type":"string"},
+              "identifier":{"type":"string"},
+              "url":{"type":"string",
+                       "format":"uri"},
+              "vocabulary": {
               "ontology": ["efo", "ncit","obi"],
               "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
-                             "http://purl.obolibrary.org/obo/OBI_0000011"]
-            },
+                             "http://purl.obolibrary.org/obo/OBI_0000011"],
             "strict": false
+            }
+            }
           },
           "miscControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "string",
-            "vocabulary": {
+            "type": "object",
+            "properties":{
+              "name": {"type":"string"},
+              "identifier":{"type":"string"},
+              "url":{"type":"string",
+                       "format":"uri"},
+              "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
-            },
-            "strict": false
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"],
+              "strict": false
+            }
+            }
           },
           "speciesControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "string",
-            "vocabulary": {
+            "type": "object",
+            "properties":{
+              "name": {"type":"string"},
+              "identifier":{"type":"string"},
+              "url":{"type":"string",
+                       "format":"uri"},
+              "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567", "http://purl.obolibrary.org/obo/NCBITaxon_10239"]
-            },
-            "strict": false
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567", "http://purl.obolibrary.org/obo/NCBITaxon_10239"],
+              "strict": false
+            }
+            }
           },
           "diseaseVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "string",
-            "vocabulary": {
+            "type": "object",
+            "properties":{
+              "name": {"type":"string"},
+              "identifier":{"type":"string"},
+              "url":{"type":"string",
+                       "format":"uri"},
+              "vocabulary": {
               "ontology": ["mondo"],
-              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]
-            },
-            "strict": false
+              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"],
+              "strict": false
+            }
+            }
           },
           "moreControlledVocabulary": {
-              "definition": "collection of vocabulary terms defined in ontologies",
-              "@type": "CreativeWork",
-              "type": "string",
-              "strict": false,
+            "definition": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties":{
+              "name": {"type":"string"},
+              "identifier":{"type":"string"},
+              "url":{"type":"string",
+                     "format":"uri"},
               "vocabulary": {
                 "ontology": [
                   "efo",
@@ -457,9 +485,11 @@
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo",
                   "https://bioportal.bioontology.org/ontologies/COVID19"
-                ]
+                ],
+                "strict": false
               }
-            },
+            }
+          },
           "datadownload": {
             "description": "A dataset in downloadable form.",
             "@type": "DataDownload",
@@ -701,7 +731,7 @@
     {"@id":"outbreak:distribution","@type":"rdf:Property","rdfs:comment":"Available downloads of the dataset","rdfs:label":"distribution","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:DataDownload"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"outbreak:DataDownload"}},
     {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"The name of the download if available","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"outbreak:DataDownload"},"schema:rangeIncludes":{"@id":"schema:Text"}},  
     {"@id":"outbreak:contentUrl","@type":"rdf:Property","rdfs:comment":"Link to the location where the dataset can be found, ideally a permanent URL","rdfs:label":"contentUrl","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:contentUrl"},"schema:domainIncludes":{"@id":"outbreak:DataDownload"},"schema:rangeIncludes":{"@id":"schema:URL"}},{"@id":"outbreak:dateModified","@type":"rdf:Property","rdfs:comment":"Date which the particular DataDownload (file) has been changed","rdfs:label":"dateModified","owl:cardinality":"one","marginality":"required","rdfs:sameAs":{"@id":"schema:dateModified"},"schema:domainIncludes":{"@id":"outbreak:DataDownload"},"schema:rangeIncludes":{"@id":"schema:Date"}},
-    {"@id":"outbreak:funding","@type":"rdf:Property","rdfs:comment":"Funding for the generation of the dataset","rdfs:label":"funding","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:MonetaryGrant"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"outbreak:MonetaryGrant"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"Name of the funding organization ofr the dataset. Note: schema.org\/funder and schema.org\/Grant have additional fields that can provide more information about the funding organization, if desired","rdfs:label":"funder","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The identifier of the grant (if available)","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:species","@type":"rdf:Property","rdfs:comment":"Species(es) from which dataset has been collected","rdfs:label":"species","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:additionalType"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
+    {"@id":"outbreak:funding","@type":"rdf:Property","rdfs:comment":"Funding for the generation of the dataset","rdfs:label":"funding","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"outbreak:MonetaryGrant"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"outbreak:MonetaryGrant"}},{"@id":"outbreak:funder","@type":"rdf:Property","rdfs:comment":"Name of the funding organization ofr the dataset. Note: schema.org\/funder and schema.org\/Grant have additional fields that can provide more information about the funding organization, if desired","rdfs:label":"funder","owl:cardinality":"many","marginality":"required","rdfs:sameAs":{"@id":"schema:funder"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"The identifier of the grant (if available)","rdfs:label":"identifier","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:MonetaryGrant"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:species","@type":"rdf:Property","rdfs:comment":"Species(es) from which dataset has been collected","rdfs:label":"species","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:category"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:infectiousAgent","@type":"rdf:Property","rdfs:comment":"The actual infectious agent, such as a specific bacterium","rdfs:label":"infectiousAgent","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:infectiousAgent"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:infectiousDisease","@type":"rdf:Property","rdfs:comment":"The infectious disease or medical condition caused by the infectious agent, such as a Covid-19","rdfs:label":"infectiousDisease","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:code"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:identifier","@type":"rdf:Property","rdfs:comment":"Unique identifier for the dataset","rdfs:label":"identifier","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:doi","@type":"rdf:Property","rdfs:comment":"DOI for the dataset if available","rdfs:label":"doi","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"outbreak:license","@type":"rdf:Property","rdfs:comment":"License associated with re-use of the dataset","rdfs:label":"license","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:license"},"schema:domainIncludes":{"@id":"outbreak:Dataset"},"schema:rangeIncludes":{"@id":"schema:URL"}},
