@@ -469,13 +469,13 @@
                     "cido",
                     "epo"
                   ],
-                "children_of": [
+                  "children_of": [
                   "https://bioportal.bioontology.org/ontologies/COVID19",
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo"
                 ],
-                "strict": false,
-              }
+                  "strict": false
+                }
               }
             },
             "miscControlledVocabulary": {
