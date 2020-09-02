@@ -457,19 +457,25 @@
             "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "string",
-              "strict": false,
-              "vocabulary": {
-                "ontology": [
-                  "covid19",
-                  "cido",
-                  "epo"
-                ],
+              "type": "object",
+              "properties":{
+                "name": {"type":"string"},
+                "identifier":{"type":"string"},
+                "url":{"type":"string",
+                       "format":"uri"},
+                "vocabulary": {
+                  "ontology": [
+                    "covid19",
+                    "cido",
+                    "epo"
+                  ],
                 "children_of": [
                   "https://bioportal.bioontology.org/ontologies/COVID19",
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo"
-                ]
+                ],
+                "strict": false,
+              }
               }
             },
             "miscControlledVocabulary": {
