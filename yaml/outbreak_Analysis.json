@@ -457,13 +457,9 @@
             "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
                   "ontology": [
                     "covid19",
                     "cido",
@@ -473,61 +469,41 @@
                   "https://bioportal.bioontology.org/ontologies/COVID19",
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo"
-                ],
-                  "strict": false
+                ]
                 }
-              }
             },
             "miscControlledVocabulary": {
               "description": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
-                  "ontology": ["ncbitaxon"],
-                  "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"],
-                  "strict": false
-                }
-              }
-            },
-            "diseaseVocabulary": {
-              "description": "collection of vocabulary terms defined in ontologies",
-              "@type": "CreativeWork",
-              "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
+              "type": "string",
+              "strict": false,
               "vocabulary": {
-              "ontology": ["mondo"],
-              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"],
-              "strict": false
-              }
-            }
-          },
+                  "ontology": ["ncbitaxon"],
+                  "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
+                }
+            },
             "moreControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
                   "ontology": [
                     "mamo"
                   ],
                   "children_of": [
                     "http://identifiers.org/mamo/MAMO_0000037"
-                  ],
-                  "strict": false
+                  ]
                 }
+            },
+            "diseaseVocabulary": {
+              "description": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
+                "ontology": ["mondo"],
+                "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]              
               }
             },
             "baseOrgObject":{

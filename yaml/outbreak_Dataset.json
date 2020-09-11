@@ -402,77 +402,49 @@
           "controlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "object",
-            "properties":{
-              "name": {"type":"string"},
-              "identifier":{"type":"string"},
-              "url":{"type":"string",
-                       "format":"uri"},
-              "vocabulary": {
+            "type": "string",
+            "vocabulary": {
               "ontology": ["efo", "ncit","obi"],
               "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
-                             "http://purl.obolibrary.org/obo/OBI_0000011"],
+                             "http://purl.obolibrary.org/obo/OBI_0000011"]
+            },
             "strict": false
-            }
-            }
           },
           "miscControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "object",
-            "properties":{
-              "name": {"type":"string"},
-              "identifier":{"type":"string"},
-              "url":{"type":"string",
-                       "format":"uri"},
-              "vocabulary": {
+            "type": "string",
+            "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"],
-              "strict": false
-            }
-            }
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
+            },
+            "strict": false
           },
           "speciesControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "object",
-            "properties":{
-              "name": {"type":"string"},
-              "identifier":{"type":"string"},
-              "url":{"type":"string",
-                       "format":"uri"},
-              "vocabulary": {
+            "type": "string",
+            "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567", "http://purl.obolibrary.org/obo/NCBITaxon_10239"],
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567"]
+            },
               "strict": false
-            }
-            }
           },
           "diseaseVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
-            "type": "object",
-            "properties":{
-              "name": {"type":"string"},
-              "identifier":{"type":"string"},
-              "url":{"type":"string",
-                       "format":"uri"},
-              "vocabulary": {
+            "type": "string",
+            "vocabulary": {
               "ontology": ["mondo"],
-              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"],
-              "strict": false
-            }
-            }
+              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]
+            },
+            "strict": false
           },
           "moreControlledVocabulary": {
-            "definition": "collection of vocabulary terms defined in ontologies",
-            "@type": "CreativeWork",
-            "type": "object",
-            "properties":{
-              "name": {"type":"string"},
-              "identifier":{"type":"string"},
-              "url":{"type":"string",
-                     "format":"uri"},
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "string",
+              "strict": false,
               "vocabulary": {
                 "ontology": [
                   "efo",
@@ -485,10 +457,8 @@
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo",
                   "https://bioportal.bioontology.org/ontologies/COVID19"
-                ],
-                "strict": false
+                ]
               }
-            }
           },
           "datadownload": {
             "description": "A dataset in downloadable form.",
