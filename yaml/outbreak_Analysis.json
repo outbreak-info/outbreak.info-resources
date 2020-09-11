@@ -458,12 +458,8 @@
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
               "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
+              "strict": false,
+              "vocabulary": {
                   "ontology": [
                     "covid19",
                     "cido",
@@ -473,8 +469,7 @@
                   "https://bioportal.bioontology.org/ontologies/COVID19",
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo"
-                ],
-                  "strict": false
+                ]
                 }
               }
             },
@@ -482,15 +477,25 @@
               "description": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
               "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
+              "strict": false,
+              "vocabulary": {
                   "ontology": ["ncbitaxon"],
-                  "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"],
-                  "strict": false
+                  "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
+                }
+              }
+            },
+            "moreControlledVocabulary": {
+              "definition": "collection of vocabulary terms defined in ontologies",
+              "@type": "CreativeWork",
+              "type": "object",
+              "strict": false,
+              "vocabulary": {
+                  "ontology": [
+                    "mamo"
+                  ],
+                  "children_of": [
+                    "http://identifiers.org/mamo/MAMO_0000037"
+                  ]
                 }
               }
             },
@@ -498,38 +503,13 @@
               "description": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
               "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
+              "strict": false,
               "vocabulary": {
-              "ontology": ["mondo"],
-              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"],
-              "strict": false
+                "ontology": ["mondo"],
+                "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]              
               }
             }
           },
-            "moreControlledVocabulary": {
-              "definition": "collection of vocabulary terms defined in ontologies",
-              "@type": "CreativeWork",
-              "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
-                  "ontology": [
-                    "mamo"
-                  ],
-                  "children_of": [
-                    "http://identifiers.org/mamo/MAMO_0000037"
-                  ],
-                  "strict": false
-                }
-              }
-            },
             "baseOrgObject":{
                 "description": "A barebones Organization object to work around recursion issues in DDE",
                 "@type": "Organization",
