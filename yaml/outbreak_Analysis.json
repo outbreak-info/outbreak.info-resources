@@ -457,7 +457,7 @@
             "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
+              "type": "string",
               "strict": false,
               "vocabulary": {
                   "ontology": [
@@ -471,23 +471,21 @@
                   "http://purl.obolibrary.org/obo/epo"
                 ]
                 }
-              }
             },
             "miscControlledVocabulary": {
               "description": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
+              "type": "string",
               "strict": false,
               "vocabulary": {
                   "ontology": ["ncbitaxon"],
                   "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
                 }
-              }
             },
             "moreControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
+              "type": "string",
               "strict": false,
               "vocabulary": {
                   "ontology": [
@@ -497,19 +495,17 @@
                     "http://identifiers.org/mamo/MAMO_0000037"
                   ]
                 }
-              }
             },
             "diseaseVocabulary": {
               "description": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
+              "type": "string",
               "strict": false,
               "vocabulary": {
                 "ontology": ["mondo"],
                 "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]              
               }
-            }
-          },
+            },
             "baseOrgObject":{
                 "description": "A barebones Organization object to work around recursion issues in DDE",
                 "@type": "Organization",
