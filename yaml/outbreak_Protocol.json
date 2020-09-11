@@ -520,13 +520,9 @@
             "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
                 "ontology": [
                   "efo",
                   "eco",
@@ -536,29 +532,21 @@
                   "https://www.ebi.ac.uk/efo/EFO_0002694",
                   "http://purl.obolibrary.org/obo/ECO_0000000",
                   "http://purl.obolibrary.org/obo/OBI_0000011"
-                ],
-                "strict": false
-              }
+                ]
               }
             },
             "miscControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "CreativeWork",
-              "type": "object",
-              "properties":{
-                "name": {"type":"string"},
-                "identifier":{"type":"string"},
-                "url":{"type":"string",
-                       "format":"uri"},
-                "vocabulary": {
+              "type": "string",
+              "strict": false,
+              "vocabulary": {
                 "ontology": [
                   "eco"
                 ],
                 "children_of": [
                   "http://purl.obolibrary.org/obo/ECO_0000000"
-                ],
-                "strict": false
-              }
+                ]
               }
             },
             "baseOrgObject":{
