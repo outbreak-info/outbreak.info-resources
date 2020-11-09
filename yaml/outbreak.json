@@ -2615,7 +2615,29 @@
             "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
             "type": "string",
             "format": "date"
-          }
+          },
+            "evaluations":{
+              "anyOf":[
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/reviewObject"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ratingObject"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/aggregateRatingObject"
+                }
+              }
+            ]
+            }
           },
           "required": [
             "name",
@@ -2871,7 +2893,133 @@
               "required": [
                 "funder"
               ]
-            }
+            },
+            "reviewObject":{
+                "description": "A review or descriptive evaluation of the resource",
+                "@type": "schema:Review",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the review"
+                  },
+                  "author": {
+                    "description": "The author of this content or rating.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/person"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/person"
+                      }
+                      },
+                      {
+                        "$ref": "#/definitions/organization"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/organization"
+                      }
+                }
+              ]
+            },
+                  "curationDate":{
+                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+            },
+            "ratingObject":{
+                "description": "A rating or categorical evaluation of the resource",
+                "@type": "schema:Rating",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the rating"
+                  },
+                  "author": {
+                    "description": "The author of this content or rating.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/person"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/person"
+                      }
+                      },
+                      {
+                        "$ref": "#/definitions/organization"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/organization"
+                      }
+                }
+              ]
+            },
+                  "curationDate":{
+                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+            },
+            "aggregateRatingObject":{
+                "description": "A cumulative evaluation of the resource",
+                "@type": "schema:AggregateRating",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the aggregate rating"
+                  },
+                  "author": {
+                    "description": "The author of this content or rating.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/person"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/person"
+                      }
+                      },
+                      {
+                        "$ref": "#/definitions/organization"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/organization"
+                      }
+                }
+              ]
+            },
+                  "curationDate":{
+                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+            } 
           }
         }
     },
@@ -2889,6 +3037,7 @@
     {"@id":"outbreak:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this publication was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:citation"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"},{"@id":"schema:Thing"}]},
     {"@id":"outbreak:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this publication was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"outbreak:ClinicalTrial"},{"@id":"outbreak:Analysis"},{"@id":"outbreak:Publication"},{"@id":"outbreak:Dataset"},{"@id":"outbreak:Protocol"},{"@id":"schema:SoftwareApplication"},{"@id":"outbreak:Person"},{"@id":"outbreak:Organization"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"outbreak:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added to outbreak.info, or the date when this resource was updated in outbreak.info","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"outbreak:evaluations","@type":"rdf:Property","rdfs:comment":"One or more reviews, ratings, or other evaluations of this resource","rdfs:label":"evaluations","owl:cardinality":"many","marginality":"optional","schema:domainIncludes":{"@id":"outbreak:Publication"},"schema:rangeIncludes":[{"@id":"schema:Review"},{"@id":"schema:Rating"},{"@id":"schema:AggregateRating"}]},
     {
       "@id": "outbreak:ClinicalTrial",
       "@type": "rdfs:Class",
