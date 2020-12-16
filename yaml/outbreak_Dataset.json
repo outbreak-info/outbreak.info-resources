@@ -938,7 +938,19 @@
             "vocabulary": {
               "ontology": ["efo", "ncit","obi"],
               "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
-                             "http://purl.obolibrary.org/obo/OBI_0000011"]
+                             "http://purl.obolibrary.org/obo/OBI_0000011"],
+              "property": {
+                "name": {
+                  "type" : "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "identifier": {
+                  "type": "string"
+                }
+              }
             },
             "strict": false
           },
