@@ -3873,7 +3873,7 @@
         {"@id": "outbreak:Person"},
         {"@id": "outbreak:Organization"},
         {"@id": "outbreak:CitationObject"},
-        {"@id": "schema:CreativeWork}
+        {"@id": "schema:CreativeWork"}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}
