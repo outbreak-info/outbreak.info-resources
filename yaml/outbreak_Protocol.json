@@ -65,6 +65,11 @@
                 }
               }
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -168,6 +173,11 @@
                 }
               }
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -496,6 +506,11 @@
               "SoftwareApplication",
               "CreativeWork"
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -1210,11 +1225,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "evaluations":{
               "description": "Reviews, Ratings, or other types of evaluations on this resource",
               "anyOf":[
@@ -1262,7 +1272,19 @@
                   "https://www.ebi.ac.uk/efo/EFO_0002694",
                   "http://purl.obolibrary.org/obo/ECO_0000000",
                   "http://purl.obolibrary.org/obo/OBI_0000011"
-                ]
+                ],
+                "property": {
+                  "name": {
+                    "type" : "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "identifier": {
+                    "type": "string"
+                  }
+                }
               }
           },
           "miscControlledVocabulary": {
@@ -1276,7 +1298,19 @@
                 ],
                 "children_of": [
                   "http://purl.obolibrary.org/obo/ECO_0000000"
-                ]
+                ],
+                "property": {
+                  "name": {
+                    "type" : "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "identifier": {
+                    "type": "string"
+                  }
+                }
               }
           },
           "product": {
@@ -1397,7 +1431,12 @@
                       }
                     }
                   ]
-                }
+                },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
+              }
               },
               "required": [
                 "name"
@@ -1464,6 +1503,11 @@
                       }
                     }
                   ]
+              },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
               }
             },
             "required": [
@@ -1553,6 +1597,11 @@
               "citeText": {
                 "description": "The bibliographic citation for the referenced resource as is provided",
                 "type": "string"
+              },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
               }
             },
             "required": [
@@ -1600,16 +1649,11 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
+                          }
+                    }
+                  ]
                 }
-              ]
-            },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
+              },
               "required": [
               ]
             },
@@ -1653,16 +1697,11 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
+                          }
+                    }
+                  ]
                 }
-              ]
             },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
             "required": [
             ]
           },
@@ -1702,15 +1741,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
-                }
-              ]
-            },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
+                          }
+                    }
+                  ]
+                },
                 "reviews": {
                   "anyOf": [
                       {
@@ -2945,11 +2979,10 @@
       "rdfs:comment": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
       "rdfs:label": "curationDate",
       "schema:domainIncludes": [
-        {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:Analysis"},
-        {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:Person"},
+        {"@id": "outbreak:Organization"},
+        {"@id": "outbreak:CitationObject"},
+        {"@id": "schema:CreativeWork"}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}

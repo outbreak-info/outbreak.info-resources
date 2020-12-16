@@ -65,6 +65,11 @@
                 }
               }
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -168,6 +173,11 @@
                 }
               }
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -496,6 +506,11 @@
               "SoftwareApplication",
               "CreativeWork"
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -965,11 +980,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "license": {
             "description": "Licensing that applies to this content, typically indicated by URL.",
             "type": "string"
@@ -1054,6 +1064,11 @@
                       }
                     }
                   ]
+                },
+                "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
                 }
               },
               "required": [
@@ -1121,6 +1136,11 @@
                       }
                     }
                   ]
+              },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
               }
             },
             "required": [
@@ -1251,6 +1271,11 @@
               "citeText": {
                 "description": "The bibliographic citation for the referenced resource as is provided",
                 "type": "string"
+              },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
               }
             },
             "required": [
@@ -1298,16 +1323,11 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
+                          }
+                    }
+                  ]
                 }
-              ]
-            },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
+              },
               "required": [
               ]
             },
@@ -1351,14 +1371,9 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
+                          }
                       }
-                }
-              ]
-            },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
+                    ]
                   }
                 },
                 "required": [
@@ -1400,15 +1415,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
-                }
-              ]
-            },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
+                          }
+                    }
+                  ]
+                },
                 "reviews": {
                   "anyOf": [
                       {
@@ -2865,11 +2875,10 @@
       "rdfs:comment": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
       "rdfs:label": "curationDate",
       "schema:domainIncludes": [
-        {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:Analysis"},
-        {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:Person"},
+        {"@id": "outbreak:Organization"},
+        {"@id": "outbreak:CitationObject"},
+        {"@id": "schema:Thing"}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}

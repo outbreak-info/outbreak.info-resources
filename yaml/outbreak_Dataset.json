@@ -65,6 +65,11 @@
                 }
               }
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -168,6 +173,11 @@
                 }
               }
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -520,6 +530,11 @@
               "SoftwareApplication",
               "CreativeWork"
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -891,11 +906,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
             "type": "string"
@@ -938,7 +948,19 @@
             "vocabulary": {
               "ontology": ["efo", "ncit","obi"],
               "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
-                             "http://purl.obolibrary.org/obo/OBI_0000011"]
+                             "http://purl.obolibrary.org/obo/OBI_0000011"],
+              "property": {
+                "name": {
+                  "type" : "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "identifier": {
+                  "type": "string"
+                }
+              }
             },
             "strict": false
           },
@@ -948,7 +970,19 @@
             "type": "string",
             "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"]
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"],
+              "property": {
+                "name": {
+                  "type" : "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "identifier": {
+                  "type": "string"
+                }
+              }
             },
             "strict": false
           },
@@ -958,7 +992,19 @@
             "type": "string",
             "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567"]
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567"],
+              "property": {
+                "name": {
+                  "type" : "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "identifier": {
+                  "type": "string"
+                }
+              }
             },
               "strict": false
           },
@@ -968,7 +1014,19 @@
             "type": "string",
             "vocabulary": {
               "ontology": ["mondo"],
-              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]
+              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"],
+              "property": {
+                "name": {
+                  "type" : "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "identifier": {
+                  "type": "string"
+                }
+              }
             },
             "strict": false
           },
@@ -989,7 +1047,19 @@
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo",
                   "https://bioportal.bioontology.org/ontologies/COVID19"
-                ]
+                ],
+                "property": {
+                  "name": {
+                    "type" : "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "identifier": {
+                    "type": "string"
+                  }
+                }
               }
           },
           "datadownload": {
@@ -1061,6 +1131,11 @@
                       }
                     }
                   ]
+                },
+                "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
                 }
               },
               "required": [
@@ -1128,6 +1203,11 @@
                       }
                     }
                   ]
+              },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
               }
             },
             "required": [
@@ -1217,6 +1297,11 @@
               "citeText": {
                 "description": "The bibliographic citation for the referenced resource as is provided",
                 "type": "string"
+              },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
               }
             },
             "required": [
@@ -1264,16 +1349,11 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
+                          }
+                    }
+                  ]
                 }
-              ]
-            },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
+              },
               "required": [
               ]
             },
@@ -1317,14 +1397,9 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
+                          }
                       }
-                }
-              ]
-            },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
+                    ]
                   }
                 },
                 "required": [
@@ -1370,11 +1445,6 @@
                 }
               ]
             },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
                 "reviews": {
                   "anyOf": [
                       {
@@ -2791,11 +2861,10 @@
       "rdfs:comment": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
       "rdfs:label": "curationDate",
       "schema:domainIncludes": [
-        {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:Analysis"},
-        {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:Person"},
+        {"@id": "outbreak:Organization"},
+        {"@id": "outbreak:CitationObject"},
+        {"@id": "schema:CreativeWork"}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}
