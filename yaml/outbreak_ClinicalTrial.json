@@ -2420,11 +2420,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "evaluations":{
               "description": "Reviews, Ratings, or other types of evaluations on this resource",
               "anyOf":[
@@ -3258,15 +3253,10 @@
                         "items": {
                           "$ref": "#/definitions/organization"
                       }
+                    }
+                  ]
                 }
-              ]
-            },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
+              },
               "required": [
               ]
             },
@@ -3310,16 +3300,11 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
+                          }
+                    }
+                  ]
                 }
-              ]
             },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
             "required": [
             ]
           },
@@ -3359,33 +3344,17 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
-                }
-              ]
-            },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
+                          }
+                    }
+                  ]
+                },
                 "reviews": {
-                  "oneOf": [
-                      {
-                        "$ref": "#/definitions/reviewObject"
-                      },
+                  "anyOf": [
                       {
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/reviewObject"
                         }
-                      }
-                      
-                  ]
-                },
-                "ratings": {
-                  "oneOf": [
-                      {
-                        "$ref": "#/definitions/ratingObject"
                       },
                       {
                         "type": "array",
@@ -3396,7 +3365,7 @@
                       
                   ]
                 }
-                },
+            },
             "required": [
             ]
           }
@@ -3904,11 +3873,7 @@
         {"@id": "outbreak:Person"},
         {"@id": "outbreak:Organization"},
         {"@id": "outbreak:CitationObject"},
-        {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:Analysis"},
-        {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "schema:CreativeWork}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}

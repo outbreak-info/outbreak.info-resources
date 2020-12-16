@@ -530,6 +530,11 @@
               "SoftwareApplication",
               "CreativeWork"
             ]
+          },
+          "curationDate":{
+            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -900,11 +905,6 @@
                 }
               }
             ]
-          },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
           },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
@@ -1349,19 +1349,14 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
-                }
-              ]
+                        }
+                        }
+                    ]
+              }
             },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
-              "required": [
-              ]
-            },
+            "required": [
+            ]
+          },
           "ratingObject": {
                 "description": "A rating or categorical evaluation of the resource",
                 "@type": "Rating",
@@ -1405,12 +1400,7 @@
                       }
                 }
               ]
-            },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
+            }
                 },
                 "required": [
                 ]
@@ -1455,11 +1445,6 @@
                 }
               ]
             },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
                 "reviews": {
                   "anyOf": [
                       {
@@ -1477,9 +1462,9 @@
                       
                   ]
                 }
-                },
-            "required": [
-            ]
+              },
+              "required": [
+              ]
           }
         }
       }
@@ -1894,11 +1879,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "license": {
             "description": "Licensing that applies to this content, typically indicated by URL.",
             "type": "string"
@@ -2242,16 +2222,11 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
+                        }
                       }
+                    ]
                 }
-              ]
-            },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
+              },
               "required": [
               ]
             },
@@ -2295,19 +2270,14 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
+                        }
                       }
+                    ]
                 }
-              ]
-            },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
                 },
                 "required": [
                 ]
-            },
+          },
           "aggregateRatingObject": {
               "description": "A cumulative evaluation of the resource",
               "@type": "AggregateRating",
@@ -2348,11 +2318,6 @@
                 }
               ]
             },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
                 "reviews": {
                   "anyOf": [
                       {
@@ -2770,11 +2735,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
             "type": "string"
@@ -2912,23 +2872,23 @@
               }
             },
             "baseOrgObject":{
-            "description": "A barebones Organization object to work around recursion issues in DDE",
-            "@type": "outbreak:Organization",
-            "type": "object",
-            "properties": {
-              "name": {
-                "description": "name of the organization",
-                "type": "string"
-              },
-              "alternateName": {
-                "description": "Alternate name or Acronym for the organization.",
-                "type": "string"
-              }
-            },
-            "required": [
-              "name"
-            ]              
-          }, 
+                "description": "A barebones Organization object to work around recursion issues in DDE",
+                "@type": "outbreak:Organization",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "name of the organization",
+                    "type": "string"
+                  },
+                  "alternateName": {
+                    "description": "Alternate name or Acronym for the organization.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]              
+            }, 
             "person": {
               "description": "Reusable person definition",
               "@type": "outbreak:Person",
@@ -3079,10 +3039,10 @@
             ]
           },
             "citation": {
-                "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the publication) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
-                "@type": "outbreak:CitationObject",
-                "type": "object",
-                "properties": {
+              "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the publication) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
+              "@type": "outbreak:CitationObject",
+              "type": "object",
+              "properties": {
                 "name": {
                     "description": "Name of or title of the citation",
                     "type": "string"
@@ -3111,25 +3071,25 @@
                       "CreativeWork"
                       ]
                 },
-              "url": {
-                "description": "The url of the resource cited.",
-                "type": "string",
-                "format": "uri"
-              },
-              "versionDate": {
-                "description": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.",
-                "type": "string",
-                "format": "date"
-              },
-              "citeText": {
-                "description": "The bibliographic citation for the referenced resource as is provided",
-                "type": "string"
-              },
-              "curationDate":{
-                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                "type": "string",
-                "format": "date"
-              }
+                "url": {
+                  "description": "The url of the resource cited.",
+                  "type": "string",
+                  "format": "uri"
+                },
+                "versionDate": {
+                  "description": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.",
+                  "type": "string",
+                  "format": "date"
+                },
+                "citeText": {
+                  "description": "The bibliographic citation for the referenced resource as is provided",
+                  "type": "string"
+                },
+                "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
+                }
             },
             "required": [
               "name",
@@ -3179,12 +3139,7 @@
                       }
                 }
               ]
-            },
-                "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                }
+            }
               },
               "required": [
               ]
@@ -3232,12 +3187,7 @@
                       }
                 }
               ]
-            },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
+            }
                 },
                 "required": [
                 ]
@@ -3282,11 +3232,6 @@
                 }
               ]
             },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
                 "reviews": {
                   "anyOf": [
                       {
@@ -3869,11 +3814,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "evaluations":{
               "description": "Reviews, Ratings, or other types of evaluations on this resource",
               "anyOf":[
@@ -4301,16 +4241,11 @@
                       }
                 }
               ]
+            }
             },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
-              "required": [
-              ]
-            },
+            "required": [
+            ]
+          },
           "ratingObject": {
             "description": "A rating or categorical evaluation of the resource",
             "@type": "Rating",
@@ -4354,13 +4289,8 @@
                       }
                 }
               ]
+            }
             },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
             "required": [
             ]
           },
@@ -4404,11 +4334,6 @@
                 }
               ]
             },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
                 "reviews": {
                   "anyOf": [
                       {
@@ -6101,11 +6026,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "evaluations":{
               "description": "Reviews, Ratings, or other types of evaluations on this resource",
               "anyOf":[
@@ -6941,16 +6861,11 @@
                       }
                 }
               ]
+            }
             },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
-              "required": [
-              ]
-            },
+            "required": [
+            ]
+          },
           "ratingObject": {
             "description": "A rating or categorical evaluation of the resource",
             "@type": "Rating",
@@ -6994,13 +6909,8 @@
                       }
                 }
               ]
+            }
             },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
             "required": [
             ]
           },
@@ -7044,29 +6954,13 @@
                 }
               ]
             },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
                 "reviews": {
-                  "oneOf": [
-                      {
-                        "$ref": "#/definitions/reviewObject"
-                      },
+                  "anyOf": [
                       {
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/reviewObject"
                         }
-                      }
-                      
-                  ]
-                },
-                "ratings": {
-                  "oneOf": [
-                      {
-                        "$ref": "#/definitions/ratingObject"
                       },
                       {
                         "type": "array",
@@ -7077,7 +6971,7 @@
                       
                   ]
                 }
-                },
+            },
             "required": [
             ]
           }
@@ -7585,11 +7479,7 @@
         {"@id": "outbreak:Person"},
         {"@id": "outbreak:Organization"},
         {"@id": "outbreak:CitationObject"},
-        {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:Analysis"},
-        {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "schema:CreativeWork"}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}

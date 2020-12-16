@@ -980,11 +980,6 @@
               }
             ]
           },
-          "curationDate":{
-            "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-            "type": "string",
-            "format": "date"
-          },
           "license": {
             "description": "Licensing that applies to this content, typically indicated by URL.",
             "type": "string"
@@ -1328,16 +1323,11 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
+                          }
+                    }
+                  ]
                 }
-              ]
-            },
-              "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
+              },
               "required": [
               ]
             },
@@ -1381,14 +1371,9 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
+                          }
                       }
-                }
-              ]
-            },
-                  "curationDate":{
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
+                    ]
                   }
                 },
                 "required": [
@@ -1430,15 +1415,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                      }
-                }
-              ]
-            },
-                "curationDate": {
-                    "description": "The date this evaluation was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  },
+                          }
+                    }
+                  ]
+                },
                 "reviews": {
                   "anyOf": [
                       {
@@ -2898,11 +2878,7 @@
         {"@id": "outbreak:Person"},
         {"@id": "outbreak:Organization"},
         {"@id": "outbreak:CitationObject"},
-        {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:Analysis"},
-        {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "schema:Thing"}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}
