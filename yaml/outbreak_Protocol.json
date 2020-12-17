@@ -1260,7 +1260,7 @@
           "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
-              "type": "string",
+              "type": "object",
               "strict": false,
               "vocabulary": {
                 "ontology": [
@@ -1290,7 +1290,7 @@
           "miscControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
-              "type": "string",
+              "type": "object",
               "strict": false,
               "vocabulary": {
                 "ontology": [

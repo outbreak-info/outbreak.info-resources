@@ -944,7 +944,7 @@
           "controlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "DefinedTerm",
-            "type": "string",
+            "type": "object",
             "vocabulary": {
               "ontology": ["efo", "ncit","obi"],
               "children_of": ["https://www.ebi.ac.uk/efo/EFO_0002694", "http://purl.obolibrary.org/obo/NCIT_C20368",
@@ -967,7 +967,7 @@
           "miscControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "DefinedTerm",
-            "type": "string",
+            "type": "object",
             "vocabulary": {
               "ontology": ["ncbitaxon"],
               "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239"],
@@ -989,7 +989,7 @@
           "speciesControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "DefinedTerm",
-            "type": "string",
+            "type": "object",
             "vocabulary": {
               "ontology": ["ncbitaxon"],
               "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567"],
@@ -1011,7 +1011,7 @@
           "diseaseVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "DefinedTerm",
-            "type": "string",
+            "type": "object",
             "vocabulary": {
               "ontology": ["mondo"],
               "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"],
@@ -1033,7 +1033,7 @@
           "moreControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
-              "type": "string",
+              "type": "object",
               "strict": false,
               "vocabulary": {
                 "ontology": [

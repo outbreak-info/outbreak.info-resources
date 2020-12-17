@@ -1034,7 +1034,7 @@
             "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
-              "type": "string",
+              "type": "object",
               "strict": false,
               "vocabulary": {
                   "ontology": [
@@ -1064,7 +1064,7 @@
             "miscControlledVocabulary": {
               "description": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
-              "type": "string",
+              "type": "object",
               "strict": false,
               "vocabulary": {
                   "ontology": ["ncbitaxon"],
@@ -1086,7 +1086,7 @@
             "moreControlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
-              "type": "string",
+              "type": "object",
               "strict": false,
               "vocabulary": {
                   "ontology": [
@@ -1112,7 +1112,7 @@
             "diseaseVocabulary": {
               "description": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
-              "type": "string",
+              "type": "object",
               "strict": false,
               "vocabulary": {
                 "ontology": ["mondo"],
