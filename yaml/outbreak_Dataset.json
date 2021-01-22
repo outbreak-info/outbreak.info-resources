@@ -96,7 +96,7 @@
     },
     {
       "@id": "outbreak:orcid",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "the ORCID ID of the person",
       "rdfs:label": "orcid",
       "schema:domainIncludes": {
@@ -245,7 +245,7 @@
     },
     {
       "@id": "outbreak:affiliation",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "consortia or other organizations with which this organization is affiliated",
       "rdfs:label": "affiliation",
       "schema:domainIncludes": {
@@ -259,7 +259,7 @@
     },
     {
       "@id": "outbreak:members",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Members of this organization, team, or group",
       "rdfs:label": "members",
       "schema:domainIncludes": {
@@ -273,7 +273,7 @@
     },
     {
       "@id": "outbreak:class",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A classification of the organization by a resource. Eg- for ClinicalTrials funders, it's [U.S. National Institutes of Health, Other U.S. Federal agencies, Industry, All others]",
       "rdfs:label": "class",
       "schema:domainIncludes": {
@@ -287,7 +287,7 @@
     },
     {
       "@id": "outbreak:role",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "authorship, sponsorship, or other contribution role played by the person or organization in the creation of this resource. In a Clinical Study/Trial ArmGroup, it's equivalent to the ArmType in ClinicalTrials.gov",
       "rdfs:label": "role",
       "schema:domainIncludes": [
@@ -429,7 +429,7 @@
     },
     {
       "@id": "outbreak:recipient",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The person or organization to whom or to which the grant was awarded",
       "rdfs:label": "recipient",
       "schema:domainIncludes": {
@@ -545,7 +545,7 @@
     },
     {
       "@id": "outbreak:citeText",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The bibliographic citation for the referenced resource as is provided",
       "rdfs:label": "citeText",
       "schema:domainIncludes": {
@@ -559,7 +559,7 @@
     },
     {
       "@id": "outbreak:versionDate",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.",
       "rdfs:label": "versionDate",
       "schema:domainIncludes": {
@@ -573,7 +573,7 @@
     },
     {
       "@id": "outbreak:sourceType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The type of resource",
       "rdfs:label": "sourceType",
       "schema:domainIncludes": {
@@ -1480,7 +1480,7 @@
     },
     {
       "@id": "outbreak:correctionType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Type of notice or correction: (correction, retraction, expression of convern, withdrawal, erratum, update, correction/republication, preprint, peer reviewed version)",
       "rdfs:label": "correctionType",
       "schema:domainIncludes": {
@@ -1503,7 +1503,7 @@
     },
     {
       "@id": "outbreak:journalName",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The name of the journal (or publisher if journal name not available)",
       "rdfs:label": "journalName",
       "schema:domainIncludes": {
@@ -1517,7 +1517,7 @@
     },
     {
       "@id": "outbreak:journalNameAbbrevation",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "abbreviated Journal Title (note, this should be autopopulated)",
       "rdfs:label": "journalNameAbbrevation",
       "schema:domainIncludes": {
@@ -1531,7 +1531,7 @@
     },
     {
       "@id": "outbreak:volumeNumber",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Volume number of journal in which the article was published",
       "rdfs:label": "volumeNumber",
       "schema:domainIncludes": {
@@ -1545,7 +1545,7 @@
     },
     {
       "@id": "outbreak:issueNumber",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Issue of journal in which the article was published",
       "rdfs:label": "issueNumber",
       "schema:domainIncludes": {
@@ -1568,7 +1568,7 @@
         },
     {
       "@id": "outbreak:domainUrl",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The domain name or main site on which webpage or specific url can be found",
       "rdfs:label": "domainUrl",
       "schema:domainIncludes": {
@@ -1582,7 +1582,7 @@
     },
     {
       "@id": "outbreak:assumption",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Statement of assumptions / limitations of the model",
       "rdfs:label": "assumption",
       "schema:domainIncludes": {
@@ -1596,7 +1596,7 @@
     },
     {
       "@id": "outbreak:analysisTechnique",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A technique or technology used in a analysis",
       "rdfs:label": "analysisTechnique",
       "schema:domainIncludes": {
@@ -1610,7 +1610,7 @@
     },
     {
       "@id": "outbreak:analysisTopic",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The underlying question, goal, or aim of the analysis",
       "rdfs:label": "analysisTopic",
       "schema:domainIncludes": {
@@ -1651,7 +1651,7 @@
     },
     {
       "@id": "outbreak:warning",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Precautions, warnings, and/or safety warnings associated with or highlighted by the protocol",
       "rdfs:label": "warning",
       "schema:domainIncludes": {
@@ -1665,7 +1665,7 @@
     },
     {
       "@id": "outbreak:correctionNote",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "statement of what was updated/changed since prior version",
       "rdfs:label": "correctionNote",
       "schema:domainIncludes": {
@@ -1679,7 +1679,7 @@
     },
     {
       "@id": "outbreak:protocolStatus",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The status of the protocol",
       "rdfs:label": "protocolStatus",
       "schema:domainIncludes": {
@@ -1693,7 +1693,7 @@
     },
     {
       "@id": "outbreak:instrument",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A laboratory equipment use by a person to follow one or more steps described in this Protocol",
       "rdfs:label": "instrument",
       "schema:domainIncludes": {
@@ -1707,7 +1707,7 @@
     },
     {
       "@id": "outbreak:protocolSetting",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The type of 'protocol' based on setting in which it would apply",
       "rdfs:label": "protocolSetting",
       "schema:domainIncludes": {
@@ -1721,7 +1721,7 @@
     },
     {
       "@id": "outbreak:protocolCategory",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The type of 'protocol' based on degree of specificity and purpose",
       "rdfs:label": "protocolCategory",
       "schema:domainIncludes": {
@@ -1735,7 +1735,7 @@
     },
     {
       "@id": "outbreak:usedToGenerate",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Type of evidence/data generated by the protocol",
       "rdfs:label": "usedToGenerate",
       "schema:domainIncludes": {
@@ -1749,7 +1749,7 @@
     },
     {
       "@id": "outbreak:inComplianceWith",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Guidelines or Standards to which these protocols adhere. ie- GMP, GCP, other EQUATOR guidelines. Useful for selecting protocols where certain standards/guidelines must be met",
       "rdfs:label": "inComplianceWith",
       "schema:domainIncludes": {
@@ -1772,7 +1772,7 @@
     },
     {
       "@id": "outbreak:studyEventType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Type of the event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
       "rdfs:label": "studyEventType",
       "schema:domainIncludes": {
@@ -1786,7 +1786,7 @@
     },
     {
       "@id": "outbreak:studyEventDate",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The corresponding/actual date of the study event (ie- the StartDate, Primary CompletionDate, CompletionDate, StudyFirstSubmitDate, StudyFirstSubmitQCDate, LastUpdateSubmitDate)",
       "rdfs:label": "studyEventDate",
       "schema:domainIncludes": {
@@ -1800,7 +1800,7 @@
     },
     {
       "@id": "outbreak:studyEventDateType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "the type of date provided (actual, anticipated, or estimated)",
       "rdfs:label": "studyEventDateType",
       "schema:domainIncludes": {
@@ -1823,7 +1823,7 @@
     },
     {
       "@id": "outbreak:status",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The recruitment status of the study",
       "rdfs:label": "status",
       "rdfs:sameAs":{"@id":"schema:status"},
@@ -1838,7 +1838,7 @@
     },
     {
       "@id": "outbreak:statusExpandedAccess",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Flag for whether or not the study has expanded Access status",
       "rdfs:label": "statusExpandedAccess",
       "schema:domainIncludes": {
@@ -1852,7 +1852,7 @@
     },
     {
       "@id": "outbreak:statusDate",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The date that the status was verified. Equivalent to NCT's StatusVerifiedDate",
       "rdfs:label": "statusDate",
       "schema:domainIncludes": {
@@ -1866,7 +1866,7 @@
     },
     {
       "@id": "outbreak:enrollmentCount",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The number of participants enrolled in the study",
       "rdfs:label": "enrollmentCount",
       "schema:domainIncludes": {
@@ -1880,7 +1880,7 @@
     },
     {
       "@id": "outbreak:enrollmentType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The type of estimation used to determine the enrollmentCount (actual counts, target size, etc.)",
       "rdfs:label": "enrollmentType",
       "schema:domainIncludes": {
@@ -1894,7 +1894,7 @@
     },
     {
       "@id": "outbreak:whyStopped",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A brief explanation of the reason(s) why such clinical study was stopped (for a clinical study that is Suspended, Terminated, or Withdrawn prior to its planned completion as anticipated by the protocol)",
       "rdfs:label": "whyStopped",
       "schema:domainIncludes": {
@@ -1917,7 +1917,7 @@
     },
     {
       "@id": "outbreak:studyType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Type of human study, can be subtypes of observational study or interventional studies and may include the temporal relationship of observation period to time of participant enrollment.",
       "rdfs:label": "studyType",
       "schema:domainIncludes": {
@@ -1931,7 +1931,7 @@
     },
     {
       "@id": "outbreak:phase",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Stage or phase of the study in the U.S. if applicable",
       "rdfs:label": "phase",
       "rdfs:sameAs":{"@id":"schema:phase"},
@@ -1946,7 +1946,7 @@
     },
     {
       "@id": "outbreak:phaseNumber",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The number of the phase or stage of the study",
       "rdfs:label": "phaseNumber",
       "schema:domainIncludes": {
@@ -1960,7 +1960,7 @@
     },
     {
       "@id": "outbreak:designAllocation",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The method by which the study participants were allocated into groups",
       "rdfs:label": "designAllocation",
       "schema:domainIncludes": {
@@ -1974,7 +1974,7 @@
     },
     {
       "@id": "outbreak:designModel",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The general design of the strategy for assigning interventions to participants in a clinical intervention study OR the general design of the strategy for identifying and following up with participants during an observational study",
       "rdfs:label": "designModel",
       "schema:domainIncludes": {
@@ -1988,7 +1988,7 @@
     },
     {
       "@id": "outbreak:designPrimaryPurpose",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The primary purpose of the study",
       "rdfs:label": "designPrimaryPurpose",
       "schema:domainIncludes": {
@@ -2002,7 +2002,7 @@
     },
     {
       "@id": "outbreak:designWhoMasked",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The people who do not know which participants have been assigned to which interventions",
       "rdfs:label": "designWhoMasked",
       "schema:domainIncludes": {
@@ -2016,7 +2016,7 @@
     },
     {
       "@id": "outbreak:designStudyText",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "String description of the study design if structured information not available",
       "rdfs:label": "designStudyText",
       "schema:domainIncludes": {
@@ -2039,7 +2039,7 @@
     },
     {
       "@id": "outbreak:category",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The category of an intervention in the study",
       "rdfs:label": "category",
       "schema:domainIncludes": {
@@ -2062,7 +2062,7 @@
     },
     {
       "@id": "outbreak:intervention",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The interventions (if any) in this ArmGroup",
       "rdfs:label": "intervention",
       "schema:domainIncludes": {
@@ -2085,7 +2085,7 @@
     },
     {
       "@id": "outbreak:outcomeMeasure",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The outcome measure for the study",
       "rdfs:label": "outcomeMeasure",
       "schema:domainIncludes": {
@@ -2099,7 +2099,7 @@
     },
     {
       "@id": "outbreak:outcomeTimeFrame",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The specific time point(s) and overall duration of evaluation must be specified in this section",
       "rdfs:label": "outcomeTimeFrame",
       "schema:domainIncludes": {
@@ -2116,7 +2116,7 @@
     },
     {
       "@id": "outbreak:outcomeType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The classification of the outcome measure as either primary, secondary, or exploratory",
       "rdfs:label": "outcomeType",
       "schema:domainIncludes": {
@@ -2139,7 +2139,7 @@
     },
     {
       "@id": "outbreak:inclusionCriteria",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "\"criteria for inclusion in the study",
       "rdfs:label": "inclusionCriteria",
       "schema:domainIncludes": {
@@ -2153,7 +2153,7 @@
     },
     {
       "@id": "outbreak:minimumAge",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "the minimum age for a participant to be included in the study",
       "rdfs:label": "minimumAge",
       "schema:domainIncludes": {
@@ -2167,7 +2167,7 @@
     },
     {
       "@id": "outbreak:maximumAge",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "the maximum age for a participant to be included in the study",
       "rdfs:label": "maximumAge",
       "schema:domainIncludes": {
@@ -2181,7 +2181,7 @@
     },
     {
       "@id": "outbreak:gender",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "the sex requirement to be included in the study",
       "rdfs:label": "gender",
       "schema:domainIncludes": {
@@ -2195,7 +2195,7 @@
     },
     {
       "@id": "outbreak:genderBased",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Boolean for whether or not participation is based on gender",
       "rdfs:label": "genderBased",
       "schema:domainIncludes": {
@@ -2209,7 +2209,7 @@
     },
     {
       "@id": "outbreak:healthyVolunteers",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Boolean to indicate whether or not healthy volunteers may be included in the study",
       "rdfs:label": "healthyVolunteers",
       "schema:domainIncludes": {
@@ -2223,7 +2223,7 @@
     },
     {
       "@id": "outbreak:stdAge",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "the age category of a participant to be included in the study if a minimum and maximum age is not specified",
       "rdfs:label": "stdAge",
       "schema:domainIncludes": {
@@ -2237,7 +2237,7 @@
     },
     {
       "@id": "outbreak:exclusionCriteria",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "criteria for exclusion from the study",
       "rdfs:label": "exclusionCriteria",
       "schema:domainIncludes": {
@@ -2251,7 +2251,7 @@
     },
     {
       "@id": "outbreak:criteriaText",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The descriptive criteria as published for the Clinical Trial",
       "rdfs:label": "criteriaText",
       "schema:domainIncludes": {
@@ -2274,7 +2274,7 @@
     },
     {
       "@id": "outbreak:studyLocation",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The location of the study",
       "rdfs:label": "studyLocation",
       "schema:domainIncludes": {
@@ -2291,7 +2291,7 @@
     },
     {
       "@id": "outbreak:studyLocationCity",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The city in which the facility used for the study is located",
       "rdfs:label": "studyLocationCity",
       "schema:domainIncludes": {
@@ -2308,7 +2308,7 @@
     },
     {
       "@id": "outbreak:studyLocationState",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The state or province in which the facility used for the study is located",
       "rdfs:label": "studyLocationState",
       "schema:domainIncludes": {
@@ -2325,7 +2325,7 @@
     },
     {
       "@id": "outbreak:studyLocationCountry",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The country in which the facility used for the study is located",
       "rdfs:label": "studyLocationCountry",
       "schema:domainIncludes": {
@@ -2342,7 +2342,7 @@
     },
     {
       "@id": "outbreak:studyLocationStatus",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The recruitment status of the study at the specific study site",
       "rdfs:label": "studyLocationStatus",
       "schema:domainIncludes": {
@@ -2365,7 +2365,7 @@
     },
     {
       "@id": "outbreak:identifierSource",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Source of identifier assignment or type of identifier (NCTid, China CTRid, EudraCT Number, etc.)",
       "rdfs:label": "identifierSource",
       "schema:domainIncludes": {
@@ -2379,7 +2379,7 @@
     },
     {
       "@id": "outbreak:dateModifiedType",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The type of date. Equivalent to NCT's LastUpdatePostDateType",
       "rdfs:label": "dateModifiedType",
       "schema:domainIncludes": {
@@ -2393,7 +2393,7 @@
     },
     {
       "@id": "outbreak:healthConditionIdentifier",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Ontological or controlled vocabulary identifier for the health condition or disease",
       "rdfs:label": "healthConditionIdentifier",
       "schema:domainIncludes": {
@@ -2410,7 +2410,7 @@
     },
     {
       "@id": "outbreak:hasResults",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Boolean for if the clinical trial has published any results",
       "rdfs:label": "hasResults",
       "schema:domainIncludes": {
@@ -2424,7 +2424,7 @@
     },
     {
       "@id": "outbreak:studyEvent",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "an event status such as StudyStart, PrimaryCompletion, Completion, StudyFirstSubmit, StudyFirstSubmitQC, LastUpdateSubmit",
       "rdfs:label": "studyEvent",
       "schema:domainIncludes": {
@@ -2438,7 +2438,7 @@
     },
     {
       "@id": "outbreak:studyStatus",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The status of the study",
       "rdfs:label": "studyStatus",
       "schema:domainIncludes": {
@@ -2452,7 +2452,7 @@
     },
     {
       "@id": "outbreak:studyDesign",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The general design of the study",
       "rdfs:label": "studyDesign",
       "schema:domainIncludes": {
@@ -2466,7 +2466,7 @@
     },
     {
       "@id": "outbreak:armGroup",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The arm or factor of an interventional study",
       "rdfs:label": "armGroup",
       "schema:domainIncludes": {
@@ -2480,7 +2480,7 @@
     },
     {
       "@id": "outbreak:outcome",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The arm or factor of an interventional study",
       "rdfs:label": "outcome",
       "schema:domainIncludes": {
@@ -2494,7 +2494,7 @@
     },
     {
       "@id": "outbreak:eligibilityCriteria",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "eligibility criteria",
       "rdfs:label": "eligibilityCriteria",
       "schema:domainIncludes": {
@@ -2508,7 +2508,7 @@
     },
     {
       "@id": "outbreak:author",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The author of this resource, content, or rating",
       "rdfs:label": "author",
       "rdfs:sameAs": {"@id":"schema:author"},
@@ -2530,7 +2530,7 @@
     },
     {
       "@id": "outbreak:dateCreated",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Date the record was created",
       "rdfs:label": "dateCreated",
       "rdfs:sameAs": {"@id":"schema:dateCreated"},
@@ -2545,7 +2545,7 @@
     },
     {
       "@id": "outbreak:datePublished",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Date of first broadcast/publication",
       "rdfs:label": "datePublished",
       "rdfs:sameAs": {"@id":"schema:datePublished"},
@@ -2564,7 +2564,7 @@
     },
     {
       "@id": "outbreak:dateModified",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed",
       "rdfs:label": "dateModified",
       "rdfs:sameAs": {"@id":"schema:dateModified"},
@@ -2583,7 +2583,7 @@
     },
     {
       "@id": "outbreak:keywords",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "keywords for describing the record",
       "rdfs:label": "keywords",
       "schema:domainIncludes": [
@@ -2601,7 +2601,7 @@
     },
     {
       "@id": "outbreak:abstract",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A short descriptive summary of the publication or study",
       "rdfs:label": "abstract",
       "rdfs:sameAs": {"@id":"schema:abstract"},
@@ -2617,7 +2617,7 @@
     },
     {
       "@id": "outbreak:pmid",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A pubmed identifier if available",
       "rdfs:label": "pmid",
       "schema:domainIncludes": [
@@ -2633,7 +2633,7 @@
     },
     {
       "@id": "outbreak:doi",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A doi if available",
       "rdfs:label": "doi",
       "schema:domainIncludes": [
@@ -2652,7 +2652,7 @@
     },
     {
       "@id": "outbreak:funding",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
       "rdfs:label": "funding",
       "schema:domainIncludes": [
@@ -2670,7 +2670,7 @@
     },
     {
       "@id": "outbreak:measurementTechnique",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A technique or technology used in this resource",
       "rdfs:label": "measurementTechnique",
       "rdfs:sameAs": {"@id":"schema:measurementTechnique"},
@@ -2689,7 +2689,7 @@
     },
     {
       "@id": "outbreak:species",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Species(es) from which dataset has been collected",
       "rdfs:label": "species",
       "schema:domainIncludes": [
@@ -2707,7 +2707,7 @@
     },
     {
       "@id": "outbreak:infectiousAgent",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "infectious agents(s) which are the focus of the dataset",
       "rdfs:label": "infectiousAgent",
       "schema:domainIncludes": [
@@ -2725,7 +2725,7 @@
     },
     {
       "@id": "outbreak:infectiousDisease",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The disease or medical conditions caused by the infectious agent. Important as some agents may cause multiple diseases",
       "rdfs:label": "infectiousDisease",
       "schema:domainIncludes": [
@@ -2743,7 +2743,7 @@
     },
     {
       "@id": "outbreak:topicCategory",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "Applicable outbreak.info category",
       "rdfs:label": "topicCategory",
       "schema:domainIncludes": [
@@ -2762,7 +2762,7 @@
 
     {
       "@id": "outbreak:isBasedOn",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A citation to a resource (eg- publication, protocol, etc.) on which this resource was derived (stored as an object, not a string)",
       "rdfs:label": "isBasedOn",
       "schema:domainIncludes": [
@@ -2785,7 +2785,7 @@
     },
     {
       "@id": "outbreak:isRelatedTo",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A citation to a resource (eg- publication, protocol, etc.) which is related to the resource but is not a derivative nor was derived from the resource (stored as an object, not a string)",
       "rdfs:label": "isRelatedTo",
       "schema:domainIncludes": [
@@ -2808,7 +2808,7 @@
     },
     {
       "@id": "outbreak:citedBy",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "A citation to a resource (eg- publication, protocol, etc.) which is derived from this resource (stored as an object, not a string)",
       "rdfs:label": "citedBy",
       "rdfs:sameAs":{"@id":"owl:inverseOf: outbreak:isBasedOn"},
@@ -2832,7 +2832,7 @@
     },
     {
       "@id": "outbreak:curatedBy",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The source from which this Dataset was identified for inclusion into Outbreak.info. Provides provenance for a resource which was curated by another.",
       "rdfs:label": "curatedBy",
       "schema:domainIncludes": [
@@ -2857,7 +2857,7 @@
     },
     {
       "@id": "outbreak:curationDate",
-      "@type": "rdfs:Property",
+      "@type": "rdf:Property",
       "rdfs:comment": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
       "rdfs:label": "curationDate",
       "schema:domainIncludes": [
