@@ -5,6 +5,7 @@
   },
   "abstract": {
     "type": "text",
+    "index": true,
     "copy_to": ["all"]
   },
   "alternateName": {
@@ -192,6 +193,7 @@
   },
   "description": {
     "type": "text",
+    "index": true,
     "copy_to": ["all"]
   },
   "distribution": {
@@ -389,6 +391,7 @@
   },
   "keywords": {
     "type": "keyword",
+    "index": true,
     "copy_to": ["all"]
   },
   "license": {
@@ -410,7 +413,8 @@
     "copy_to": ["all"]
   },
   "name": {
-    "type": "text",
+    "type": "keyword",
+    "index": true,
     "copy_to": ["all"]
   },
   "outcome": {
