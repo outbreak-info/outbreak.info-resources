@@ -591,20 +591,29 @@
             "type": "integer"
           },
           "correctionType": {
-            "description": "Type of notice or correction: (correction, retraction, expression of convern, withdrawal, erratum, update, correction/republication, preprint, peer reviewed version)",
+            "description": "Type of notice or correction: (comment in/on, retraction in/of, expression of concern in/for, withdrawal in/of, erratum in/for, update in/of, (correction and) republication in/from, preprint, peer-reviewed version)",
             "oneOf": [
               {
                 "type": "string",
                 "enum": [
-                  "correction",
-                  "retraction",
-                  "expression of concern",
-                  "withdrawal",
-                  "erratum",
-                  "update",
-                  "correction and re-publication",
-                  "peer reviewed version",
-                  "preprint"
+                    "comment in",
+                    "comment on",
+                    "erratum in",
+                    "erratum for",
+                    "republished in",
+                    "republished from",
+                    "dataset described in",
+                    "dataset use reported in",
+                    "expression of concern in",
+                    "expression of concern for",
+                    "retraction in",
+                    "retraction of",
+                    "update in",
+                    "update of",
+                    "preprint",
+                    "peer-reviewed version",
+                    "withdrawal in",
+                    "withdrawal of"
                 ]
               },
               {
@@ -612,15 +621,24 @@
                 "items": {
                   "type": "string",
                   "enum": [
-                    "correction",
-                    "retraction",
-                    "expression of concern",
-                    "withdrawal",
-                    "erratum",
-                    "update",
-                    "correction and re-publication",
-                    "peer reviewed version",
-                    "preprint"
+                    "comment in",
+                    "comment on",
+                    "erratum in",
+                    "erratum for",
+                    "republished in",
+                    "republished from",
+                    "dataset described in",
+                    "dataset use reported in",
+                    "expression of concern in",
+                    "expression of concern for",
+                    "retraction in",
+                    "retraction of",
+                    "update in",
+                    "update of",
+                    "preprint",
+                    "peer-reviewed version",
+                    "withdrawal in",
+                    "withdrawal of"
                   ]
                 }
               }
@@ -647,7 +665,7 @@
     {
       "@id": "outbreak:correctionType",
       "@type": "rdf:Property",
-      "rdfs:comment": "Type of notice or correction: (correction, retraction, expression of convern, withdrawal, erratum, update, correction/republication, preprint, peer reviewed version)",
+      "rdfs:comment": "Type of notice or correction: (comment in/on, retraction in/of, expression of concern in/for, withdrawal in/of, erratum in/for, update in/of, (correction and) republication in/from, preprint, peer-reviewed version)",
       "rdfs:label": "correctionType",
       "schema:domainIncludes": {
         "@id": "outbreak:Correction"
@@ -1194,15 +1212,24 @@
                 },
                 "correctionType": {
                   "enum": [
-                    "correction",
-                    "retraction",
-                    "expression of concern",
-                    "withdrawal",
-                    "erratum",
-                    "update",
-                    "correction and re-publication",
-                    "peer reviewed version",
-                    "preprint"
+                    "comment in",
+                    "comment on",
+                    "erratum in",
+                    "erratum for",
+                    "republished in",
+                    "republished from",
+                    "dataset described in",
+                    "dataset use reported in",
+                    "expression of concern in",
+                    "expression of concern for",
+                    "retraction in",
+                    "retraction of",
+                    "update in",
+                    "update of",
+                    "preprint",
+                    "peer-reviewed version",
+                    "withdrawal in",
+                    "withdrawal of"
                   ]
                 },
                 "identifier": {
