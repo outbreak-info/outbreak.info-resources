@@ -591,7 +591,7 @@
             "type": "integer"
           },
           "correctionType": {
-            "description": "Type of notice or correction: (comment in/on, retraction in/of, expression of concern in/for, withdrawal in/of, erratum in/for, update in/of, rpublication in/from, preprint, peer-reviewed version)",
+            "description": "Type of notice or correction: (comment in/on, retraction in/of, expression of concern in/for, withdrawal in/of, erratum in/for, update in/of, (correction and) republication in/from, preprint, peer-reviewed version)",
             "oneOf": [
               {
                 "type": "string",
@@ -665,7 +665,7 @@
     {
       "@id": "outbreak:correctionType",
       "@type": "rdf:Property",
-      "rdfs:comment": "Type of notice or correction: (comment in/on, retraction in/of, expression of concern in/for, withdrawal in/of, erratum in/for, update in/of, rpublication in/from, preprint, peer-reviewed version)",
+      "rdfs:comment": "Type of notice or correction: (comment in/on, retraction in/of, expression of concern in/for, withdrawal in/of, erratum in/for, update in/of, (correction and) republication in/from, preprint, peer-reviewed version)",
       "rdfs:label": "correctionType",
       "schema:domainIncludes": {
         "@id": "outbreak:Correction"
