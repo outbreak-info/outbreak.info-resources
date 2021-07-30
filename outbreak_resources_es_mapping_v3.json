@@ -686,7 +686,7 @@
     "type": "keyword",
     "copy_to": ["all"]
   },
-  "relatedTo": {
+  "isRelatedTo": {
     "properties": {
       "@type": {
         "type": "keyword"
