@@ -18,7 +18,7 @@
         "type": "keyword"
       },
       "name": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "description": {
@@ -35,7 +35,7 @@
             "type": "keyword"
           },
           "name": {
-            "type": "keyword",
+            "type": "text",
             "copy_to": ["all"]
           },
           "category": {
@@ -58,7 +58,7 @@
       "affiliation": {
         "properties": {
           "name": {
-            "type": "keyword",
+            "type": "text",
             "copy_to": ["all"]
           }
         }
@@ -76,7 +76,7 @@
         "copy_to": ["all"]
       },
       "role": {
-        "type": "keyword"
+        "type": "text"
       },
       "title": {
         "type": "text"
@@ -98,7 +98,7 @@
         "type": "text"
       },
       "datePublished": {
-        "type": "text"
+        "type": "date"
       },
       "description": {
         "type": "text"
@@ -133,7 +133,7 @@
         "copy_to": ["all"]
       },
       "datePublished": {
-        "type": "text"
+        "type": "date"
       },
       "doi": {
         "type": "text",
@@ -155,12 +155,12 @@
   "creator": {
     "properties": {
       "@type": {
-        "type": "text"
+        "type": "keyword"
       },
       "affiliation": {
         "properties": {
           "name": {
-            "type": "keyword",
+            "type": "text",
             "copy_to": ["all"]
           }
         }
@@ -178,7 +178,7 @@
         "copy_to": ["all"]
       },
       "role": {
-        "type": "keyword"
+        "type": "text"
       },
       "title": {
         "type": "text"
@@ -188,20 +188,20 @@
   "curatedBy": {
     "properties": {
       "@type": {
-        "type": "text"
+        "type": "keyword"
       },
       "identifier": {
         "type": "keyword"
       },
       "name": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "url": {
         "type": "text"
       },
       "versionDate": {
-        "type": "keyword"
+        "type": "date"
       }
     }
   },
@@ -209,13 +209,13 @@
     "type": "date"
   },
   "dateCreated": {
-    "type": "keyword"
+    "type": "date"
   },
   "dateModified": {
-    "type": "keyword"
+    "type": "date"
   },
   "datePublished": {
-    "type": "keyword"
+    "type": "date"
   },
   "description": {
     "type": "text",
@@ -231,22 +231,22 @@
         "type": "text"
       },
       "dateCreated": {
-        "type": "keyword"
+        "type": "date"
       },
       "dateModified": {
-        "type": "keyword"
+        "type": "date"
       },
       "datePublished": {
-        "type": "keyword"
+        "type": "date"
       },
       "description": {
         "type": "text"
       },
       "@id": {
-        "type": "keyword"
+        "type": "text"
        },
       "name": {
-        "type": "keyword"
+        "type": "text"
       }
     }
   },
@@ -295,7 +295,7 @@
       },
       "reviewAspect": {
         "type": "text",
-        "copy_to": ["all"]          
+        "copy_to": ["all"]
       },
       "reviewBody": {
         "type": "text",
@@ -309,7 +309,7 @@
           "affiliation": {
             "properties": {
               "name": {
-                "type": "keyword",
+                "type": "text",
                 "copy_to": ["all"]
               }
             }
@@ -347,7 +347,7 @@
           },
           "reviewAspect": {
             "type": "text",
-            "copy_to": ["all"]          
+            "copy_to": ["all"]
           },
           "author": {
             "properties": {
@@ -357,7 +357,7 @@
               "affiliation": {
                 "properties": {
                   "name": {
-                    "type": "keyword",
+                    "type": "text",
                     "copy_to": ["all"]
                   }
                 }
@@ -399,7 +399,7 @@
               },
               "reviewAspect": {
                 "type": "text",
-                "copy_to": ["all"]          
+                "copy_to": ["all"]
               },
               "author": {
                 "properties": {
@@ -409,7 +409,7 @@
                   "affiliation": {
                     "properties": {
                       "name": {
-                        "type": "keyword",
+                        "type": "text",
                         "copy_to": ["all"]
                       }
                     }
@@ -439,7 +439,7 @@
               "name": {
                 "type": "text",
                 "copy_to": ["all"]
-              }            
+              }
             }
           }
         }
@@ -451,7 +451,7 @@
           },
           "reviewAspect": {
             "type": "text",
-            "copy_to": ["all"]          
+            "copy_to": ["all"]
           },
           "author": {
             "properties": {
@@ -461,7 +461,7 @@
               "affiliation": {
                 "properties": {
                   "name": {
-                    "type": "keyword",
+                    "type": "text",
                     "copy_to": ["all"]
                   }
                 }
@@ -491,7 +491,7 @@
           "name": {
             "type": "text",
             "copy_to": ["all"]
-          }            
+          }
         }
       }
     }
@@ -501,14 +501,14 @@
       "funder": {
         "properties": {
           "name": {
-            "type": "keyword",
+            "type": "text",
             "copy_to": ["all"]
           },
           "class": {
-            "type": "keyword"
+            "type": "text"
           },
           "role": {
-            "type": "keyword"
+            "type": "text"
           },
           "url": {
             "type": "text",
@@ -542,7 +542,7 @@
     "copy_to": ["all"]
   },
   "identifierSource": {
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "inComplianceWith": {
@@ -562,7 +562,7 @@
         "type": "keyword"
       },
       "name": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "category": {
@@ -587,7 +587,7 @@
         "type": "text"
       },
       "datePublished": {
-        "type": "text"
+        "type": "date"
       },
       "description": {
         "type": "text"
@@ -616,15 +616,15 @@
     "type": "text"
   },
   "journalName": {
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "journalNameAbbrev": {
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "keywords": {
-    "type": "keyword",
+    "type": "text",
     "index": true,
     "copy_to": ["all"]
   },
@@ -638,16 +638,16 @@
   "measurementParameter": {
     "properties": {
       "resolution": {
-        "type": "keyword"
+        "type": "text"
       }
     }
   },
   "measurementTechnique": {
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "name": {
-    "type": "keyword",
+    "type": "text",
     "index": true,
     "copy_to": ["all"]
   },
@@ -682,6 +682,10 @@
     "type": "keyword",
     "copy_to": ["all"]
   },
+  "protocolStatus": {
+    "type": "keyword",
+    "copy_to": ["all"]
+  },
   "publicationType": {
     "type": "keyword",
     "copy_to": ["all"]
@@ -698,7 +702,7 @@
         "type": "text"
       },
       "datePublished": {
-        "type": "text"
+        "type": "date"
       },
       "description": {
         "type": "text"
@@ -725,16 +729,16 @@
   },
   "infectiousDisease": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "infectiousAgent": {
     "normalizer": "keyword_lowercase_normalizer",
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "species": {
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "sponsor": {
@@ -743,15 +747,15 @@
         "type": "keyword"
       },
       "name": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "class": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "role": {
-        "type": "keyword"
+        "type": "text"
       }
     }
   },
@@ -802,7 +806,7 @@
         "type": "text"
       },
       "studyEventDate": {
-        "type": "text"
+        "type": "date"
       },
       "studyEventDateType": {
         "type": "text"
@@ -815,19 +819,19 @@
         "type": "keyword"
       },
       "name": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "studyLocationCity": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "studyLocationState": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "studyLocationCountry": {
-        "type": "keyword",
+        "type": "text",
         "copy_to": ["all"]
       },
       "studyLocationStatus": {
@@ -846,7 +850,7 @@
         "copy_to": ["all"]
       },
       "statusDate": {
-        "type": "text"
+        "type": "date"
       },
       "whyStopped": {
         "type": "text",
@@ -875,13 +879,13 @@
     "type": "text"
   },
   "variableMeasured": {
-    "type": "keyword",
+    "type": "text",
     "copy_to": ["all"]
   },
   "volumeNumber": {
     "type": "text"
   },
   "@id": {
-      "type": "keyword"
+      "type": "text"
   }
 }
