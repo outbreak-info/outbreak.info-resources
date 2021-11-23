@@ -746,7 +746,18 @@
             "format": "uri"
           }
         },
-        "required": []
+        "required": [
+          "correctionType"
+        ],
+        "recommended": [
+          "doi",
+          "pmid",
+          "identifier",
+          "url"
+        ],
+        "optional": [
+          "datePublished"
+        ]
       }
     },
     {
