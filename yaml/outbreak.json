@@ -2007,12 +2007,12 @@
           "author",
           "description",
           "identifier",
-          "name",
-          "funding",
-          "distribution"
+          "name"
         ],
         "recommended": [
           "dateModified",
+          "funding",
+          "distribution",
           "measurementTechnique",
           "variableMeasured",
           "species",
@@ -3742,6 +3742,19 @@
                   }
                 ]
           },
+          "species": {
+            "description": "Species(es) from which dataset has been collected",
+            "oneOf": [{
+                "$ref": "#/definitions/speciesControlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/speciesControlledVocabulary"
+                }
+              }
+            ]
+          },
           "infectiousAgent": {
             "description": "infectious agents(s) which are the focus of the analysis",
             "oneOf": [{
@@ -3903,7 +3916,30 @@
           "name",
           "url"
         ],
-          "definitions": {
+        "recommended": [
+          "domainUrl",
+          "doi",
+          "funding",
+          "species",
+          "infectiousAgent",
+          "infectiousDisease",
+          "license",
+          "datePublished",
+          "dateModified",
+          "analysisTechnique",
+          "analysisTopic",
+          "assumption",
+          "keywords",
+          "topicCategory",
+          "curatedBy"
+        ],
+        "optional": [
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "evaluations"
+        ],
+        "definitions": {
             "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
@@ -3933,6 +3969,28 @@
                   }
                 }
               }
+            },
+            "speciesControlledVocabulary": {
+              "description": "collection of vocabulary terms defined in ontologies",
+              "@type": "DefinedTerm",
+              "type": "object",
+              "vocabulary": {
+                "ontology": ["ncbitaxon"],
+                "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567"],
+                "property": {
+                  "name": {
+                    "type" : "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "identifier": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": false
             },
             "miscControlledVocabulary": {
               "description": "collection of vocabulary terms defined in ontologies",
@@ -4135,19 +4193,19 @@
             ]
           },
             "funding": {
-            "type": "object",
-            "@type": "outbreak:MonetaryGrant",
-            "description": "Information about funding support",
-            "properties": {
-              "name": {
+              "type": "object",
+              "@type": "outbreak:MonetaryGrant",
+              "description": "Information about funding support",
+              "properties": {
+                "name": {
                 "type": "string",
                 "description": "The name of the monetary grant that funded/funds the analysis"
               },
-              "identifier": {
+                "identifier": {
                 "type": "string",
                 "description": "Unique identifier(s) for the grant(s) used to fund the analysis"
               },
-              "funder": {
+                "funder": {
                 "description": "name of the funding organization",
                 "oneOf": [
               {
@@ -4161,16 +4219,16 @@
               }
             ]
               },
-              "url": {
+                "url": {
                 "type": "string",
                 "format": "uri",
                 "description": "award URL"
               }
+              },
+              "required": [
+                "funder"
+              ]
             },
-            "required": [
-              "funder"
-            ]
-          },
             "citation": {
               "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the publication) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
               "@type": "outbreak:CitationObject",
@@ -4387,8 +4445,8 @@
             ]
           }
             }
-          }
-        },
+      }
+    },
     {
       "@id": "outbreak:domainUrl",
       "@type": "rdf:Property",
