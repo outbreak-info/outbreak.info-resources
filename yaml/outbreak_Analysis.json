@@ -956,6 +956,19 @@
                   }
                 ]
           },
+          "species": {
+            "description": "Species(es) for which the analysis has been performed",
+            "oneOf": [{
+                "$ref": "#/definitions/speciesControlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/speciesControlledVocabulary"
+                }
+              }
+            ]
+          },
           "infectiousAgent": {
             "description": "infectious agents(s) which are the focus of the analysis",
             "oneOf": [{
@@ -1117,7 +1130,30 @@
           "name",
           "url"
         ],
-          "definitions": {
+        "recommended": [
+          "domainUrl",
+          "doi",
+          "funding",
+          "species",
+          "infectiousAgent",
+          "infectiousDisease",
+          "license",
+          "datePublished",
+          "dateModified",
+          "analysisTechnique",
+          "analysisTopic",
+          "assumption",
+          "keywords",
+          "topicCategory",
+          "curatedBy"
+        ],
+        "optional": [
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "evaluations"
+        ],
+        "definitions": {
             "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
               "@type": "DefinedTerm",
@@ -1134,19 +1170,41 @@
                   "http://purl.obolibrary.org/obo/cido.owl",
                   "http://purl.obolibrary.org/obo/epo"
                 ],
-                  "property": {
-                    "name": {
-                      "type" : "string"
-                    },
-                    "url": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "identifier": {
-                      "type": "string"
-                    }
+                "property": {
+                  "name": {
+                    "type" : "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "identifier": {
+                    "type": "string"
                   }
                 }
+              }
+            },
+            "speciesControlledVocabulary": {
+              "description": "collection of vocabulary terms defined in ontologies",
+              "@type": "DefinedTerm",
+              "type": "object",
+              "vocabulary": {
+                "ontology": ["ncbitaxon"],
+                "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567"],
+                "property": {
+                  "name": {
+                    "type" : "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "identifier": {
+                    "type": "string"
+                  }
+                }
+              },
+              "strict": false
             },
             "miscControlledVocabulary": {
               "description": "collection of vocabulary terms defined in ontologies",
@@ -1219,23 +1277,23 @@
               }
             },
             "baseOrgObject":{
-            "description": "A barebones Organization object to work around recursion issues in DDE",
-            "@type": "outbreak:Organization",
-            "type": "object",
-            "properties": {
-              "name": {
-                "description": "name of the organization",
-                "type": "string"
-              },
-              "alternateName": {
-                "description": "Alternate name or Acronym for the organization.",
-                "type": "string"
-              }
-            },
-            "required": [
-              "name"
-            ]              
-          }, 
+                "description": "A barebones Organization object to work around recursion issues in DDE",
+                "@type": "outbreak:Organization",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "name of the organization",
+                    "type": "string"
+                  },
+                  "alternateName": {
+                    "description": "Alternate name or Acronym for the organization.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]              
+            }, 
             "person": {
               "description": "Reusable person definition",
               "@type": "outbreak:Person",
@@ -1325,43 +1383,43 @@
                   "affiliation": {
                     "$ref": "#/definitions/baseOrgObject"
                   },
-                  "members": {
-                     "oneOf": [
-                        {
-                          "$ref": "#/definitions/memberObject"
-                        },
-                        {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/definitions/memberObject"
-                          }
-                        }
-                      ]
-                  },
-                  "curationDate":{
-                    "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
-                "required": [
-                  "name"
-                ]
+              "members": {
+                 "oneOf": [
+                    {
+                      "$ref": "#/definitions/memberObject"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/memberObject"
+                      }
+                    }
+                  ]
+              },
+              "curationDate":{
+                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "required": [
+              "name"
+            ]
           },
             "funding": {
-            "type": "object",
-            "@type": "outbreak:MonetaryGrant",
-            "description": "Information about funding support",
-            "properties": {
-              "name": {
+              "type": "object",
+              "@type": "outbreak:MonetaryGrant",
+              "description": "Information about funding support",
+              "properties": {
+                "name": {
                 "type": "string",
                 "description": "The name of the monetary grant that funded/funds the analysis"
               },
-              "identifier": {
+                "identifier": {
                 "type": "string",
                 "description": "Unique identifier(s) for the grant(s) used to fund the analysis"
               },
-              "funder": {
+                "funder": {
                 "description": "name of the funding organization",
                 "oneOf": [
               {
@@ -1375,21 +1433,21 @@
               }
             ]
               },
-              "url": {
+                "url": {
                 "type": "string",
                 "format": "uri",
                 "description": "award URL"
               }
+              },
+              "required": [
+                "funder"
+              ]
             },
-            "required": [
-              "funder"
-            ]
-          },
             "citation": {
-                "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the publication) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
-                "@type": "outbreak:CitationObject",
-                "type": "object",
-                "properties": {
+              "description": "A citation object for a resource which is cited by the analysis (ie- is a derivative of the publication) , related to the analysis, or from which the analysis was based on (ie- is derived from).",
+              "@type": "outbreak:CitationObject",
+              "type": "object",
+              "properties": {
                 "name": {
                     "description": "Name of or title of the citation",
                     "type": "string"
@@ -1418,25 +1476,25 @@
                       "CreativeWork"
                       ]
                 },
-              "url": {
-                "description": "The url of the resource cited.",
-                "type": "string",
-                "format": "uri"
-              },
-              "versionDate": {
-                "description": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.",
-                "type": "string",
-                "format": "date"
-              },
-              "citeText": {
-                "description": "The bibliographic citation for the referenced resource as is provided",
-                "type": "string"
-              },
-              "curationDate":{
-                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                "type": "string",
-                "format": "date"
-              }
+                "url": {
+                  "description": "The url of the resource cited.",
+                  "type": "string",
+                  "format": "uri"
+                },
+                "versionDate": {
+                  "description": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.",
+                  "type": "string",
+                  "format": "date"
+                },
+                "citeText": {
+                  "description": "The bibliographic citation for the referenced resource as is provided",
+                  "type": "string"
+                },
+                "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
+                }
             },
             "required": [
               "name",
@@ -1483,10 +1541,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                        }
                       }
-                    ]
                 }
+              ]
+            }
               },
               "required": [
               ]
@@ -1531,10 +1589,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                        }
                       }
-                    ]
-                  }
+                }
+              ]
+            }
                 },
                 "required": [
                 ]
@@ -1575,10 +1633,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                        }
                       }
-                    ]
-                },
+                }
+              ]
+            },
                 "reviews": {
                   "anyOf": [
                       {
@@ -1601,8 +1659,8 @@
             ]
           }
             }
-          }
-        },
+      }
+    }
     {
       "@id": "outbreak:domainUrl",
       "@type": "rdf:Property",

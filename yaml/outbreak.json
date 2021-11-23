@@ -3743,7 +3743,7 @@
                 ]
           },
           "species": {
-            "description": "Species(es) from which dataset has been collected",
+            "description": "Species(es) for which the analysis has been performed",
             "oneOf": [{
                 "$ref": "#/definitions/speciesControlledVocabulary"
               },
@@ -5052,6 +5052,33 @@
           "name",
           "url",
           "author"
+        ],
+        "recommended": [
+          "doi",
+          "status",
+          "measurementTechnique",
+          "material",
+          "license",
+          "funding",
+          "datePublished",
+          "topicCategory",
+          "keywords",
+          "curatedBy"
+        ],
+        "optional": [
+          "instrument",
+          "warning",
+          "dateModified",
+          "correctionNote",
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "protocolSetting",
+          "protocolCategory",
+          "usedToGenerate",
+          "inComplianceWith",
+          "duration",
+          "evaluations"
         ],
         "definitions": {
           "controlledVocabulary": {
