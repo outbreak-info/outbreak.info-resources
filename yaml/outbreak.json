@@ -2008,6 +2008,7 @@
           "description",
           "identifier",
           "name",
+          "funding",
           "distribution"
         ],
         "recommended": [
@@ -2016,6 +2017,7 @@
           "variableMeasured",
           "species",
           "infectiousAgent",
+          "infectiousDisease",
           "identifier",
           "doi",
           "license",
