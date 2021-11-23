@@ -550,6 +550,9 @@
         "required": [
           "contentUrl",
           "dateModified"
+        ],
+        "recommended": [
+          "name"
         ]
       }
     },

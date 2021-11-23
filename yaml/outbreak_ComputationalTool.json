@@ -1348,30 +1348,6 @@
       "rdfs:label": "DataDownload",
       "rdfs:subClassOf": {
         "@id": "schema:DataDownload"
-      },
-      "$validation": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "properties": {
-          "name": {
-            "description": "The name of the distribution.",
-            "type": "string"
-          },
-          "contentUrl": {
-            "description": "Actual url of the data file.",
-            "type": "string",
-            "format": "uri"
-          },
-          "dateModified": {
-            "description": "The date on which the distribution was most recently modified or when the item's entry was modified within a DataFeed.",
-            "format": "date",
-            "type": "string"
-          }
-        },
-        "required": [
-          "contentUrl",
-          "dateModified"
-        ]
       }
     },
     {
