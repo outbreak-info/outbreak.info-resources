@@ -1000,7 +1000,11 @@
             ]
           }
         },
-        "required": []
+        "recommended": [
+          "studyEventType",
+          "studyEventDate",
+          "studyEventDateType"
+        ]
       }
     },
     {
@@ -1117,6 +1121,13 @@
         },
         "required": [
             "status"
+        ],
+        "recommended": [
+          "statusExpandedAccess",
+          "statusDate",
+          "enrollmentCount",
+          "enrollmentType",
+          "whyStopped"    
         ]
       }
     },
@@ -1374,7 +1385,20 @@
             "type": "string"
           }
         },
-        "required": []
+        "required": [],
+        "recommended": [
+          "studyType",
+          "designAllocation",
+          "designPrimaryPurpose",
+          "designWhoMasked"
+          
+        ],
+        "optional": [
+          "phase",
+          "phaseNumber",
+          "designModel",
+          "designStudyText"
+        ]
       }
     },
     {
@@ -1527,7 +1551,11 @@
               ]
             }
         },
-        "required": []
+        "optional": [
+          "name",
+          "description",
+          "category"
+        ]
       }
     },
     {
@@ -1590,7 +1618,12 @@
             "type": "string"
           }
         },
-        "required": [],
+        "optional": [
+          "role",
+          "intervention",
+          "name",
+          "description"
+        ],
         "definitions":{
           "intervention": {
               "type": "object",
@@ -1678,7 +1711,11 @@
                   ]
             }
         },
-        "required": []
+        "recommended": [
+          "outcomeMeasure",
+          "outcomeTimeFrame",
+          "outcomeType"
+        ]
       }
     },
     {
@@ -1816,7 +1853,19 @@
             ]
           }
         },
-        "required": []
+        "required": [
+          "inclusionCriteria",
+          "minimumAge",
+          "unitText",
+          "maximumAge",
+          "unitText",
+          "gender",
+          "genderBased",
+          "healthyVolunteers",
+          "stdAge",
+          "exclusionCriteria",
+          "criteriaText"
+        ]
       }
     },
     {
@@ -1989,7 +2038,13 @@
             ]
           }
         },
-        "required": []
+        "recommended": [
+          "studyLocation",
+          "studyLocationCity",
+          "studyLocationState",
+          "studyLocationCountry",
+          "studyLocationStatus"
+        ]
       }
     },
     {
