@@ -7,6 +7,46 @@
   },
   "@graph": [
     {
+      "@id": "outbreak:ComputationalTool",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "This is the Computational Tool schema for describing software and other computational tools for outbreak.info resources.",
+      "rdfs:label": "ComputationalTool",
+      "rdfs:subClassOf": {
+        "@id": "schema:SoftwareApplication"
+      }
+    },
+    {
+      "@id": "outbreak:codeRepository",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to the source code repository of the tool.",
+      "rdfs:label": "codeRepository",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ComputationalTool"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "outbreak:programmingLanguage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The main programming language(s) used to build or execute the tool. Please use terms from the ‘Programming language’ table in the Bio.Tools documentation",
+      "rdfs:label": "programmingLanguage",
+      "schema:domainIncludes": {
+        "@id": "outbreak:ComputationalTool"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:ComputerLanguage"
+        }
+      ]
+    },
+    {
       "@id": "outbreak:Person",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is the Person schema for describing authors and people for outbreak.info resources",
@@ -75,8 +115,20 @@
         "required": [
           "name"
         ],
+        "recommended": [
+          "alternateName",
+          "givenName",
+          "familyName",
+          "affiliation",
+          "affiliationStatus",
+          "orcid"
+        ],
+        "optional": [
+          "role",
+          "curationDate"
+        ],
         "definitions":{
-            "baseOrgObject": {
+          "baseOrgObject": {
                 "@type": "outbreak:Organization",
                 "type": "object",
                 "properties": {
@@ -503,7 +555,7 @@
               "ClinicalTrial",
               "Analysis",
               "Protocol",
-              "SoftwareApplication",
+              "ComputationalTool",
               "CreativeWork"
             ]
           },
@@ -3526,7 +3578,8 @@
         {"@id": "outbreak:Dataset"},
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3544,7 +3597,8 @@
       "rdfs:label": "dateCreated",
       "rdfs:sameAs": {"@id":"schema:dateCreated"},
       "schema:domainIncludes": [
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3563,7 +3617,8 @@
         {"@id": "outbreak:Dataset"},
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3582,7 +3637,8 @@
         {"@id": "outbreak:Dataset"},
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3600,7 +3656,8 @@
         {"@id": "outbreak:Dataset"},
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:Publication"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3651,7 +3708,8 @@
           {"@id": "outbreak:Dataset"},
           {"@id": "outbreak:Publication"},
           {"@id": "outbreak:Analysis"},
-          {"@id": "outbreak:Protocol"}
+          {"@id": "outbreak:Protocol"},
+          {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3665,11 +3723,12 @@
       "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
       "rdfs:label": "funding",
       "schema:domainIncludes": [
-          {"@id": "outbreak:Dataset"},
-          {"@id": "outbreak:Publication"},
-          {"@id": "outbreak:Analysis"},
-          {"@id": "outbreak:Protocol"},
-          {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:Dataset"},
+        {"@id": "outbreak:Publication"},
+        {"@id": "outbreak:Analysis"},
+        {"@id": "outbreak:Protocol"},
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3703,7 +3762,8 @@
       "rdfs:label": "species",
       "schema:domainIncludes": [
         {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Analysis"}
+        {"@id": "outbreak:Analysis"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3721,7 +3781,8 @@
       "rdfs:label": "infectiousAgent",
       "schema:domainIncludes": [
         {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Analysis"}
+        {"@id": "outbreak:Analysis"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3739,7 +3800,8 @@
       "rdfs:label": "infectiousDisease",
       "schema:domainIncludes": [
         {"@id": "outbreak:Dataset"},
-        {"@id": "outbreak:Analysis"}
+        {"@id": "outbreak:Analysis"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3760,7 +3822,8 @@
         {"@id": "outbreak:Publication"},
         {"@id": "outbreak:Analysis"},
         {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {
@@ -3768,7 +3831,6 @@
         }
       ]
     },
-
     {
       "@id": "outbreak:isBasedOn",
       "@type": "rdf:Property",
@@ -3779,7 +3841,8 @@
         {"@id": "outbreak:Publication"},
         {"@id": "outbreak:Analysis"},
         {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {"@id": "outbreak:CitationObject"},
@@ -3789,7 +3852,8 @@
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:ClinicalTrial"},
         {"@id": "schema:SoftwareApplication"},
-        {"@id": "schema:CreativeWork"}
+        {"@id": "schema:CreativeWork"},
+        {"@id": "outbreak:ComputationalTool"}
       ]
     },
     {
@@ -3802,7 +3866,8 @@
         {"@id": "outbreak:Publication"},
         {"@id": "outbreak:Analysis"},
         {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {"@id": "outbreak:CitationObject"},
@@ -3812,7 +3877,8 @@
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:ClinicalTrial"},
         {"@id": "schema:SoftwareApplication"},
-        {"@id": "schema:CreativeWork"}
+        {"@id": "schema:CreativeWork"},
+        {"@id": "outbreak:ComputationalTool"}
       ]
     },
     {
@@ -3826,7 +3892,8 @@
         {"@id": "outbreak:Publication"},
         {"@id": "outbreak:Analysis"},
         {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {"@id": "outbreak:CitationObject"},
@@ -3836,7 +3903,8 @@
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:ClinicalTrial"},
         {"@id": "schema:SoftwareApplication"},
-        {"@id": "schema:CreativeWork"}
+        {"@id": "schema:CreativeWork"},
+        {"@id": "outbreak:ComputationalTool"}
       ]
     },
     {
@@ -3849,7 +3917,8 @@
         {"@id": "outbreak:Publication"},
         {"@id": "outbreak:Analysis"},
         {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {"@id": "outbreak:Person"},
@@ -3861,7 +3930,8 @@
         {"@id": "outbreak:Protocol"},
         {"@id": "outbreak:ClinicalTrial"},
         {"@id": "schema:SoftwareApplication"},
-        {"@id": "schema:CreativeWork"}
+        {"@id": "schema:CreativeWork"},
+        {"@id": "outbreak:ComputationalTool"}
       ]
     },
     {
@@ -3873,7 +3943,8 @@
         {"@id": "outbreak:Person"},
         {"@id": "outbreak:Organization"},
         {"@id": "outbreak:CitationObject"},
-        {"@id": "schema:CreativeWork"}
+        {"@id": "schema:CreativeWork"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes": [
         {"@id": "schema:Date"}
@@ -3889,7 +3960,8 @@
         {"@id": "outbreak:Publication"},
         {"@id": "outbreak:Analysis"},
         {"@id": "outbreak:Protocol"},
-        {"@id": "outbreak:ClinicalTrial"}
+        {"@id": "outbreak:ClinicalTrial"},
+        {"@id": "outbreak:ComputationalTool"}
       ],
       "schema:rangeIncludes":[
         {"@id": "schema:Review"},

@@ -115,8 +115,20 @@
         "required": [
           "name"
         ],
+        "recommended": [
+          "alternateName",
+          "givenName",
+          "familyName",
+          "affiliation",
+          "affiliationStatus",
+          "orcid"
+        ],
+        "optional": [
+          "role",
+          "curationDate"
+        ],
         "definitions":{
-            "baseOrgObject": {
+          "baseOrgObject": {
                 "@type": "outbreak:Organization",
                 "type": "object",
                 "properties": {
