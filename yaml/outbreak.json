@@ -1065,7 +1065,8 @@
           "members",
           "membershipStatus",
           "class",
-          "role"
+          "role",
+          "curationDate"
         ],
         "definitions": {
             "baseOrgObject":{
@@ -1249,7 +1250,15 @@
           }   
         },
         "required": [
-          "funder"
+          "funder",
+          "identifier"
+        ],
+        "recommended": [
+          "name",
+          "url",
+          "recipient"
+        ],
+        "optional": [
         ],
         "definitions": {
             "baseOrgObject":{
@@ -1306,7 +1315,11 @@
                 },
                 "required": [
                     "name"
-                ]                
+                ],
+                "recommended": [
+                  "affilication"
+                ],
+                "optional": []
             }
         }
       }
