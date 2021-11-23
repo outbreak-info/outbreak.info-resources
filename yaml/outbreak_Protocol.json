@@ -235,6 +235,17 @@
         "required": [
           "name"
         ],
+        "recommended": [
+          "alternateName",
+          "affiliation",
+          "affiliationStatus"
+        ],
+        "optional": [
+          "members",
+          "membershipStatus",
+          "class",
+          "role"
+        ],
         "definitions": {
             "baseOrgObject":{
                 "description": "Affiliated Organization",
