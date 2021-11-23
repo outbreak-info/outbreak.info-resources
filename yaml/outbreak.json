@@ -419,7 +419,30 @@
                 }
               }
             ]
-          }
+          },
+          "evaluations":{
+              "description": "Reviews, Ratings, or other types of evaluations on this resource",
+              "anyOf":[
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/reviewObject"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ratingObject"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/aggregateRatingObject"
+                }
+              }
+            ]
+            }
         },
         "required": [
           "description",
@@ -449,7 +472,8 @@
           "softwareHelp",
           "isBasedOn",
           "isRelatedTo",
-          "citedBy"
+          "citedBy",
+          "evaluations"
         ],
         "definitions": {
           "edamTopic": {
@@ -809,6 +833,163 @@
               "name",
               "sourceType"
             ]
+          },
+          "reviewObject": {
+            "description": "A review or descriptive evaluation of the resource",
+            "@type": "Review",
+            "type": "object",
+            "properties": {
+              "name": {
+                    "type": "string",
+                    "description": "The name of the review"
+                  },
+              "reviewAspect":{
+                    "description": "This Review or Rating is relevant to this part or facet of the itemReviewed",
+                    "type": "string"
+                  },
+              "reviewBody": {
+                      "description": "The actual body of the review.",
+                      "type": "string"
+                  },
+              "reviewRating": {
+                "description": "The rating given in this review",
+                    "$ref": "#/definitions/ratingObject"      
+                },
+              "author": {
+                    "description": "The author of this content or rating.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/person"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/person"
+                      }
+                      },
+                      {
+                        "$ref": "#/definitions/organization"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/organization"
+                        }
+                        }
+                    ]
+              }
+            },
+            "required": [
+            ]
+          },
+          "ratingObject": {
+                "description": "A rating or categorical evaluation of the resource",
+                "@type": "Rating",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the rating"
+                  },
+                  "ratingExplanation": {
+                    "type": "string",
+                    "description": "An explanation of the rating"    
+                  },
+                  "ratingValue": {
+                    "type": "string",
+                    "description": "The rating for the content."
+                  },
+                  "reviewAspect": {
+                    "type": "string",
+                    "description": "This Review or Rating is relevant to this part or facet of the itemReviewed"
+                  },
+                  "author": {
+                    "description": "The author of this content or rating.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/person"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/person"
+                      }
+                      },
+                      {
+                        "$ref": "#/definitions/organization"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/organization"
+                      }
+                }
+              ]
+            }
+                },
+                "required": [
+                ]
+            },
+          "aggregateRatingObject": {
+              "description": "A cumulative evaluation of the resource",
+              "@type": "AggregateRating",
+              "type": "object",
+              "properties": {
+                "name": {
+                "type": "string",
+                "description": "The name of the aggregate rating"
+                },
+                "ratingValue": {
+                    "type": "string",
+                    "description": "The rating for the content."
+                },
+                "reviewAspect":{
+                  "description": "This Review or Rating is relevant to this part or facet of the itemReviewed",
+                  "type": "string"
+                },
+                "author": {
+                    "description": "The author of this content or rating.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/person"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/person"
+                      }
+                      },
+                      {
+                        "$ref": "#/definitions/organization"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/organization"
+                      }
+                }
+              ]
+            },
+                "reviews": {
+                  "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/reviewObject"
+                        }
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/ratingObject"
+                        }
+                      }
+                      
+                  ]
+                }
+              },
+              "required": [
+              ]
           }
         }
       }
@@ -1826,7 +2007,28 @@
           "author",
           "description",
           "identifier",
-          "name"
+          "name",
+          "distribution"
+        ],
+        "recommended": [
+          "dateModified",
+          "measurementTechnique",
+          "variableMeasured",
+          "species",
+          "infectiousAgent",
+          "identifier",
+          "doi",
+          "license",
+          "topicCategory",
+          "keywords",
+          "curatedBy"
+        ],
+        "optional": [
+          "datePublished",
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "evaluations"
         ],
         "definitions": {
           "controlledVocabulary": {
@@ -1970,6 +2172,9 @@
             "required": [
               "dateModified",
               "contentUrl"
+            ],
+            "recommended": [
+              "name"
             ]
           },
           "baseOrgObject": {
