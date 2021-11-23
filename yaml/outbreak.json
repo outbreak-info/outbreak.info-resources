@@ -4335,6 +4335,15 @@
         },
         "required": [
           "name"
+        ],
+        "recommended": [
+          "manufacturer",
+          "category",
+          "identifier"
+        ],
+        "optional": [
+          "url",
+          "brand"
         ]
       }
     },
@@ -4386,6 +4395,14 @@
         },
         "required": [
           "name"
+        ],
+        "recommended": [
+          "manufacturer",
+          "model"
+        ],
+        "optional": [
+          "brand",
+          "url"
         ]
       }
     },
