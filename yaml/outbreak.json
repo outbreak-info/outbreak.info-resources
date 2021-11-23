@@ -1440,6 +1440,17 @@
         "required": [
           "name",
           "sourceType"
+        ],
+        "recommended": [
+          "url",
+          "identifier",
+          "pmid",
+          "doi"
+        ],
+        "optional": [
+          "citeText",
+          "versionDate",
+          "curationDate"
         ]
       }
     },
