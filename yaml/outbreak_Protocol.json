@@ -1061,17 +1061,18 @@
               ]
           },
           "measurementTechnique": {
-                "description": "A technique or technology used in this protocol.",
-                "oneOf": [{
-                    "$ref": "#/definitions/controlledVocabulary"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/controlledVocabulary"
-                    }
-                  }
-                ]
+            "description": "A technique or technology used in this protocol.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/controlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/controlledVocabulary"
+                }
+              }
+            ]
           },
           "protocolSetting": {
               "description": "The type of 'protocol' based on setting in which it would apply",
@@ -1360,6 +1361,34 @@
           "url",
           "author"
         ],
+        "recommended": [
+          "doi",
+          "status",
+          "measurementTechnique",
+          "material",
+          "protocolSetting",
+          "protocolCategory",
+          "license",
+          "funding",
+          "datePublished",
+          "topicCategory",
+          "keywords",
+          "curatedBy"
+        ],
+        "optional": [
+          "instrument",
+          "warning",
+          "dateModified",
+          "correctionNote",
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "protocolStatus",
+          "usedToGenerate",
+          "inComplianceWith",
+          "duration",
+          "evaluations"
+        ],
         "definitions": {
           "controlledVocabulary": {
               "definition": "collection of vocabulary terms defined in ontologies",
@@ -1536,11 +1565,11 @@
                     }
                   ]
                 },
-              "curationDate":{
-                "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
-                "type": "string",
-                "format": "date"
-              }
+                "curationDate":{
+                  "description": "The date this resource was added into outbreak.info, or was updated in outbreak.info.",
+                  "type": "string",
+                  "format": "date"
+                }
               },
               "required": [
                 "name"
@@ -1753,14 +1782,14 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
-                    }
-                  ]
+                      }
                 }
-              },
-              "required": [
               ]
+            }
             },
+            "required": [
+            ]
+          },
           "ratingObject": {
             "description": "A rating or categorical evaluation of the resource",
             "@type": "Rating",
@@ -1801,10 +1830,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
-                    }
-                  ]
+                      }
                 }
+              ]
+            }
             },
             "required": [
             ]
@@ -1845,10 +1874,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
-                    }
-                  ]
-                },
+                      }
+                }
+              ]
+            },
                 "reviews": {
                   "anyOf": [
                       {

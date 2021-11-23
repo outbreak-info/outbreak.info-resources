@@ -1660,7 +1660,7 @@
           }
             }
       }
-    }
+    },
     {
       "@id": "outbreak:domainUrl",
       "@type": "rdf:Property",
