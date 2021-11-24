@@ -2138,7 +2138,7 @@
         }
       ]
     },
-{
+    {
       "@id": "outbreak:ClinicalTrial",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is the schema for describing the Clinical Trials and other medical studies used for outbreak.info Resources",
@@ -2603,6 +2603,33 @@
           "description",
           "identifier",
           "name"
+        ],
+        "recommended": [
+          "url",
+          "studyStatus",
+          "abstract",
+          "studyEvent",
+          "dateCreated",
+          "datePublished",
+          "dateModified",
+          "dateModifiedType",
+          "studyLocation",
+          "studyDesign",
+          "outcome",
+          "healthConditionIdentifier",
+          "eligibilityCriteria",
+          "keywords",
+          "topicCategory",
+          "curatedBy"
+        ],
+        "optional": [
+          "alternateName",
+          "hasResults",
+          "armGroup",
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "evaluations"
         ],
         "definitions": {
           "baseOrgObject":{
@@ -3404,13 +3431,13 @@
                         "items": {
                           "$ref": "#/definitions/organization"
                       }
-                    }
-                  ]
                 }
-              },
-              "required": [
               ]
+            }
             },
+            "required": [
+            ]
+          },
           "ratingObject": {
             "description": "A rating or categorical evaluation of the resource",
             "@type": "Rating",
@@ -3451,10 +3478,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
-                    }
-                  ]
+                      }
                 }
+              ]
+            }
             },
             "required": [
             ]
@@ -3495,10 +3522,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
-                    }
-                  ]
-                },
+                      }
+                }
+              ]
+            },
                 "reviews": {
                   "anyOf": [
                       {

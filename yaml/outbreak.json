@@ -6916,7 +6916,7 @@
         }
       ]
     },
-{
+    {
       "@id": "outbreak:ClinicalTrial",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is the schema for describing the Clinical Trials and other medical studies used for outbreak.info Resources",
@@ -7383,6 +7383,7 @@
           "name"
         ],
         "recommended": [
+          "url",
           "studyStatus",
           "abstract",
           "studyEvent",
@@ -7393,7 +7394,7 @@
           "studyLocation",
           "studyDesign",
           "outcome",
-          "healthConditionIidentifier",
+          "healthConditionIdentifier",
           "eligibilityCriteria",
           "keywords",
           "topicCategory",
@@ -7401,6 +7402,7 @@
         ],
         "optional": [
           "alternateName",
+          "hasResults",
           "armGroup",
           "citedBy",
           "isBasedOn",
