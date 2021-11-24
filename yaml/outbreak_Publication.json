@@ -1132,6 +1132,29 @@
           "author",
           "datePublished"
         ],
+        "recommended": [
+          "doi",
+          "pmid",
+          "journalNameAbbrevation",
+          "volumeNumber",
+          "issueNumber",
+          "pagination",
+          "license",
+          "abstract",
+          "publicationType",
+          "funding",
+          "keywords",
+          "topicCategory",
+          "curatedBy"
+        ],
+        "optional": [
+          "dateModified",
+          "correction",
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "evaluations"    
+        ],
         "definitions": {
           "baseOrgObject":{
             "description": "A barebones Organization object to work around recursion issues in DDE",
@@ -1448,9 +1471,9 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
-                    }
-                  ]
+                        }
+                      }
+                    ]
                 }
               },
               "required": [
@@ -1496,14 +1519,14 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
+                        }
                       }
                     ]
-                  }
+                }
                 },
                 "required": [
                 ]
-            },
+          },
           "aggregateRatingObject": {
               "description": "A cumulative evaluation of the resource",
               "@type": "AggregateRating",
@@ -1540,10 +1563,10 @@
                         "type": "array",
                         "items": {
                           "$ref": "#/definitions/organization"
-                          }
-                    }
-                  ]
-                },
+                      }
+                }
+              ]
+            },
                 "reviews": {
                   "anyOf": [
                       {

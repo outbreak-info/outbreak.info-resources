@@ -3060,7 +3060,7 @@
           "citedBy",
           "isBasedOn",
           "isRelatedTo",
-          "evalutations"    
+          "evaluations"    
         ],
         "definitions": {
           "baseOrgObject":{
@@ -7381,6 +7381,31 @@
           "description",
           "identifier",
           "name"
+        ],
+        "recommended": [
+          "studyStatus",
+          "abstract",
+          "studyEvent",
+          "dateCreated",
+          "datePublished",
+          "dateModified",
+          "dateModifiedType",
+          "studyLocation",
+          "studyDesign",
+          "outcome",
+          "healthConditionIidentifier"
+          "eligibilityCriteria",
+          "keywords",
+          "topicCategory",
+          "curatedBy"
+        ],
+        "optional": [
+          "alternateName",
+          "armGroup",
+          "citedBy",
+          "isBasedOn",
+          "isRelatedTo",
+          "evaluations"
         ],
         "definitions": {
           "baseOrgObject":{
