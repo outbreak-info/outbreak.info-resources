@@ -307,12 +307,8 @@
             "type": "text"
           },
           "affiliation": {
-            "properties": {
-              "name": {
-                "type": "keyword",
-                "copy_to": ["all"]
-              }
-            }
+            "type": "keyword",
+            "copy_to": ["all"]
           },
           "familyName": {
             "type": "text",
