@@ -56,8 +56,12 @@
         "type": "text"
       },
       "affiliation": {
-        "type": "keyword",
-        "copy_to": ["all"]
+        "properties": {
+          "name": {
+            "type": "keyword",
+            "copy_to": ["all"]
+          }
+        }
       },
       "familyName": {
         "type": "text",
