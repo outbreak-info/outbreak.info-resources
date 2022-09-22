@@ -114,6 +114,11 @@
             "description": "License associated with re-use of the computational tool.",
             "type": "string"
           },
+          "dateModified": {
+            "description": "The date on which the ComputationalTool was most recently modified or when the item's entry was modified within a DataFeed.",
+            "format": "date",
+            "type": "string"
+          },
           "programmingLanguage": {
             "description": "The main programming language(s) used to build or execute the tool. Please use terms from the ‘Programming language’ table in the Bio.Tools documentation",
             "oneOf": [
@@ -456,6 +461,7 @@
           "curatedBy",
           "identifier",
           "license",
+          "dateModified",
           "applicationCategory",
           "applicationSubCategory",
           "downloadUrl",
@@ -1511,8 +1517,7 @@
     {
       "@id": "outbreak:CitationObject",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A citation object for a resource which is cited by the subject (ie- is a derivative of the subject), related to the subject, or from which the subject was based on (ie- is derived from).",
-      "rdfs:label": "CitationObject",
+      "rdfs:comment": "A citation object for a resource which is cited by the subject (ie- is a derivative of the subject), related to the subject, or from which the subject was based on (ie- is derived from). Note that the required 'sourceType' is a stand-in for the JSON-LD '@type' and should be used in lieu of 'CitationObject' for the '@type' whenever possible.",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       },
@@ -1616,7 +1621,7 @@
     {
       "@id": "outbreak:sourceType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The type of resource",
+      "rdfs:comment": "The type of resource. A stand-in property for the JSON-LD '@type'",
       "rdfs:label": "sourceType",
       "schema:domainIncludes": {
         "@id": "outbreak:CitationObject"
