@@ -643,7 +643,7 @@
     "copy_to": ["all"]
   },
   "name": {
-    "type": "keyword",
+    "type": "text",
     "index": true,
     "copy_to": ["all"]
   },
