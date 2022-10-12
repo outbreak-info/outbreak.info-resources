@@ -590,8 +590,7 @@
           }
         },
         "required": [
-          "name",
-          "sourceType"
+          "name"
         ],
         "recommended": [
           "url",
@@ -1497,8 +1496,7 @@
                 }
             },
             "required": [
-              "name",
-              "sourceType"
+              "name"
             ]
           },
             "reviewObject": {

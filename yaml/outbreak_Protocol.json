@@ -532,7 +532,7 @@
     {
       "@id": "outbreak:CitationObject",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A citation object for a resource which is cited by the subject (ie- is a derivative of the subject), related to the subject, or from which the subject was based on (ie- is derived from). Note that the required 'sourceType' is a stand-in for the JSON-LD '@type' and should be used in lieu of 'CitationObject' for the '@type' whenever possible.",
+      "rdfs:comment": "A citation object for a resource which is cited by the subject (ie- is a derivative of the subject), related to the subject, or from which the subject was based on (ie- is derived from). Note that 'sourceType' is merely a stand-in or placeholder for the JSON-LD '@type'.",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       },
@@ -589,8 +589,7 @@
           }
         },
         "required": [
-          "name",
-          "sourceType"
+          "name"
         ],
         "recommended": [
           "url",
@@ -1737,8 +1736,7 @@
               }
             },
             "required": [
-              "name",
-              "sourceType"
+              "name"
             ]
           },
           "reviewObject": {
