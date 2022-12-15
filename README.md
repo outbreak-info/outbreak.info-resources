@@ -1,4 +1,6 @@
 # outbreak.info-resources
+[![DOI](https://zenodo.org/badge/250611544.svg)](https://zenodo.org/badge/latestdoi/250611544)
+
 A curated repository of metadata of resources on COVID-19 and SARS-CoV-2
 
 ## Topic Categories
